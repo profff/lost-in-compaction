@@ -1,0 +1,485 @@
+You said:
+Je suis sorti major de l'epita en 2000 avec une spécialisation en génie informatique des systèmes temps réel j'ai également fait ensuite un dea en robotique et systèmes intelligents a Jussieu en 2001 j'ai 25 ans de développement soft embarqué et pc majoritairement en c c++ et python et majoritairement bare métal ... Je suis en train de tomber dans un terrier de lapin a 4096 dimensions... J'explore majoritairement avec Claude les théories sur les LLM ... Évidemment ...plus je sais, plus je sais que je sais rien ... Mais les raisonnements en espace latent les planificateurs sans token les réseaux state full ou a mémoire par graph me pationnent de plus en plus j'ai également vu quelques trucs intéressants sur les processeurs neromorphiques ... Avant j'en avais mare de mon taf et comptais me réorienter en menuiserie (j'ai passé un cap d'ébéniste en cours du soir y a longtemps) ou en boulangerie... Mais j'avoue que j'aimerais étudier les options pour travailler dans le domaine (en cas de ruee vers l'or je préfère être du côté de ceux qui fournissent les pelles et les pioches que de ceux qui creusent) j'ai étudié les options spour me faire un serveur multi gpu a la maison mais je doute d'avoir les moyens surtout en ce moment... Est ce que tu as un avis ... (Je sais faire aussi plein d'autres choses a 48 ans c'est encore  heureux mais c'est pas vraiment utile dans ce contexte )
+
+ChatGPT said:
+
+Tu as un profil rarement aligné avec “les pelles et les pioches” : temps réel, bare metal, C/C++, perf, robotique, systèmes… et maintenant curiosité profonde sur LLM / mémoire / planification / architectures. Ça te place naturellement côté infra, runtime, optimisation, edge, outillage, plus que “prompt engineer”.
+
+Quelques angles très concrets où ton background fait la différence (et où tu n’as pas besoin d’être “chercheur LLM” pur) :
+1) Les “pelles et pioches” qui matchent ton ADN
+A. Inference / runtime / perf
+
+Objectif : faire tourner des modèles plus vite, moins cher, plus stable, sur GPU/CPU/NPU.
+
+    Optimisations d’inférence (batching, KV cache, paging, quantization, speculative decoding)
+
+    Intégration CUDA/Triton/Metal, profiling, latences, throughput
+
+    Packaging “prod” : serveur d’inférence, autoscaling, monitoring, SLO
+
+➡️ Ton côté “bare metal + temps réel” colle parfaitement à la mentalité latence, déterminisme, instrumentation.
+B. LLM “stateful” / mémoire / agentique robuste
+
+Beaucoup de boîtes se plantent sur : mémoire, outils, planification, évaluation, et le passage à l’échelle.
+
+    “Memory graph” / retrieval / politiques d’oubli / cohérence temporelle
+
+    Orchestration agents-outils (safety rails, timeouts, idempotence, tracing)
+
+    Architectures “tokenless planning” / planificateurs hybrides (symbolique + LLM)
+
+➡️ Là, ton expérience systèmes aide à éviter les usines à gaz fragiles.
+C. Edge AI / robotique / embarqué + modèles
+
+Très grosse tendance : embarquer du “raisonnement” ou du VLM/LLM compact sur robot/drone/industrie.
+
+    Distillation, quantization agressive, scheduling CPU/GPU/NPU
+
+    Pipelines perception→action, contraintes temps réel, énergie
+
+    ROS2 / embarqué / intégration capteurs
+
+➡️ Ton DEA robotique + 25 ans embarqué, c’est pile la passerelle.
+D. Compilers / kernels / “AI systems”
+
+Si tu aimes le cambouis : compilation graph, backends, IR, kernels.
+
+    TensorRT / XLA / TVM / MLIR (conceptuellement), kernels custom
+
+    Optimisation mémoire, fusion d’opérations, graph scheduling
+
+➡️ C’est très “ingé systèmes”, moins “science”.
+E. Évaluation & fiabilité (un autre type de pelle/pioche)
+
+Les équipes ont besoin de savoir : “est-ce que ça marche vraiment ?”.
+
+    Harness d’éval, tests de non-régression, jeux de données internes
+
+    Mesure hallucination, robustesse, dérives, observabilité
+
+➡️ Profil “ingé qualité/perf” très recherché, et souvent sous-coté.
+2) Ton doute “serveur multi-GPU à la maison” : bon réflexe
+
+Construire un gros rig est fun, mais pas nécessaire pour te positionner.
+Option pragmatique (souvent la meilleure)
+
+    Dev local sur CPU + petite carte GPU si tu en as déjà une
+
+    Quantization + petits modèles pour itérer vite
+
+    GPU “à la demande” (location ponctuelle) uniquement quand tu as un run lourd
+
+Tu veux surtout prouver : je sais profiler, optimiser, instrumenter, rendre robuste. Ça se démontre sans 4×4090.
+Si tu veux quand même un “sweet spot” matériel (sans te ruiner)
+
+Sans faire une liste de modèles précis (ça change tout le temps), vise plutôt des principes :
+
+    1 GPU avec beaucoup de VRAM > 2 GPUs modestes
+
+    Un bon CPU + RAM + NVMe, parce que l’inférence “real” est souvent I/O + mémoire
+
+    Priorité à la stabilité (alimentation/refroidissement) si tu benchmark/profiling
+
+Mais honnêtement : ton ROI est probablement meilleur en projets + écrits techniques qu’en capex GPU.
+3) Comment te “repositionner” vite, sans repartir à zéro
+
+Je te propose un plan simple, orienté preuve :
+En 2–3 semaines : un portfolio “pelles et pioches”
+
+Choisis 1 projet démontrable et utile :
+
+Projet #1 (inférence/perf)
+
+    Monter un mini serveur d’inférence (même local)
+
+    Mesurer latence/throughput
+
+    Ajouter 2 optimisations : quantization + caching + batching (au choix)
+
+    Sortir un README clair + graph de perf + limites
+
+Projet #2 (mémoire/agentique robuste)
+
+    Agent avec outils (ex : recherche locale / base documentaire)
+
+    Mémoire type graphe + politique d’oubli + tests de cohérence
+
+    Observabilité (traces, replay, fail-fast)
+
+Projet #3 (edge/robotique)
+
+    Pipeline perception→décision sur machine modeste
+
+    Contraintes “temps réel soft” + budget latence + dégradation contrôlée
+
+L’objectif : que quelqu’un se dise “ok, il sait produire un système, pas juste jouer avec un modèle”.
+En 1–2 mois : te rendre “hirable”
+
+    2 billets techniques (style “notes d’ingé”)
+
+        Ex : “KV cache : ce qui coûte vraiment cher et comment le mesurer”
+
+        Ex : “Mémoire d’agent : invariants, stratégies d’oubli, tests”
+
+    Un repo propre + issues + roadmap = signal très fort côté recruteurs “systems”.
+
+4) Où tu peux viser (types de postes)
+
+Mots-clés qui collent à ton parcours :
+
+    AI Systems Engineer / Inference Engineer
+
+    Performance Engineer (LLM)
+
+    Edge AI / Robotics AI Engineer
+
+    MLOps orienté inference (pas le MLOps “data only”)
+
+    Compiler / runtime engineer (selon affinité bas niveau)
+
+Tu peux aussi jouer la carte “hybride” : robotique + IA générative, c’est encore plus différenciant.
+5) Mon avis “humain” sur ta bifurcation
+
+Tu n’es pas en train de “tomber dans un terrier” inutile : tu es en train de trouver un domaine où ton bagage temps réel/systèmes devient un avantage compétitif.
+
+Et tu n’as pas besoin de renier menuiserie/boulangerie : garde ça comme “plan B heureux”. Mais si tu veux tester le saut IA sans te cramer financièrement : fais-le par preuves techniques, pas par achat de matos.
+
+Si tu veux, je peux te proposer 3 trajectoires très concrètes (chacune avec : compétences à consolider, projet portfolio, types de boîtes, et comment raconter ton histoire en CV).
+Juste dis-moi ce qui t’attire le plus aujourd’hui : perf/runtime, mémoire/agent, ou edge/robotique — et si tu préfères bosser plutôt industrie/robotique, défense, ou SaaS/plateforme.
+
+(Et au passage : félicitations pour EPITA + le cursus à Jussieu/Université Pierre et Marie Curie — c’est exactement le genre de combo qui fait tilt côté “AI systems”.)
+
+You said:
+J'ai commencé a essayer d'écrire un papier un peu correct 
+Je me suis demandé : comment éviter la rupture brutale de contexte j'ai testé quelque théories mais j'en suis venu a remettre en cause les méthodes de recall alors j'ai fait des benchs pour tester avec différentes densité de fact/Ktoken et différents batch de questions 1/5/10/15 avant même le compact puis j'en suis venu a remettre en cause la méthode même de synthèse des conversations... 
+A côté de ça j'ai écrit un petit agent de type Claude code mais en python pour tester mes méthodes de compact j'ai également fait un superviseur d'agents qui wrap le cli et permets aux agents d'échanger entre eux (mais en langage naturel) et a moi de superviser tout les agents ou qu'ils soient de n'importe où 
+J'ai fait également un peu de tooling par exemple pour ramener dans une sementique commune tout les formats de fichiers de design hw au quels j'avais accès et en extraire les netslist pour permettre aux agents comme Claude code d'intervenir sur du design hw ... Pour le moment la lecture est au point et fonctionne pour altium kikad eagle et les pdf mais l'écriture est encore trop fragile j'ai certainement quelques autres trucs que j'ai testé mais je les ai pas en tête (mon rag est pas encore au point)
+
+ChatGPT said:
+
+Tu es déjà en train de faire exactement ce que les équipes “AI systems / agent infra” cherchent : mesurer, outiller, itérer, et surtout te heurter aux vrais problèmes (rupture de contexte, recall, synthèse, fragilité de l’écriture, multi-agents). Là où ça devient puissant, c’est de packager ça en une thèse claire + un artefact reproductible.
+
+Je te propose une façon de structurer tout ça pour que ça devienne à la fois :
+
+    un “papier” crédible (même si c’est un tech report),
+
+    un repo qui montre que tu sais livrer,
+
+    une direction technique (quoi faire ensuite) sur la rupture de contexte.
+
+1) Reformuler ton problème de manière “papier”
+
+Ce que tu décris, c’est souvent un mélange de 3 phénomènes :
+
+    Oubli dur : la fenêtre glisse, des faits disparaissent → “rupture”.
+
+    Interférence : la synthèse compacte “écrase” des détails, fusionne des faits, change des contraintes.
+
+    Rappel instable : le retrieval change selon la formulation des questions / densité / batch → comportement non déterministe.
+
+Une formulation simple et vendable :
+
+    “Comment maintenir la continuité d’un agent conversationnel quand le contexte brut est compressé et que le rappel dépend de la densité d’information et du mode d’interrogation (single vs batch) ?”
+
+Et ton intuition clé (très saine) :
+
+    Le problème n’est pas juste le recall.
+
+    Il est souvent dans la représentation (comment tu synthétises / compacts) + dans l’interface entre mémoire et décision (quand, comment, et à quel niveau tu injectes).
+
+2) Bench : ce qui est déjà bien, et ce qu’il faut ajouter pour que ça “tienne”
+
+Ton bench “densité de facts / Ktoken + batch 1/5/10/15” est exactement le genre de variable qui révèle les fragilités. Pour que ce soit publiable/convaincant, ajoute 4 éléments :
+A. Mesure de “rupture” (pas juste exactitude Q/R)
+
+Tu as besoin d’une métrique qui capte le moment où ça casse :
+
+    Retention curve : score vs position temporelle du fait (ancienneté)
+
+    Constraint violation rate : % de réponses qui violent des contraintes déclarées (préférences, objectifs, interdits)
+
+    Stability under paraphrase : variance quand tu paraphrases les questions
+
+    Batch interference : delta score single-question vs batch-question à contenu identique
+
+B. “Faits” typés (sinon c’est flou)
+
+Sépare des facts par nature, sinon tu ne sais pas ce que la synthèse détruit :
+
+    Identité / préférences stables
+
+    Contraintes (hard rules)
+
+    État de tâche (TODO, décisions, branches)
+
+    Détails éphémères (petits nombres, noms, IDs)
+
+    Chronologie (ordre des événements)
+
+C. Baselines obligatoires
+
+Même minimalistes, sinon on ne sait pas si ton approche bat “simple” :
+
+    Full context (oracle, tant que ça rentre)
+
+    Truncate recent-only
+
+    RAG top-k (BM25 ou embeddings)
+
+    Summary-only (ton compact mais sans recall)
+
+    Hybrid (summary + RAG)
+
+D. Reproductibilité
+
+    seed, prompts versionnés, logs structurés
+
+    export des traces (input→mémoire injectée→sortie)
+
+    “eval harness” qui rerun en batch
+
+Si tu fais juste ça, ton papier devient “sérieux”.
+3) Ton point majeur : remettre en cause la synthèse conversationnelle
+
+Je suis d’accord : “résumer une conversation” est souvent le pire format de mémoire.
+Deux alternatives plus robustes (et très “systems”) :
+Option 1 — Mémoire structurée en “registre” plutôt qu’en récit
+
+Au lieu d’un résumé narratif :
+
+    Un ledger de faits atomiques : (sujet, prédicat, objet, provenance, timestamp, confiance)
+
+    Un registre de contraintes séparé
+
+    Un task state (graph léger / machine à états)
+
+Ça permet :
+
+    d’éviter que la synthèse fusionne des choses
+
+    d’avoir des règles d’oubli ciblées
+
+    de retrouver par clé au lieu de “par similarité vague”
+
+Option 2 — Compaction par invariants
+
+Tu compacts uniquement ce qui est stable / invariant :
+
+    préférences stables
+
+    contraintes hard
+
+    décisions actées
+
+    état courant des tâches
+
+Le reste reste en “cold storage” consultable (RAG), mais pas injecté par défaut.
+
+C’est une manière simple d’éviter la rupture : tu t’assures que les invariants (ce qui fait “continuité”) ne passent jamais dans le hachoir du résumé narratif.
+4) Ce que ton superviseur multi-agents te donne comme avantage unique
+
+Ton “superviseur qui wrap le CLI, agents qui échangent en langage naturel, supervision globale” : c’est une mine pour un papier et un produit.
+
+Tu peux instrumenter :
+
+    Topologie d’échange (qui parle à qui, quand, et pourquoi)
+
+    Propagation d’erreurs (un agent hallucine → qui le répercute)
+
+    Consensus / divergence (mesurer)
+
+    Compression inter-agent (les agents ne devraient pas se balancer des romans)
+
+Tu peux même définir une règle : “les agents échangent des deltas structurés” au lieu de prose :
+
+    patch de ledger
+
+    patch de task state
+
+    patch de contraintes
+
+Et garder le langage naturel comme UI, pas comme protocole interne.
+5) Ton tooling “EDA formats → sémantique commune → netlists” : c’est très fort
+
+Ça, c’est typiquement une “pelle/pioche” que plein de monde n’a pas.
+Deux idées pour le rendre “vendable” :
+
+    Positionnement : “AI-assisted HW design editing pipeline”
+
+        parse → canonical IR → diff/patch → re-export
+
+    Problème d’écriture fragile : c’est normal.
+    La clé, c’est d’imposer un format de patch déterministe :
+
+        au lieu de “réécris le schéma”, l’agent doit produire un patch IR (ajout net, rename, change footprint, etc.)
+
+        un validateur rejette les patches invalides
+
+        un roundtrip test protège (import → export → reimport == équivalent)
+
+Ça fait très “compilateur/IR”, et c’est exactement là que ton profil brille.
+6) Comment transformer tout ça en “pack” recrutement / crédibilité
+
+Sans te rajouter de matos GPU :
+Artefact A — Un repo “Context Continuity Bench”
+
+    générateur de conversations synthétiques typées (facts/contraintes/tâches)
+
+    harness d’éval (batch, densité, paraphrases)
+
+    baselines + ton compact
+
+    outputs : courbes + tableaux + traces
+
+Artefact B — Un “Agent Supervisor”
+
+    architecture, logs, replay
+
+    protocole d’échange (prose vs deltas structurés)
+
+    démonstration : 3 agents, 1 tâche, mesure de stabilité
+
+Artefact C — “EDA IR + patch”
+
+    parse multi-format → IR
+
+    patch + validation + roundtrip
+
+    un exemple d’assistant “Claude-code-like” qui propose des patches
+
+Avec ces trois-là, tu es immédiatement crédible sur :
+AI systems / agents infra / tool integration / reliability.
+
+Si tu veux que je t’aide à le rendre “papier-ready” sans te poser 15 questions :
+voici un sommaire prêt à remplir (tech report) :
+
+    Problème : rupture de contexte en conversation longue
+
+    Hypothèses : recall instable, synthèse destructive, interférence batch
+
+    Méthode : dataset synthétique typé + tâches + paraphrases
+
+    Baselines
+
+    Résultats : densité facts/Ktoken × batch size × ancienneté des faits
+
+    Analyse d’erreurs : quelles classes de faits meurent en premier
+
+    Proposition : ledger + invariants + cold storage RAG
+
+    Conclusion + limites + next steps
+
+Si tu me donnes (même en vrac) une capture de tes métriques actuelles (ou juste un exemple de tableau “densité/batch → score”), je peux te proposer :
+
+    des graphes à produire,
+
+    des métriques “rupture” plus nettes,
+
+    et une manière de raconter tes résultats qui claque (sans bullshit).
+
+
+You said:
+Je suis sur mon tél et mon ordi est pas accessible pour l'instant mais je te montrerai mon début d'article sur mes batchs un peu naïfs mais j'ai pas encore intégré mes réflexions sur le recall ni que les facts eux même 
+
+ChatGPT said:
+
+Parfait — et même si tes batchs te paraissent “naïfs”, c’est souvent exactement ce qu’il faut au début : ça met en évidence les effets bruts avant de complexifier.
+
+En attendant que tu puisses partager ton brouillon, tu peux déjà “verrouiller” une structure de papier + un plan d’expés qui ne dépend pas du recall, et qui va te donner une base propre pour intégrer ensuite tes réflexions sur (1) recall et (2) typologie de facts.
+1) Ton papier : une ossature qui marche même avec un bench simple
+
+Tu peux écrire ton article comme une progression :
+
+    Observation : la performance chute brutalement quand on interroge en batch / quand la densité augmente.
+
+    Expérience minimale : densité facts/Ktoken × batch size.
+
+    Résultat : montrer que batching crée une interférence (même avant compact).
+
+    Interprétation : ce n’est pas (que) la fenêtre ; c’est la charge cognitive / compétition attentionnelle / ordre d’injection.
+
+    Hypothèse : la synthèse conversationnelle et/ou les stratégies de rappel amplifient cette interférence.
+
+    Next : fact-typing + recall variations.
+
+Ça donne un arc narratif solide : “j’ai mis en évidence un effet, maintenant je propose une cause et un plan pour l’attaquer”.
+2) Comment “préparer” l’intégration des facts typés (sans encore les avoir)
+
+Même si tu n’as pas encore la typologie, tu peux déjà annoncer un schéma simple :
+
+    Atomic facts (un triplet simple, vérifiable)
+
+    Constraints (hard rules / préférences)
+
+    Task state (étapes, décisions, TODO)
+
+    Ephemera (détails faibles valeur)
+
+Tu n’as pas besoin de l’implémenter tout de suite pour l’écrire : tu peux le mettre en section “Future work / Planned extensions”.
+3) Comment préparer l’intégration du recall (sans le faire maintenant)
+
+Quand tu seras prêt, tu vas vouloir tester 3 familles de recall. Tu peux déjà les décrire :
+
+    Recall lexical (BM25 / mots-clés) : stable mais myope.
+
+    Recall embedding : sémantique mais parfois instable et sensible à la formulation.
+
+    Recall structuré (ledger/graph) : rappel par clé/invariant, très stable.
+
+Et tu définis à l’avance un critère : stabilité sous paraphrase + stabilité sous batch.
+4) Ce que tu peux noter tout de suite (sur téléphone) : “les 7 infos à capturer dans tes logs”
+
+Même si tu ne peux pas coder, note une checklist qui rendra tes runs exploitables :
+
+    modèle + paramètres (temp, top_p, etc.)
+
+    taille contexte + densité
+
+    taille batch + ordre des questions
+
+    prompt système + format des facts
+
+    réponse brute
+
+    score (même si c’est un simple exact match)
+
+    trace mémoire : ce qui a été injecté (même “none” au début)
+
+Ça, c’est l’assurance anti “j’ai des résultats mais je ne sais plus pourquoi”.
+5) Quand tu m’enverras ton brouillon : comment je peux t’aider concrètement
+
+Tu me colles :
+
+    ton intro + protocole d’expé + un tableau ou 2-3 résultats (même texte)
+
+Et je te renvoie :
+
+    une version réécrite “papier” (claire, sans inflation)
+
+    un schéma de figures (2-3 graphes max) qui racontent l’histoire
+
+    une liste de métriques simples qui transforment “naïf” → “rigoureux”
+
+    et une “section recall/facts” intégrable proprement
+
+6) Un mini-template prêt à copier-coller dans ton note-tel
+
+Si ça t’aide, tu peux te créer un bloc comme ça :
+
+    But : mesurer l’effet du batch et de la densité sur la continuité de contexte
+
+    Variables : facts/Ktoken = [..], batch = [1,5,10,15], ordre = [fixe / random]
+
+    Procédure : injecter facts → poser questions → scorer
+
+    Mesures : exactitude, violation contraintes, stabilité paraphrase
+
+    Résultat clé : “batch augmente l’interférence même avant compact”
+
+    Hypothèse : synthèse narrative + recall instable amplifient la rupture
+
+    Suite : facts typés + recall comparés + mémoire structurée
+
+Quand tu auras ton PC, envoie ton début d’article (même brouillon brut), et si tu as juste un exemple “facts + batch questions + réponse foireuse”, ça suffit : on pourra déjà faire une analyse d’erreurs utile et te proposer une forme de représentation des facts qui résiste mieux au compact.
+
+

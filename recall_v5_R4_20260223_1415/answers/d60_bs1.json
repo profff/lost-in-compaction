@@ -1,0 +1,846 @@
+{
+  "context_ref": "d60",
+  "batch_size": 1,
+  "batches": [
+    {
+      "batch_id": 0,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0124] Where did Rachel move to after her recent relocation?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0124\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0124",
+          "question": "Where did Rachel move to after her recent relocation?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0125] What was the amount I was pre-approved for when I got my mortgage from Wells Fargo?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0125\", \"answer\": \"$350,000\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0125",
+          "question": "What was the amount I was pre-approved for when I got my mortgage from Wells Fargo?",
+          "question_type": "knowledge-update",
+          "raw_answer": "$350,000",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 2,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0126] How often do I attend yoga classes to help with my anxiety?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0126\", \"answer\": \"Three times a week\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0126",
+          "question": "How often do I attend yoga classes to help with my anxiety?",
+          "question_type": "knowledge-update",
+          "raw_answer": "Three times a week",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 3,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0127] Is my mom using the same grocery list method as me?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0127\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0127",
+          "question": "Is my mom using the same grocery list method as me?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 4,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0131] Where did I go on my most recent family trip?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0131\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0131",
+          "question": "Where did I go on my most recent family trip?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 5,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0132] Where do I initially keep my old sneakers?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0132\", \"answer\": \"Under your bed for storage\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0132",
+          "question": "Where do I initially keep my old sneakers?",
+          "question_type": "knowledge-update",
+          "raw_answer": "Under your bed for storage",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 6,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0134] How many pages of 'A Short History of Nearly Everything' have I read so far?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0134\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0134",
+          "question": "How many pages of 'A Short History of Nearly Everything' have I read so far?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 7,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0137] How many stars do I need to reach the gold level on my Starbucks Rewards app?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0137\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0137",
+          "question": "How many stars do I need to reach the gold level on my Starbucks Rewards app?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 8,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0143] How many of Emma's recipes have I tried out?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0143\", \"answer\": \"3\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0143",
+          "question": "How many of Emma's recipes have I tried out?",
+          "question_type": "knowledge-update",
+          "raw_answer": "3",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 9,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0149] Do I go to the gym more frequently than I did previously?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0149\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0149",
+          "question": "Do I go to the gym more frequently than I did previously?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 10,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0151] How many videos of Corey Schafer's Python programming series have I completed so far?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0151\", \"answer\": \"30 videos\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0151",
+          "question": "How many videos of Corey Schafer's Python programming series have I completed so far?",
+          "question_type": "knowledge-update",
+          "raw_answer": "30 videos",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 11,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0152] How long have I been living in my current apartment in Harajuku?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0152\", \"answer\": \"I don't recall. You mentioned you've been living in Harajuku for 3 months and recently moved there, but you didn't specify how long you've been in your current apartment specifically.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0152",
+          "question": "How long have I been living in my current apartment in Harajuku?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall. You mentioned you've been living in Harajuku for 3 months and recently moved there, but you didn't specify how long you've been in your current apartment specifically.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 12,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0164] How much did I earn at the Downtown Farmers Market on my most recent visit?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0164\", \"answer\": \"$420\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0164",
+          "question": "How much did I earn at the Downtown Farmers Market on my most recent visit?",
+          "question_type": "knowledge-update",
+          "raw_answer": "$420",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 13,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0166] What time do I usually go to the gym?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0166\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0166",
+          "question": "What time do I usually go to the gym?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 14,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0167] How many Crash Course videos have I watched in the past few weeks?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0167\", \"answer\": \"10 videos\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0167",
+          "question": "How many Crash Course videos have I watched in the past few weeks?",
+          "question_type": "knowledge-update",
+          "raw_answer": "10 videos",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 15,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0174] How much time do I dedicate to coding exercises each day?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0174\", \"answer\": \"About one hour each day\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0174",
+          "question": "How much time do I dedicate to coding exercises each day?",
+          "question_type": "knowledge-update",
+          "raw_answer": "About one hour each day",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 16,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0182] What type of vehicle model am I currently working on?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "[{\"id\": \"LM_0182\", \"answer\": \"I don't recall\"}]",
+      "answers": [
+        {
+          "fact_id": "LM_0182",
+          "question": "What type of vehicle model am I currently working on?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 17,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0183] What was my previous goal for my Apex Legends level before I updated my goal?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0183\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0183",
+          "question": "What was my previous goal for my Apex Legends level before I updated my goal?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 18,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0188] How many times have I met up with Alex from Germany?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0188\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0188",
+          "question": "How many times have I met up with Alex from Germany?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 19,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0194] How often do I see Dr. Johnson?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0194\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0194",
+          "question": "How often do I see Dr. Johnson?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 20,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0200] Can you recommend some resources where I can learn more about video editing?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0200\", \"answer\": \"I don't recall recommending specific resources for learning video editing in our conversation. Our discussion covered topics like food expense tracking, meal prep, jewelry displays, housing search, gaming PCs, and Dark Souls 3, but did not include video editing resources.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0200",
+          "question": "Can you recommend some resources where I can learn more about video editing?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall recommending specific resources for learning video editing in our conversation. Our discussion covered topics like food expense tracking, meal prep, jewelry displays, housing search, gaming PCs, and Dark Souls 3, but did not include video editing resources.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 21,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0203] Can you suggest a hotel for my upcoming trip to Miami?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0203\", \"answer\": \"I don't recall discussing an upcoming trip to Miami in our conversation. We discussed various beach destinations like the Maldives, Bora Bora, and other locations for a romantic proposal trip, but no specific Miami trip was mentioned.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0203",
+          "question": "Can you suggest a hotel for my upcoming trip to Miami?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall discussing an upcoming trip to Miami in our conversation. We discussed various beach destinations like the Maldives, Bora Bora, and other locations for a romantic proposal trip, but no specific Miami trip was mentioned.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 22,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0206] Can you suggest some activities that I can do in the evening?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0206\", \"answer\": \"I don't recall discussing evening activities with you in our conversation. The conversation has covered many topics including travel recommendations, meal planning, craft projects, job interviews, gaming, real estate, home decoration, fitness, and technology recommendations, but no specific discussion about evening activities.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0206",
+          "question": "Can you suggest some activities that I can do in the evening?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall discussing evening activities with you in our conversation. The conversation has covered many topics including travel recommendations, meal planning, craft projects, job interviews, gaming, real estate, home decoration, fitness, and technology recommendations, but no specific discussion about evening activities.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 23,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0207] My kitchen's becoming a bit of a mess again. Any tips for keeping it clean?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0207\", \"answer\": \"I don't recall discussing kitchen cleaning tips in our conversation. Our discussion has covered topics like food expense tracking, meal prep, shoe cleaning, jewelry organization, housing searches, travel recommendations, gaming PC builds, and Dark Souls 3, but not specifically kitchen organization or cleaning advice.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0207",
+          "question": "My kitchen's becoming a bit of a mess again. Any tips for keeping it clean?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall discussing kitchen cleaning tips in our conversation. Our discussion has covered topics like food expense tracking, meal prep, shoe cleaning, jewelry organization, housing searches, travel recommendations, gaming PC builds, and Dark Souls 3, but not specifically kitchen organization or cleaning advice.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 24,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0221] I'm trying to decide whether to buy a NAS device now or wait. What do you think?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0221\", \"answer\": \"I don't recall this being discussed in our conversation.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0221",
+          "question": "I'm trying to decide whether to buy a NAS device now or wait. What do you think?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall this being discussed in our conversation.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 25,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0225] I've got some free time tonight, any documentary recommendations?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0225\", \"answer\": \"I don't recall any discussion about your free time tonight or documentary preferences in our conversation.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0225",
+          "question": "I've got some free time tonight, any documentary recommendations?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall any discussion about your free time tonight or documentary preferences in our conversation.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 26,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0228] Can you suggest some activities I can do during my commute to work?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0228\", \"answer\": \"I don't recall you asking about activities to do during your commute to work. However, I do recall you mentioning that you recently moved to a new apartment that is closer to your work, which saves you commute time. If you'd like suggestions for commute activities, I'd be happy to provide some recommendations.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0228",
+          "question": "Can you suggest some activities I can do during my commute to work?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall you asking about activities to do during your commute to work. However, I do recall you mentioning that you recently moved to a new apartment that is closer to your work, which saves you commute time. If you'd like suggestions for commute activities, I'd be happy to provide some recommendations.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 27,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0231] I'm planning to visit Bandung again and I was wondering if you could remind me of the name of that restaurant in Cihampelas Walk that serves a great Nasi Goreng?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0231\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0231",
+          "question": "I'm planning to visit Bandung again and I was wondering if you could remind me of the name of that restaurant in Cihampelas Walk that serves a great Nasi Goreng?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 28,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0232] I'm going back to our previous conversation about the children's book on dinosaurs. Can you remind me what color was the scaly body of the Plesiosaur in the image?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0232\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0232",
+          "question": "I'm going back to our previous conversation about the children's book on dinosaurs. Can you remind me what color was the scaly body of the Plesiosaur in the image?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 29,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0233] I'm planning to revisit Orlando. I was wondering if you could remind me of that unique dessert shop with the giant milkshakes we talked about last time?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "I appreciate the format request, but I need to be honest with you: I don't have any record of a previous conversation with you about Orlando or a dessert shop with giant milkshakes.\n\nEach conversation I have starts fresh - I don't retain information from previous conversations. This is how I'm designed to work for privacy and security reasons.\n\nIf you'd like recommendations for dessert shops in Orlando now, I'd be happy to help with that. But I cannot reference details from conversations that would have occurred in separate chat sessions.\n\nHere's the honest response in the JSON format you requested:\n\n```json\n[{\"id\": \"LM_0233\", \"answer\": \"I don't recall - this information was not discussed in our current conversation\"}]\n```\n\nIf you have other questions about topics we've actually covered in this conversation, I'm happy to answer those!",
+      "answers": [
+        {
+          "fact_id": "LM_0233",
+          "question": "I'm planning to revisit Orlando. I was wondering if you could remind me of that unique dessert shop with the giant milkshakes we talked about last time?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "[succeeded]",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 30,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0234] Can you remind me of the name of the romantic Italian restaurant in Rome you recommended for dinner?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0234\", \"answer\": \"I don't recall recommending a specific Italian restaurant in Rome for dinner in our conversation.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0234",
+          "question": "Can you remind me of the name of the romantic Italian restaurant in Rome you recommended for dinner?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "I don't recall recommending a specific Italian restaurant in Rome for dinner in our conversation.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 31,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0235] I remember you told me about the refining processes at CITGO's three refineries earlier. Can you remind me what kind of processes are used at the Lake Charles Refinery?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\n    \"id\": \"LM_0235\",\n    \"answer\": \"Atmospheric distillation, Fluid catalytic cracking (FCC), Alkylation, and Hydrotreating\"\n  }\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0235",
+          "question": "I remember you told me about the refining processes at CITGO's three refineries earlier. Can you remind me what kind of processes are used at the Lake Charles Refinery?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "Atmospheric distillation, Fluid catalytic cracking (FCC), Alkylation, and Hydrotreating",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 32,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0237] I think we discussed work from home jobs for seniors earlier. Can you remind me what was the 7th job in the list you provided?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0237\", \"answer\": \"Remote IT support specialist\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0237",
+          "question": "I think we discussed work from home jobs for seniors earlier. Can you remind me what was the 7th job in the list you provided?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "Remote IT support specialist",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 33,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0241] I was thinking about our previous conversation about the Fifth Album, and I was wondering if you could remind me what song you said best exemplified the band's growth and development as artists?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0241\", \"answer\": \"I don't recall. While we did have a conversation about the Fifth Album where I mentioned a song called 'Evolution' that exemplified the band's growth and development, I should note that I don't have reliable information about whether this was an actual discussion or accurate information about a real album and song. I cannot verify these details from our conversation history.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0241",
+          "question": "I was thinking about our previous conversation about the Fifth Album, and I was wondering if you could remind me what song you said best exemplified the band's growth and development as artists?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "I don't recall. While we did have a conversation about the Fifth Album where I mentioned a song called 'Evolution' that exemplified the band's growth and development, I should note that I don't have reliable information about whether this was an actual discussion or accurate information about a real album and song. I cannot verify these details from our conversation history.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 34,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0244] I'm going back to our previous chat about the Lost Temple of the Djinn one-shot. Can you remind me how many mummies the party will face in the temple?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\n    \"id\": \"LM_0244\",\n    \"answer\": \"4 mummies\"\n  }\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0244",
+          "question": "I'm going back to our previous chat about the Lost Temple of the Djinn one-shot. Can you remind me how many mummies the party will face in the temple?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "4 mummies",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 35,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0246] I was going through our previous conversation about The Library of Babel, and I wanted to confirm - what did Borges say about the center and circumference of the Library?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0246\", \"answer\": \"Borges wrote: 'The Library is a sphere whose exact center is any one of its hexagons and whose circumference is inaccessible.'\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0246",
+          "question": "I was going through our previous conversation about The Library of Babel, and I wanted to confirm - what did Borges say about the center and circumference of the Library?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "Borges wrote: 'The Library is a sphere whose exact center is any one of its hexagons and whose circumference is inaccessible.'",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 36,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0252] I was going through our previous chat and I wanted to clarify something about the prayer of beginners in Tanqueray's Spiritual Life treatise. Can you remind me which chapter of the second part discusses vocal prayer and meditation?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0252\", \"answer\": \"I don't recall. While I provided information about Adolphe Tanqueray's Spiritual Life treatise earlier in our conversation, stating that Chapter 4 of Book 1 was titled 'Vocal Prayer and Meditation,' I cannot verify this information with certainty based solely on our conversation history. I should not have provided specific chapter details without being able to confirm them accurately.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0252",
+          "question": "I was going through our previous chat and I wanted to clarify something about the prayer of beginners in Tanqueray's Spiritual Life treatise. Can you remind me which chapter of the second part discusses vocal prayer and meditation?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "I don't recall. While I provided information about Adolphe Tanqueray's Spiritual Life treatise earlier in our conversation, stating that Chapter 4 of Book 1 was titled 'Vocal Prayer and Meditation,' I cannot verify this information with certainty based solely on our conversation history. I should not have provided specific chapter details without being able to confirm them accurately.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 37,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0256] I wanted to follow up on our previous conversation about mindfulness techniques. You mentioned some great resources for guided imagery exercises, can you remind me of the website that had free exercises like 'The Mountain Meditation' and 'The Body Scan Meditation'?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0256\", \"answer\": \"Mindful.org\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0256",
+          "question": "I wanted to follow up on our previous conversation about mindfulness techniques. You mentioned some great resources for guided imagery exercises, can you remind me of the website that had free exercises like 'The Mountain Meditation' and 'The Body Scan Meditation'?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "Mindful.org",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 38,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0266] I wanted to follow up on our previous conversation about language learning apps. You mentioned a few options, and I was wondering if you could remind me of the one that uses mnemonics to help learners memorize words and phrases?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "[{\"id\": \"LM_0266\", \"answer\": \"Memrise\"}]",
+      "answers": [
+        {
+          "fact_id": "LM_0266",
+          "question": "I wanted to follow up on our previous conversation about language learning apps. You mentioned a few options, and I was wondering if you could remind me of the one that uses mnemonics to help learners memorize words and phrases?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "Memrise",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 39,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0267] I'm looking back at our previous chat about the DHL Wellness Retreats campaign. Can you remind me how much was allocated for influencer marketing in the campaign plan?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0267\", \"answer\": \"$2,000\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0267",
+          "question": "I'm looking back at our previous chat about the DHL Wellness Retreats campaign. Can you remind me how much was allocated for influencer marketing in the campaign plan?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "$2,000",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 40,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0275] I was looking back at our previous conversation about buying unique engagement rings directly from designers. Can you remind me of the Instagram handle of the UK-based designer who works with unusual gemstones?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0275\", \"answer\": \"@jessica_poole_jewellery\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0275",
+          "question": "I was looking back at our previous conversation about buying unique engagement rings directly from designers. Can you remind me of the Instagram handle of the UK-based designer who works with unusual gemstones?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "@jessica_poole_jewellery",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 41,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0277] I'm going back to our previous conversation about music theory. You mentioned some online resources for learning music theory. Can you remind me of the website you recommended for free lessons and exercises?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0277\", \"answer\": \"MusicTheory.net\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0277",
+          "question": "I'm going back to our previous conversation about music theory. You mentioned some online resources for learning music theory. Can you remind me of the website you recommended for free lessons and exercises?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "MusicTheory.net",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 42,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0292] Where do I take yoga classes?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0292\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0292",
+          "question": "Where do I take yoga classes?",
+          "question_type": "single-session-user",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 43,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0293] What color did I repaint my bedroom walls?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0293\", \"answer\": \"A lighter shade of gray\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0293",
+          "question": "What color did I repaint my bedroom walls?",
+          "question_type": "single-session-user",
+          "raw_answer": "A lighter shade of gray",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 44,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0296] What was my previous occupation?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0296\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0296",
+          "question": "What was my previous occupation?",
+          "question_type": "single-session-user",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 45,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0304] How many shirts did I pack for my 5-day trip to Costa Rica?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0304\", \"answer\": \"7 shirts (though you only wore 3 of them)\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0304",
+          "question": "How many shirts did I pack for my 5-day trip to Costa Rica?",
+          "question_type": "single-session-user",
+          "raw_answer": "7 shirts (though you only wore 3 of them)",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 46,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0306] What brand are my favorite running shoes?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0306\", \"answer\": \"Nike\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0306",
+          "question": "What brand are my favorite running shoes?",
+          "question_type": "single-session-user",
+          "raw_answer": "Nike",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 47,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0307] What certification did I complete last month?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0307\", \"answer\": \"Certified Data Scientist from Data Science Council of America\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0307",
+          "question": "What certification did I complete last month?",
+          "question_type": "single-session-user",
+          "raw_answer": "Certified Data Scientist from Data Science Council of America",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 48,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0309] What breed is my dog?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0309\", \"answer\": \"Golden Retriever\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0309",
+          "question": "What breed is my dog?",
+          "question_type": "single-session-user",
+          "raw_answer": "Golden Retriever",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 49,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0313] How old was I when my grandma gave me the silver necklace?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0313\", \"answer\": \"18 years old\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0313",
+          "question": "How old was I when my grandma gave me the silver necklace?",
+          "question_type": "single-session-user",
+          "raw_answer": "18 years old",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 50,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0318] Where did I complete my Bachelor's degree in Computer Science?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0318\", \"answer\": \"UCLA\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0318",
+          "question": "Where did I complete my Bachelor's degree in Computer Science?",
+          "question_type": "single-session-user",
+          "raw_answer": "UCLA",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 51,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0319] How long did it take to move to the new apartment?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0319\", \"answer\": \"5 hours\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0319",
+          "question": "How long did it take to move to the new apartment?",
+          "question_type": "single-session-user",
+          "raw_answer": "5 hours",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 52,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0325] How many copies of my favorite artist's debut album were released worldwide?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0325\", \"answer\": \"500 copies\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0325",
+          "question": "How many copies of my favorite artist's debut album were released worldwide?",
+          "question_type": "single-session-user",
+          "raw_answer": "500 copies",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 53,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0330] How long did I wait for the decision on my asylum application?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0330\", \"answer\": \"Over a year of uncertainty\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0330",
+          "question": "How long did I wait for the decision on my asylum application?",
+          "question_type": "single-session-user",
+          "raw_answer": "Over a year of uncertainty",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 54,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0331] What type of action figure did I buy from a thrift store?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0331\", \"answer\": \"A rare blue Snaggletooth action figure\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0331",
+          "question": "What type of action figure did I buy from a thrift store?",
+          "question_type": "single-session-user",
+          "raw_answer": "A rare blue Snaggletooth action figure",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 55,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0341] What is my ethnicity?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0341\", \"answer\": \"Irish and Italian\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0341",
+          "question": "What is my ethnicity?",
+          "question_type": "single-session-user",
+          "raw_answer": "Irish and Italian",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 56,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0344] How long did Alex marinate the BBQ ribs in special sauce?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0344\", \"answer\": \"24 hours\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0344",
+          "question": "How long did Alex marinate the BBQ ribs in special sauce?",
+          "question_type": "single-session-user",
+          "raw_answer": "24 hours",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 57,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0347] What health issue did I initially think was just a cold?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0347\", \"answer\": \"Bronchitis\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0347",
+          "question": "What health issue did I initially think was just a cold?",
+          "question_type": "single-session-user",
+          "raw_answer": "Bronchitis",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 58,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0348] Where did I meet Sophia?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0348\", \"answer\": \"Coffee shop in the city\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0348",
+          "question": "Where did I meet Sophia?",
+          "question_type": "single-session-user",
+          "raw_answer": "Coffee shop in the city",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 59,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0349] What game did I finally beat last weekend?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0349\", \"answer\": \"Dark Souls 3 DLC - specifically the last boss\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0349",
+          "question": "What game did I finally beat last weekend?",
+          "question_type": "single-session-user",
+          "raw_answer": "Dark Souls 3 DLC - specifically the last boss",
+          "batch_position": 0
+        }
+      ]
+    }
+  ]
+}

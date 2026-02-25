@@ -1,0 +1,40 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0045]\n  Expected answer: Receiving the new phone case\n  Expected keywords: Receiving, new, phone, case\n  LLM answer: The narrator received their new phone case about a month ago. The narrator lost their phone charger at the gym and realized they needed a new one. Based on the conversation, the phone case arrival came first (mentioned as arriving a month ago), followed by the realization about needing a new charger.\n\n[LM_0156]\n  Expected answer: 9 months\n  Expected keywords: months, 9\n  LLM answer: I don't recall the exact timeframe for how long you've had your cat Luna mentioned in our conversation.\n\n[LM_0164]\n  Expected answer: $420\n  Expected keywords: 420\n  LLM answer: $420\n\n[LM_0383]\n  Expected answer: First, I attended a NBA game at the Staples Center, then I watched the College Football National Championship game, and finally, I watched the NFL playoffs.\n  Expected keywords: First, attended, NBA, game, Staples, Center, watched, College, Football, National, Championship, finally, NFL, playoffs\n  LLM answer: Based on our conversation, the sports events watched in January were: 1) College Football National Championship (Georgia defeated Alabama 33-18), 2) NFL Divisional Round playoffs (Kansas City Chiefs defeated Buffalo Bills). However, I'm not entirely certain of the exact chronological order within January.\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies receiving a new phone case and includes all expected keywords (Receiving, new, phone, case)\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM explicitly states 'I don't recall', demonstrating lack of knowledge of the expected answer (9 months)\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer exactly matches expected answer of $420\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM recalls sports events (College Football Championship, NFL playoffs) but fails to mention NBA game at Staples Center, lacks chronological certainty, and doesn't match the expected complete narrative with all key events in order\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "question_type": "temporal-reasoning",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies receiving a new phone case and includes all expected keywords (Receiving, new, phone, case)"
+        },
+        {
+          "fact_id": "LM_0156",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM explicitly states 'I don't recall', demonstrating lack of knowledge of the expected answer (9 months)"
+        },
+        {
+          "fact_id": "LM_0164",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer exactly matches expected answer of $420"
+        },
+        {
+          "fact_id": "LM_0383",
+          "question_type": "temporal-reasoning",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalls sports events (College Football Championship, NFL playoffs) but fails to mention NBA game at Staples Center, lacks chronological certainty, and doesn't match the expected complete narrative with all key events in order"
+        }
+      ]
+    }
+  ]
+}

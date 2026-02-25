@@ -1,0 +1,131 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0045\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0053\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0059\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0072\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0074\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0092\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0156\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0163\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answer is specific but does not match expected 'five' - wrong value\"},\n  {\"id\": \"LM_0164\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '$420' matches expected answer exactly\"},\n  {\"id\": \"LM_0209\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'Not yet discussed' indicates no knowledge of expected preference information\"},\n  {\"id\": \"LM_0210\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0215\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0315\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '16GB' matches expected answer exactly\"},\n  {\"id\": \"LM_0333\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer 'Xfinity Center on June 15th' contains expected keywords and correct information\"},\n  {\"id\": \"LM_0368\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall' - no knowledge demonstrated\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0059",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0074",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0092",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0163",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer is specific but does not match expected 'five' - wrong value"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '$420' matches expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'Not yet discussed' indicates no knowledge of expected preference information"
+        },
+        {
+          "fact_id": "LM_0210",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0215",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '16GB' matches expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0333",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'Xfinity Center on June 15th' contains expected keywords and correct information"
+        },
+        {
+          "fact_id": "LM_0368",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall' - no knowledge demonstrated"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer is 'I don't recall', demonstrating no knowledge of the expected information\"\n  },\n  {\n    \"id\": \"LM_0403\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Answer shows knowledge of timeframe (weeks ago) but provides range (3-4) instead of specific value (3)\"\n  },\n  {\n    \"id\": \"LM_0415\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer is 'I don't recall', demonstrating no knowledge of the expected information\"\n  },\n  {\n    \"id\": \"LM_0479\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer is 'I don't recall', demonstrating no knowledge of the expected information\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', demonstrating no knowledge of the expected information"
+        },
+        {
+          "fact_id": "LM_0403",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer shows knowledge of timeframe (weeks ago) but provides range (3-4) instead of specific value (3)"
+        },
+        {
+          "fact_id": "LM_0415",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', demonstrating no knowledge of the expected information"
+        },
+        {
+          "fact_id": "LM_0479",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', demonstrating no knowledge of the expected information"
+        }
+      ]
+    }
+  ]
+}

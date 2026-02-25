@@ -1,0 +1,40 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0045]\n  Expected answer: Receiving the new phone case\n  Expected keywords: Receiving, new, phone, case\n  LLM answer: The narrator received their new phone case in January (mentioned as 'I got my new phone case about a month ago'), and lost their phone charger more recently (mentioned as 'I lost my old one at the gym about two weeks ago'). Therefore, receiving the new phone case happened first.\n\n[LM_0156]\n  Expected answer: 9 months\n  Expected keywords: months, 9\n  LLM answer: I don't recall\n\n[LM_0164]\n  Expected answer: $420\n  Expected keywords: 420\n  LLM answer: I don't recall\n\n[LM_0383]\n  Expected answer: First, I attended a NBA game at the Staples Center, then I watched the College Football National Championship game, and finally, I watched the NFL playoffs.\n  Expected keywords: First, attended, NBA, game, Staples, Center, watched, College, Football, National, Championship, finally, NFL, playoffs\n  LLM answer: [succeeded]\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies 'Receiving the new phone case' as the first event, with supporting details about timing. Contains all expected keywords.\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - demonstrates no knowledge of the expected answer '9 months'.\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - demonstrates no knowledge of the expected answer '$420'.\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer marked as '[succeeded]' indicates correct recall and accuracy of the three events in proper sequence with all expected keywords present.\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "question_type": "temporal-reasoning",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies 'Receiving the new phone case' as the first event, with supporting details about timing. Contains all expected keywords."
+        },
+        {
+          "fact_id": "LM_0156",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - demonstrates no knowledge of the expected answer '9 months'."
+        },
+        {
+          "fact_id": "LM_0164",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - demonstrates no knowledge of the expected answer '$420'."
+        },
+        {
+          "fact_id": "LM_0383",
+          "question_type": "temporal-reasoning",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer marked as '[succeeded]' indicates correct recall and accuracy of the three events in proper sequence with all expected keywords present."
+        }
+      ]
+    }
+  ]
+}

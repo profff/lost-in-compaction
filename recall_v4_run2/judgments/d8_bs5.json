@@ -1,0 +1,59 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing the expected answer about receiving a new phone case\"\n  },\n  {\n    \"id\": \"LM_0053\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing the expected answer about 7-8 days\"\n  },\n  {\n    \"id\": \"LM_0072\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing the expected answer of 17 days\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing the expected answer of 9 months\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly answered '$420' matching the expected answer\"\n  },\n  {\n    \"id\": \"LM_0209\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM recalled relevant information about virtual collaboration and team-building but provided a narrower summary lacking the depth about user preferences and generic suggestions to avoid\"\n  },\n  {\n    \"id\": \"LM_0315\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly identified the 16GB RAM upgrade, matching the expected answer\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM recalled some sports events but did not mention the NBA game at Staples Center and failed to provide the complete chronological order as expected\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing the expected answer about receiving a new phone case"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing the expected answer about 7-8 days"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing the expected answer of 17 days"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing the expected answer of 9 months"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly answered '$420' matching the expected answer"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalled relevant information about virtual collaboration and team-building but provided a narrower summary lacking the depth about user preferences and generic suggestions to avoid"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified the 16GB RAM upgrade, matching the expected answer"
+        },
+        {
+          "fact_id": "LM_0383",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalled some sports events but did not mention the NBA game at Staples Center and failed to provide the complete chronological order as expected"
+        }
+      ]
+    }
+  ]
+}

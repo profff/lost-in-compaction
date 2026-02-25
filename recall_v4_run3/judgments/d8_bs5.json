@@ -1,0 +1,59 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answer is 'I don't recall', no knowledge demonstrated\"\n  },\n  {\n    \"id\": \"LM_0053\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answer is 'I don't recall', no knowledge demonstrated\"\n  },\n  {\n    \"id\": \"LM_0072\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answer is 'I don't recall', no knowledge demonstrated\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answer is 'I don't recall', no knowledge demonstrated\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM answer '$420' matches expected answer exactly\"\n  },\n  {\n    \"id\": \"LM_0209\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM answer demonstrates understanding of user preferences for social interaction, virtual activities, and team collaboration while working remotely\"\n  },\n  {\n    \"id\": \"LM_0315\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM answer mentions '16GB' RAM upgrade, matches expected answer\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answer is 'I don't recall', no knowledge of specific sports events demonstrated\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answer is 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answer is 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answer is 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answer is 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answer '$420' matches expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answer demonstrates understanding of user preferences for social interaction, virtual activities, and team collaboration while working remotely"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answer mentions '16GB' RAM upgrade, matches expected answer"
+        },
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answer is 'I don't recall', no knowledge of specific sports events demonstrated"
+        }
+      ]
+    }
+  ]
+}

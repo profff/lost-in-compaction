@@ -1,0 +1,59 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - no knowledge demonstrated\"\n  },\n  {\n    \"id\": \"LM_0053\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - no knowledge demonstrated\"\n  },\n  {\n    \"id\": \"LM_0072\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly recalls and calculates 17 days from 10-day and 7-day breaks\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - no knowledge demonstrated\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly provides $420\"\n  },\n  {\n    \"id\": \"LM_0209\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM demonstrates knowledge of user preferences but provides only a brief list rather than the comprehensive, nuanced explanation expected\"\n  },\n  {\n    \"id\": \"LM_0315\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly provides 16GB\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall the specific order' - no knowledge demonstrated\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalls and calculates 17 days from 10-day and 7-day breaks"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly provides $420"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM demonstrates knowledge of user preferences but provides only a brief list rather than the comprehensive, nuanced explanation expected"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly provides 16GB"
+        },
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall the specific order' - no knowledge demonstrated"
+        }
+      ]
+    }
+  ]
+}

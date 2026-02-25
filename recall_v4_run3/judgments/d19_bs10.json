@@ -1,0 +1,131 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0045\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0053\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0059\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0072\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0074\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0092\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0156\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0163\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0164\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '$420' matches expected '$420' exactly\"},\n  {\"id\": \"LM_0209\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'No previous discussion about this topic' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0210\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0215\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0315\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '16GB' matches expected '16GB' exactly\"},\n  {\"id\": \"LM_0333\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer 'Xfinity Center on June 15th' contains expected keywords and core answer 'Xfinity Center'\"},\n  {\"id\": \"LM_0368\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' - no knowledge demonstrated\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0059",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0074",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0092",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0163",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '$420' matches expected '$420' exactly"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'No previous discussion about this topic' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0210",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0215",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '16GB' matches expected '16GB' exactly"
+        },
+        {
+          "fact_id": "LM_0333",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'Xfinity Center on June 15th' contains expected keywords and core answer 'Xfinity Center'"
+        },
+        {
+          "fact_id": "LM_0368",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' - no knowledge demonstrated"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer discusses unrelated events (Imagine Dragons concert, Chiefs vs Bills, United flight) with no mention of NBA game, Staples Center, College Football Championship, or NFL playoffs\"\n  },\n  {\n    \"id\": \"LM_0403\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly recalls '3 weeks ago' using alternative phrasing 'Three weeks ago'; contains all required keywords\"\n  },\n  {\n    \"id\": \"LM_0415\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer explicitly states 'I don't recall' - no knowledge demonstrated\"\n  },\n  {\n    \"id\": \"LM_0479\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer explicitly states 'I don't recall' - no knowledge demonstrated\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer discusses unrelated events (Imagine Dragons concert, Chiefs vs Bills, United flight) with no mention of NBA game, Staples Center, College Football Championship, or NFL playoffs"
+        },
+        {
+          "fact_id": "LM_0403",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly recalls '3 weeks ago' using alternative phrasing 'Three weeks ago'; contains all required keywords"
+        },
+        {
+          "fact_id": "LM_0415",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer explicitly states 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0479",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer explicitly states 'I don't recall' - no knowledge demonstrated"
+        }
+      ]
+    }
+  ]
+}

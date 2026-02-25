@@ -1,0 +1,96 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0131]\n  Expected answer: Paris\n  Expected keywords: Paris\n  LLM answer: I don't recall\n\n[LM_0151]\n  Expected answer: 30\n  Expected keywords: 30\n  LLM answer: 30 videos\n\n[LM_0174]\n  Expected answer: about two hours\n  Expected keywords: two, hours\n  LLM answer: 2 hours\n\n[LM_0203]\n  Expected answer: The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features.\n  Expected keywords: user, prefer, suggestions, hotels, Miami, offer, great, views, possibly, ocean, city, skyline, unique, features, rooftop, pool, hot, tub, balcony, basic, budget, without\n  LLM answer: I don't recall\n\n[LM_0228]\n  Expected answer: The user would prefer suggestions related to listening to new podcasts or audiobooks, especially the genre beyond true crime or self-improvement, such as history. They may not be interested in activities that require visual attention, such as reading or watching videos, as they are commuting. The user would not prefer general podcast topics such as true crime or self-improvement, as the user wants to explore other topics.\n  Expected keywords: user, prefer, suggestions, related, listening, new, podcasts, audiobooks, especially, genre, beyond, true, crime, self, improvement, history, interested, activities, require, visual, attention, reading, watching, videos, commuting, general, podcast, topics, wants, explore, other\n  LLM answer: I don't recall\n\n[LM_0241]\n  Expected answer: Evolution\n  Expected keywords: Evolution\n  LLM answer: Evolution\n\n[LM_0292]\n  Expected answer: Serenity Yoga\n  Expected keywords: Serenity, Yoga\n  LLM answer: Serenity Yoga\n\n[LM_0296]\n  Expected answer: Marketing specialist at a small startup\n  Expected keywords: Marketing, specialist, small, startup\n  LLM answer: Marketing specialist at a small startup\n\n[LM_0304]\n  Expected answer: 7\n  Expected keywords: 7\n  LLM answer: 7 shirts\n\n[LM_0307]\n  Expected answer: Data Science\n  Expected keywords: Data, Science\n  LLM answer: Certified Data Scientist\n\n[LM_0318]\n  Expected answer: University of California, Los Angeles (UCLA)\n  Expected keywords: University, California, Los, Angeles, UCLA\n  LLM answer: UCLA\n\n[LM_0325]\n  Expected answer: 500\n  Expected keywords: 500\n  LLM answer: 500 copies\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0131\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM explicitly states 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0151\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '30 videos' contains the correct number 30, minor extra context\"},\n  {\"id\": \"LM_0174\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '2 hours' matches expected 'two hours', same information in different format\"},\n  {\"id\": \"LM_0203\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall', no knowledge of user preferences demonstrated\"},\n  {\"id\": \"LM_0228\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall', no knowledge of user preferences demonstrated\"},\n  {\"id\": \"LM_0241\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer 'Evolution' exactly matches expected answer\"},\n  {\"id\": \"LM_0292\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer 'Serenity Yoga' exactly matches expected answer\"},\n  {\"id\": \"LM_0296\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer exactly matches expected answer\"},\n  {\"id\": \"LM_0304\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '7 shirts' contains correct number 7, minor extra context\"},\n  {\"id\": \"LM_0307\", \"recalled\": true, \"accurate\": false, \"notes\": \"Recalls 'Data Science' but adds 'Certified' prefix, expected answer does not include this certification detail\"},\n  {\"id\": \"LM_0318\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer 'UCLA' is correct abbreviation matching the expected answer UCLA\"},\n  {\"id\": \"LM_0325\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '500 copies' contains correct number 500, minor extra context\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0131",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM explicitly states 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0151",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '30 videos' contains the correct number 30, minor extra context"
+        },
+        {
+          "fact_id": "LM_0174",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '2 hours' matches expected 'two hours', same information in different format"
+        },
+        {
+          "fact_id": "LM_0203",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall', no knowledge of user preferences demonstrated"
+        },
+        {
+          "fact_id": "LM_0228",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall', no knowledge of user preferences demonstrated"
+        },
+        {
+          "fact_id": "LM_0241",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'Evolution' exactly matches expected answer"
+        },
+        {
+          "fact_id": "LM_0292",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'Serenity Yoga' exactly matches expected answer"
+        },
+        {
+          "fact_id": "LM_0296",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer exactly matches expected answer"
+        },
+        {
+          "fact_id": "LM_0304",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '7 shirts' contains correct number 7, minor extra context"
+        },
+        {
+          "fact_id": "LM_0307",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Recalls 'Data Science' but adds 'Certified' prefix, expected answer does not include this certification detail"
+        },
+        {
+          "fact_id": "LM_0318",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'UCLA' is correct abbreviation matching the expected answer UCLA"
+        },
+        {
+          "fact_id": "LM_0325",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '500 copies' contains correct number 500, minor extra context"
+        }
+      ]
+    }
+  ]
+}

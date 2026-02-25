@@ -1,0 +1,59 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies receiving a new phone case and includes all expected keywords (Receiving, new, phone, case)\"\n  },\n  {\n    \"id\": \"LM_0053\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM says 'I don't recall' - no knowledge demonstrated of the expected answer (7 or 8 days)\"\n  },\n  {\n    \"id\": \"LM_0072\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM says 'I don't recall' - no knowledge demonstrated of the expected answer (17 days)\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM says 'I don't recall' - no knowledge demonstrated of the expected answer (9 months)\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly states $420, matching expected answer exactly\"\n  },\n  {\n    \"id\": \"LM_0209\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM demonstrates some knowledge of the topic (mentions virtual team-building activities, check-ins, company initiatives) but does not fully match the expected comprehensive answer about user preferences and does not address the key point about acknowledging desire for social interaction\"\n  },\n  {\n    \"id\": \"LM_0315\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly states 16GB, matching expected answer exactly\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM says 'I don't recall' - no knowledge demonstrated of the expected chronological sequence of events\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies receiving a new phone case and includes all expected keywords (Receiving, new, phone, case)"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM says 'I don't recall' - no knowledge demonstrated of the expected answer (7 or 8 days)"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM says 'I don't recall' - no knowledge demonstrated of the expected answer (17 days)"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM says 'I don't recall' - no knowledge demonstrated of the expected answer (9 months)"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly states $420, matching expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM demonstrates some knowledge of the topic (mentions virtual team-building activities, check-ins, company initiatives) but does not fully match the expected comprehensive answer about user preferences and does not address the key point about acknowledging desire for social interaction"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly states 16GB, matching expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM says 'I don't recall' - no knowledge demonstrated of the expected chronological sequence of events"
+        }
+      ]
+    }
+  ]
+}

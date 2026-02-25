@@ -1,0 +1,131 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0045\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0053\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0059\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0072\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0074\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0092\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0156\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0163\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM recalled a number but answered '3 tops' instead of 'five'\"},\n  {\"id\": \"LM_0164\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM answered '$420' matching expected answer exactly\"},\n  {\"id\": \"LM_0209\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0210\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0215\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0315\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM answered '16GB' matching expected answer exactly\"},\n  {\"id\": \"LM_0333\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM answered 'Xfinity Center on June 15th' which includes the expected answer 'Xfinity Center'\"},\n  {\"id\": \"LM_0368\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall', no knowledge demonstrated\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0059",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0074",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0092",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0163",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalled a number but answered '3 tops' instead of 'five'"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answered '$420' matching expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0210",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0215",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answered '16GB' matching expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0333",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answered 'Xfinity Center on June 15th' which includes the expected answer 'Xfinity Center'"
+        },
+        {
+          "fact_id": "LM_0368",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall', no knowledge demonstrated"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' - no knowledge demonstrated of the events, venues, or sports mentioned\"\n  },\n  {\n    \"id\": \"LM_0403\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' - no knowledge demonstrated of the time period\"\n  },\n  {\n    \"id\": \"LM_0415\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' - no knowledge demonstrated of the airline name\"\n  },\n  {\n    \"id\": \"LM_0479\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' - no knowledge demonstrated of the numerical value\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' - no knowledge demonstrated of the events, venues, or sports mentioned"
+        },
+        {
+          "fact_id": "LM_0403",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' - no knowledge demonstrated of the time period"
+        },
+        {
+          "fact_id": "LM_0415",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' - no knowledge demonstrated of the airline name"
+        },
+        {
+          "fact_id": "LM_0479",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' - no knowledge demonstrated of the numerical value"
+        }
+      ]
+    }
+  ]
+}

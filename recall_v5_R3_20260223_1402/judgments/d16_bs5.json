@@ -1,0 +1,131 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0131]\n  Expected answer: Paris\n  Expected keywords: Paris\n  LLM answer: Costa Rica\n\n[LM_0151]\n  Expected answer: 30\n  Expected keywords: 30\n  LLM answer: 30 videos\n\n[LM_0174]\n  Expected answer: about two hours\n  Expected keywords: two, hours\n  LLM answer: 2 hours\n\n[LM_0203]\n  Expected answer: The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features.\n  Expected keywords: user, prefer, suggestions, hotels, Miami, offer, great, views, possibly, ocean, city, skyline, unique, features, rooftop, pool, hot, tub, balcony, basic, budget, without\n  LLM answer: I don't recall\n\n[LM_0228]\n  Expected answer: The user would prefer suggestions related to listening to new podcasts or audiobooks, especially the genre beyond true crime or self-improvement, such as history. They may not be interested in activities that require visual attention, such as reading or watching videos, as they are commuting. The user would not prefer general podcast topics such as true crime or self-improvement, as the user wants to explore other topics.\n  Expected keywords: user, prefer, suggestions, related, listening, new, podcasts, audiobooks, especially, genre, beyond, true, crime, self, improvement, history, interested, activities, require, visual, attention, reading, watching, videos, commuting, general, podcast, topics, wants, explore, other\n  LLM answer: I don't recall\n\n[LM_0231]\n  Expected answer: Miss Bee Providore\n  Expected keywords: Miss, Bee, Providore\n  LLM answer: I don't recall the specific name of a restaurant in Cihampelas Walk that serves Nasi Goreng. I mentioned Miss Bee Providore as a restaurant in the Cihampelas Walk area, but I don't recall specifically recommending it for Nasi Goreng.\n\n[LM_0234]\n  Expected answer: Roscioli\n  Expected keywords: Roscioli\n  LLM answer: I recommended Roscioli as a romantic Italian restaurant in Rome for dinner.\n\n[LM_0241]\n  Expected answer: Evolution\n  Expected keywords: Evolution\n  LLM answer: I said the song \"Evolution\" best exemplified the band's growth and development as artists on the Fifth Album.\n\n[LM_0292]\n  Expected answer: Serenity Yoga\n  Expected keywords: Serenity, Yoga\n  LLM answer: You take yoga classes on Saturday mornings at a studio (you didn't specify the exact studio name in our conversation).\n\n[LM_0296]\n  Expected answer: Marketing specialist at a small startup\n  Expected keywords: Marketing, specialist, small, startup\n  LLM answer: I don't recall you mentioning your previous occupation in our conversation.\n\n[LM_0304]\n  Expected answer: 7\n  Expected keywords: 7\n  LLM answer: I don't recall\n\n[LM_0306]\n  Expected answer: Nike\n  Expected keywords: Nike\n  LLM answer: Nike\n\n[LM_0307]\n  Expected answer: Data Science\n  Expected keywords: Data, Science\n  LLM answer: Certified Data Scientist\n\n[LM_0318]\n  Expected answer: University of California, Los Angeles (UCLA)\n  Expected keywords: University, California, Los, Angeles, UCLA\n  LLM answer: UCLA\n\n[LM_0325]\n  Expected answer: 500\n  Expected keywords: 500\n  LLM answer: 500\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0131\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answer is Costa Rica, expected Paris - completely wrong location\"},\n  {\"id\": \"LM_0151\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '30 videos' contains the expected answer '30'\"},\n  {\"id\": \"LM_0174\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '2 hours' matches expected 'two hours' - same meaning, different format\"},\n  {\"id\": \"LM_0203\", \"recalled\": false, \"accurate\": false, \"notes\": \"'I don't recall' indicates no knowledge of expected information\"},\n  {\"id\": \"LM_0228\", \"recalled\": false, \"accurate\": false, \"notes\": \"'I don't recall' indicates no knowledge of expected information\"},\n  {\"id\": \"LM_0231\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer mentions 'Miss Bee Providore' which matches expected answer, though with caveats\"},\n  {\"id\": \"LM_0234\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer correctly identifies Roscioli as the restaurant\"},\n  {\"id\": \"LM_0241\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer correctly identifies 'Evolution' as the song\"},\n  {\"id\": \"LM_0292\", \"recalled\": true, \"accurate\": false, \"notes\": \"Recalls yoga classes but doesn't provide the specific studio name 'Serenity Yoga'\"},\n  {\"id\": \"LM_0296\", \"recalled\": false, \"accurate\": false, \"notes\": \"'I don't recall' indicates no knowledge of expected occupation information\"},\n  {\"id\": \"LM_0304\", \"recalled\": false, \"accurate\": false, \"notes\": \"'I don't recall' indicates no knowledge of the expected number\"},\n  {\"id\": \"LM_0306\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer 'Nike' matches expected answer exactly\"},\n  {\"id\": \"LM_0307\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer 'Certified Data Scientist' contains expected keywords 'Data Science'\"},\n  {\"id\": \"LM_0318\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer 'UCLA' is correct abbreviation matching expected answer\"},\n  {\"id\": \"LM_0325\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '500' matches expected answer exactly\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0131",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer is Costa Rica, expected Paris - completely wrong location"
+        },
+        {
+          "fact_id": "LM_0151",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '30 videos' contains the expected answer '30'"
+        },
+        {
+          "fact_id": "LM_0174",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '2 hours' matches expected 'two hours' - same meaning, different format"
+        },
+        {
+          "fact_id": "LM_0203",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "'I don't recall' indicates no knowledge of expected information"
+        },
+        {
+          "fact_id": "LM_0228",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "'I don't recall' indicates no knowledge of expected information"
+        },
+        {
+          "fact_id": "LM_0231",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer mentions 'Miss Bee Providore' which matches expected answer, though with caveats"
+        },
+        {
+          "fact_id": "LM_0234",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies Roscioli as the restaurant"
+        },
+        {
+          "fact_id": "LM_0241",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies 'Evolution' as the song"
+        },
+        {
+          "fact_id": "LM_0292",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Recalls yoga classes but doesn't provide the specific studio name 'Serenity Yoga'"
+        },
+        {
+          "fact_id": "LM_0296",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "'I don't recall' indicates no knowledge of expected occupation information"
+        },
+        {
+          "fact_id": "LM_0304",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "'I don't recall' indicates no knowledge of the expected number"
+        },
+        {
+          "fact_id": "LM_0306",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'Nike' matches expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0307",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'Certified Data Scientist' contains expected keywords 'Data Science'"
+        },
+        {
+          "fact_id": "LM_0318",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'UCLA' is correct abbreviation matching expected answer"
+        },
+        {
+          "fact_id": "LM_0325",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '500' matches expected answer exactly"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0347]\n  Expected answer: bronchitis\n  Expected keywords: bronchitis\n  LLM answer: Bronchitis\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0347\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer 'Bronchitis' matches expected answer 'bronchitis' - same condition, only differs in capitalization which is not a material difference\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0347",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'Bronchitis' matches expected answer 'bronchitis' - same condition, only differs in capitalization which is not a material difference"
+        }
+      ]
+    }
+  ]
+}

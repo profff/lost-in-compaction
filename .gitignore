@@ -1,0 +1,9 @@
+venv/
+__pycache__/
+longmemeval_data/
+data/
+First_naive_bench_results/
+*.html
+*.pyc
+.env
+.claude/

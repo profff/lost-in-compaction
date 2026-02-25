@@ -1,0 +1,118 @@
+{
+  "run_mode": "R4",
+  "results": {
+    "d80": {
+      "grep": {
+        "facts_total": 80,
+        "all_present": 69,
+        "any_present": 79,
+        "recall_upper_bound": 0.8625,
+        "by_category": {
+          "knowledge-update": {
+            "total": 27,
+            "present": 27,
+            "recall": 1.0
+          },
+          "single-session-assistant": {
+            "total": 20,
+            "present": 16,
+            "recall": 0.8
+          },
+          "single-session-preference": {
+            "total": 10,
+            "present": 3,
+            "recall": 0.3
+          },
+          "single-session-user": {
+            "total": 23,
+            "present": 23,
+            "recall": 1.0
+          }
+        }
+      },
+      "bs5": {
+        "recall": 0.775,
+        "accuracy": 0.45,
+        "facts_recalled": 62,
+        "facts_total": 80,
+        "recall_early": 0.8571428571428571,
+        "recall_mid": 0.5333333333333333,
+        "recall_late": 0.8235294117647058,
+        "n_early": 14,
+        "n_mid": 15,
+        "n_late": 51,
+        "by_category": {
+          "knowledge-update": {
+            "total": 27,
+            "recalled": 20,
+            "accurate": 8,
+            "recall": 0.7407407407407407,
+            "accuracy": 0.2962962962962963
+          },
+          "single-session-assistant": {
+            "total": 20,
+            "recalled": 18,
+            "accurate": 15,
+            "recall": 0.9,
+            "accuracy": 0.75
+          },
+          "single-session-preference": {
+            "total": 10,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 0.1,
+            "accuracy": 0.1
+          },
+          "single-session-user": {
+            "total": 23,
+            "recalled": 23,
+            "accurate": 12,
+            "recall": 1.0,
+            "accuracy": 0.5217391304347826
+          }
+        }
+      }
+    }
+  },
+  "grep": {
+    "d80": {
+      "facts_total": 80,
+      "all_present": 69,
+      "any_present": 79,
+      "recall_upper_bound": 0.8625,
+      "by_category": {
+        "knowledge-update": {
+          "total": 27,
+          "present": 27,
+          "recall": 1.0
+        },
+        "single-session-assistant": {
+          "total": 20,
+          "present": 16,
+          "recall": 0.8
+        },
+        "single-session-preference": {
+          "total": 10,
+          "present": 3,
+          "recall": 0.3
+        },
+        "single-session-user": {
+          "total": 23,
+          "present": 23,
+          "recall": 1.0
+        }
+      }
+    }
+  },
+  "batch_api": {
+    "qa_batch_ids": [
+      "msgbatch_019KibBYAteqLCUZBgLzhdn2"
+    ],
+    "judge_batch_ids": [
+      "msgbatch_01MPDpaFJvBmMKwzjdjeteBw"
+    ],
+    "qa_requests": 16,
+    "judge_requests": 6,
+    "total_requests": 22
+  }
+}

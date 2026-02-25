@@ -1,0 +1,131 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0045\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer mentions receiving new phone case and contains all expected keywords\"},\n  {\"id\": \"LM_0053\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', no demonstration of knowledge\"},\n  {\"id\": \"LM_0059\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', no demonstration of knowledge\"},\n  {\"id\": \"LM_0072\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', expected '17 days'\"},\n  {\"id\": \"LM_0074\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', expected '$2,500'\"},\n  {\"id\": \"LM_0092\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', expected '4'\"},\n  {\"id\": \"LM_0156\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', expected '9 months'\"},\n  {\"id\": \"LM_0163\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', expected 'five'\"},\n  {\"id\": \"LM_0164\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '$420' matches expected answer exactly\"},\n  {\"id\": \"LM_0209\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answer demonstrates recall but contradicts expectation by stating the topic was not discussed\"},\n  {\"id\": \"LM_0210\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', expected detailed preference about homegrown produce\"},\n  {\"id\": \"LM_0215\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answer recalls discussion but provides incorrect context (mocha cake instead of lemon poppyseed, different event type)\"},\n  {\"id\": \"LM_0315\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', expected '16GB'\"},\n  {\"id\": \"LM_0333\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer 'Xfinity Center on June 15th' contains expected keywords and matches expected venue\"},\n  {\"id\": \"LM_0368\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', expected '18 days' or '19 days'\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer mentions receiving new phone case and contains all expected keywords"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', no demonstration of knowledge"
+        },
+        {
+          "fact_id": "LM_0059",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', no demonstration of knowledge"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', expected '17 days'"
+        },
+        {
+          "fact_id": "LM_0074",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', expected '$2,500'"
+        },
+        {
+          "fact_id": "LM_0092",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', expected '4'"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', expected '9 months'"
+        },
+        {
+          "fact_id": "LM_0163",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', expected 'five'"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '$420' matches expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer demonstrates recall but contradicts expectation by stating the topic was not discussed"
+        },
+        {
+          "fact_id": "LM_0210",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', expected detailed preference about homegrown produce"
+        },
+        {
+          "fact_id": "LM_0215",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer recalls discussion but provides incorrect context (mocha cake instead of lemon poppyseed, different event type)"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', expected '16GB'"
+        },
+        {
+          "fact_id": "LM_0333",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'Xfinity Center on June 15th' contains expected keywords and matches expected venue"
+        },
+        {
+          "fact_id": "LM_0368",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', expected '18 days' or '19 days'"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing the detailed event sequence with required keywords\"\n  },\n  {\n    \"id\": \"LM_0403\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing the timeframe with required keywords\"\n  },\n  {\n    \"id\": \"LM_0415\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing the airline name with required keywords\"\n  },\n  {\n    \"id\": \"LM_0479\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing the numeric value\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing the detailed event sequence with required keywords"
+        },
+        {
+          "fact_id": "LM_0403",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing the timeframe with required keywords"
+        },
+        {
+          "fact_id": "LM_0415",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing the airline name with required keywords"
+        },
+        {
+          "fact_id": "LM_0479",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing the numeric value"
+        }
+      ]
+    }
+  ]
+}

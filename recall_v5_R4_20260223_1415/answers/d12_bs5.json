@@ -1,0 +1,111 @@
+{
+  "context_ref": "d12",
+  "batch_size": 5,
+  "batches": [
+    {
+      "batch_id": 0,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0131] Where did I go on my most recent family trip?\n- [LM_0151] How many videos of Corey Schafer's Python programming series have I completed so far?\n- [LM_0174] How much time do I dedicate to coding exercises each day?\n- [LM_0203] Can you suggest a hotel for my upcoming trip to Miami?\n- [LM_0228] Can you suggest some activities I can do during my commute to work?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0131\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0151\", \"answer\": \"20 videos\"},\n  {\"id\": \"LM_0174\", \"answer\": \"1 hour\"},\n  {\"id\": \"LM_0203\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0228\", \"answer\": \"I don't recall\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0131",
+          "question": "Where did I go on my most recent family trip?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0151",
+          "question": "How many videos of Corey Schafer's Python programming series have I completed so far?",
+          "question_type": "knowledge-update",
+          "raw_answer": "20 videos",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0174",
+          "question": "How much time do I dedicate to coding exercises each day?",
+          "question_type": "knowledge-update",
+          "raw_answer": "1 hour",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0203",
+          "question": "Can you suggest a hotel for my upcoming trip to Miami?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0228",
+          "question": "Can you suggest some activities I can do during my commute to work?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0241] I was thinking about our previous conversation about the Fifth Album, and I was wondering if you could remind me what song you said best exemplified the band's growth and development as artists?\n- [LM_0292] Where do I take yoga classes?\n- [LM_0296] What was my previous occupation?\n- [LM_0304] How many shirts did I pack for my 5-day trip to Costa Rica?\n- [LM_0307] What certification did I complete last month?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0241\", \"answer\": \"I don't recall discussing a Fifth Album or recommending a specific song that exemplified a band's growth and development.\"},\n  {\"id\": \"LM_0292\", \"answer\": \"You mentioned taking yoga classes, but you did not specify where you take them.\"},\n  {\"id\": \"LM_0296\", \"answer\": \"I don't recall you mentioning a previous occupation.\"},\n  {\"id\": \"LM_0304\", \"answer\": \"You mentioned packing 7 shirts and 5 pairs of shorts for a trip to Costa Rica, but you did not specify it was a 5-day trip.\"},\n  {\"id\": \"LM_0307\", \"answer\": \"You completed a certification in Data Science last month.\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0241",
+          "question": "I was thinking about our previous conversation about the Fifth Album, and I was wondering if you could remind me what song you said best exemplified the band's growth and development as artists?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "I don't recall discussing a Fifth Album or recommending a specific song that exemplified a band's growth and development.",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0292",
+          "question": "Where do I take yoga classes?",
+          "question_type": "single-session-user",
+          "raw_answer": "You mentioned taking yoga classes, but you did not specify where you take them.",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0296",
+          "question": "What was my previous occupation?",
+          "question_type": "single-session-user",
+          "raw_answer": "I don't recall you mentioning a previous occupation.",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0304",
+          "question": "How many shirts did I pack for my 5-day trip to Costa Rica?",
+          "question_type": "single-session-user",
+          "raw_answer": "You mentioned packing 7 shirts and 5 pairs of shorts for a trip to Costa Rica, but you did not specify it was a 5-day trip.",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0307",
+          "question": "What certification did I complete last month?",
+          "question_type": "single-session-user",
+          "raw_answer": "You completed a certification in Data Science last month.",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 2,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0318] Where did I complete my Bachelor's degree in Computer Science?\n- [LM_0325] How many copies of my favorite artist's debut album were released worldwide?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0318\", \"answer\": \"UCLA\"},\n  {\"id\": \"LM_0325\", \"answer\": \"500\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0318",
+          "question": "Where did I complete my Bachelor's degree in Computer Science?",
+          "question_type": "single-session-user",
+          "raw_answer": "UCLA",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0325",
+          "question": "How many copies of my favorite artist's debut album were released worldwide?",
+          "question_type": "single-session-user",
+          "raw_answer": "500",
+          "batch_position": 1
+        }
+      ]
+    }
+  ]
+}

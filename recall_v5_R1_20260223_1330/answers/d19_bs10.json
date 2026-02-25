@@ -1,0 +1,153 @@
+{
+  "context_ref": "d19",
+  "batch_size": 10,
+  "batches": [
+    {
+      "batch_id": 0,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0045] Which event happened first, the narrator losing their phone charger or the narrator receiving their new phone case?\n- [LM_0053] How many days had passed between the day I bought a gift for my brother's graduation ceremony and the day I bought a birthday gift for my best friend?\n- [LM_0059] Who became a parent first, Tom or Alex?\n- [LM_0072] How many days did I take social media breaks in total?\n- [LM_0074] What is the total amount I spent on luxury items in the past few months?\n- [LM_0092] How many health-related devices do I use in a day?\n- [LM_0156] How long have I had my cat, Luna?\n- [LM_0163] How many tops have I bought from H&M so far?\n- [LM_0164] How much did I earn at the Downtown Farmers Market on my most recent visit?\n- [LM_0209] I've been thinking about ways to stay connected with my colleagues. Any suggestions?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0045\", \"answer\": \"The narrator received their new phone case about a month ago. They lost their phone charger at the gym about two weeks ago. So the new phone case happened first.\"},\n  {\"id\": \"LM_0053\", \"answer\": \"I don't recall the specific dates for these events to calculate the exact number of days.\"},\n  {\"id\": \"LM_0059\", \"answer\": \"I don't recall information about Tom or Alex becoming parents.\"},\n  {\"id\": \"LM_0072\", \"answer\": \"The narrator took a 10-day break in mid-February and a week-long break in mid-January, for a total of 17 days.\"},\n  {\"id\": \"LM_0074\", \"answer\": \"I don't recall the total amount spent on luxury items in the past few months.\"},\n  {\"id\": \"LM_0092\", \"answer\": \"The narrator uses at least 3 health-related devices: a Fitbit Versa 3, an Accu-Chek Aviva Nano blood sugar monitor, and a nebulizer machine.\"},\n  {\"id\": \"LM_0156\", \"answer\": \"The narrator has had their cat Luna for about 9 months.\"},\n  {\"id\": \"LM_0163\", \"answer\": \"The narrator has bought 5 tops from H&M so far, with plans to get a few more.\"},\n  {\"id\": \"LM_0164\", \"answer\": \"$420\"},\n  {\"id\": \"LM_0209\", \"answer\": \"I don't recall the narrator asking for suggestions on staying connected with colleagues. However, we did discuss virtual coffee breaks and team-building activities.\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0045",
+          "question": "Which event happened first, the narrator losing their phone charger or the narrator receiving their new phone case?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "The narrator received their new phone case about a month ago. They lost their phone charger at the gym about two weeks ago. So the new phone case happened first.",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0053",
+          "question": "How many days had passed between the day I bought a gift for my brother's graduation ceremony and the day I bought a birthday gift for my best friend?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall the specific dates for these events to calculate the exact number of days.",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0059",
+          "question": "Who became a parent first, Tom or Alex?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall information about Tom or Alex becoming parents.",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0072",
+          "question": "How many days did I take social media breaks in total?",
+          "question_type": "multi-session",
+          "raw_answer": "The narrator took a 10-day break in mid-February and a week-long break in mid-January, for a total of 17 days.",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0074",
+          "question": "What is the total amount I spent on luxury items in the past few months?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall the total amount spent on luxury items in the past few months.",
+          "batch_position": 4
+        },
+        {
+          "fact_id": "LM_0092",
+          "question": "How many health-related devices do I use in a day?",
+          "question_type": "multi-session",
+          "raw_answer": "The narrator uses at least 3 health-related devices: a Fitbit Versa 3, an Accu-Chek Aviva Nano blood sugar monitor, and a nebulizer machine.",
+          "batch_position": 5
+        },
+        {
+          "fact_id": "LM_0156",
+          "question": "How long have I had my cat, Luna?",
+          "question_type": "knowledge-update",
+          "raw_answer": "The narrator has had their cat Luna for about 9 months.",
+          "batch_position": 6
+        },
+        {
+          "fact_id": "LM_0163",
+          "question": "How many tops have I bought from H&M so far?",
+          "question_type": "knowledge-update",
+          "raw_answer": "The narrator has bought 5 tops from H&M so far, with plans to get a few more.",
+          "batch_position": 7
+        },
+        {
+          "fact_id": "LM_0164",
+          "question": "How much did I earn at the Downtown Farmers Market on my most recent visit?",
+          "question_type": "knowledge-update",
+          "raw_answer": "$420",
+          "batch_position": 8
+        },
+        {
+          "fact_id": "LM_0209",
+          "question": "I've been thinking about ways to stay connected with my colleagues. Any suggestions?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall the narrator asking for suggestions on staying connected with colleagues. However, we did discuss virtual coffee breaks and team-building activities.",
+          "batch_position": 9
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0210] What should I serve for dinner this weekend with my homegrown ingredients?\n- [LM_0215] I'm thinking of inviting my colleagues over for a small gathering. Any tips on what to bake?\n- [LM_0315] How much RAM did I upgrade my laptop to?\n- [LM_0333] Where did I attend the Imagine Dragons concert?\n- [LM_0368] How many days had passed since I finished reading 'The Seven Husbands of Evelyn Hugo' when I attended the book reading event at the local library, where the author of 'The Silent Patient' is discussing her latest thriller novel?\n- [LM_0383] What is the order of the sports events I watched in January?\n- [LM_0403] How many weeks ago did I attend the 'Summer Nights' festival at Universal Studios Hollywood?\n- [LM_0415] What was the airline that I flied with on Valentine's day?\n- [LM_0479] How many years older is my grandma than me?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0210\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0215\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0315\", \"answer\": \"16GB\"},\n  {\"id\": \"LM_0333\", \"answer\": \"Xfinity Center on June 15th\"},\n  {\"id\": \"LM_0368\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0383\", \"answer\": \"I don't recall the specific order\"},\n  {\"id\": \"LM_0403\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0415\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0479\", \"answer\": \"I don't recall\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0210",
+          "question": "What should I serve for dinner this weekend with my homegrown ingredients?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0215",
+          "question": "I'm thinking of inviting my colleagues over for a small gathering. Any tips on what to bake?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0315",
+          "question": "How much RAM did I upgrade my laptop to?",
+          "question_type": "single-session-user",
+          "raw_answer": "16GB",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0333",
+          "question": "Where did I attend the Imagine Dragons concert?",
+          "question_type": "single-session-user",
+          "raw_answer": "Xfinity Center on June 15th",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0368",
+          "question": "How many days had passed since I finished reading 'The Seven Husbands of Evelyn Hugo' when I attended the book reading event at the local library, where the author of 'The Silent Patient' is discussing her latest thriller novel?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        },
+        {
+          "fact_id": "LM_0383",
+          "question": "What is the order of the sports events I watched in January?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall the specific order",
+          "batch_position": 5
+        },
+        {
+          "fact_id": "LM_0403",
+          "question": "How many weeks ago did I attend the 'Summer Nights' festival at Universal Studios Hollywood?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 6
+        },
+        {
+          "fact_id": "LM_0415",
+          "question": "What was the airline that I flied with on Valentine's day?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 7
+        },
+        {
+          "fact_id": "LM_0479",
+          "question": "How many years older is my grandma than me?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 8
+        }
+      ]
+    }
+  ]
+}

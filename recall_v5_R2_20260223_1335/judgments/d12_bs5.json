@@ -1,0 +1,96 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0045]\n  Expected answer: Receiving the new phone case\n  Expected keywords: Receiving, new, phone, case\n  LLM answer: I don't recall\n\n[LM_0053]\n  Expected answer: 7 days. 8 days (including the last day) is also acceptable.\n  Expected keywords: days, including, last, day, acceptable, 7, 8\n  LLM answer: I don't recall\n\n[LM_0072]\n  Expected answer: 17 days\n  Expected keywords: 17, days\n  LLM answer: I don't recall\n\n[LM_0074]\n  Expected answer: $2,500\n  Expected keywords: 500, 2\n  LLM answer: I don't recall\n\n[LM_0156]\n  Expected answer: 9 months\n  Expected keywords: months, 9\n  LLM answer: I don't recall\n\n[LM_0164]\n  Expected answer: $420\n  Expected keywords: 420\n  LLM answer: I don't recall\n\n[LM_0209]\n  Expected answer: The user would prefer responses that acknowledge their desire for social interaction and collaboration while working remotely, utilizing their previous experiences with company initiatives and team collaborations. They might prefer suggestions of virtual team-building activities, regular check-ins, or joining interest-based groups within the company. The user may not prefer generic suggestions that do not take into account their specific work situation or previous attempts at staying connected with colleagues.\n  Expected keywords: user, prefer, responses, acknowledge, desire, social, interaction, collaboration, while, working, remotely, utilizing, previous, experiences, company, initiatives, team, collaborations, suggestions, virtual, building, activities, regular, check, ins, joining, interest, based, groups, within, generic, take, account, specific, work, situation, attempts, staying, connected, colleagues\n  LLM answer: I don't recall\n\n[LM_0315]\n  Expected answer: 16GB\n  Expected keywords: 16GB, 16\n  LLM answer: I don't recall\n\n[LM_0333]\n  Expected answer: Xfinity Center\n  Expected keywords: Xfinity, Center\n  LLM answer: Xfinity Center on June 15th\n\n[LM_0383]\n  Expected answer: First, I attended a NBA game at the Staples Center, then I watched the College Football National Championship game, and finally, I watched the NFL playoffs.\n  Expected keywords: First, attended, NBA, game, Staples, Center, watched, College, Football, National, Championship, finally, NFL, playoffs\n  LLM answer: I don't recall\n\n[LM_0403]\n  Expected answer: 3 weeks ago\n  Expected keywords: weeks, ago, 3\n  LLM answer: I don't recall\n\n[LM_0415]\n  Expected answer: American Airlines\n  Expected keywords: American, Airlines\n  LLM answer: I don't recall\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing information about receiving a new phone case\"\n  },\n  {\n    \"id\": \"LM_0053\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing the answer about 7 or 8 days\"\n  },\n  {\n    \"id\": \"LM_0072\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing '17 days'\"\n  },\n  {\n    \"id\": \"LM_0074\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing '$2,500'\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing '9 months'\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing '$420'\"\n  },\n  {\n    \"id\": \"LM_0209\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing detailed preferences about social interaction and remote work\"\n  },\n  {\n    \"id\": \"LM_0315\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing '16GB'\"\n  },\n  {\n    \"id\": \"LM_0333\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly identified 'Xfinity Center' with additional accurate date information\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing the sequence of sporting events attended\"\n  },\n  {\n    \"id\": \"LM_0403\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing '3 weeks ago'\"\n  },\n  {\n    \"id\": \"LM_0415\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answered 'I don't recall' instead of providing 'American Airlines'\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing information about receiving a new phone case"
+        },
+        {
+          "fact_id": "LM_0053",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing the answer about 7 or 8 days"
+        },
+        {
+          "fact_id": "LM_0072",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing '17 days'"
+        },
+        {
+          "fact_id": "LM_0074",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing '$2,500'"
+        },
+        {
+          "fact_id": "LM_0156",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing '9 months'"
+        },
+        {
+          "fact_id": "LM_0164",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing '$420'"
+        },
+        {
+          "fact_id": "LM_0209",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing detailed preferences about social interaction and remote work"
+        },
+        {
+          "fact_id": "LM_0315",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing '16GB'"
+        },
+        {
+          "fact_id": "LM_0333",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified 'Xfinity Center' with additional accurate date information"
+        },
+        {
+          "fact_id": "LM_0383",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing the sequence of sporting events attended"
+        },
+        {
+          "fact_id": "LM_0403",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing '3 weeks ago'"
+        },
+        {
+          "fact_id": "LM_0415",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing 'American Airlines'"
+        }
+      ]
+    }
+  ]
+}

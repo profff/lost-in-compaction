@@ -1,0 +1,242 @@
+{
+  "results": {
+    "d19": {
+      "grep": {
+        "facts_total": 19,
+        "all_present": 14,
+        "any_present": 19,
+        "recall_upper_bound": 0.7368421052631579
+      },
+      "bs1": {
+        "recall": 0.3157894736842105,
+        "accuracy": 0.21052631578947367,
+        "facts_recalled": 6,
+        "facts_total": 19,
+        "recall_early": 0.16666666666666666,
+        "recall_mid": 0.5714285714285714,
+        "recall_late": 0.16666666666666666,
+        "n_early": 6,
+        "n_mid": 7,
+        "n_late": 6
+      },
+      "bs5": {
+        "recall": 0.21052631578947367,
+        "accuracy": 0.15789473684210525,
+        "facts_recalled": 4,
+        "facts_total": 19,
+        "recall_early": 0.0,
+        "recall_mid": 0.42857142857142855,
+        "recall_late": 0.16666666666666666,
+        "n_early": 6,
+        "n_mid": 7,
+        "n_late": 6
+      },
+      "bs10": {
+        "recall": 0.2631578947368421,
+        "accuracy": 0.15789473684210525,
+        "facts_recalled": 5,
+        "facts_total": 19,
+        "recall_early": 0.0,
+        "recall_mid": 0.42857142857142855,
+        "recall_late": 0.3333333333333333,
+        "n_early": 6,
+        "n_mid": 7,
+        "n_late": 6
+      },
+      "agreement": {
+        "jaccard": {
+          "1_vs_5": 0.42857142857142855,
+          "1_vs_10": 0.375,
+          "5_vs_10": 0.8
+        },
+        "stable_facts": [
+          "LM_0164",
+          "LM_0315",
+          "LM_0333"
+        ],
+        "unstable_facts": [
+          "LM_0045",
+          "LM_0163",
+          "LM_0209",
+          "LM_0215",
+          "LM_0403"
+        ],
+        "never_recalled": [
+          "LM_0053",
+          "LM_0059",
+          "LM_0072",
+          "LM_0074",
+          "LM_0092",
+          "LM_0156",
+          "LM_0210",
+          "LM_0368",
+          "LM_0383",
+          "LM_0415",
+          "LM_0479"
+        ],
+        "stable_count": 3,
+        "unstable_count": 5,
+        "never_count": 11
+      }
+    },
+    "d4": {
+      "grep": {
+        "facts_total": 4,
+        "all_present": 4,
+        "any_present": 4,
+        "recall_upper_bound": 1.0
+      },
+      "bs1": {
+        "recall": 0.5,
+        "accuracy": 0.5,
+        "facts_recalled": 2,
+        "facts_total": 4,
+        "recall_early": 1.0,
+        "recall_mid": 0.5,
+        "recall_late": 0.0,
+        "n_early": 1,
+        "n_mid": 2,
+        "n_late": 1
+      },
+      "bs5": {
+        "recall": 0.25,
+        "accuracy": 0.25,
+        "facts_recalled": 1,
+        "facts_total": 4,
+        "recall_early": 0.0,
+        "recall_mid": 0.5,
+        "recall_late": 0.0,
+        "n_early": 1,
+        "n_mid": 2,
+        "n_late": 1
+      },
+      "bs10": {
+        "recall": 0.25,
+        "accuracy": 0.25,
+        "facts_recalled": 1,
+        "facts_total": 4,
+        "recall_early": 0.0,
+        "recall_mid": 0.5,
+        "recall_late": 0.0,
+        "n_early": 1,
+        "n_mid": 2,
+        "n_late": 1
+      },
+      "agreement": {
+        "jaccard": {
+          "1_vs_5": 0.5,
+          "1_vs_10": 0.5,
+          "5_vs_10": 1.0
+        },
+        "stable_facts": [
+          "LM_0164"
+        ],
+        "unstable_facts": [
+          "LM_0045"
+        ],
+        "never_recalled": [
+          "LM_0156",
+          "LM_0383"
+        ],
+        "stable_count": 1,
+        "unstable_count": 1,
+        "never_count": 2
+      }
+    },
+    "d8": {
+      "grep": {
+        "facts_total": 8,
+        "all_present": 6,
+        "any_present": 8,
+        "recall_upper_bound": 0.75
+      },
+      "bs1": {
+        "recall": 0.375,
+        "accuracy": 0.25,
+        "facts_recalled": 3,
+        "facts_total": 8,
+        "recall_early": 0.0,
+        "recall_mid": 0.5,
+        "recall_late": 0.6666666666666666,
+        "n_early": 3,
+        "n_mid": 2,
+        "n_late": 3
+      },
+      "bs5": {
+        "recall": 0.5,
+        "accuracy": 0.25,
+        "facts_recalled": 4,
+        "facts_total": 8,
+        "recall_early": 0.0,
+        "recall_mid": 0.5,
+        "recall_late": 1.0,
+        "n_early": 3,
+        "n_mid": 2,
+        "n_late": 3
+      },
+      "bs10": {
+        "recall": 0.5,
+        "accuracy": 0.375,
+        "facts_recalled": 4,
+        "facts_total": 8,
+        "recall_early": 0.3333333333333333,
+        "recall_mid": 0.5,
+        "recall_late": 0.6666666666666666,
+        "n_early": 3,
+        "n_mid": 2,
+        "n_late": 3
+      },
+      "agreement": {
+        "jaccard": {
+          "1_vs_5": 0.75,
+          "1_vs_10": 0.75,
+          "5_vs_10": 0.6
+        },
+        "stable_facts": [
+          "LM_0164",
+          "LM_0209",
+          "LM_0315"
+        ],
+        "unstable_facts": [
+          "LM_0072",
+          "LM_0383"
+        ],
+        "never_recalled": [
+          "LM_0045",
+          "LM_0053",
+          "LM_0156"
+        ],
+        "stable_count": 3,
+        "unstable_count": 2,
+        "never_count": 3
+      }
+    }
+  },
+  "grep": {
+    "d4": {
+      "facts_total": 4,
+      "all_present": 4,
+      "any_present": 4,
+      "recall_upper_bound": 1.0
+    },
+    "d8": {
+      "facts_total": 8,
+      "all_present": 6,
+      "any_present": 8,
+      "recall_upper_bound": 0.75
+    },
+    "d19": {
+      "facts_total": 19,
+      "all_present": 14,
+      "any_present": 19,
+      "recall_upper_bound": 0.7368421052631579
+    }
+  },
+  "batch_api": {
+    "qa_batch_id": "msgbatch_01F1cD2bYCY3fS4TxvnrURDd",
+    "judge_batch_id": "msgbatch_01WXKCHKRPthSLUkTnrn6bBX",
+    "qa_requests": 42,
+    "judge_requests": 12,
+    "total_requests": 54
+  }
+}

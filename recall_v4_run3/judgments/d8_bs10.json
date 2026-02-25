@@ -1,0 +1,59 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states it doesn't recall the event; no mention of phone case\"\n  },\n  {\n    \"id\": \"LM_0053\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states it doesn't recall gift purchases; no mention of days or number\"\n  },\n  {\n    \"id\": \"LM_0072\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM recalls some break information but provides uncertain estimate (10 days + 1 week) rather than correct answer of 17 days\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states it doesn't recall Luna's age; no mention of 9 months\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM answer exactly matches expected answer of $420\"\n  },\n  {\n    \"id\": \"LM_0209\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM answer demonstrates understanding of user preferences for social interaction, collaboration, virtual activities, and team engagement strategies aligned with expected response\"\n  },\n  {\n    \"id\": \"LM_0315\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM answer exactly matches expected answer of 16GB\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states it doesn't recall the specific order of sports events; no mention of NBA game, College Football Championship, or NFL playoffs\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states it doesn't recall the event; no mention of phone case"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states it doesn't recall gift purchases; no mention of days or number"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalls some break information but provides uncertain estimate (10 days + 1 week) rather than correct answer of 17 days"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states it doesn't recall Luna's age; no mention of 9 months"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answer exactly matches expected answer of $420"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answer demonstrates understanding of user preferences for social interaction, collaboration, virtual activities, and team engagement strategies aligned with expected response"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answer exactly matches expected answer of 16GB"
+        },
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states it doesn't recall the specific order of sports events; no mention of NBA game, College Football Championship, or NFL playoffs"
+        }
+      ]
+    }
+  ]
+}

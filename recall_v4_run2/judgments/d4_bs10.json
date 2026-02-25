@@ -1,0 +1,35 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' indicates no knowledge of the expected information about receiving a new phone case\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' indicates no knowledge of the expected timeframe of 9 months\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer '$420' exactly matches the expected answer\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' indicates no knowledge of the detailed sequence of sporting events attended\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' indicates no knowledge of the expected information about receiving a new phone case"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' indicates no knowledge of the expected timeframe of 9 months"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '$420' exactly matches the expected answer"
+        },
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' indicates no knowledge of the detailed sequence of sporting events attended"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "experiment": "recall_v4_longmemeval",
+  "timestamp": "2026-02-12T12:23:08.970976",
+  "densities": [
+    4,
+    8,
+    19
+  ],
+  "batch_sizes": [
+    1,
+    5,
+    10
+  ],
+  "seed": 42,
+  "model": "claude-haiku-4-5-20251001",
+  "data_source": "longmemeval",
+  "contexts_dir": "data\\contexts\\recall_190K",
+  "backend": "anthropic_batch"
+}

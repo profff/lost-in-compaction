@@ -1,0 +1,152 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0131]\n  Expected answer: Paris\n  Expected keywords: Paris\n  LLM answer: I don't recall\n\n[LM_0151]\n  Expected answer: 30\n  Expected keywords: 30\n  LLM answer: 20 videos\n\n[LM_0174]\n  Expected answer: about two hours\n  Expected keywords: two, hours\n  LLM answer: 2 hours\n\n[LM_0203]\n  Expected answer: The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features.\n  Expected keywords: user, prefer, suggestions, hotels, Miami, offer, great, views, possibly, ocean, city, skyline, unique, features, rooftop, pool, hot, tub, balcony, basic, budget, without\n  LLM answer: I don't recall\n\n[LM_0228]\n  Expected answer: The user would prefer suggestions related to listening to new podcasts or audiobooks, especially the genre beyond true crime or self-improvement, such as history. They may not be interested in activities that require visual attention, such as reading or watching videos, as they are commuting. The user would not prefer general podcast topics such as true crime or self-improvement, as the user wants to explore other topics.\n  Expected keywords: user, prefer, suggestions, related, listening, new, podcasts, audiobooks, especially, genre, beyond, true, crime, self, improvement, history, interested, activities, require, visual, attention, reading, watching, videos, commuting, general, podcast, topics, wants, explore, other\n  LLM answer: I don't recall\n\n[LM_0231]\n  Expected answer: Miss Bee Providore\n  Expected keywords: Miss, Bee, Providore\n  LLM answer: I don't recall\n\n[LM_0233]\n  Expected answer: The Sugar Factory at Icon Park.\n  Expected keywords: Sugar, Factory, Icon, Park\n  LLM answer: The Sugar Factory\n\n[LM_0234]\n  Expected answer: Roscioli\n  Expected keywords: Roscioli\n  LLM answer: I don't recall\n\n[LM_0237]\n  Expected answer: Transcriptionist.\n  Expected keywords: Transcriptionist\n  LLM answer: Online survey taker\n\n[LM_0241]\n  Expected answer: Evolution\n  Expected keywords: Evolution\n  LLM answer: Evolution\n\n[LM_0292]\n  Expected answer: Serenity Yoga\n  Expected keywords: Serenity, Yoga\n  LLM answer: I don't recall\n\n[LM_0296]\n  Expected answer: Marketing specialist at a small startup\n  Expected keywords: Marketing, specialist, small, startup\n  LLM answer: I don't recall\n\n[LM_0304]\n  Expected answer: 7\n  Expected keywords: 7\n  LLM answer: I don't recall\n\n[LM_0306]\n  Expected answer: Nike\n  Expected keywords: Nike\n  LLM answer: I don't recall\n\n[LM_0307]\n  Expected answer: Data Science\n  Expected keywords: Data, Science\n  LLM answer: I don't recall\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0131\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of expected answer 'Paris'\"\n  },\n  {\n    \"id\": \"LM_0151\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Answer '20 videos' demonstrates knowledge of numeric context but incorrect value (expected 30)\"\n  },\n  {\n    \"id\": \"LM_0174\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer '2 hours' matches expected keywords 'two, hours' and conveys same information as 'about two hours'\"\n  },\n  {\n    \"id\": \"LM_0203\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of detailed user preference information\"\n  },\n  {\n    \"id\": \"LM_0228\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of detailed user preference information about podcasts/audiobooks\"\n  },\n  {\n    \"id\": \"LM_0231\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of expected answer 'Miss Bee Providore'\"\n  },\n  {\n    \"id\": \"LM_0233\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Answer 'The Sugar Factory' is incomplete; missing 'at Icon Park' from expected answer\"\n  },\n  {\n    \"id\": \"LM_0234\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of expected answer 'Roscioli'\"\n  },\n  {\n    \"id\": \"LM_0237\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Answer 'Online survey taker' demonstrates knowledge of work types but is incorrect (expected 'Transcriptionist')\"\n  },\n  {\n    \"id\": \"LM_0241\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer 'Evolution' exactly matches expected answer\"\n  },\n  {\n    \"id\": \"LM_0292\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of expected answer 'Serenity Yoga'\"\n  },\n  {\n    \"id\": \"LM_0296\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of expected role 'Marketing specialist at a small startup'\"\n  },\n  {\n    \"id\": \"LM_0304\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of expected answer '7'\"\n  },\n  {\n    \"id\": \"LM_0306\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of expected answer 'Nike'\"\n  },\n  {\n    \"id\": \"LM_0307\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of expected answer 'Data Science'\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0131",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of expected answer 'Paris'"
+        },
+        {
+          "fact_id": "LM_0151",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer '20 videos' demonstrates knowledge of numeric context but incorrect value (expected 30)"
+        },
+        {
+          "fact_id": "LM_0174",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '2 hours' matches expected keywords 'two, hours' and conveys same information as 'about two hours'"
+        },
+        {
+          "fact_id": "LM_0203",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of detailed user preference information"
+        },
+        {
+          "fact_id": "LM_0228",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of detailed user preference information about podcasts/audiobooks"
+        },
+        {
+          "fact_id": "LM_0231",
+          "question_type": "single-session-assistant",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of expected answer 'Miss Bee Providore'"
+        },
+        {
+          "fact_id": "LM_0233",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer 'The Sugar Factory' is incomplete; missing 'at Icon Park' from expected answer"
+        },
+        {
+          "fact_id": "LM_0234",
+          "question_type": "single-session-assistant",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of expected answer 'Roscioli'"
+        },
+        {
+          "fact_id": "LM_0237",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer 'Online survey taker' demonstrates knowledge of work types but is incorrect (expected 'Transcriptionist')"
+        },
+        {
+          "fact_id": "LM_0241",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'Evolution' exactly matches expected answer"
+        },
+        {
+          "fact_id": "LM_0292",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of expected answer 'Serenity Yoga'"
+        },
+        {
+          "fact_id": "LM_0296",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of expected role 'Marketing specialist at a small startup'"
+        },
+        {
+          "fact_id": "LM_0304",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of expected answer '7'"
+        },
+        {
+          "fact_id": "LM_0306",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of expected answer 'Nike'"
+        },
+        {
+          "fact_id": "LM_0307",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of expected answer 'Data Science'"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0318]\n  Expected answer: University of California, Los Angeles (UCLA)\n  Expected keywords: University, California, Los, Angeles, UCLA\n  LLM answer: I don't recall\n\n[LM_0325]\n  Expected answer: 500\n  Expected keywords: 500\n  LLM answer: 500 copies\n\n[LM_0341]\n  Expected answer: A mix of Irish and Italian\n  Expected keywords: mix, Irish, Italian\n  LLM answer: Irish and Italian\n\n[LM_0347]\n  Expected answer: bronchitis\n  Expected keywords: bronchitis\n  LLM answer: Bronchitis\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0318\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' indicates no knowledge demonstrated\"\n  },\n  {\n    \"id\": \"LM_0325\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer contains the expected keyword '500' with minor additional context 'copies'\"\n  },\n  {\n    \"id\": \"LM_0341\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer matches expected keywords 'Irish and Italian', matches the expected mix concept\"\n  },\n  {\n    \"id\": \"LM_0347\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer 'Bronchitis' matches expected answer 'bronchitis', only capitalization differs\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0318",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' indicates no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0325",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer contains the expected keyword '500' with minor additional context 'copies'"
+        },
+        {
+          "fact_id": "LM_0341",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer matches expected keywords 'Irish and Italian', matches the expected mix concept"
+        },
+        {
+          "fact_id": "LM_0347",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'Bronchitis' matches expected answer 'bronchitis', only capitalization differs"
+        }
+      ]
+    }
+  ]
+}

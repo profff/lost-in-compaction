@@ -1,0 +1,678 @@
+{
+  "context_ref": "d80",
+  "batch_size": 5,
+  "batches": [
+    {
+      "batch_id": 0,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0004] How many days before the team meeting I was preparing for did I attend the workshop on 'Effective Communication in the Workplace'?\n- [LM_0007] Which seeds were started first, the tomatoes or the marigolds?\n- [LM_0021] What was the date on which I attended the first BBQ event in June?\n- [LM_0037] Which trip did the narrator take first, the solo trip to Europe or the family road trip across the American Southwest?\n- [LM_0041] Which group did I join first, 'Page Turners' or 'Marketing Professionals'?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0004\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0007\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0021\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0037\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0041\", \"answer\": \"I don't recall\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0004",
+          "question": "How many days before the team meeting I was preparing for did I attend the workshop on 'Effective Communication in the Workplace'?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0007",
+          "question": "Which seeds were started first, the tomatoes or the marigolds?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0021",
+          "question": "What was the date on which I attended the first BBQ event in June?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0037",
+          "question": "Which trip did the narrator take first, the solo trip to Europe or the family road trip across the American Southwest?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0041",
+          "question": "Which group did I join first, 'Page Turners' or 'Marketing Professionals'?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0045] Which event happened first, the narrator losing their phone charger or the narrator receiving their new phone case?\n- [LM_0050] Which event happened first, my attendance at a cultural festival or the start of my Spanish classes?\n- [LM_0053] How many days had passed between the day I bought a gift for my brother's graduation ceremony and the day I bought a birthday gift for my best friend?\n- [LM_0059] Who became a parent first, Tom or Alex?\n- [LM_0068] How many different doctors did I visit?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0045\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0050\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0053\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0059\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0068\", \"answer\": \"I don't recall\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0045",
+          "question": "Which event happened first, the narrator losing their phone charger or the narrator receiving their new phone case?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0050",
+          "question": "Which event happened first, my attendance at a cultural festival or the start of my Spanish classes?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0053",
+          "question": "How many days had passed between the day I bought a gift for my brother's graduation ceremony and the day I bought a birthday gift for my best friend?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0059",
+          "question": "Who became a parent first, Tom or Alex?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0068",
+          "question": "How many different doctors did I visit?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 2,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0072] How many days did I take social media breaks in total?\n- [LM_0074] What is the total amount I spent on luxury items in the past few months?\n- [LM_0088] How many different art-related events did I attend in the past month?\n- [LM_0092] How many health-related devices do I use in a day?\n- [LM_0093] How many fish are there in total in both of my aquariums?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0072\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0074\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0088\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0092\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0093\", \"answer\": \"I don't recall\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0072",
+          "question": "How many days did I take social media breaks in total?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0074",
+          "question": "What is the total amount I spent on luxury items in the past few months?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0088",
+          "question": "How many different art-related events did I attend in the past month?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0092",
+          "question": "How many health-related devices do I use in a day?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0093",
+          "question": "How many fish are there in total in both of my aquariums?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 3,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0094] How many fitness classes do I attend in a typical week?\n- [LM_0096] How many pieces of jewelry did I acquire in the last two months?\n- [LM_0120] How many days did I spend in total traveling in Hawaii and in Seattle?\n- [LM_0127] Is my mom using the same grocery list method as me?\n- [LM_0129] How many bikes do I currently own?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0094\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0096\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0120\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0127\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0129\", \"answer\": \"I don't recall\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0094",
+          "question": "How many fitness classes do I attend in a typical week?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0096",
+          "question": "How many pieces of jewelry did I acquire in the last two months?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0120",
+          "question": "How many days did I spend in total traveling in Hawaii and in Seattle?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0127",
+          "question": "Is my mom using the same grocery list method as me?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0129",
+          "question": "How many bikes do I currently own?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 4,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0131] Where did I go on my most recent family trip?\n- [LM_0139] How many sessions of the bereavement support group did I attend?\n- [LM_0141] How often do I see my therapist, Dr. Smith?\n- [LM_0151] How many videos of Corey Schafer's Python programming series have I completed so far?\n- [LM_0154] How long have my parents been staying with me in the US?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0131\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0139\", \"answer\": \"Five sessions\"},\n  {\"id\": \"LM_0141\", \"answer\": \"Every two weeks\"},\n  {\"id\": \"LM_0154\", \"answer\": \"Nine months\"},\n  {\"id\": \"LM_0151\", \"answer\": \"30 videos\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0131",
+          "question": "Where did I go on my most recent family trip?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0139",
+          "question": "How many sessions of the bereavement support group did I attend?",
+          "question_type": "knowledge-update",
+          "raw_answer": "Five sessions",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0141",
+          "question": "How often do I see my therapist, Dr. Smith?",
+          "question_type": "knowledge-update",
+          "raw_answer": "Every two weeks",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0151",
+          "question": "How many videos of Corey Schafer's Python programming series have I completed so far?",
+          "question_type": "knowledge-update",
+          "raw_answer": "30 videos",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0154",
+          "question": "How long have my parents been staying with me in the US?",
+          "question_type": "knowledge-update",
+          "raw_answer": "Nine months",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 5,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0156] How long have I had my cat, Luna?\n- [LM_0160] Did I finish reading 'The Nightingale' by Kristin Hannah?\n- [LM_0162] What is my current highest score in Ticket to Ride?\n- [LM_0163] How many tops have I bought from H&M so far?\n- [LM_0164] How much did I earn at the Downtown Farmers Market on my most recent visit?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0156\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0160\", \"answer\": \"Yes, you finished listening to it today\"},\n  {\"id\": \"LM_0162\", \"answer\": \"132 points\"},\n  {\"id\": \"LM_0163\", \"answer\": \"Five tops\"},\n  {\"id\": \"LM_0164\", \"answer\": \"$420\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0156",
+          "question": "How long have I had my cat, Luna?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0160",
+          "question": "Did I finish reading 'The Nightingale' by Kristin Hannah?",
+          "question_type": "knowledge-update",
+          "raw_answer": "Yes, you finished listening to it today",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0162",
+          "question": "What is my current highest score in Ticket to Ride?",
+          "question_type": "knowledge-update",
+          "raw_answer": "132 points",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0163",
+          "question": "How many tops have I bought from H&M so far?",
+          "question_type": "knowledge-update",
+          "raw_answer": "Five tops",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0164",
+          "question": "How much did I earn at the Downtown Farmers Market on my most recent visit?",
+          "question_type": "knowledge-update",
+          "raw_answer": "$420",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 6,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0170] What was my previous frequent flyer status on United Airlines before I got the current status?\n- [LM_0175] What day of the week did I meet with my previous language exchange tutor Juan?\n- [LM_0177] How many free night's stays can I redeem at any Hilton property with my accumulated points?\n- [LM_0180] What is my current record in the recreational volleyball league?\n- [LM_0187] Do I have a spare screwdriver for opening up my laptop?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0170\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0175\", \"answer\": \"Wednesday\"},\n  {\"id\": \"LM_0177\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0180\", \"answer\": \"5-2\"},\n  {\"id\": \"LM_0187\", \"answer\": \"Yes\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0170",
+          "question": "What was my previous frequent flyer status on United Airlines before I got the current status?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0175",
+          "question": "What day of the week did I meet with my previous language exchange tutor Juan?",
+          "question_type": "knowledge-update",
+          "raw_answer": "Wednesday",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0177",
+          "question": "How many free night's stays can I redeem at any Hilton property with my accumulated points?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0180",
+          "question": "What is my current record in the recreational volleyball league?",
+          "question_type": "knowledge-update",
+          "raw_answer": "5-2",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0187",
+          "question": "Do I have a spare screwdriver for opening up my laptop?",
+          "question_type": "knowledge-update",
+          "raw_answer": "Yes",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 7,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0188] How many times have I met up with Alex from Germany?\n- [LM_0199] Where do I currently keep my old sneakers?\n- [LM_0209] I've been thinking about ways to stay connected with my colleagues. Any suggestions?\n- [LM_0210] What should I serve for dinner this weekend with my homegrown ingredients?\n- [LM_0211] I've been feeling a bit stuck with my paintings lately. Do you have any ideas on how I can find new inspiration?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0188\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0199\", \"answer\": \"Under the bed\"},\n  {\"id\": \"LM_0209\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0210\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0211\", \"answer\": \"I don't recall\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0188",
+          "question": "How many times have I met up with Alex from Germany?",
+          "question_type": "knowledge-update",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0199",
+          "question": "Where do I currently keep my old sneakers?",
+          "question_type": "knowledge-update",
+          "raw_answer": "Under the bed",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0209",
+          "question": "I've been thinking about ways to stay connected with my colleagues. Any suggestions?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0210",
+          "question": "What should I serve for dinner this weekend with my homegrown ingredients?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0211",
+          "question": "I've been feeling a bit stuck with my paintings lately. Do you have any ideas on how I can find new inspiration?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 8,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0213] I've been having trouble with the battery life on my phone lately. Any tips?\n- [LM_0215] I'm thinking of inviting my colleagues over for a small gathering. Any tips on what to bake?\n- [LM_0217] I'm getting excited about my visit to the music store this weekend. Any tips on what to look for in a new guitar?\n- [LM_0223] I'm planning my meal prep next week, any suggestions for new recipes?\n- [LM_0227] Can you suggest some useful accessories for my phone?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\n    \"id\": \"LM_0213\",\n    \"answer\": \"I don't recall\"\n  },\n  {\n    \"id\": \"LM_0215\",\n    \"answer\": \"I don't recall\"\n  },\n  {\n    \"id\": \"LM_0217\",\n    \"answer\": \"I don't recall\"\n  },\n  {\n    \"id\": \"LM_0223\",\n    \"answer\": \"I don't recall\"\n  },\n  {\n    \"id\": \"LM_0227\",\n    \"answer\": \"I don't recall\"\n  }\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0213",
+          "question": "I've been having trouble with the battery life on my phone lately. Any tips?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0215",
+          "question": "I'm thinking of inviting my colleagues over for a small gathering. Any tips on what to bake?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0217",
+          "question": "I'm getting excited about my visit to the music store this weekend. Any tips on what to look for in a new guitar?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0223",
+          "question": "I'm planning my meal prep next week, any suggestions for new recipes?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0227",
+          "question": "Can you suggest some useful accessories for my phone?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 9,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0228] Can you suggest some activities I can do during my commute to work?\n- [LM_0245] I'm planning to go back to the Natural Park of Moncayo mountain in Aragón and I was wondering, what was the name of that hiking trail you recommended that takes you through the park's most stunning landscapes and offers panoramic views of the surrounding mountainside?\n- [LM_0249] I'm planning to visit the Vatican again and I was wondering if you could remind me of the name of that famous deli near the Vatican that serves the best cured meats and cheeses?\n- [LM_0251] I'm planning my trip to Speyer again and I wanted to confirm, what's the phone number of the Speyer tourism board that you provided me earlier?\n- [LM_0278] I'm looking back at our previous conversation about the Seco de Cordero recipe from Ancash. You mentioned using a light or medium-bodied beer, but I was wondering if you could remind me what type of beer you specifically recommended?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\n    \"id\": \"LM_0228\",\n    \"answer\": \"I don't recall discussing activities during your commute to work in our conversation.\"\n  },\n  {\n    \"id\": \"LM_0245\",\n    \"answer\": \"GR-90\"\n  },\n  {\n    \"id\": \"LM_0249\",\n    \"answer\": \"Roscioli\"\n  },\n  {\n    \"id\": \"LM_0251\",\n    \"answer\": \"+49 (0) 62 32 / 14 23 - 0\"\n  },\n  {\n    \"id\": \"LM_0278\",\n    \"answer\": \"I don't recall providing a specific beer recommendation for the Seco de Cordero recipe. I mentioned using a light or medium-bodied beer like a pilsner or lager, but did not specify a particular brand or type beyond those general categories.\"\n  }\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0228",
+          "question": "Can you suggest some activities I can do during my commute to work?",
+          "question_type": "single-session-preference",
+          "raw_answer": "I don't recall discussing activities during your commute to work in our conversation.",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0245",
+          "question": "I'm planning to go back to the Natural Park of Moncayo mountain in Aragón and I was wondering, what was the name of that hiking trail you recommended that takes you through the park's most stunning landscapes and offers panoramic views of the surrounding mountainside?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "GR-90",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0249",
+          "question": "I'm planning to visit the Vatican again and I was wondering if you could remind me of the name of that famous deli near the Vatican that serves the best cured meats and cheeses?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "Roscioli",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0251",
+          "question": "I'm planning my trip to Speyer again and I wanted to confirm, what's the phone number of the Speyer tourism board that you provided me earlier?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "+49 (0) 62 32 / 14 23 - 0",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0278",
+          "question": "I'm looking back at our previous conversation about the Seco de Cordero recipe from Ancash. You mentioned using a light or medium-bodied beer, but I was wondering if you could remind me what type of beer you specifically recommended?",
+          "question_type": "single-session-assistant",
+          "raw_answer": "I don't recall providing a specific beer recommendation for the Seco de Cordero recipe. I mentioned using a light or medium-bodied beer like a pilsner or lager, but did not specify a particular brand or type beyond those general categories.",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 10,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0289] What play did I attend at the local community theater?\n- [LM_0292] Where do I take yoga classes?\n- [LM_0297] How much did I spend on a designer handbag?\n- [LM_0303] What speed is my new internet plan?\n- [LM_0304] How many shirts did I pack for my 5-day trip to Costa Rica?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0289\", \"answer\": \"The Glass Menagerie\"},\n  {\"id\": \"LM_0292\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0297\", \"answer\": \"$800\"},\n  {\"id\": \"LM_0303\", \"answer\": \"500 Mbps\"},\n  {\"id\": \"LM_0304\", \"answer\": \"7 shirts\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0289",
+          "question": "What play did I attend at the local community theater?",
+          "question_type": "single-session-user",
+          "raw_answer": "The Glass Menagerie",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0292",
+          "question": "Where do I take yoga classes?",
+          "question_type": "single-session-user",
+          "raw_answer": "I don't recall",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0297",
+          "question": "How much did I spend on a designer handbag?",
+          "question_type": "single-session-user",
+          "raw_answer": "$800",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0303",
+          "question": "What speed is my new internet plan?",
+          "question_type": "single-session-user",
+          "raw_answer": "500 Mbps",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0304",
+          "question": "How many shirts did I pack for my 5-day trip to Costa Rica?",
+          "question_type": "single-session-user",
+          "raw_answer": "7 shirts",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 11,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0315] How much RAM did I upgrade my laptop to?\n- [LM_0320] What type of cocktail recipe did I try last weekend?\n- [LM_0326] How long have I been collecting vintage cameras?\n- [LM_0333] Where did I attend the Imagine Dragons concert?\n- [LM_0334] How much screen time have I been averaging on Instagram per day?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0315\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0320\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0326\", \"answer\": \"three months\"},\n  {\"id\": \"LM_0333\", \"answer\": \"Xfinity Center on June 15th\"},\n  {\"id\": \"LM_0334\", \"answer\": \"2 hours per day for the past two weeks\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0315",
+          "question": "How much RAM did I upgrade my laptop to?",
+          "question_type": "single-session-user",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0320",
+          "question": "What type of cocktail recipe did I try last weekend?",
+          "question_type": "single-session-user",
+          "raw_answer": "I don't recall",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0326",
+          "question": "How long have I been collecting vintage cameras?",
+          "question_type": "single-session-user",
+          "raw_answer": "three months",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0333",
+          "question": "Where did I attend the Imagine Dragons concert?",
+          "question_type": "single-session-user",
+          "raw_answer": "Xfinity Center on June 15th",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0334",
+          "question": "How much screen time have I been averaging on Instagram per day?",
+          "question_type": "single-session-user",
+          "raw_answer": "2 hours per day for the past two weeks",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 12,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0340] What time do I usually get home from work on weeknights?\n- [LM_0358] How many weeks ago did I meet up with my aunt and receive the crystal chandelier?\n- [LM_0368] How many days had passed since I finished reading 'The Seven Husbands of Evelyn Hugo' when I attended the book reading event at the local library, where the author of 'The Silent Patient' is discussing her latest thriller novel?\n- [LM_0369] How many days did I spend on my solo camping trip to Yosemite National Park?\n- [LM_0370] What is the order of the three trips I took in the past three months, from earliest to latest?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0340\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0358\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0368\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0369\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0370\", \"answer\": \"I don't recall\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0340",
+          "question": "What time do I usually get home from work on weeknights?",
+          "question_type": "single-session-user",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0358",
+          "question": "How many weeks ago did I meet up with my aunt and receive the crystal chandelier?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0368",
+          "question": "How many days had passed since I finished reading 'The Seven Husbands of Evelyn Hugo' when I attended the book reading event at the local library, where the author of 'The Silent Patient' is discussing her latest thriller novel?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0369",
+          "question": "How many days did I spend on my solo camping trip to Yosemite National Park?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0370",
+          "question": "What is the order of the three trips I took in the past three months, from earliest to latest?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 13,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0374] How many weeks in total do I spent on reading 'The Nightingale' and listening to 'Sapiens: A Brief History of Humankind' and 'The Power'?\n- [LM_0383] What is the order of the sports events I watched in January?\n- [LM_0389] Which mode of transport did I use most recently, a bus or a train?\n- [LM_0397] How many months ago did I attend the photography workshop?\n- [LM_0403] How many weeks ago did I attend the 'Summer Nights' festival at Universal Studios Hollywood?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0374\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0383\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0389\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0397\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0403\", \"answer\": \"I don't recall\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0374",
+          "question": "How many weeks in total do I spent on reading 'The Nightingale' and listening to 'Sapiens: A Brief History of Humankind' and 'The Power'?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0383",
+          "question": "What is the order of the sports events I watched in January?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0389",
+          "question": "Which mode of transport did I use most recently, a bus or a train?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0397",
+          "question": "How many months ago did I attend the photography workshop?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0403",
+          "question": "How many weeks ago did I attend the 'Summer Nights' festival at Universal Studios Hollywood?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 14,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0407] Who graduated first, second and third among Emma, Rachel and Alex?\n- [LM_0408] How many days ago did I read the March 15th issue of The New Yorker?\n- [LM_0415] What was the airline that I flied with on Valentine's day?\n- [LM_0434] What is the total cost of the new food bowl, measuring cup, dental chews, and flea and tick collar I got for Max?\n- [LM_0439] What percentage discount did I get on the book from my favorite author?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\"id\": \"LM_0407\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0408\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0415\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0434\", \"answer\": \"I don't recall\"},\n  {\"id\": \"LM_0439\", \"answer\": \"I don't recall\"}\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0407",
+          "question": "Who graduated first, second and third among Emma, Rachel and Alex?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0408",
+          "question": "How many days ago did I read the March 15th issue of The New Yorker?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0415",
+          "question": "What was the airline that I flied with on Valentine's day?",
+          "question_type": "temporal-reasoning",
+          "raw_answer": "I don't recall",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0434",
+          "question": "What is the total cost of the new food bowl, measuring cup, dental chews, and flea and tick collar I got for Max?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0439",
+          "question": "What percentage discount did I get on the book from my favorite author?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        }
+      ]
+    },
+    {
+      "batch_id": 15,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0443] How many hours do I work in a typical week during peak campaign seasons?\n- [LM_0453] How many points do I need to earn to redeem a free skincare product at Sephora?\n- [LM_0462] How long have I been working in my current role?\n- [LM_0468] What is the total number of online courses I've completed?\n- [LM_0479] How many years older is my grandma than me?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[\n  {\n    \"id\": \"LM_0443\",\n    \"answer\": \"10 hours per week\"\n  },\n  {\n    \"id\": \"LM_0453\",\n    \"answer\": \"300 points\"\n  },\n  {\n    \"id\": \"LM_0462\",\n    \"answer\": \"3 years and 9 months\"\n  },\n  {\n    \"id\": \"LM_0468\",\n    \"answer\": \"I don't recall\"\n  },\n  {\n    \"id\": \"LM_0479\",\n    \"answer\": \"I don't recall\"\n  }\n]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0443",
+          "question": "How many hours do I work in a typical week during peak campaign seasons?",
+          "question_type": "multi-session",
+          "raw_answer": "10 hours per week",
+          "batch_position": 0
+        },
+        {
+          "fact_id": "LM_0453",
+          "question": "How many points do I need to earn to redeem a free skincare product at Sephora?",
+          "question_type": "multi-session",
+          "raw_answer": "300 points",
+          "batch_position": 1
+        },
+        {
+          "fact_id": "LM_0462",
+          "question": "How long have I been working in my current role?",
+          "question_type": "multi-session",
+          "raw_answer": "3 years and 9 months",
+          "batch_position": 2
+        },
+        {
+          "fact_id": "LM_0468",
+          "question": "What is the total number of online courses I've completed?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 3
+        },
+        {
+          "fact_id": "LM_0479",
+          "question": "How many years older is my grandma than me?",
+          "question_type": "multi-session",
+          "raw_answer": "I don't recall",
+          "batch_position": 4
+        }
+      ]
+    }
+  ]
+}

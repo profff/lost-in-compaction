@@ -1,0 +1,35 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer contains all expected keywords (Receiving, new, phone, case) and correctly identifies receiving the new phone case as the event.\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer contains both expected keywords (months, 9) and matches the expected answer of 9 months.\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer is exactly $420, matching the expected answer and containing the expected keyword.\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Answer recalls some events (College Football National Championship, NFL playoffs) but omits the NBA game at Staples Center and doesn't follow the 'First...then...finally' structure of the expected answer.\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer contains all expected keywords (Receiving, new, phone, case) and correctly identifies receiving the new phone case as the event."
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer contains both expected keywords (months, 9) and matches the expected answer of 9 months."
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer is exactly $420, matching the expected answer and containing the expected keyword."
+        },
+        {
+          "fact_id": "LM_0383",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer recalls some events (College Football National Championship, NFL playoffs) but omits the NBA game at Staples Center and doesn't follow the 'First...then...finally' structure of the expected answer."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - does not demonstrate knowledge of receiving a new phone case\"\n  },\n  {\n    \"id\": \"LM_0053\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - does not demonstrate knowledge of the 7-8 days answer\"\n  },\n  {\n    \"id\": \"LM_0072\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - does not demonstrate knowledge of 17 days\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - does not demonstrate knowledge of 9 months\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM answer '$420' matches expected answer exactly\"\n  },\n  {\n    \"id\": \"LM_0209\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM demonstrates knowledge of socializing at work and team-building activities, but provides incomplete answer focused on what was actually discussed rather than comprehensive preferences as expected\"\n  },\n  {\n    \"id\": \"LM_0315\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM answer correctly identifies the RAM upgrade to 16GB, matching expected answer\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM demonstrates knowledge of the NFL playoffs and College Football National Championship, but does not confirm all three events (NBA game at Staples Center is missing) and expresses uncertainty about January timing\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - does not demonstrate knowledge of receiving a new phone case"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - does not demonstrate knowledge of the 7-8 days answer"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - does not demonstrate knowledge of 17 days"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - does not demonstrate knowledge of 9 months"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answer '$420' matches expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM demonstrates knowledge of socializing at work and team-building activities, but provides incomplete answer focused on what was actually discussed rather than comprehensive preferences as expected"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answer correctly identifies the RAM upgrade to 16GB, matching expected answer"
+        },
+        {
+          "fact_id": "LM_0383",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM demonstrates knowledge of the NFL playoffs and College Football National Championship, but does not confirm all three events (NBA game at Staples Center is missing) and expresses uncertainty about January timing"
+        }
+      ]
+    }
+  ]
+}

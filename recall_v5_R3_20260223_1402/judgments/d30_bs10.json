@@ -1,0 +1,229 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0124]\n  Expected answer: the suburbs\n  Expected keywords: suburbs\n  LLM answer: Chicago\n\n[LM_0131]\n  Expected answer: Paris\n  Expected keywords: Paris\n  LLM answer: Hawaii\n\n[LM_0151]\n  Expected answer: 30\n  Expected keywords: 30\n  LLM answer: 30 videos\n\n[LM_0174]\n  Expected answer: about two hours\n  Expected keywords: two, hours\n  LLM answer: 2 hours\n\n[LM_0182]\n  Expected answer: Ford F-150 pickup truck\n  Expected keywords: Ford, 150, pickup, truck\n  LLM answer: Ford Mustang Shelby GT350R\n\n[LM_0183]\n  Expected answer: level 100\n  Expected keywords: level, 100\n  LLM answer: Level 100\n\n[LM_0188]\n  Expected answer: We've met up twice.\n  Expected keywords: We've, met, twice\n  LLM answer: I don't recall\n\n[LM_0200]\n  Expected answer: The user would prefer responses that suggest resources specifically tailored to Adobe Premiere Pro, especially those that delve into its advanced settings. They might not prefer general video editing resources or resources related to other video editing software.\n  Expected keywords: user, prefer, responses, suggest, resources, specifically, tailored, Adobe, Premiere, Pro, especially, delve, advanced, settings, general, video, editing, related, other, software\n  LLM answer: I don't recall\n\n[LM_0203]\n  Expected answer: The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features.\n  Expected keywords: user, prefer, suggestions, hotels, Miami, offer, great, views, possibly, ocean, city, skyline, unique, features, rooftop, pool, hot, tub, balcony, basic, budget, without\n  LLM answer: I don't recall\n\n[LM_0206]\n  Expected answer: The user would prefer suggestions that involve relaxing activities that can be done in the evening, preferably before 9:30 pm. They would not prefer suggestions that involve using their phone or watching TV, as these activities have been affecting their sleep quality.\n  Expected keywords: user, prefer, suggestions, involve, relaxing, activities, done, evening, preferably, 30, pm, using, phone, watching, TV, affecting, sleep, quality, 9\n  LLM answer: I don't recall\n\n[LM_0228]\n  Expected answer: The user would prefer suggestions related to listening to new podcasts or audiobooks, especially the genre beyond true crime or self-improvement, such as history. They may not be interested in activities that require visual attention, such as reading or watching videos, as they are commuting. The user would not prefer general podcast topics such as true crime or self-improvement, as the user wants to explore other topics.\n  Expected keywords: user, prefer, suggestions, related, listening, new, podcasts, audiobooks, especially, genre, beyond, true, crime, self, improvement, history, interested, activities, require, visual, attention, reading, watching, videos, commuting, general, podcast, topics, wants, explore, other\n  LLM answer: I don't recall discussing activities for your commute to work\n\n[LM_0231]\n  Expected answer: Miss Bee Providore\n  Expected keywords: Miss, Bee, Providore\n  LLM answer: Miss Bee Providore\n\n[LM_0232]\n  Expected answer: The Plesiosaur had a blue scaly body.\n  Expected keywords: Plesiosaur, blue, scaly, body\n  LLM answer: Blue\n\n[LM_0233]\n  Expected answer: The Sugar Factory at Icon Park.\n  Expected keywords: Sugar, Factory, Icon, Park\n  LLM answer: The Sugar Factory\n\n[LM_0234]\n  Expected answer: Roscioli\n  Expected keywords: Roscioli\n  LLM answer: Roscioli\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0124\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answered 'Chicago' instead of 'the suburbs'; wrong location\"},\n  {\"id\": \"LM_0131\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answered 'Hawaii' instead of 'Paris'; wrong location\"},\n  {\"id\": \"LM_0151\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answered '30 videos' which contains the expected answer '30'\"},\n  {\"id\": \"LM_0174\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answered '2 hours' which matches 'two hours' with equivalent numerals\"},\n  {\"id\": \"LM_0182\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answered 'Ford Mustang Shelby GT350R' instead of 'Ford F-150 pickup truck'; wrong vehicle\"},\n  {\"id\": \"LM_0183\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answered 'Level 100' which matches expected 'level 100'\"},\n  {\"id\": \"LM_0188\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answered 'I don't recall' indicating no knowledge of the expected information\"},\n  {\"id\": \"LM_0200\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answered 'I don't recall' indicating no knowledge of the expected information\"},\n  {\"id\": \"LM_0203\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answered 'I don't recall' indicating no knowledge of the expected information\"},\n  {\"id\": \"LM_0206\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answered 'I don't recall' indicating no knowledge of the expected information\"},\n  {\"id\": \"LM_0228\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answered 'I don't recall discussing activities for your commute to work' indicating no clear knowledge of the expected information\"},\n  {\"id\": \"LM_0231\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answered 'Miss Bee Providore' which exactly matches expected answer\"},\n  {\"id\": \"LM_0232\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answered 'Blue' which is incomplete; expected full description 'The Plesiosaur had a blue scaly body'\"},\n  {\"id\": \"LM_0233\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answered 'The Sugar Factory' which is incomplete; expected 'The Sugar Factory at Icon Park'\"},\n  {\"id\": \"LM_0234\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answered 'Roscioli' which exactly matches expected answer\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0124",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answered 'Chicago' instead of 'the suburbs'; wrong location"
+        },
+        {
+          "fact_id": "LM_0131",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answered 'Hawaii' instead of 'Paris'; wrong location"
+        },
+        {
+          "fact_id": "LM_0151",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answered '30 videos' which contains the expected answer '30'"
+        },
+        {
+          "fact_id": "LM_0174",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answered '2 hours' which matches 'two hours' with equivalent numerals"
+        },
+        {
+          "fact_id": "LM_0182",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answered 'Ford Mustang Shelby GT350R' instead of 'Ford F-150 pickup truck'; wrong vehicle"
+        },
+        {
+          "fact_id": "LM_0183",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answered 'Level 100' which matches expected 'level 100'"
+        },
+        {
+          "fact_id": "LM_0188",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answered 'I don't recall' indicating no knowledge of the expected information"
+        },
+        {
+          "fact_id": "LM_0200",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answered 'I don't recall' indicating no knowledge of the expected information"
+        },
+        {
+          "fact_id": "LM_0203",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answered 'I don't recall' indicating no knowledge of the expected information"
+        },
+        {
+          "fact_id": "LM_0206",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answered 'I don't recall' indicating no knowledge of the expected information"
+        },
+        {
+          "fact_id": "LM_0228",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answered 'I don't recall discussing activities for your commute to work' indicating no clear knowledge of the expected information"
+        },
+        {
+          "fact_id": "LM_0231",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answered 'Miss Bee Providore' which exactly matches expected answer"
+        },
+        {
+          "fact_id": "LM_0232",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answered 'Blue' which is incomplete; expected full description 'The Plesiosaur had a blue scaly body'"
+        },
+        {
+          "fact_id": "LM_0233",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answered 'The Sugar Factory' which is incomplete; expected 'The Sugar Factory at Icon Park'"
+        },
+        {
+          "fact_id": "LM_0234",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answered 'Roscioli' which exactly matches expected answer"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0237]\n  Expected answer: Transcriptionist.\n  Expected keywords: Transcriptionist\n  LLM answer: Transcriptionist\n\n[LM_0241]\n  Expected answer: Evolution\n  Expected keywords: Evolution\n  LLM answer: Evolution\n\n[LM_0244]\n  Expected answer: 4\n  Expected keywords: 4\n  LLM answer: 4 mummies\n\n[LM_0292]\n  Expected answer: Serenity Yoga\n  Expected keywords: Serenity, Yoga\n  LLM answer: Serenity Yoga\n\n[LM_0296]\n  Expected answer: Marketing specialist at a small startup\n  Expected keywords: Marketing, specialist, small, startup\n  LLM answer: Marketing specialist at a small startup\n\n[LM_0304]\n  Expected answer: 7\n  Expected keywords: 7\n  LLM answer: 7 shirts\n\n[LM_0306]\n  Expected answer: Nike\n  Expected keywords: Nike\n  LLM answer: Nike\n\n[LM_0307]\n  Expected answer: Data Science\n  Expected keywords: Data, Science\n  LLM answer: Certified Data Scientist\n\n[LM_0313]\n  Expected answer: 18\n  Expected keywords: 18\n  LLM answer: 18 years old\n\n[LM_0318]\n  Expected answer: University of California, Los Angeles (UCLA)\n  Expected keywords: University, California, Los, Angeles, UCLA\n  LLM answer: UCLA\n\n[LM_0319]\n  Expected answer: 5 hours\n  Expected keywords: hours, 5\n  LLM answer: 5 hours\n\n[LM_0325]\n  Expected answer: 500\n  Expected keywords: 500\n  LLM answer: 500 copies\n\n[LM_0341]\n  Expected answer: A mix of Irish and Italian\n  Expected keywords: mix, Irish, Italian\n  LLM answer: Irish and Italian\n\n[LM_0347]\n  Expected answer: bronchitis\n  Expected keywords: bronchitis\n  LLM answer: Bronchitis\n\n[LM_0349]\n  Expected answer: Dark Souls 3 DLC\n  Expected keywords: Dark, Souls, DLC, 3\n  LLM answer: Dark Souls 3 DLC boss\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0237\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0241\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0244\", \"recalled\": true, \"accurate\": false, \"notes\": \"Contains '4' but adds 'mummies' which is extra context\"},\n  {\"id\": \"LM_0292\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match with both keywords\"},\n  {\"id\": \"LM_0296\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match with all keywords\"},\n  {\"id\": \"LM_0304\", \"recalled\": true, \"accurate\": false, \"notes\": \"Contains '7' but adds 'shirts' which is extra context\"},\n  {\"id\": \"LM_0306\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0307\", \"recalled\": true, \"accurate\": false, \"notes\": \"Recalls data science but answers 'Certified Data Scientist' instead of just 'Data Science'\"},\n  {\"id\": \"LM_0313\", \"recalled\": true, \"accurate\": false, \"notes\": \"Contains '18' but adds 'years old' which is extra context\"},\n  {\"id\": \"LM_0318\", \"recalled\": true, \"accurate\": false, \"notes\": \"Contains UCLA but expected full name 'University of California, Los Angeles (UCLA)'\"},\n  {\"id\": \"LM_0319\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0325\", \"recalled\": true, \"accurate\": false, \"notes\": \"Contains '500' but adds 'copies' which is extra context\"},\n  {\"id\": \"LM_0341\", \"recalled\": true, \"accurate\": false, \"notes\": \"Missing 'mix' from expected answer; answers 'Irish and Italian' instead of 'A mix of Irish and Italian'\"},\n  {\"id\": \"LM_0347\", \"recalled\": true, \"accurate\": false, \"notes\": \"Capitalized 'Bronchitis' vs lowercase 'bronchitis' expected\"},\n  {\"id\": \"LM_0349\", \"recalled\": true, \"accurate\": false, \"notes\": \"Adds 'boss' beyond expected 'Dark Souls 3 DLC'\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0237",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0241",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0244",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Contains '4' but adds 'mummies' which is extra context"
+        },
+        {
+          "fact_id": "LM_0292",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match with both keywords"
+        },
+        {
+          "fact_id": "LM_0296",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match with all keywords"
+        },
+        {
+          "fact_id": "LM_0304",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Contains '7' but adds 'shirts' which is extra context"
+        },
+        {
+          "fact_id": "LM_0306",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0307",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Recalls data science but answers 'Certified Data Scientist' instead of just 'Data Science'"
+        },
+        {
+          "fact_id": "LM_0313",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Contains '18' but adds 'years old' which is extra context"
+        },
+        {
+          "fact_id": "LM_0318",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Contains UCLA but expected full name 'University of California, Los Angeles (UCLA)'"
+        },
+        {
+          "fact_id": "LM_0319",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0325",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Contains '500' but adds 'copies' which is extra context"
+        },
+        {
+          "fact_id": "LM_0341",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Missing 'mix' from expected answer; answers 'Irish and Italian' instead of 'A mix of Irish and Italian'"
+        },
+        {
+          "fact_id": "LM_0347",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Capitalized 'Bronchitis' vs lowercase 'bronchitis' expected"
+        },
+        {
+          "fact_id": "LM_0349",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Adds 'boss' beyond expected 'Dark Souls 3 DLC'"
+        }
+      ]
+    }
+  ]
+}

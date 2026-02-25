@@ -1,0 +1,35 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM recalls phone case but focuses on lost charger as primary answer instead of receiving new phone case as main point\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - no knowledge demonstrated\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM answer matches expected answer exactly\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - no knowledge demonstrated\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalls phone case but focuses on lost charger as primary answer instead of receiving new phone case as main point"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answer matches expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no knowledge demonstrated"
+        }
+      ]
+    }
+  ]
+}

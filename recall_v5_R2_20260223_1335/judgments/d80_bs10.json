@@ -1,0 +1,607 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0004]\n  Expected answer: 7 days. 8 days (including the last day) is also acceptable.\n  Expected keywords: days, including, last, day, acceptable, 7, 8\n  LLM answer: I don't recall\n\n[LM_0007]\n  Expected answer: Tomatoes\n  Expected keywords: Tomatoes\n  LLM answer: I don't recall\n\n[LM_0021]\n  Expected answer: June 3rd\n  Expected keywords: June, 3rd, 3\n  LLM answer: I don't recall\n\n[LM_0037]\n  Expected answer: The family road trip across the American Southwest\n  Expected keywords: family, road, trip, across, American, Southwest\n  LLM answer: I don't recall\n\n[LM_0041]\n  Expected answer: Page Turners\n  Expected keywords: Page, Turners\n  LLM answer: I don't recall\n\n[LM_0045]\n  Expected answer: Receiving the new phone case\n  Expected keywords: Receiving, new, phone, case\n  LLM answer: I don't recall\n\n[LM_0050]\n  Expected answer: Spanish classes\n  Expected keywords: Spanish, classes\n  LLM answer: I don't recall\n\n[LM_0053]\n  Expected answer: 7 days. 8 days (including the last day) is also acceptable.\n  Expected keywords: days, including, last, day, acceptable, 7, 8\n  LLM answer: I don't recall\n\n[LM_0059]\n  Expected answer: The information provided is not enough. You mentioned Alex becoming a parent in January, but you didn't mention anything about Tom.\n  Expected keywords: information, provided, enough, mentioned, Alex, becoming, parent, January, didn't, mention, anything, Tom\n  LLM answer: I don't recall\n\n[LM_0068]\n  Expected answer: I visited three different doctors: a primary care physician, an ENT specialist, and a dermatologist.\n  Expected keywords: visited, three, different, doctors, primary, care, physician, ENT, specialist, dermatologist\n  LLM answer: 3\n\n[LM_0072]\n  Expected answer: 17 days\n  Expected keywords: 17, days\n  LLM answer: I don't recall\n\n[LM_0074]\n  Expected answer: $2,500\n  Expected keywords: 500, 2\n  LLM answer: I don't recall\n\n[LM_0088]\n  Expected answer: 4\n  Expected keywords: 4\n  LLM answer: I don't recall\n\n[LM_0092]\n  Expected answer: 4\n  Expected keywords: 4\n  LLM answer: I don't recall\n\n[LM_0093]\n  Expected answer: 17\n  Expected keywords: 17\n  LLM answer: I don't recall\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0004\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0007\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0021\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0037\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0041\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0045\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0050\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0053\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0059\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0068\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answer '3' demonstrates knowledge of number of doctors but lacks required details and keywords\"},\n  {\"id\": \"LM_0072\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0074\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0088\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0092\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"},\n  {\"id\": \"LM_0093\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0004",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0007",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0021",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0037",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0041",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0045",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0050",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0053",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0059",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0068",
+          "question_type": "multi-session",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer '3' demonstrates knowledge of number of doctors but lacks required details and keywords"
+        },
+        {
+          "fact_id": "LM_0072",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0074",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0088",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0092",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        },
+        {
+          "fact_id": "LM_0093",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0094]\n  Expected answer: 5\n  Expected keywords: 5\n  LLM answer: I don't recall\n\n[LM_0096]\n  Expected answer: 3\n  Expected keywords: 3\n  LLM answer: I don't recall\n\n[LM_0120]\n  Expected answer: The information provided is not enough. You mentioned traveling for 10 days in Hawaii but did not mention abything about the trip to Seattle.\n  Expected keywords: information, provided, enough, mentioned, traveling, 10, days, Hawaii, mention, abything, trip, Seattle\n  LLM answer: I don't recall\n\n[LM_0127]\n  Expected answer: Yes.\n  Expected keywords: Yes\n  LLM answer: I don't recall\n\n[LM_0129]\n  Expected answer: 4\n  Expected keywords: 4\n  LLM answer: I don't recall\n\n[LM_0131]\n  Expected answer: Paris\n  Expected keywords: Paris\n  LLM answer: I don't recall a specific mention of your most recent family trip location\n\n[LM_0139]\n  Expected answer: five\n  Expected keywords: five\n  LLM answer: 5 sessions\n\n[LM_0141]\n  Expected answer: every week\n  Expected keywords: week\n  LLM answer: Every two weeks\n\n[LM_0151]\n  Expected answer: 30\n  Expected keywords: 30\n  LLM answer: 30 videos\n\n[LM_0154]\n  Expected answer: nine months\n  Expected keywords: nine, months\n  LLM answer: 9 months\n\n[LM_0156]\n  Expected answer: 9 months\n  Expected keywords: months, 9\n  LLM answer: 9 months\n\n[LM_0160]\n  Expected answer: Yes\n  Expected keywords: Yes\n  LLM answer: I don't recall if you finished reading it\n\n[LM_0162]\n  Expected answer: 132 points\n  Expected keywords: 132, points\n  LLM answer: 132 points\n\n[LM_0163]\n  Expected answer: five\n  Expected keywords: five\n  LLM answer: 5 tops\n\n[LM_0164]\n  Expected answer: $420\n  Expected keywords: 420\n  LLM answer: $420\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0094\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0096\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0120\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0127\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0129\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0131\", \"recalled\": true, \"accurate\": false, \"notes\": \"Acknowledges lack of recall of location; does not provide 'Paris' as expected\"},\n  {\"id\": \"LM_0139\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '5 sessions' contains the expected keyword 'five' (as numeral 5) and matches the expected answer\"},\n  {\"id\": \"LM_0141\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answer 'Every two weeks' demonstrates knowledge of frequency but contradicts expected 'every week'\"},\n  {\"id\": \"LM_0151\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '30 videos' contains the expected keyword '30' and matches the expected answer\"},\n  {\"id\": \"LM_0154\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '9 months' matches expected answer and contains both keywords\"},\n  {\"id\": \"LM_0156\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '9 months' matches expected answer and contains both keywords\"},\n  {\"id\": \"LM_0160\", \"recalled\": true, \"accurate\": false, \"notes\": \"Demonstrates knowledge of the topic but expresses uncertainty rather than confirming 'Yes'\"},\n  {\"id\": \"LM_0162\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '132 points' matches expected answer and contains both keywords\"},\n  {\"id\": \"LM_0163\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '5 tops' contains the expected keyword 'five' (as numeral 5) and matches the expected answer\"},\n  {\"id\": \"LM_0164\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer '$420' matches expected answer and contains the expected keyword '420'\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0094",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0096",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0120",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0127",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0129",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0131",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Acknowledges lack of recall of location; does not provide 'Paris' as expected"
+        },
+        {
+          "fact_id": "LM_0139",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '5 sessions' contains the expected keyword 'five' (as numeral 5) and matches the expected answer"
+        },
+        {
+          "fact_id": "LM_0141",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer 'Every two weeks' demonstrates knowledge of frequency but contradicts expected 'every week'"
+        },
+        {
+          "fact_id": "LM_0151",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '30 videos' contains the expected keyword '30' and matches the expected answer"
+        },
+        {
+          "fact_id": "LM_0154",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '9 months' matches expected answer and contains both keywords"
+        },
+        {
+          "fact_id": "LM_0156",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '9 months' matches expected answer and contains both keywords"
+        },
+        {
+          "fact_id": "LM_0160",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Demonstrates knowledge of the topic but expresses uncertainty rather than confirming 'Yes'"
+        },
+        {
+          "fact_id": "LM_0162",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '132 points' matches expected answer and contains both keywords"
+        },
+        {
+          "fact_id": "LM_0163",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '5 tops' contains the expected keyword 'five' (as numeral 5) and matches the expected answer"
+        },
+        {
+          "fact_id": "LM_0164",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '$420' matches expected answer and contains the expected keyword '420'"
+        }
+      ]
+    },
+    {
+      "batch_id": 2,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0170]\n  Expected answer: Premier Silver\n  Expected keywords: Premier, Silver\n  LLM answer: I don't recall\n\n[LM_0175]\n  Expected answer: Wednesday\n  Expected keywords: Wednesday\n  LLM answer: Wednesday\n\n[LM_0177]\n  Expected answer: Two\n  Expected keywords: Two\n  LLM answer: One free night's stay\n\n[LM_0180]\n  Expected answer: 5-2\n  Expected keywords: 5, 2\n  LLM answer: 5-2\n\n[LM_0187]\n  Expected answer: Yes\n  Expected keywords: Yes\n  LLM answer: Yes\n\n[LM_0188]\n  Expected answer: We've met up twice.\n  Expected keywords: We've, met, twice\n  LLM answer: Twice\n\n[LM_0199]\n  Expected answer: in a shoe rack in my closet\n  Expected keywords: shoe, rack, closet\n  LLM answer: Under her bed\n\n[LM_0209]\n  Expected answer: The user would prefer responses that acknowledge their desire for social interaction and collaboration while working remotely, utilizing their previous experiences with company initiatives and team collaborations. They might prefer suggestions of virtual team-building activities, regular check-ins, or joining interest-based groups within the company. The user may not prefer generic suggestions that do not take into account their specific work situation or previous attempts at staying connected with colleagues.\n  Expected keywords: user, prefer, responses, acknowledge, desire, social, interaction, collaboration, while, working, remotely, utilizing, previous, experiences, company, initiatives, team, collaborations, suggestions, virtual, building, activities, regular, check, ins, joining, interest, based, groups, within, generic, take, account, specific, work, situation, attempts, staying, connected, colleagues\n  LLM answer: I don't recall providing suggestions on this topic\n\n[LM_0210]\n  Expected answer: The user would prefer dinner suggestions that incorporate their homegrown cherry tomatoes and herbs like basil and mint, highlighting recipes that showcase their garden produce. They might not prefer suggestions that do not utilize these specific ingredients or do not emphasize the use of homegrown elements.\n  Expected keywords: user, prefer, dinner, suggestions, incorporate, homegrown, cherry, tomatoes, herbs, like, basil, mint, highlighting, recipes, showcase, garden, produce, utilize, specific, ingredients, emphasize, use, elements\n  LLM answer: I don't recall\n\n[LM_0211]\n  Expected answer: The user would prefer responses that build upon their existing sources of inspiration, such as revisiting Instagram art accounts or exploring new techniques from online tutorials. They might also appreciate suggestions that revisit previous themes they found enjoyable, like painting flowers. The user would not prefer generic or vague suggestions for finding inspiration, and would likely appreciate responses that utilize their recent 30-day painting challenge experience.\n  Expected keywords: user, prefer, responses, build, upon, existing, sources, inspiration, revisiting, Instagram, art, accounts, exploring, new, techniques, online, tutorials, appreciate, suggestions, revisit, previous, themes, found, enjoyable, like, painting, flowers, generic, vague, finding, likely, utilize, recent, 30, day, challenge, experience\n  LLM answer: I don't recall providing suggestions on this topic\n\n[LM_0213]\n  Expected answer: The user would prefer responses that build upon their previous mention of purchasing a portable power bank, such as suggestions on how to optimize its use, like ensuring it's fully charged before use. They might also appreciate tips on utilizing battery-saving features on their phone. The user may not prefer responses that suggest alternative solutions or unrelated advice.\n  Expected keywords: user, prefer, responses, build, upon, previous, mention, purchasing, portable, power, bank, suggestions, optimize, use, like, ensuring, it's, fully, charged, appreciate, tips, utilizing, battery, saving, features, phone, suggest, alternative, solutions, unrelated, advice\n  LLM answer: I don't recall discussing phone battery life tips with you in our conversation.\n\n[LM_0215]\n  Expected answer: The user would prefer baking suggestions that take into account their previous success with the lemon poppyseed cake, such as variations of that recipe or other desserts that share similar qualities. They might prefer suggestions that balance impressiveness with manageability, considering their previous experience. The user may not prefer overly complex or unfamiliar recipes, or suggestions that do not build upon their existing baking experience.\n  Expected keywords: user, prefer, baking, suggestions, take, account, previous, success, lemon, poppyseed, cake, variations, recipe, other, desserts, share, similar, qualities, balance, impressiveness, manageability, considering, experience, overly, complex, unfamiliar, recipes, build, upon, existing\n  LLM answer: I don't recall you mentioning inviting colleagues over for a gathering or asking for baking tips.\n\n[LM_0217]\n  Expected answer: The user would prefer responses that highlight the differences between Fender Stratocaster and Gibson Les Paul electric guitars, such as the feel of the neck, weight, and sound profile. They might not prefer general tips on buying an electric guitar or suggestions that do not take into account their current guitar and desired upgrade.\n  Expected keywords: user, prefer, responses, highlight, differences, Fender, Stratocaster, Gibson, Les, Paul, electric, guitars, feel, neck, weight, sound, profile, general, tips, buying, guitar, suggestions, take, account, current, desired, upgrade\n  LLM answer: I don't recall discussing visiting a music store or guitar recommendations.\n\n[LM_0223]\n  Expected answer: The user would prefer responses that suggest healthy meal prep recipes, especially those that incorporate quinoa and roasted vegetables, and offer variations in protein sources. They might appreciate suggestions that build upon their existing preferences, such as new twists on chicken Caesar salads or turkey and avocado wraps. The user may not prefer responses that suggest unhealthy or high-calorie meal prep options, or those that deviate significantly from their established healthy eating habits.\n  Expected keywords: user, prefer, responses, suggest, healthy, meal, prep, recipes, especially, incorporate, quinoa, roasted, vegetables, offer, variations, protein, sources, appreciate, suggestions, build, upon, existing, preferences, new, twists, chicken, Caesar, salads, turkey, avocado, wraps, unhealthy, high, calorie, options, deviate, significantly, established, eating, habits\n  LLM answer: I don't recall discussing meal prep recipes for next week in our conversation.\n\n[LM_0227]\n  Expected answer: The user would prefer suggestions of accessories that are compatible with an iPhone 13 Pro, such as high-quality screen protectors, durable cases, portable power banks, or phone wallet cases. They may not prefer suggestions of accessories that are not compatible with Apple products or do not enhance the functionality or protection of their phone.\n  Expected keywords: user, prefer, suggestions, accessories, compatible, iPhone, 13, Pro, high, quality, screen, protectors, durable, cases, portable, power, banks, phone, wallet, Apple, products, enhance, functionality, protection\n  LLM answer: I recommended various phone accessories including a portable power bank, wireless charging pad, and premium earbuds.\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0170\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM stated 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0175\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match with expected answer\"},\n  {\"id\": \"LM_0177\", \"recalled\": true, \"accurate\": false, \"notes\": \"Related to the topic but incorrect value (One vs Two)\"},\n  {\"id\": \"LM_0180\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match with expected answer\"},\n  {\"id\": \"LM_0187\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match with expected answer\"},\n  {\"id\": \"LM_0188\", \"recalled\": true, \"accurate\": false, \"notes\": \"Correct keyword 'Twice' but missing context from full expected answer\"},\n  {\"id\": \"LM_0199\", \"recalled\": true, \"accurate\": false, \"notes\": \"Related to location but incorrect (Under her bed vs in a shoe rack)\"},\n  {\"id\": \"LM_0209\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM stated 'I don't recall', no knowledge of detailed preferences\"},\n  {\"id\": \"LM_0210\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM stated 'I don't recall', no knowledge demonstrated\"},\n  {\"id\": \"LM_0211\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM stated 'I don't recall', no knowledge of painting/inspiration preferences\"},\n  {\"id\": \"LM_0213\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM denies discussing phone battery, doesn't build on power bank mention\"},\n  {\"id\": \"LM_0215\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM denies baking discussion, no knowledge of lemon poppyseed cake\"},\n  {\"id\": \"LM_0217\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM denies guitar store visit, no knowledge of Stratocaster/Les Paul comparison\"},\n  {\"id\": \"LM_0223\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM denies meal prep discussion, no knowledge of preferences\"},\n  {\"id\": \"LM_0227\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM recalled accessories but recommended generic items (wireless charging, earbuds) not specifically matching iPhone 13 Pro focus\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0170",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM stated 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0175",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match with expected answer"
+        },
+        {
+          "fact_id": "LM_0177",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Related to the topic but incorrect value (One vs Two)"
+        },
+        {
+          "fact_id": "LM_0180",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match with expected answer"
+        },
+        {
+          "fact_id": "LM_0187",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match with expected answer"
+        },
+        {
+          "fact_id": "LM_0188",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Correct keyword 'Twice' but missing context from full expected answer"
+        },
+        {
+          "fact_id": "LM_0199",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Related to location but incorrect (Under her bed vs in a shoe rack)"
+        },
+        {
+          "fact_id": "LM_0209",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM stated 'I don't recall', no knowledge of detailed preferences"
+        },
+        {
+          "fact_id": "LM_0210",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM stated 'I don't recall', no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0211",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM stated 'I don't recall', no knowledge of painting/inspiration preferences"
+        },
+        {
+          "fact_id": "LM_0213",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM denies discussing phone battery, doesn't build on power bank mention"
+        },
+        {
+          "fact_id": "LM_0215",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM denies baking discussion, no knowledge of lemon poppyseed cake"
+        },
+        {
+          "fact_id": "LM_0217",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM denies guitar store visit, no knowledge of Stratocaster/Les Paul comparison"
+        },
+        {
+          "fact_id": "LM_0223",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM denies meal prep discussion, no knowledge of preferences"
+        },
+        {
+          "fact_id": "LM_0227",
+          "question_type": "single-session-preference",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalled accessories but recommended generic items (wireless charging, earbuds) not specifically matching iPhone 13 Pro focus"
+        }
+      ]
+    },
+    {
+      "batch_id": 3,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0228]\n  Expected answer: The user would prefer suggestions related to listening to new podcasts or audiobooks, especially the genre beyond true crime or self-improvement, such as history. They may not be interested in activities that require visual attention, such as reading or watching videos, as they are commuting. The user would not prefer general podcast topics such as true crime or self-improvement, as the user wants to explore other topics.\n  Expected keywords: user, prefer, suggestions, related, listening, new, podcasts, audiobooks, especially, genre, beyond, true, crime, self, improvement, history, interested, activities, require, visual, attention, reading, watching, videos, commuting, general, podcast, topics, wants, explore, other\n  LLM answer: I recommended listening to podcasts during your commute, including The Tim Ferriss Show, Stuff You Should Know, and Radiolab.\n\n[LM_0245]\n  Expected answer: The GR-90 trail.\n  Expected keywords: GR, 90, trail\n  LLM answer: The hiking trail I recommended was the GR-90, a circular hiking trail running for approximately 36 kilometers through the Natural Park of Moncayo.\n\n[LM_0249]\n  Expected answer: Roscioli\n  Expected keywords: Roscioli\n  LLM answer: The deli I recommended near the Vatican was Roscioli, which serves the best cured meats, cheeses, and traditional Roman cuisine.\n\n[LM_0251]\n  Expected answer: +49 (0) 62 32 / 14 23 - 0\n  Expected keywords: 49, 62, 32, 14, 23, 0\n  LLM answer: The phone number for the Speyer tourism board that I provided was +49 (0) 62 32 / 14 23 - 0.\n\n[LM_0278]\n  Expected answer: I recommended using a Pilsner or Lager for the recipe.\n  Expected keywords: recommended, using, Pilsner, Lager, recipe\n  LLM answer: I did not specifically recommend a type of beer for Seco de Cordero. I stated that you could use a light or medium-bodied beer like a pilsner or lager, but did not make a specific recommendation.\n\n[LM_0289]\n  Expected answer: The Glass Menagerie\n  Expected keywords: Glass, Menagerie\n  LLM answer: The Glass Menagerie\n\n[LM_0292]\n  Expected answer: Serenity Yoga\n  Expected keywords: Serenity, Yoga\n  LLM answer: I don't recall\n\n[LM_0297]\n  Expected answer: $800\n  Expected keywords: 800\n  LLM answer: $800\n\n[LM_0303]\n  Expected answer: 500 Mbps\n  Expected keywords: 500, Mbps\n  LLM answer: 500 Mbps\n\n[LM_0304]\n  Expected answer: 7\n  Expected keywords: 7\n  LLM answer: I don't recall\n\n[LM_0315]\n  Expected answer: 16GB\n  Expected keywords: 16GB, 16\n  LLM answer: 16GB\n\n[LM_0320]\n  Expected answer: lavender gin fizz\n  Expected keywords: lavender, gin, fizz\n  LLM answer: I don't recall\n\n[LM_0326]\n  Expected answer: three months\n  Expected keywords: three, months\n  LLM answer: three months\n\n[LM_0333]\n  Expected answer: Xfinity Center\n  Expected keywords: Xfinity, Center\n  LLM answer: Xfinity Center on June 15th\n\n[LM_0334]\n  Expected answer: 2 hours\n  Expected keywords: hours, 2\n  LLM answer: around 2 hours per day\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0228\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Answer mentions podcasts but recommends true crime and self-improvement shows (Tim Ferriss, Stuff You Should Know) which contradicts the expected answer stating user wants to avoid these genres and explore history instead.\"\n  },\n  {\n    \"id\": \"LM_0245\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies GR-90 trail with additional accurate details about its characteristics.\"\n  },\n  {\n    \"id\": \"LM_0249\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies Roscioli with relevant supporting details.\"\n  },\n  {\n    \"id\": \"LM_0251\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer provides the exact phone number with correct formatting.\"\n  },\n  {\n    \"id\": \"LM_0278\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Answer states no specific recommendation was made, but expected answer indicates a recommendation should have been provided (Pilsner or Lager).\"\n  },\n  {\n    \"id\": \"LM_0289\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies 'The Glass Menagerie'.\"\n  },\n  {\n    \"id\": \"LM_0292\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' indicates lack of knowledge about Serenity Yoga.\"\n  },\n  {\n    \"id\": \"LM_0297\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies $800.\"\n  },\n  {\n    \"id\": \"LM_0303\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies 500 Mbps.\"\n  },\n  {\n    \"id\": \"LM_0304\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' indicates lack of knowledge about the expected answer '7'.\"\n  },\n  {\n    \"id\": \"LM_0315\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies 16GB.\"\n  },\n  {\n    \"id\": \"LM_0320\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' indicates lack of knowledge about lavender gin fizz.\"\n  },\n  {\n    \"id\": \"LM_0326\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies 'three months'.\"\n  },\n  {\n    \"id\": \"LM_0333\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies Xfinity Center with additional accurate date detail.\"\n  },\n  {\n    \"id\": \"LM_0334\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies approximately 2 hours with qualifying phrase 'per day'.\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0228",
+          "question_type": "single-session-preference",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer mentions podcasts but recommends true crime and self-improvement shows (Tim Ferriss, Stuff You Should Know) which contradicts the expected answer stating user wants to avoid these genres and explore history instead."
+        },
+        {
+          "fact_id": "LM_0245",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies GR-90 trail with additional accurate details about its characteristics."
+        },
+        {
+          "fact_id": "LM_0249",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies Roscioli with relevant supporting details."
+        },
+        {
+          "fact_id": "LM_0251",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer provides the exact phone number with correct formatting."
+        },
+        {
+          "fact_id": "LM_0278",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer states no specific recommendation was made, but expected answer indicates a recommendation should have been provided (Pilsner or Lager)."
+        },
+        {
+          "fact_id": "LM_0289",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies 'The Glass Menagerie'."
+        },
+        {
+          "fact_id": "LM_0292",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' indicates lack of knowledge about Serenity Yoga."
+        },
+        {
+          "fact_id": "LM_0297",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies $800."
+        },
+        {
+          "fact_id": "LM_0303",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies 500 Mbps."
+        },
+        {
+          "fact_id": "LM_0304",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' indicates lack of knowledge about the expected answer '7'."
+        },
+        {
+          "fact_id": "LM_0315",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies 16GB."
+        },
+        {
+          "fact_id": "LM_0320",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' indicates lack of knowledge about lavender gin fizz."
+        },
+        {
+          "fact_id": "LM_0326",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies 'three months'."
+        },
+        {
+          "fact_id": "LM_0333",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies Xfinity Center with additional accurate date detail."
+        },
+        {
+          "fact_id": "LM_0334",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies approximately 2 hours with qualifying phrase 'per day'."
+        }
+      ]
+    },
+    {
+      "batch_id": 4,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0340]\n  Expected answer: 6:30 pm\n  Expected keywords: 30, pm, 6\n  LLM answer: I don't recall\n\n[LM_0358]\n  Expected answer: 4\n  Expected keywords: 4\n  LLM answer: I don't recall\n\n[LM_0368]\n  Expected answer: 18 days. 19 days (including the last day) is also acceptable.\n  Expected keywords: 18, days, 19, including, last, day, acceptable\n  LLM answer: I don't recall\n\n[LM_0369]\n  Expected answer: 2 days. 3 days (including the last day) is also acceptable.\n  Expected keywords: days, including, last, day, acceptable, 2, 3\n  LLM answer: I don't recall\n\n[LM_0370]\n  Expected answer: I went on a day hike to Muir Woods National Monument with my family, then I went on a road trip with friends to Big Sur and Monterey, and finally I started my solo camping trip to Yosemite National Park.\n  Expected keywords: went, day, hike, Muir, Woods, National, Monument, family, road, trip, friends, Big, Sur, Monterey, finally, started, solo, camping, Yosemite, Park\n  LLM answer: I don't recall\n\n[LM_0374]\n  Expected answer: 2 weeks for 'The Nightingale', 4 weeks for 'Sapiens: A Brief History of Humankind', and 2 weeks for 'The Power', so a total of 8 weeks.\n  Expected keywords: weeks, 'The, Nightingale', 'Sapiens, Brief, History, Humankind', Power', total, 2, 4, 8\n  LLM answer: I don't recall\n\n[LM_0383]\n  Expected answer: First, I attended a NBA game at the Staples Center, then I watched the College Football National Championship game, and finally, I watched the NFL playoffs.\n  Expected keywords: First, attended, NBA, game, Staples, Center, watched, College, Football, National, Championship, finally, NFL, playoffs\n  LLM answer: College Football National Championship (Georgia vs Alabama on an unspecified date), Kansas City Chiefs vs Buffalo Bills in NFL Divisional Round (last weekend from a point in conversation), and a Lakers vs Chicago Bulls game (today from a point in conversation)\n\n[LM_0389]\n  Expected answer: train\n  Expected keywords: train\n  LLM answer: Bus (attended friend's wedding via bus ride)\n\n[LM_0397]\n  Expected answer: 3\n  Expected keywords: 3\n  LLM answer: I don't recall\n\n[LM_0403]\n  Expected answer: 3 weeks ago\n  Expected keywords: weeks, ago, 3\n  LLM answer: I don't recall\n\n[LM_0407]\n  Expected answer: Emma graduated first, followed by Rachel and then Alex.\n  Expected keywords: Emma, graduated, first, followed, Rachel, Alex\n  LLM answer: I don't recall\n\n[LM_0408]\n  Expected answer: 12 days ago. 13 days (including the last day) is also acceptable.\n  Expected keywords: 12, days, ago, 13, including, last, day, acceptable\n  LLM answer: I don't recall\n\n[LM_0415]\n  Expected answer: American Airlines\n  Expected keywords: American, Airlines\n  LLM answer: I don't recall\n\n[LM_0434]\n  Expected answer: $50\n  Expected keywords: 50\n  LLM answer: I don't recall\n\n[LM_0439]\n  Expected answer: 20%\n  Expected keywords: 20\n  LLM answer: I don't recall - the discount percentage was not specified\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0340\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0358\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0368\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0369\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0370\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0374\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0383\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM recalls watching sports events but details differ significantly from expected answer (different games and context)\"},\n  {\"id\": \"LM_0389\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM mentions a bus ride but expected answer is 'train' - wrong transportation mode\"},\n  {\"id\": \"LM_0397\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0403\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0407\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0408\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0415\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0434\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM states 'I don't recall' - no information provided\"},\n  {\"id\": \"LM_0439\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM explicitly states discount percentage was not specified - acknowledges lack of knowledge\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0340",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0358",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0368",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0369",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0370",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0374",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0383",
+          "question_type": "temporal-reasoning",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalls watching sports events but details differ significantly from expected answer (different games and context)"
+        },
+        {
+          "fact_id": "LM_0389",
+          "question_type": "temporal-reasoning",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM mentions a bus ride but expected answer is 'train' - wrong transportation mode"
+        },
+        {
+          "fact_id": "LM_0397",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0403",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0407",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0408",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0415",
+          "question_type": "temporal-reasoning",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0434",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - no information provided"
+        },
+        {
+          "fact_id": "LM_0439",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM explicitly states discount percentage was not specified - acknowledges lack of knowledge"
+        }
+      ]
+    },
+    {
+      "batch_id": 5,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0443]\n  Expected answer: 50\n  Expected keywords: 50\n  LLM answer: 50 hours per week (40 hours regular + 10 hours additional during peak seasons)\n\n[LM_0453]\n  Expected answer: 100\n  Expected keywords: 100\n  LLM answer: 300 points\n\n[LM_0462]\n  Expected answer: 1 year and 5 months\n  Expected keywords: year, months, 1, 5\n  LLM answer: 3 years and 9 months\n\n[LM_0468]\n  Expected answer: 20\n  Expected keywords: 20\n  LLM answer: 20 courses (12 on Coursera and 8 on edX)\n\n[LM_0479]\n  Expected answer: 43\n  Expected keywords: 43\n  LLM answer: I don't recall\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0443\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer contains the expected value 50 with supporting details about hours per week\"\n  },\n  {\n    \"id\": \"LM_0453\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Answer provides a number (300) but it doesn't match expected value (100)\"\n  },\n  {\n    \"id\": \"LM_0462\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Answer uses correct format (years and months) but values don't match (3 years 9 months vs expected 1 year 5 months)\"\n  },\n  {\n    \"id\": \"LM_0468\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer contains the expected value 20 with supporting breakdown of course sources\"\n  },\n  {\n    \"id\": \"LM_0479\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer explicitly states 'I don't recall', demonstrating no knowledge of expected information\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0443",
+          "question_type": "multi-session",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer contains the expected value 50 with supporting details about hours per week"
+        },
+        {
+          "fact_id": "LM_0453",
+          "question_type": "multi-session",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer provides a number (300) but it doesn't match expected value (100)"
+        },
+        {
+          "fact_id": "LM_0462",
+          "question_type": "multi-session",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer uses correct format (years and months) but values don't match (3 years 9 months vs expected 1 year 5 months)"
+        },
+        {
+          "fact_id": "LM_0468",
+          "question_type": "multi-session",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer contains the expected value 20 with supporting breakdown of course sources"
+        },
+        {
+          "fact_id": "LM_0479",
+          "question_type": "multi-session",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of expected information"
+        }
+      ]
+    }
+  ]
+}

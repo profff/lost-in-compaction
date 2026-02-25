@@ -1,0 +1,1507 @@
+{
+  "run_mode": "R3",
+  "results": {
+    "d12": {
+      "grep": {
+        "facts_total": 12,
+        "all_present": 12,
+        "any_present": 12,
+        "recall_upper_bound": 1.0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "present": 3,
+            "recall": 1.0
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "present": 1,
+            "recall": 1.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "present": 2,
+            "recall": 1.0
+          },
+          "single-session-user": {
+            "total": 6,
+            "present": 6,
+            "recall": 1.0
+          }
+        }
+      },
+      "bs1": {
+        "recall": 0.6666666666666666,
+        "accuracy": 0.5833333333333334,
+        "facts_recalled": 8,
+        "facts_total": 12,
+        "recall_early": 0.6666666666666666,
+        "recall_mid": 0.5,
+        "recall_late": 0.8,
+        "n_early": 3,
+        "n_mid": 4,
+        "n_late": 5,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 1,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.3333333333333333
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 1.0,
+            "accuracy": 1.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 0.5,
+            "accuracy": 0.5
+          },
+          "single-session-user": {
+            "total": 6,
+            "recalled": 4,
+            "accurate": 4,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.6666666666666666
+          }
+        }
+      },
+      "bs5": {
+        "recall": 0.75,
+        "accuracy": 0.5833333333333334,
+        "facts_recalled": 9,
+        "facts_total": 12,
+        "recall_early": 0.6666666666666666,
+        "recall_mid": 0.5,
+        "recall_late": 1.0,
+        "n_early": 3,
+        "n_mid": 4,
+        "n_late": 5,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 1,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.3333333333333333
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 1.0,
+            "accuracy": 1.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 6,
+            "recalled": 6,
+            "accurate": 5,
+            "recall": 1.0,
+            "accuracy": 0.8333333333333334
+          }
+        }
+      },
+      "bs10": {
+        "recall": 0.75,
+        "accuracy": 0.6666666666666666,
+        "facts_recalled": 9,
+        "facts_total": 12,
+        "recall_early": 0.6666666666666666,
+        "recall_mid": 0.5,
+        "recall_late": 1.0,
+        "n_early": 3,
+        "n_mid": 4,
+        "n_late": 5,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 2,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.6666666666666666
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 1.0,
+            "accuracy": 1.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 6,
+            "recalled": 6,
+            "accurate": 5,
+            "recall": 1.0,
+            "accuracy": 0.8333333333333334
+          }
+        }
+      },
+      "agreement": {
+        "jaccard": {
+          "1_vs_5": 0.7,
+          "1_vs_10": 0.7,
+          "5_vs_10": 1.0
+        },
+        "stable_facts": [
+          "LM_0151",
+          "LM_0174",
+          "LM_0241",
+          "LM_0304",
+          "LM_0307",
+          "LM_0318",
+          "LM_0325"
+        ],
+        "unstable_facts": [
+          "LM_0203",
+          "LM_0292",
+          "LM_0296"
+        ],
+        "never_recalled": [
+          "LM_0131",
+          "LM_0228"
+        ],
+        "stable_count": 7,
+        "unstable_count": 3,
+        "never_count": 2
+      }
+    },
+    "d16": {
+      "grep": {
+        "facts_total": 16,
+        "all_present": 16,
+        "any_present": 16,
+        "recall_upper_bound": 1.0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "present": 3,
+            "recall": 1.0
+          },
+          "single-session-assistant": {
+            "total": 3,
+            "present": 3,
+            "recall": 1.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "present": 2,
+            "recall": 1.0
+          },
+          "single-session-user": {
+            "total": 8,
+            "present": 8,
+            "recall": 1.0
+          }
+        }
+      },
+      "bs1": {
+        "recall": 0.625,
+        "accuracy": 0.4375,
+        "facts_recalled": 10,
+        "facts_total": 16,
+        "recall_early": 0.5,
+        "recall_mid": 0.5,
+        "recall_late": 0.8333333333333334,
+        "n_early": 4,
+        "n_mid": 6,
+        "n_late": 6,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 1,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.3333333333333333
+          },
+          "single-session-assistant": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 1,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.3333333333333333
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 8,
+            "recalled": 6,
+            "accurate": 5,
+            "recall": 0.75,
+            "accuracy": 0.625
+          }
+        }
+      },
+      "bs5": {
+        "recall": 0.75,
+        "accuracy": 0.625,
+        "facts_recalled": 12,
+        "facts_total": 16,
+        "recall_early": 0.75,
+        "recall_mid": 0.6666666666666666,
+        "recall_late": 0.8333333333333334,
+        "n_early": 4,
+        "n_mid": 6,
+        "n_late": 6,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "recalled": 3,
+            "accurate": 2,
+            "recall": 1.0,
+            "accuracy": 0.6666666666666666
+          },
+          "single-session-assistant": {
+            "total": 3,
+            "recalled": 3,
+            "accurate": 3,
+            "recall": 1.0,
+            "accuracy": 1.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 8,
+            "recalled": 6,
+            "accurate": 5,
+            "recall": 0.75,
+            "accuracy": 0.625
+          }
+        }
+      },
+      "bs10": {
+        "recall": 0.6875,
+        "accuracy": 0.4375,
+        "facts_recalled": 11,
+        "facts_total": 16,
+        "recall_early": 0.5,
+        "recall_mid": 0.6666666666666666,
+        "recall_late": 0.8333333333333334,
+        "n_early": 4,
+        "n_mid": 6,
+        "n_late": 6,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 1,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.3333333333333333
+          },
+          "single-session-assistant": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 2,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.6666666666666666
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 8,
+            "recalled": 7,
+            "accurate": 4,
+            "recall": 0.875,
+            "accuracy": 0.5
+          }
+        }
+      },
+      "agreement": {
+        "jaccard": {
+          "1_vs_5": 0.6923076923076923,
+          "1_vs_10": 0.75,
+          "5_vs_10": 0.7692307692307693
+        },
+        "stable_facts": [
+          "LM_0151",
+          "LM_0174",
+          "LM_0234",
+          "LM_0241",
+          "LM_0292",
+          "LM_0307",
+          "LM_0318",
+          "LM_0325",
+          "LM_0347"
+        ],
+        "unstable_facts": [
+          "LM_0131",
+          "LM_0231",
+          "LM_0296",
+          "LM_0304",
+          "LM_0306"
+        ],
+        "never_recalled": [
+          "LM_0203",
+          "LM_0228"
+        ],
+        "stable_count": 9,
+        "unstable_count": 5,
+        "never_count": 2
+      }
+    },
+    "d19": {
+      "grep": {
+        "facts_total": 19,
+        "all_present": 19,
+        "any_present": 19,
+        "recall_upper_bound": 1.0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "present": 3,
+            "recall": 1.0
+          },
+          "single-session-assistant": {
+            "total": 5,
+            "present": 5,
+            "recall": 1.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "present": 2,
+            "recall": 1.0
+          },
+          "single-session-user": {
+            "total": 9,
+            "present": 9,
+            "recall": 1.0
+          }
+        }
+      },
+      "bs1": {
+        "recall": 0.47368421052631576,
+        "accuracy": 0.2631578947368421,
+        "facts_recalled": 9,
+        "facts_total": 19,
+        "recall_early": 0.4,
+        "recall_mid": 0.2857142857142857,
+        "recall_late": 0.7142857142857143,
+        "n_early": 5,
+        "n_mid": 7,
+        "n_late": 7,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 1,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.3333333333333333
+          },
+          "single-session-assistant": {
+            "total": 5,
+            "recalled": 2,
+            "accurate": 1,
+            "recall": 0.4,
+            "accuracy": 0.2
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 9,
+            "recalled": 5,
+            "accurate": 3,
+            "recall": 0.5555555555555556,
+            "accuracy": 0.3333333333333333
+          }
+        }
+      },
+      "bs5": {
+        "recall": 0.7368421052631579,
+        "accuracy": 0.47368421052631576,
+        "facts_recalled": 14,
+        "facts_total": 19,
+        "recall_early": 0.4,
+        "recall_mid": 0.7142857142857143,
+        "recall_late": 1.0,
+        "n_early": 5,
+        "n_mid": 7,
+        "n_late": 7,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 2,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.6666666666666666
+          },
+          "single-session-assistant": {
+            "total": 5,
+            "recalled": 4,
+            "accurate": 2,
+            "recall": 0.8,
+            "accuracy": 0.4
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 9,
+            "recalled": 8,
+            "accurate": 5,
+            "recall": 0.8888888888888888,
+            "accuracy": 0.5555555555555556
+          }
+        }
+      },
+      "bs10": {
+        "recall": 0.7368421052631579,
+        "accuracy": 0.42105263157894735,
+        "facts_recalled": 14,
+        "facts_total": 19,
+        "recall_early": 0.4,
+        "recall_mid": 0.7142857142857143,
+        "recall_late": 1.0,
+        "n_early": 5,
+        "n_mid": 7,
+        "n_late": 7,
+        "by_category": {
+          "knowledge-update": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 2,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.6666666666666666
+          },
+          "single-session-assistant": {
+            "total": 5,
+            "recalled": 4,
+            "accurate": 2,
+            "recall": 0.8,
+            "accuracy": 0.4
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 9,
+            "recalled": 8,
+            "accurate": 4,
+            "recall": 0.8888888888888888,
+            "accuracy": 0.4444444444444444
+          }
+        }
+      },
+      "agreement": {
+        "jaccard": {
+          "1_vs_5": 0.6428571428571429,
+          "1_vs_10": 0.6428571428571429,
+          "5_vs_10": 1.0
+        },
+        "stable_facts": [
+          "LM_0151",
+          "LM_0174",
+          "LM_0233",
+          "LM_0241",
+          "LM_0307",
+          "LM_0318",
+          "LM_0325",
+          "LM_0341",
+          "LM_0347"
+        ],
+        "unstable_facts": [
+          "LM_0234",
+          "LM_0237",
+          "LM_0292",
+          "LM_0304",
+          "LM_0306"
+        ],
+        "never_recalled": [
+          "LM_0131",
+          "LM_0203",
+          "LM_0228",
+          "LM_0231",
+          "LM_0296"
+        ],
+        "stable_count": 9,
+        "unstable_count": 5,
+        "never_count": 5
+      }
+    },
+    "d25": {
+      "grep": {
+        "facts_total": 25,
+        "all_present": 25,
+        "any_present": 25,
+        "recall_upper_bound": 1.0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 6,
+            "present": 6,
+            "recall": 1.0
+          },
+          "single-session-assistant": {
+            "total": 6,
+            "present": 6,
+            "recall": 1.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "present": 2,
+            "recall": 1.0
+          },
+          "single-session-user": {
+            "total": 11,
+            "present": 11,
+            "recall": 1.0
+          }
+        }
+      },
+      "bs1": {
+        "recall": 0.84,
+        "accuracy": 0.68,
+        "facts_recalled": 21,
+        "facts_total": 25,
+        "recall_early": 0.6666666666666666,
+        "recall_mid": 0.8,
+        "recall_late": 1.0,
+        "n_early": 6,
+        "n_mid": 10,
+        "n_late": 9,
+        "by_category": {
+          "knowledge-update": {
+            "total": 6,
+            "recalled": 4,
+            "accurate": 2,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.3333333333333333
+          },
+          "single-session-assistant": {
+            "total": 6,
+            "recalled": 6,
+            "accurate": 5,
+            "recall": 1.0,
+            "accuracy": 0.8333333333333334
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 0.5,
+            "accuracy": 0.5
+          },
+          "single-session-user": {
+            "total": 11,
+            "recalled": 10,
+            "accurate": 9,
+            "recall": 0.9090909090909091,
+            "accuracy": 0.8181818181818182
+          }
+        }
+      },
+      "bs5": {
+        "recall": 0.84,
+        "accuracy": 0.6,
+        "facts_recalled": 21,
+        "facts_total": 25,
+        "recall_early": 0.8333333333333334,
+        "recall_mid": 0.7,
+        "recall_late": 1.0,
+        "n_early": 6,
+        "n_mid": 10,
+        "n_late": 9,
+        "by_category": {
+          "knowledge-update": {
+            "total": 6,
+            "recalled": 5,
+            "accurate": 1,
+            "recall": 0.8333333333333334,
+            "accuracy": 0.16666666666666666
+          },
+          "single-session-assistant": {
+            "total": 6,
+            "recalled": 6,
+            "accurate": 4,
+            "recall": 1.0,
+            "accuracy": 0.6666666666666666
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 11,
+            "recalled": 10,
+            "accurate": 10,
+            "recall": 0.9090909090909091,
+            "accuracy": 0.9090909090909091
+          }
+        }
+      },
+      "bs10": {
+        "recall": 0.88,
+        "accuracy": 0.48,
+        "facts_recalled": 22,
+        "facts_total": 25,
+        "recall_early": 0.8333333333333334,
+        "recall_mid": 0.8,
+        "recall_late": 1.0,
+        "n_early": 6,
+        "n_mid": 10,
+        "n_late": 9,
+        "by_category": {
+          "knowledge-update": {
+            "total": 6,
+            "recalled": 5,
+            "accurate": 2,
+            "recall": 0.8333333333333334,
+            "accuracy": 0.3333333333333333
+          },
+          "single-session-assistant": {
+            "total": 6,
+            "recalled": 6,
+            "accurate": 3,
+            "recall": 1.0,
+            "accuracy": 0.5
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 11,
+            "recalled": 11,
+            "accurate": 7,
+            "recall": 1.0,
+            "accuracy": 0.6363636363636364
+          }
+        }
+      },
+      "agreement": {
+        "jaccard": {
+          "1_vs_5": 0.9090909090909091,
+          "1_vs_10": 0.8695652173913043,
+          "5_vs_10": 0.8695652173913043
+        },
+        "stable_facts": [
+          "LM_0131",
+          "LM_0151",
+          "LM_0174",
+          "LM_0182",
+          "LM_0231",
+          "LM_0232",
+          "LM_0233",
+          "LM_0234",
+          "LM_0237",
+          "LM_0241",
+          "LM_0292",
+          "LM_0304",
+          "LM_0306",
+          "LM_0307",
+          "LM_0313",
+          "LM_0318",
+          "LM_0325",
+          "LM_0341",
+          "LM_0347",
+          "LM_0349"
+        ],
+        "unstable_facts": [
+          "LM_0124",
+          "LM_0183",
+          "LM_0228",
+          "LM_0296"
+        ],
+        "never_recalled": [
+          "LM_0203"
+        ],
+        "stable_count": 20,
+        "unstable_count": 4,
+        "never_count": 1
+      }
+    },
+    "d30": {
+      "grep": {
+        "facts_total": 30,
+        "all_present": 28,
+        "any_present": 30,
+        "recall_upper_bound": 0.9333333333333333,
+        "by_category": {
+          "knowledge-update": {
+            "total": 7,
+            "present": 7,
+            "recall": 1.0
+          },
+          "single-session-assistant": {
+            "total": 7,
+            "present": 7,
+            "recall": 1.0
+          },
+          "single-session-preference": {
+            "total": 4,
+            "present": 2,
+            "recall": 0.5
+          },
+          "single-session-user": {
+            "total": 12,
+            "present": 12,
+            "recall": 1.0
+          }
+        }
+      },
+      "bs1": {
+        "recall": 0.7333333333333333,
+        "accuracy": 0.5666666666666667,
+        "facts_recalled": 22,
+        "facts_total": 30,
+        "recall_early": 0.5,
+        "recall_mid": 0.5,
+        "recall_late": 0.9375,
+        "n_early": 6,
+        "n_mid": 8,
+        "n_late": 16,
+        "by_category": {
+          "knowledge-update": {
+            "total": 7,
+            "recalled": 4,
+            "accurate": 3,
+            "recall": 0.5714285714285714,
+            "accuracy": 0.42857142857142855
+          },
+          "single-session-assistant": {
+            "total": 7,
+            "recalled": 6,
+            "accurate": 4,
+            "recall": 0.8571428571428571,
+            "accuracy": 0.5714285714285714
+          },
+          "single-session-preference": {
+            "total": 4,
+            "recalled": 1,
+            "accurate": 0,
+            "recall": 0.25,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 12,
+            "recalled": 11,
+            "accurate": 10,
+            "recall": 0.9166666666666666,
+            "accuracy": 0.8333333333333334
+          }
+        }
+      },
+      "bs5": {
+        "recall": 0.7666666666666667,
+        "accuracy": 0.36666666666666664,
+        "facts_recalled": 23,
+        "facts_total": 30,
+        "recall_early": 0.6666666666666666,
+        "recall_mid": 0.5,
+        "recall_late": 0.9375,
+        "n_early": 6,
+        "n_mid": 8,
+        "n_late": 16,
+        "by_category": {
+          "knowledge-update": {
+            "total": 7,
+            "recalled": 5,
+            "accurate": 2,
+            "recall": 0.7142857142857143,
+            "accuracy": 0.2857142857142857
+          },
+          "single-session-assistant": {
+            "total": 7,
+            "recalled": 7,
+            "accurate": 5,
+            "recall": 1.0,
+            "accuracy": 0.7142857142857143
+          },
+          "single-session-preference": {
+            "total": 4,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 12,
+            "recalled": 11,
+            "accurate": 4,
+            "recall": 0.9166666666666666,
+            "accuracy": 0.3333333333333333
+          }
+        }
+      },
+      "bs10": {
+        "recall": 0.8333333333333334,
+        "accuracy": 0.36666666666666664,
+        "facts_recalled": 25,
+        "facts_total": 30,
+        "recall_early": 1.0,
+        "recall_mid": 0.375,
+        "recall_late": 1.0,
+        "n_early": 6,
+        "n_mid": 8,
+        "n_late": 16,
+        "by_category": {
+          "knowledge-update": {
+            "total": 7,
+            "recalled": 6,
+            "accurate": 3,
+            "recall": 0.8571428571428571,
+            "accuracy": 0.42857142857142855
+          },
+          "single-session-assistant": {
+            "total": 7,
+            "recalled": 7,
+            "accurate": 4,
+            "recall": 1.0,
+            "accuracy": 0.5714285714285714
+          },
+          "single-session-preference": {
+            "total": 4,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 12,
+            "recalled": 12,
+            "accurate": 4,
+            "recall": 1.0,
+            "accuracy": 0.3333333333333333
+          }
+        }
+      },
+      "agreement": {
+        "jaccard": {
+          "1_vs_5": 0.7307692307692307,
+          "1_vs_10": 0.7407407407407407,
+          "5_vs_10": 0.8461538461538461
+        },
+        "stable_facts": [
+          "LM_0151",
+          "LM_0174",
+          "LM_0232",
+          "LM_0233",
+          "LM_0234",
+          "LM_0237",
+          "LM_0241",
+          "LM_0244",
+          "LM_0292",
+          "LM_0296",
+          "LM_0306",
+          "LM_0313",
+          "LM_0318",
+          "LM_0319",
+          "LM_0325",
+          "LM_0341",
+          "LM_0347",
+          "LM_0349"
+        ],
+        "unstable_facts": [
+          "LM_0124",
+          "LM_0131",
+          "LM_0182",
+          "LM_0183",
+          "LM_0188",
+          "LM_0200",
+          "LM_0231",
+          "LM_0304",
+          "LM_0307"
+        ],
+        "never_recalled": [
+          "LM_0203",
+          "LM_0206",
+          "LM_0228"
+        ],
+        "stable_count": 18,
+        "unstable_count": 9,
+        "never_count": 3
+      }
+    },
+    "d4": {
+      "grep": {
+        "facts_total": 4,
+        "all_present": 4,
+        "any_present": 4,
+        "recall_upper_bound": 1.0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 1,
+            "present": 1,
+            "recall": 1.0
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "present": 1,
+            "recall": 1.0
+          },
+          "single-session-user": {
+            "total": 2,
+            "present": 2,
+            "recall": 1.0
+          }
+        }
+      },
+      "bs1": {
+        "recall": 0.0,
+        "accuracy": 0.0,
+        "facts_recalled": 0,
+        "facts_total": 4,
+        "recall_early": 0.0,
+        "recall_mid": 0.0,
+        "recall_late": 0.0,
+        "n_early": 1,
+        "n_mid": 2,
+        "n_late": 1,
+        "by_category": {
+          "knowledge-update": {
+            "total": 1,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          }
+        }
+      },
+      "bs5": {
+        "recall": 0.5,
+        "accuracy": 0.5,
+        "facts_recalled": 2,
+        "facts_total": 4,
+        "recall_early": 0.0,
+        "recall_mid": 0.5,
+        "recall_late": 1.0,
+        "n_early": 1,
+        "n_mid": 2,
+        "n_late": 1,
+        "by_category": {
+          "knowledge-update": {
+            "total": 1,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 1.0,
+            "accuracy": 1.0
+          },
+          "single-session-user": {
+            "total": 2,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 0.5,
+            "accuracy": 0.5
+          }
+        }
+      },
+      "bs10": {
+        "recall": 0.5,
+        "accuracy": 0.5,
+        "facts_recalled": 2,
+        "facts_total": 4,
+        "recall_early": 0.0,
+        "recall_mid": 0.5,
+        "recall_late": 1.0,
+        "n_early": 1,
+        "n_mid": 2,
+        "n_late": 1,
+        "by_category": {
+          "knowledge-update": {
+            "total": 1,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 1.0,
+            "accuracy": 1.0
+          },
+          "single-session-user": {
+            "total": 2,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 0.5,
+            "accuracy": 0.5
+          }
+        }
+      },
+      "agreement": {
+        "jaccard": {
+          "1_vs_5": 0.0,
+          "1_vs_10": 0.0,
+          "5_vs_10": 1.0
+        },
+        "stable_facts": [],
+        "unstable_facts": [
+          "LM_0241",
+          "LM_0325"
+        ],
+        "never_recalled": [
+          "LM_0131",
+          "LM_0296"
+        ],
+        "stable_count": 0,
+        "unstable_count": 2,
+        "never_count": 2
+      }
+    },
+    "d8": {
+      "grep": {
+        "facts_total": 8,
+        "all_present": 8,
+        "any_present": 8,
+        "recall_upper_bound": 1.0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 2,
+            "present": 2,
+            "recall": 1.0
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "present": 1,
+            "recall": 1.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "present": 2,
+            "recall": 1.0
+          },
+          "single-session-user": {
+            "total": 3,
+            "present": 3,
+            "recall": 1.0
+          }
+        }
+      },
+      "bs1": {
+        "recall": 0.375,
+        "accuracy": 0.375,
+        "facts_recalled": 3,
+        "facts_total": 8,
+        "recall_early": 0.5,
+        "recall_mid": 0.0,
+        "recall_late": 0.6666666666666666,
+        "n_early": 2,
+        "n_mid": 3,
+        "n_late": 3,
+        "by_category": {
+          "knowledge-update": {
+            "total": 2,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 0.5,
+            "accuracy": 0.5
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 2,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.6666666666666666
+          }
+        }
+      },
+      "bs5": {
+        "recall": 0.625,
+        "accuracy": 0.5,
+        "facts_recalled": 5,
+        "facts_total": 8,
+        "recall_early": 1.0,
+        "recall_mid": 0.3333333333333333,
+        "recall_late": 0.6666666666666666,
+        "n_early": 2,
+        "n_mid": 3,
+        "n_late": 3,
+        "by_category": {
+          "knowledge-update": {
+            "total": 2,
+            "recalled": 2,
+            "accurate": 1,
+            "recall": 1.0,
+            "accuracy": 0.5
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 1.0,
+            "accuracy": 1.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 3,
+            "recalled": 2,
+            "accurate": 2,
+            "recall": 0.6666666666666666,
+            "accuracy": 0.6666666666666666
+          }
+        }
+      },
+      "bs10": {
+        "recall": 0.75,
+        "accuracy": 0.25,
+        "facts_recalled": 6,
+        "facts_total": 8,
+        "recall_early": 1.0,
+        "recall_mid": 0.3333333333333333,
+        "recall_late": 1.0,
+        "n_early": 2,
+        "n_mid": 3,
+        "n_late": 3,
+        "by_category": {
+          "knowledge-update": {
+            "total": 2,
+            "recalled": 2,
+            "accurate": 0,
+            "recall": 1.0,
+            "accuracy": 0.0
+          },
+          "single-session-assistant": {
+            "total": 1,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 1.0,
+            "accuracy": 1.0
+          },
+          "single-session-preference": {
+            "total": 2,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-user": {
+            "total": 3,
+            "recalled": 3,
+            "accurate": 1,
+            "recall": 1.0,
+            "accuracy": 0.3333333333333333
+          }
+        }
+      },
+      "agreement": {
+        "jaccard": {
+          "1_vs_5": 0.6,
+          "1_vs_10": 0.5,
+          "5_vs_10": 0.8333333333333334
+        },
+        "stable_facts": [
+          "LM_0174",
+          "LM_0304",
+          "LM_0325"
+        ],
+        "unstable_facts": [
+          "LM_0131",
+          "LM_0241",
+          "LM_0296"
+        ],
+        "never_recalled": [
+          "LM_0203",
+          "LM_0228"
+        ],
+        "stable_count": 3,
+        "unstable_count": 3,
+        "never_count": 2
+      }
+    }
+  },
+  "grep": {
+    "d4": {
+      "facts_total": 4,
+      "all_present": 4,
+      "any_present": 4,
+      "recall_upper_bound": 1.0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 1,
+          "present": 1,
+          "recall": 1.0
+        },
+        "single-session-assistant": {
+          "total": 1,
+          "present": 1,
+          "recall": 1.0
+        },
+        "single-session-user": {
+          "total": 2,
+          "present": 2,
+          "recall": 1.0
+        }
+      }
+    },
+    "d8": {
+      "facts_total": 8,
+      "all_present": 8,
+      "any_present": 8,
+      "recall_upper_bound": 1.0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 2,
+          "present": 2,
+          "recall": 1.0
+        },
+        "single-session-assistant": {
+          "total": 1,
+          "present": 1,
+          "recall": 1.0
+        },
+        "single-session-preference": {
+          "total": 2,
+          "present": 2,
+          "recall": 1.0
+        },
+        "single-session-user": {
+          "total": 3,
+          "present": 3,
+          "recall": 1.0
+        }
+      }
+    },
+    "d12": {
+      "facts_total": 12,
+      "all_present": 12,
+      "any_present": 12,
+      "recall_upper_bound": 1.0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 3,
+          "present": 3,
+          "recall": 1.0
+        },
+        "single-session-assistant": {
+          "total": 1,
+          "present": 1,
+          "recall": 1.0
+        },
+        "single-session-preference": {
+          "total": 2,
+          "present": 2,
+          "recall": 1.0
+        },
+        "single-session-user": {
+          "total": 6,
+          "present": 6,
+          "recall": 1.0
+        }
+      }
+    },
+    "d16": {
+      "facts_total": 16,
+      "all_present": 16,
+      "any_present": 16,
+      "recall_upper_bound": 1.0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 3,
+          "present": 3,
+          "recall": 1.0
+        },
+        "single-session-assistant": {
+          "total": 3,
+          "present": 3,
+          "recall": 1.0
+        },
+        "single-session-preference": {
+          "total": 2,
+          "present": 2,
+          "recall": 1.0
+        },
+        "single-session-user": {
+          "total": 8,
+          "present": 8,
+          "recall": 1.0
+        }
+      }
+    },
+    "d19": {
+      "facts_total": 19,
+      "all_present": 19,
+      "any_present": 19,
+      "recall_upper_bound": 1.0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 3,
+          "present": 3,
+          "recall": 1.0
+        },
+        "single-session-assistant": {
+          "total": 5,
+          "present": 5,
+          "recall": 1.0
+        },
+        "single-session-preference": {
+          "total": 2,
+          "present": 2,
+          "recall": 1.0
+        },
+        "single-session-user": {
+          "total": 9,
+          "present": 9,
+          "recall": 1.0
+        }
+      }
+    },
+    "d25": {
+      "facts_total": 25,
+      "all_present": 25,
+      "any_present": 25,
+      "recall_upper_bound": 1.0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 6,
+          "present": 6,
+          "recall": 1.0
+        },
+        "single-session-assistant": {
+          "total": 6,
+          "present": 6,
+          "recall": 1.0
+        },
+        "single-session-preference": {
+          "total": 2,
+          "present": 2,
+          "recall": 1.0
+        },
+        "single-session-user": {
+          "total": 11,
+          "present": 11,
+          "recall": 1.0
+        }
+      }
+    },
+    "d30": {
+      "facts_total": 30,
+      "all_present": 28,
+      "any_present": 30,
+      "recall_upper_bound": 0.9333333333333333,
+      "by_category": {
+        "knowledge-update": {
+          "total": 7,
+          "present": 7,
+          "recall": 1.0
+        },
+        "single-session-assistant": {
+          "total": 7,
+          "present": 7,
+          "recall": 1.0
+        },
+        "single-session-preference": {
+          "total": 4,
+          "present": 2,
+          "recall": 0.5
+        },
+        "single-session-user": {
+          "total": 12,
+          "present": 12,
+          "recall": 1.0
+        }
+      }
+    }
+  },
+  "batch_api": {
+    "qa_batch_ids": [
+      "msgbatch_01Rghibt6tvoCinwZe3ZfRp1",
+      "msgbatch_01EHgcfma2usUBttLtpfPTff",
+      "msgbatch_01MiwSefAmqCRhrnUXbWTeXf",
+      "msgbatch_015StrgzDVa29LQcmroytv3C",
+      "msgbatch_01KLA2rVwbQxxECTyt1pvirS",
+      "msgbatch_01367hmTn8buucpXf4N1gFox",
+      "msgbatch_01CjgrNizhnsJvMvDep6F9e7",
+      "msgbatch_01LwwWT7ZdW6EJd6UHFtmGhx"
+    ],
+    "judge_batch_ids": [
+      "msgbatch_019TvfnAyts8kyNWyiW5dk8p"
+    ],
+    "qa_requests": 153,
+    "judge_requests": 33,
+    "total_requests": 186
+  }
+}

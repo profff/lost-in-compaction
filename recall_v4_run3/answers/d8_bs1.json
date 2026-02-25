@@ -1,0 +1,110 @@
+{
+  "context_ref": "d8",
+  "batch_size": 1,
+  "batches": [
+    {
+      "batch_id": 0,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0045] Which event happened first, the narrator losing their phone charger or the narrator receiving their new phone case?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0045\", \"answer\": \"The narrator received their new phone case first. They mentioned getting a new phone case about a month ago, while they lost their phone charger more recently (a few weeks ago).\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0045",
+          "question": "Which event happened first, the narrator losing their phone charger or the narrator receiving their new phone case?",
+          "raw_answer": "The narrator received their new phone case first. They mentioned getting a new phone case about a month ago, while they lost their phone charger more recently (a few weeks ago).",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0053] How many days had passed between the day I bought a gift for my brother's graduation ceremony and the day I bought a birthday gift for my best friend?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0053\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0053",
+          "question": "How many days had passed between the day I bought a gift for my brother's graduation ceremony and the day I bought a birthday gift for my best friend?",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 2,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0072] How many days did I take social media breaks in total?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0072\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0072",
+          "question": "How many days did I take social media breaks in total?",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 3,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0156] How long have I had my cat, Luna?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0156\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0156",
+          "question": "How long have I had my cat, Luna?",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 4,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0164] How much did I earn at the Downtown Farmers Market on my most recent visit?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0164\", \"answer\": \"$420\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0164",
+          "question": "How much did I earn at the Downtown Farmers Market on my most recent visit?",
+          "raw_answer": "$420",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 5,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0209] I've been thinking about ways to stay connected with my colleagues. Any suggestions?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0209\", \"answer\": \"I don't recall you asking about ways to stay connected with colleagues. However, earlier in our conversation, I did provide suggestions for virtual team-building activities, including virtual coffee breaks, online team activities, social channels, and recognition programs. You may be referring to that conversation.\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0209",
+          "question": "I've been thinking about ways to stay connected with my colleagues. Any suggestions?",
+          "raw_answer": "I don't recall you asking about ways to stay connected with colleagues. However, earlier in our conversation, I did provide suggestions for virtual team-building activities, including virtual coffee breaks, online team activities, social channels, and recognition programs. You may be referring to that conversation.",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 6,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0315] How much RAM did I upgrade my laptop to?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0315\", \"answer\": \"16GB\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0315",
+          "question": "How much RAM did I upgrade my laptop to?",
+          "raw_answer": "16GB",
+          "batch_position": 0
+        }
+      ]
+    },
+    {
+      "batch_id": 7,
+      "prompt_sent": "Answer each of the following questions based ONLY on what you know from our conversation.\nBe specific: include exact numbers, names, paths, versions.\nIf you don't remember or aren't sure, say \"I don't recall\".\n\n- [LM_0383] What is the order of the sports events I watched in January?\n\nReply with a JSON array of objects, one per question:\n[{\"id\": \"LM_0001\", \"answer\": \"your answer\"}, ...]\n\nIMPORTANT: Return ONLY the JSON array, no other text.",
+      "raw_llm_response": "```json\n[{\"id\": \"LM_0383\", \"answer\": \"I don't recall\"}]\n```",
+      "answers": [
+        {
+          "fact_id": "LM_0383",
+          "question": "What is the order of the sports events I watched in January?",
+          "raw_answer": "I don't recall",
+          "batch_position": 0
+        }
+      ]
+    }
+  ]
+}

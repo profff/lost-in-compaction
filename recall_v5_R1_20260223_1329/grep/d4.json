@@ -1,0 +1,84 @@
+[
+  {
+    "fact_id": "LM_0045",
+    "question_type": "temporal-reasoning",
+    "keywords": [
+      "Receiving",
+      "new",
+      "phone",
+      "case"
+    ],
+    "keywords_found": [
+      "Receiving",
+      "new",
+      "phone",
+      "case"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0156",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "months",
+      "9"
+    ],
+    "keywords_found": [
+      "months",
+      "9"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0164",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "420"
+    ],
+    "keywords_found": [
+      "420"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0383",
+    "question_type": "temporal-reasoning",
+    "keywords": [
+      "First",
+      "attended",
+      "NBA",
+      "game",
+      "Staples",
+      "Center",
+      "watched",
+      "College",
+      "Football",
+      "National",
+      "Championship",
+      "finally",
+      "NFL",
+      "playoffs"
+    ],
+    "keywords_found": [
+      "First",
+      "attended",
+      "NBA",
+      "game",
+      "Staples",
+      "Center",
+      "watched",
+      "College",
+      "Football",
+      "National",
+      "Championship",
+      "finally",
+      "NFL",
+      "playoffs"
+    ],
+    "all_present": true,
+    "any_present": true
+  }
+]

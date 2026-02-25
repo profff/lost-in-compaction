@@ -1,0 +1,40 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0131]\n  Expected answer: Paris\n  Expected keywords: Paris\n  LLM answer: I don't recall\n\n[LM_0241]\n  Expected answer: Evolution\n  Expected keywords: Evolution\n  LLM answer: Evolution\n\n[LM_0296]\n  Expected answer: Marketing specialist at a small startup\n  Expected keywords: Marketing, specialist, small, startup\n  LLM answer: I don't recall\n\n[LM_0325]\n  Expected answer: 500\n  Expected keywords: 500\n  LLM answer: 500\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0131\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM did not recall the information; answer is 'I don't recall' instead of 'Paris'\"\n  },\n  {\n    \"id\": \"LM_0241\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly answered 'Evolution', matching the expected answer and keywords\"\n  },\n  {\n    \"id\": \"LM_0296\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM did not recall the information; answer is 'I don't recall' instead of the expected job title\"\n  },\n  {\n    \"id\": \"LM_0325\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly answered '500', matching the expected answer and keywords\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0131",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the information; answer is 'I don't recall' instead of 'Paris'"
+        },
+        {
+          "fact_id": "LM_0241",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly answered 'Evolution', matching the expected answer and keywords"
+        },
+        {
+          "fact_id": "LM_0296",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the information; answer is 'I don't recall' instead of the expected job title"
+        },
+        {
+          "fact_id": "LM_0325",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly answered '500', matching the expected answer and keywords"
+        }
+      ]
+    }
+  ]
+}

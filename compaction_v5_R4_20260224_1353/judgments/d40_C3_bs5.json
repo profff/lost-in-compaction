@@ -1,0 +1,306 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0124]\n  Expected answer: the suburbs\n  Expected keywords: suburbs\n  LLM answer: I don't recall\n\n[LM_0131]\n  Expected answer: Paris\n  Expected keywords: Paris\n  LLM answer: I don't recall\n\n[LM_0132]\n  Expected answer: under my bed\n  Expected keywords: under, bed\n  LLM answer: I don't recall\n\n[LM_0134]\n  Expected answer: 220\n  Expected keywords: 220\n  LLM answer: I don't recall\n\n[LM_0143]\n  Expected answer: 3\n  Expected keywords: 3\n  LLM answer: I don't recall\n\n[LM_0149]\n  Expected answer: Yes\n  Expected keywords: Yes\n  LLM answer: I don't recall\n\n[LM_0151]\n  Expected answer: 30\n  Expected keywords: 30\n  LLM answer: I don't recall\n\n[LM_0167]\n  Expected answer: 15\n  Expected keywords: 15\n  LLM answer: I don't recall\n\n[LM_0174]\n  Expected answer: about two hours\n  Expected keywords: two, hours\n  LLM answer: I don't recall\n\n[LM_0182]\n  Expected answer: Ford F-150 pickup truck\n  Expected keywords: Ford, 150, pickup, truck\n  LLM answer: I don't recall\n\n[LM_0183]\n  Expected answer: level 100\n  Expected keywords: level, 100\n  LLM answer: I don't recall\n\n[LM_0188]\n  Expected answer: We've met up twice.\n  Expected keywords: We've, met, twice\n  LLM answer: I don't recall\n\n[LM_0194]\n  Expected answer: The information provided is not enough. You mentioned seeing Dr. Smith but not Dr. Johnson.\n  Expected keywords: information, provided, enough, mentioned, seeing, Dr, Smith, Johnson\n  LLM answer: I don't recall\n\n[LM_0200]\n  Expected answer: The user would prefer responses that suggest resources specifically tailored to Adobe Premiere Pro, especially those that delve into its advanced settings. They might not prefer general video editing resources or resources related to other video editing software.\n  Expected keywords: user, prefer, responses, suggest, resources, specifically, tailored, Adobe, Premiere, Pro, especially, delve, advanced, settings, general, video, editing, related, other, software\n  LLM answer: I don't recall\n\n[LM_0203]\n  Expected answer: The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features.\n  Expected keywords: user, prefer, suggestions, hotels, Miami, offer, great, views, possibly, ocean, city, skyline, unique, features, rooftop, pool, hot, tub, balcony, basic, budget, without\n  LLM answer: I don't recall\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0124\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0131\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0132\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0134\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0143\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0149\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0151\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0167\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0174\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0182\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0183\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0188\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0194\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0200\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"},\n  {\"id\": \"LM_0203\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not recall the answer; no keywords matched\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0124",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0131",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0132",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0134",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0143",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0149",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0151",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0167",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0174",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0182",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0183",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0188",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0194",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0200",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        },
+        {
+          "fact_id": "LM_0203",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not recall the answer; no keywords matched"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0206]\n  Expected answer: The user would prefer suggestions that involve relaxing activities that can be done in the evening, preferably before 9:30 pm. They would not prefer suggestions that involve using their phone or watching TV, as these activities have been affecting their sleep quality.\n  Expected keywords: user, prefer, suggestions, involve, relaxing, activities, done, evening, preferably, 30, pm, using, phone, watching, TV, affecting, sleep, quality, 9\n  LLM answer: I don't recall\n\n[LM_0225]\n  Expected answer: The user would prefer documentary recommendations that are similar in style and theme to 'Our Planet', 'Free Solo', and 'Tiger King', which they have previously enjoyed. They might not prefer recommendations of documentaries that are vastly different in tone or subject matter from these titles. The preferred response utilizes the user's previously mentioned viewing history to suggest documentaries that cater to their tastes.\n  Expected keywords: user, prefer, documentary, recommendations, similar, style, theme, 'Our, Planet', 'Free, Solo', 'Tiger, King', previously, enjoyed, documentaries, vastly, different, tone, subject, matter, titles, preferred, response, utilizes, user's, mentioned, viewing, history, suggest, cater, tastes\n  LLM answer: I don't recall\n\n[LM_0228]\n  Expected answer: The user would prefer suggestions related to listening to new podcasts or audiobooks, especially the genre beyond true crime or self-improvement, such as history. They may not be interested in activities that require visual attention, such as reading or watching videos, as they are commuting. The user would not prefer general podcast topics such as true crime or self-improvement, as the user wants to explore other topics.\n  Expected keywords: user, prefer, suggestions, related, listening, new, podcasts, audiobooks, especially, genre, beyond, true, crime, self, improvement, history, interested, activities, require, visual, attention, reading, watching, videos, commuting, general, podcast, topics, wants, explore, other\n  LLM answer: I don't recall\n\n[LM_0231]\n  Expected answer: Miss Bee Providore\n  Expected keywords: Miss, Bee, Providore\n  LLM answer: I don't recall\n\n[LM_0232]\n  Expected answer: The Plesiosaur had a blue scaly body.\n  Expected keywords: Plesiosaur, blue, scaly, body\n  LLM answer: The Plesiosaur in the children's book image had a blue scaly body\n\n[LM_0233]\n  Expected answer: The Sugar Factory at Icon Park.\n  Expected keywords: Sugar, Factory, Icon, Park\n  LLM answer: I don't recall\n\n[LM_0234]\n  Expected answer: Roscioli\n  Expected keywords: Roscioli\n  LLM answer: I don't recall\n\n[LM_0237]\n  Expected answer: Transcriptionist.\n  Expected keywords: Transcriptionist\n  LLM answer: I don't recall\n\n[LM_0241]\n  Expected answer: Evolution\n  Expected keywords: Evolution\n  LLM answer: The Only Exception\n\n[LM_0244]\n  Expected answer: 4\n  Expected keywords: 4\n  LLM answer: 4\n\n[LM_0256]\n  Expected answer: Mindful.org.\n  Expected keywords: Mindful, org\n  LLM answer: Mindful.org\n\n[LM_0266]\n  Expected answer: Memrise\n  Expected keywords: Memrise\n  LLM answer: I don't recall\n\n[LM_0277]\n  Expected answer: MusicTheory.net\n  Expected keywords: MusicTheory, net\n  LLM answer: MusicTheory.net\n\n[LM_0292]\n  Expected answer: Serenity Yoga\n  Expected keywords: Serenity, Yoga\n  LLM answer: I don't recall\n\n[LM_0296]\n  Expected answer: Marketing specialist at a small startup\n  Expected keywords: Marketing, specialist, small, startup\n  LLM answer: I don't recall\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0206\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing the expected preference analysis\"},\n  {\"id\": \"LM_0225\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing documentary preference analysis\"},\n  {\"id\": \"LM_0228\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing podcast/audiobook preference analysis\"},\n  {\"id\": \"LM_0231\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of 'Miss Bee Providore'\"},\n  {\"id\": \"LM_0232\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly identified the Plesiosaur's blue scaly body, with additional context\"},\n  {\"id\": \"LM_0233\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of 'The Sugar Factory at Icon Park'\"},\n  {\"id\": \"LM_0234\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of 'Roscioli'\"},\n  {\"id\": \"LM_0237\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of 'Transcriptionist'\"},\n  {\"id\": \"LM_0241\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM recalled a song title but answered 'The Only Exception' instead of 'Evolution'\"},\n  {\"id\": \"LM_0244\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly answered '4'\"},\n  {\"id\": \"LM_0256\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly answered 'Mindful.org'\"},\n  {\"id\": \"LM_0266\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of 'Memrise'\"},\n  {\"id\": \"LM_0277\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly answered 'MusicTheory.net'\"},\n  {\"id\": \"LM_0292\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of 'Serenity Yoga'\"},\n  {\"id\": \"LM_0296\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of 'Marketing specialist at a small startup'\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0206",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing the expected preference analysis"
+        },
+        {
+          "fact_id": "LM_0225",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing documentary preference analysis"
+        },
+        {
+          "fact_id": "LM_0228",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing podcast/audiobook preference analysis"
+        },
+        {
+          "fact_id": "LM_0231",
+          "question_type": "single-session-assistant",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of 'Miss Bee Providore'"
+        },
+        {
+          "fact_id": "LM_0232",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified the Plesiosaur's blue scaly body, with additional context"
+        },
+        {
+          "fact_id": "LM_0233",
+          "question_type": "single-session-assistant",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of 'The Sugar Factory at Icon Park'"
+        },
+        {
+          "fact_id": "LM_0234",
+          "question_type": "single-session-assistant",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of 'Roscioli'"
+        },
+        {
+          "fact_id": "LM_0237",
+          "question_type": "single-session-assistant",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of 'Transcriptionist'"
+        },
+        {
+          "fact_id": "LM_0241",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalled a song title but answered 'The Only Exception' instead of 'Evolution'"
+        },
+        {
+          "fact_id": "LM_0244",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly answered '4'"
+        },
+        {
+          "fact_id": "LM_0256",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly answered 'Mindful.org'"
+        },
+        {
+          "fact_id": "LM_0266",
+          "question_type": "single-session-assistant",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of 'Memrise'"
+        },
+        {
+          "fact_id": "LM_0277",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly answered 'MusicTheory.net'"
+        },
+        {
+          "fact_id": "LM_0292",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of 'Serenity Yoga'"
+        },
+        {
+          "fact_id": "LM_0296",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of 'Marketing specialist at a small startup'"
+        }
+      ]
+    },
+    {
+      "batch_id": 2,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0304]\n  Expected answer: 7\n  Expected keywords: 7\n  LLM answer: I don't recall\n\n[LM_0306]\n  Expected answer: Nike\n  Expected keywords: Nike\n  LLM answer: I don't recall\n\n[LM_0307]\n  Expected answer: Data Science\n  Expected keywords: Data, Science\n  LLM answer: I don't recall\n\n[LM_0313]\n  Expected answer: 18\n  Expected keywords: 18\n  LLM answer: I don't recall\n\n[LM_0318]\n  Expected answer: University of California, Los Angeles (UCLA)\n  Expected keywords: University, California, Los, Angeles, UCLA\n  LLM answer: I don't recall\n\n[LM_0319]\n  Expected answer: 5 hours\n  Expected keywords: hours, 5\n  LLM answer: It took approximately 5 hours to move everything into the new apartment\n\n[LM_0325]\n  Expected answer: 500\n  Expected keywords: 500\n  LLM answer: 500 copies worldwide\n\n[LM_0341]\n  Expected answer: A mix of Irish and Italian\n  Expected keywords: mix, Irish, Italian\n  LLM answer: Mixed ethnicity - Irish and Italian\n\n[LM_0347]\n  Expected answer: bronchitis\n  Expected keywords: bronchitis\n  LLM answer: Bronchitis\n\n[LM_0349]\n  Expected answer: Dark Souls 3 DLC\n  Expected keywords: Dark, Souls, DLC, 3\n  LLM answer: The final boss in the Dark Souls 3 DLC\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0304\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM stated 'I don't recall' instead of providing the answer '7'\"\n  },\n  {\n    \"id\": \"LM_0306\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM stated 'I don't recall' instead of providing the answer 'Nike'\"\n  },\n  {\n    \"id\": \"LM_0307\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM stated 'I don't recall' instead of providing the answer 'Data Science'\"\n  },\n  {\n    \"id\": \"LM_0313\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM stated 'I don't recall' instead of providing the answer '18'\"\n  },\n  {\n    \"id\": \"LM_0318\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM stated 'I don't recall' instead of providing the answer 'UCLA'\"\n  },\n  {\n    \"id\": \"LM_0319\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer contains both required keywords '5' and 'hours' with correct information\"\n  },\n  {\n    \"id\": \"LM_0325\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer contains the keyword '500' which matches the expected answer\"\n  },\n  {\n    \"id\": \"LM_0341\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer contains all required keywords: 'Irish' and 'Italian' with correct information about mixed ethnicity\"\n  },\n  {\n    \"id\": \"LM_0347\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer 'Bronchitis' matches expected answer 'bronchitis' (case-insensitive match)\"\n  },\n  {\n    \"id\": \"LM_0349\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM recalls information about Dark Souls 3 DLC but provides incomplete answer - mentions 'final boss' rather than just the DLC name itself\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0304",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM stated 'I don't recall' instead of providing the answer '7'"
+        },
+        {
+          "fact_id": "LM_0306",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM stated 'I don't recall' instead of providing the answer 'Nike'"
+        },
+        {
+          "fact_id": "LM_0307",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM stated 'I don't recall' instead of providing the answer 'Data Science'"
+        },
+        {
+          "fact_id": "LM_0313",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM stated 'I don't recall' instead of providing the answer '18'"
+        },
+        {
+          "fact_id": "LM_0318",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM stated 'I don't recall' instead of providing the answer 'UCLA'"
+        },
+        {
+          "fact_id": "LM_0319",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer contains both required keywords '5' and 'hours' with correct information"
+        },
+        {
+          "fact_id": "LM_0325",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer contains the keyword '500' which matches the expected answer"
+        },
+        {
+          "fact_id": "LM_0341",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer contains all required keywords: 'Irish' and 'Italian' with correct information about mixed ethnicity"
+        },
+        {
+          "fact_id": "LM_0347",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'Bronchitis' matches expected answer 'bronchitis' (case-insensitive match)"
+        },
+        {
+          "fact_id": "LM_0349",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalls information about Dark Souls 3 DLC but provides incomplete answer - mentions 'final boss' rather than just the DLC name itself"
+        }
+      ]
+    }
+  ]
+}

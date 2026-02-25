@@ -1,0 +1,59 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0045\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer about receiving a new phone case\"\n  },\n  {\n    \"id\": \"LM_0053\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer about 7-8 days\"\n  },\n  {\n    \"id\": \"LM_0072\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer about 17 days\"\n  },\n  {\n    \"id\": \"LM_0156\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected answer about 9 months\"\n  },\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer '$420' exactly matches the expected answer\"\n  },\n  {\n    \"id\": \"LM_0209\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Answer demonstrates knowledge of user preferences for social interaction and remote work collaboration, but is more narrative/conversational than the comprehensive preference statement expected, missing the explicit structure about what user may NOT prefer\"\n  },\n  {\n    \"id\": \"LM_0315\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer '16GB' exactly matches the expected answer\"\n  },\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"Answer 'I don't recall' shows no knowledge of the expected sequence of events (NBA game, College Football Championship, NFL playoffs)\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer about receiving a new phone case"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer about 7-8 days"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer about 17 days"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected answer about 9 months"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '$420' exactly matches the expected answer"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer demonstrates knowledge of user preferences for social interaction and remote work collaboration, but is more narrative/conversational than the comprehensive preference statement expected, missing the explicit structure about what user may NOT prefer"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer '16GB' exactly matches the expected answer"
+        },
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer 'I don't recall' shows no knowledge of the expected sequence of events (NBA game, College Football Championship, NFL playoffs)"
+        }
+      ]
+    }
+  ]
+}

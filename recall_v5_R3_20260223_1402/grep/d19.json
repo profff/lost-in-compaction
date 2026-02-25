@@ -1,0 +1,366 @@
+[
+  {
+    "fact_id": "LM_0131",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Paris"
+    ],
+    "keywords_found": [
+      "Paris"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0151",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "30"
+    ],
+    "keywords_found": [
+      "30"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0174",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "two",
+      "hours"
+    ],
+    "keywords_found": [
+      "two",
+      "hours"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0203",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "suggestions",
+      "hotels",
+      "Miami",
+      "offer",
+      "great",
+      "views",
+      "possibly",
+      "ocean",
+      "city",
+      "skyline",
+      "unique",
+      "features",
+      "rooftop",
+      "pool",
+      "hot",
+      "tub",
+      "balcony",
+      "basic",
+      "budget",
+      "without"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "suggestions",
+      "hotels",
+      "Miami",
+      "offer",
+      "great",
+      "views",
+      "possibly",
+      "ocean",
+      "city",
+      "skyline",
+      "unique",
+      "features",
+      "rooftop",
+      "pool",
+      "hot",
+      "tub",
+      "balcony",
+      "basic",
+      "budget",
+      "without"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0228",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "suggestions",
+      "related",
+      "listening",
+      "new",
+      "podcasts",
+      "audiobooks",
+      "especially",
+      "genre",
+      "beyond",
+      "true",
+      "crime",
+      "self",
+      "improvement",
+      "history",
+      "interested",
+      "activities",
+      "require",
+      "visual",
+      "attention",
+      "reading",
+      "watching",
+      "videos",
+      "commuting",
+      "general",
+      "podcast",
+      "topics",
+      "wants",
+      "explore",
+      "other"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "suggestions",
+      "related",
+      "listening",
+      "new",
+      "podcasts",
+      "audiobooks",
+      "especially",
+      "genre",
+      "beyond",
+      "true",
+      "crime",
+      "self",
+      "improvement",
+      "history",
+      "interested",
+      "activities",
+      "require",
+      "visual",
+      "attention",
+      "reading",
+      "watching",
+      "videos",
+      "commuting",
+      "general",
+      "podcast",
+      "topics",
+      "wants",
+      "explore",
+      "other"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0231",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Miss",
+      "Bee",
+      "Providore"
+    ],
+    "keywords_found": [
+      "Miss",
+      "Bee",
+      "Providore"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0233",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Sugar",
+      "Factory",
+      "Icon",
+      "Park"
+    ],
+    "keywords_found": [
+      "Sugar",
+      "Factory",
+      "Icon",
+      "Park"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0234",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Roscioli"
+    ],
+    "keywords_found": [
+      "Roscioli"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0237",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Transcriptionist"
+    ],
+    "keywords_found": [
+      "Transcriptionist"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0241",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Evolution"
+    ],
+    "keywords_found": [
+      "Evolution"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0292",
+    "question_type": "single-session-user",
+    "keywords": [
+      "Serenity",
+      "Yoga"
+    ],
+    "keywords_found": [
+      "Serenity",
+      "Yoga"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0296",
+    "question_type": "single-session-user",
+    "keywords": [
+      "Marketing",
+      "specialist",
+      "small",
+      "startup"
+    ],
+    "keywords_found": [
+      "Marketing",
+      "specialist",
+      "small",
+      "startup"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0304",
+    "question_type": "single-session-user",
+    "keywords": [
+      "7"
+    ],
+    "keywords_found": [
+      "7"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0306",
+    "question_type": "single-session-user",
+    "keywords": [
+      "Nike"
+    ],
+    "keywords_found": [
+      "Nike"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0307",
+    "question_type": "single-session-user",
+    "keywords": [
+      "Data",
+      "Science"
+    ],
+    "keywords_found": [
+      "Data",
+      "Science"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0318",
+    "question_type": "single-session-user",
+    "keywords": [
+      "University",
+      "California",
+      "Los",
+      "Angeles",
+      "UCLA"
+    ],
+    "keywords_found": [
+      "University",
+      "California",
+      "Los",
+      "Angeles",
+      "UCLA"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0325",
+    "question_type": "single-session-user",
+    "keywords": [
+      "500"
+    ],
+    "keywords_found": [
+      "500"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0341",
+    "question_type": "single-session-user",
+    "keywords": [
+      "mix",
+      "Irish",
+      "Italian"
+    ],
+    "keywords_found": [
+      "mix",
+      "Irish",
+      "Italian"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0347",
+    "question_type": "single-session-user",
+    "keywords": [
+      "bronchitis"
+    ],
+    "keywords_found": [
+      "bronchitis"
+    ],
+    "all_present": true,
+    "any_present": true
+  }
+]

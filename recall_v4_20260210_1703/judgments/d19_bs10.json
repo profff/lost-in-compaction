@@ -1,0 +1,131 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0045\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing information about receiving a new phone case\"},\n  {\"id\": \"LM_0053\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing day count information\"},\n  {\"id\": \"LM_0059\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of addressing insufficient information about Tom\"},\n  {\"id\": \"LM_0072\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing '17 days'\"},\n  {\"id\": \"LM_0074\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing '$2,500'\"},\n  {\"id\": \"LM_0092\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing '4'\"},\n  {\"id\": \"LM_0156\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing '9 months'\"},\n  {\"id\": \"LM_0163\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM provided specific answer but it's about H&M tees, not 'five' as expected\"},\n  {\"id\": \"LM_0164\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly answered '$420'\"},\n  {\"id\": \"LM_0209\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall this question' instead of providing preference analysis\"},\n  {\"id\": \"LM_0210\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing dinner preference analysis\"},\n  {\"id\": \"LM_0215\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing baking preference analysis\"},\n  {\"id\": \"LM_0315\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly answered '16GB'\"},\n  {\"id\": \"LM_0333\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly answered 'Xfinity Center'\"},\n  {\"id\": \"LM_0368\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM answered 'I don't recall' instead of providing '18 days' or '19 days'\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0045",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing information about receiving a new phone case"
+        },
+        {
+          "fact_id": "LM_0053",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing day count information"
+        },
+        {
+          "fact_id": "LM_0059",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of addressing insufficient information about Tom"
+        },
+        {
+          "fact_id": "LM_0072",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing '17 days'"
+        },
+        {
+          "fact_id": "LM_0074",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing '$2,500'"
+        },
+        {
+          "fact_id": "LM_0092",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing '4'"
+        },
+        {
+          "fact_id": "LM_0156",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing '9 months'"
+        },
+        {
+          "fact_id": "LM_0163",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM provided specific answer but it's about H&M tees, not 'five' as expected"
+        },
+        {
+          "fact_id": "LM_0164",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly answered '$420'"
+        },
+        {
+          "fact_id": "LM_0209",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall this question' instead of providing preference analysis"
+        },
+        {
+          "fact_id": "LM_0210",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing dinner preference analysis"
+        },
+        {
+          "fact_id": "LM_0215",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing baking preference analysis"
+        },
+        {
+          "fact_id": "LM_0315",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly answered '16GB'"
+        },
+        {
+          "fact_id": "LM_0333",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly answered 'Xfinity Center'"
+        },
+        {
+          "fact_id": "LM_0368",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answered 'I don't recall' instead of providing '18 days' or '19 days'"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0383\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answer 'I don't recall' shows no knowledge of the expected information about attending NBA game, College Football Championship, and NFL playoffs\"\n  },\n  {\n    \"id\": \"LM_0403\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answer 'I don't recall' shows no knowledge of the expected timeframe of 3 weeks ago\"\n  },\n  {\n    \"id\": \"LM_0415\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answer 'I don't recall' shows no knowledge of American Airlines\"\n  },\n  {\n    \"id\": \"LM_0479\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM answer 'I don't recall' shows no knowledge of the expected number 43\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0383",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answer 'I don't recall' shows no knowledge of the expected information about attending NBA game, College Football Championship, and NFL playoffs"
+        },
+        {
+          "fact_id": "LM_0403",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answer 'I don't recall' shows no knowledge of the expected timeframe of 3 weeks ago"
+        },
+        {
+          "fact_id": "LM_0415",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answer 'I don't recall' shows no knowledge of American Airlines"
+        },
+        {
+          "fact_id": "LM_0479",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM answer 'I don't recall' shows no knowledge of the expected number 43"
+        }
+      ]
+    }
+  ]
+}

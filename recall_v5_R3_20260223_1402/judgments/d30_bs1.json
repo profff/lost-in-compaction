@@ -1,0 +1,229 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0124]\n  Expected answer: the suburbs\n  Expected keywords: suburbs\n  LLM answer: Chicago\n\n[LM_0131]\n  Expected answer: Paris\n  Expected keywords: Paris\n  LLM answer: I don't recall\n\n[LM_0151]\n  Expected answer: 30\n  Expected keywords: 30\n  LLM answer: 30 videos\n\n[LM_0174]\n  Expected answer: about two hours\n  Expected keywords: two, hours\n  LLM answer: You mentioned dedicating about two hours each day to coding exercises.\n\n[LM_0182]\n  Expected answer: Ford F-150 pickup truck\n  Expected keywords: Ford, 150, pickup, truck\n  LLM answer: I don't recall\n\n[LM_0183]\n  Expected answer: level 100\n  Expected keywords: level, 100\n  LLM answer: I don't recall\n\n[LM_0188]\n  Expected answer: We've met up twice.\n  Expected keywords: We've, met, twice\n  LLM answer: You mentioned meeting up with Alex twice before the planned meetup during your Berlin trip\n\n[LM_0200]\n  Expected answer: The user would prefer responses that suggest resources specifically tailored to Adobe Premiere Pro, especially those that delve into its advanced settings. They might not prefer general video editing resources or resources related to other video editing software.\n  Expected keywords: user, prefer, responses, suggest, resources, specifically, tailored, Adobe, Premiere, Pro, especially, delve, advanced, settings, general, video, editing, related, other, software\n  LLM answer: I don't recall recommending specific resources for learning video editing in our conversation. However, we did discuss Adobe Premiere Pro extensively, including its Lumetri Color Panel, Curves panel, and various color grading techniques. If you're interested in video editing resources, I'd be happy to provide recommendations now.\n\n[LM_0203]\n  Expected answer: The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features.\n  Expected keywords: user, prefer, suggestions, hotels, Miami, offer, great, views, possibly, ocean, city, skyline, unique, features, rooftop, pool, hot, tub, balcony, basic, budget, without\n  LLM answer: I don't recall you mentioning an upcoming trip to Miami in our conversation.\n\n[LM_0206]\n  Expected answer: The user would prefer suggestions that involve relaxing activities that can be done in the evening, preferably before 9:30 pm. They would not prefer suggestions that involve using their phone or watching TV, as these activities have been affecting their sleep quality.\n  Expected keywords: user, prefer, suggestions, involve, relaxing, activities, done, evening, preferably, 30, pm, using, phone, watching, TV, affecting, sleep, quality, 9\n  LLM answer: I don't recall discussing specific evening activities with you in our conversation. We have discussed many topics including travel, fitness, yoga, journaling, gaming, and various other subjects, but I don't have a specific record of recommending evening activities as a primary topic.\n\n[LM_0228]\n  Expected answer: The user would prefer suggestions related to listening to new podcasts or audiobooks, especially the genre beyond true crime or self-improvement, such as history. They may not be interested in activities that require visual attention, such as reading or watching videos, as they are commuting. The user would not prefer general podcast topics such as true crime or self-improvement, as the user wants to explore other topics.\n  Expected keywords: user, prefer, suggestions, related, listening, new, podcasts, audiobooks, especially, genre, beyond, true, crime, self, improvement, history, interested, activities, require, visual, attention, reading, watching, videos, commuting, general, podcast, topics, wants, explore, other\n  LLM answer: I don't recall you asking about activities to do during your commute to work in our conversation. We discussed your commute time (you mentioned your new apartment is about 20 minutes away from your old place, and you drive 2 hours to your parents' house), but we didn't discuss specific activities for your commute.\n\n[LM_0231]\n  Expected answer: Miss Bee Providore\n  Expected keywords: Miss, Bee, Providore\n  LLM answer: I don't recall\n\n[LM_0232]\n  Expected answer: The Plesiosaur had a blue scaly body.\n  Expected keywords: Plesiosaur, blue, scaly, body\n  LLM answer: blue\n\n[LM_0233]\n  Expected answer: The Sugar Factory at Icon Park.\n  Expected keywords: Sugar, Factory, Icon, Park\n  LLM answer: I don't recall discussing a specific dessert shop with giant milkshakes that you visited previously. However, during our conversation about Orlando dessert spots, I did recommend 'The Sugar Factory' at Icon Park, which offers an enormous menu of sweet treats including specialty drinks and giant milkshakes. This may be what you're thinking of, but I cannot confirm from our conversation that we previously discussed your visiting it.\n\n[LM_0234]\n  Expected answer: Roscioli\n  Expected keywords: Roscioli\n  LLM answer: Roscioli\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0124\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answered Chicago instead of suburbs\"},\n  {\"id\": \"LM_0131\", \"recalled\": false, \"accurate\": false, \"notes\": \"Explicitly stated 'I don't recall'\"},\n  {\"id\": \"LM_0151\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correct number with minor elaboration\"},\n  {\"id\": \"LM_0174\", \"recalled\": true, \"accurate\": true, \"notes\": \"Contains required keywords 'two hours'\"},\n  {\"id\": \"LM_0182\", \"recalled\": false, \"accurate\": false, \"notes\": \"Explicitly stated 'I don't recall'\"},\n  {\"id\": \"LM_0183\", \"recalled\": false, \"accurate\": false, \"notes\": \"Explicitly stated 'I don't recall'\"},\n  {\"id\": \"LM_0188\", \"recalled\": true, \"accurate\": true, \"notes\": \"Contains required keywords 'met' and 'twice'\"},\n  {\"id\": \"LM_0200\", \"recalled\": true, \"accurate\": false, \"notes\": \"Discussed Adobe Premiere Pro but didn't accurately recall user preferences for specifically tailored resources\"},\n  {\"id\": \"LM_0203\", \"recalled\": false, \"accurate\": false, \"notes\": \"Explicitly stated no recall of Miami trip discussion\"},\n  {\"id\": \"LM_0206\", \"recalled\": false, \"accurate\": false, \"notes\": \"Explicitly stated no specific record of evening activities discussion\"},\n  {\"id\": \"LM_0228\", \"recalled\": false, \"accurate\": false, \"notes\": \"Explicitly stated no recall of commute activities discussion\"},\n  {\"id\": \"LM_0231\", \"recalled\": false, \"accurate\": false, \"notes\": \"Explicitly stated 'I don't recall'\"},\n  {\"id\": \"LM_0232\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answered 'blue' but missed required keywords 'Plesiosaur', 'scaly', 'body'\"},\n  {\"id\": \"LM_0233\", \"recalled\": true, \"accurate\": true, \"notes\": \"Contains all required keywords and correct information\"},\n  {\"id\": \"LM_0234\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match with expected answer\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0124",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answered Chicago instead of suburbs"
+        },
+        {
+          "fact_id": "LM_0131",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Explicitly stated 'I don't recall'"
+        },
+        {
+          "fact_id": "LM_0151",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correct number with minor elaboration"
+        },
+        {
+          "fact_id": "LM_0174",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Contains required keywords 'two hours'"
+        },
+        {
+          "fact_id": "LM_0182",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Explicitly stated 'I don't recall'"
+        },
+        {
+          "fact_id": "LM_0183",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Explicitly stated 'I don't recall'"
+        },
+        {
+          "fact_id": "LM_0188",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Contains required keywords 'met' and 'twice'"
+        },
+        {
+          "fact_id": "LM_0200",
+          "question_type": "single-session-preference",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Discussed Adobe Premiere Pro but didn't accurately recall user preferences for specifically tailored resources"
+        },
+        {
+          "fact_id": "LM_0203",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Explicitly stated no recall of Miami trip discussion"
+        },
+        {
+          "fact_id": "LM_0206",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Explicitly stated no specific record of evening activities discussion"
+        },
+        {
+          "fact_id": "LM_0228",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Explicitly stated no recall of commute activities discussion"
+        },
+        {
+          "fact_id": "LM_0231",
+          "question_type": "single-session-assistant",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Explicitly stated 'I don't recall'"
+        },
+        {
+          "fact_id": "LM_0232",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answered 'blue' but missed required keywords 'Plesiosaur', 'scaly', 'body'"
+        },
+        {
+          "fact_id": "LM_0233",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Contains all required keywords and correct information"
+        },
+        {
+          "fact_id": "LM_0234",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match with expected answer"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "judge_prompt_sent": "Evaluate whether each answer is correct.\n\n[LM_0237]\n  Expected answer: Transcriptionist.\n  Expected keywords: Transcriptionist\n  LLM answer: Remote IT support specialist\n\n[LM_0241]\n  Expected answer: Evolution\n  Expected keywords: Evolution\n  LLM answer: Evolution\n\n[LM_0244]\n  Expected answer: 4\n  Expected keywords: 4\n  LLM answer: 4 mummies\n\n[LM_0292]\n  Expected answer: Serenity Yoga\n  Expected keywords: Serenity, Yoga\n  LLM answer: You take yoga classes on Saturday mornings, but you did not specify the location or name of the studio.\n\n[LM_0296]\n  Expected answer: Marketing specialist at a small startup\n  Expected keywords: Marketing, specialist, small, startup\n  LLM answer: Marketing specialist at a small startup\n\n[LM_0304]\n  Expected answer: 7\n  Expected keywords: 7\n  LLM answer: 7 shirts\n\n[LM_0306]\n  Expected answer: Nike\n  Expected keywords: Nike\n  LLM answer: Nike\n\n[LM_0307]\n  Expected answer: Data Science\n  Expected keywords: Data, Science\n  LLM answer: I don't recall\n\n[LM_0313]\n  Expected answer: 18\n  Expected keywords: 18\n  LLM answer: 18\n\n[LM_0318]\n  Expected answer: University of California, Los Angeles (UCLA)\n  Expected keywords: University, California, Los, Angeles, UCLA\n  LLM answer: UCLA\n\n[LM_0319]\n  Expected answer: 5 hours\n  Expected keywords: hours, 5\n  LLM answer: 5 hours\n\n[LM_0325]\n  Expected answer: 500\n  Expected keywords: 500\n  LLM answer: 500 copies\n\n[LM_0341]\n  Expected answer: A mix of Irish and Italian\n  Expected keywords: mix, Irish, Italian\n  LLM answer: Irish and Italian\n\n[LM_0347]\n  Expected answer: bronchitis\n  Expected keywords: bronchitis\n  LLM answer: bronchitis\n\n[LM_0349]\n  Expected answer: Dark Souls 3 DLC\n  Expected keywords: Dark, Souls, DLC, 3\n  LLM answer: Dark Souls 3 DLC (the last boss)\n\nFor each entry, check:\n1. \"recalled\": Does the answer demonstrate knowledge of the expected information? \"I don't recall\" = false.\n2. \"accurate\": Does the answer match the expected answer? Partial matches or wrong values = false.\n   Example: expected \"17 days\", answer \"10 days\" → recalled=true (knows about days), accurate=false (wrong number).\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}, ...]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0237\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answer is 'Remote IT support specialist' but expected 'Transcriptionist' - completely different profession\"},\n  {\"id\": \"LM_0241\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0244\", \"recalled\": true, \"accurate\": true, \"notes\": \"Contains required keyword '4', extra context ('mummies') is acceptable\"},\n  {\"id\": \"LM_0292\", \"recalled\": true, \"accurate\": false, \"notes\": \"Answer acknowledges yoga but explicitly states location/name not specified, whereas expected answer is 'Serenity Yoga'\"},\n  {\"id\": \"LM_0296\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match with all required keywords\"},\n  {\"id\": \"LM_0304\", \"recalled\": true, \"accurate\": true, \"notes\": \"Contains required keyword '7', extra context ('shirts') is acceptable\"},\n  {\"id\": \"LM_0306\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0307\", \"recalled\": false, \"accurate\": false, \"notes\": \"Answer is 'I don't recall' - no knowledge demonstrated\"},\n  {\"id\": \"LM_0313\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0318\", \"recalled\": true, \"accurate\": true, \"notes\": \"Answer 'UCLA' is valid abbreviation containing key information, matches expected intent\"},\n  {\"id\": \"LM_0319\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match with required keywords\"},\n  {\"id\": \"LM_0325\", \"recalled\": true, \"accurate\": true, \"notes\": \"Contains required keyword '500', extra context ('copies') is acceptable\"},\n  {\"id\": \"LM_0341\", \"recalled\": true, \"accurate\": true, \"notes\": \"Contains all required keywords (Irish, Italian) and concept of mix is conveyed\"},\n  {\"id\": \"LM_0347\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0349\", \"recalled\": true, \"accurate\": true, \"notes\": \"Contains all required keywords, extra context ('the last boss') is acceptable\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0237",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer is 'Remote IT support specialist' but expected 'Transcriptionist' - completely different profession"
+        },
+        {
+          "fact_id": "LM_0241",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0244",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Contains required keyword '4', extra context ('mummies') is acceptable"
+        },
+        {
+          "fact_id": "LM_0292",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Answer acknowledges yoga but explicitly states location/name not specified, whereas expected answer is 'Serenity Yoga'"
+        },
+        {
+          "fact_id": "LM_0296",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match with all required keywords"
+        },
+        {
+          "fact_id": "LM_0304",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Contains required keyword '7', extra context ('shirts') is acceptable"
+        },
+        {
+          "fact_id": "LM_0306",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0307",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "Answer is 'I don't recall' - no knowledge demonstrated"
+        },
+        {
+          "fact_id": "LM_0313",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0318",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer 'UCLA' is valid abbreviation containing key information, matches expected intent"
+        },
+        {
+          "fact_id": "LM_0319",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match with required keywords"
+        },
+        {
+          "fact_id": "LM_0325",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Contains required keyword '500', extra context ('copies') is acceptable"
+        },
+        {
+          "fact_id": "LM_0341",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Contains all required keywords (Irish, Italian) and concept of mix is conveyed"
+        },
+        {
+          "fact_id": "LM_0347",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0349",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Contains all required keywords, extra context ('the last boss') is acceptable"
+        }
+      ]
+    }
+  ]
+}
