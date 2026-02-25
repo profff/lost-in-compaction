@@ -1,4 +1,4 @@
-# Frozen Summaries: Preventing Information Loss in LLM Context Compaction
+# Lost in Compaction: Measuring Information Loss in LLM Context Summaries
 
 > Paper v2 — restructured with calibrated evidence (v5) and controlled compaction loss
 

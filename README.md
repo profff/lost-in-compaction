@@ -1,6 +1,6 @@
-# Frozen Summaries — LLM Context Compaction Benchmark
+# Lost in Compaction — Measuring Information Loss in LLM Context Summaries
 
-Measuring information loss when LLMs compact their conversation context.
+How much do LLMs forget when they summarize their own conversation history?
 
 ## What is this?
 
