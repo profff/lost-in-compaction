@@ -1,0 +1,22 @@
+{
+  "experiment": "iterative_v6",
+  "run_mode": "R4",
+  "density": 80,
+  "seed": 42,
+  "context_window": 190000,
+  "high_watermark": 0.9,
+  "low_watermark": 0.6,
+  "feed_batch_size": 10,
+  "qa_batch_size": 5,
+  "strategies": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ],
+  "model": "claude-haiku-4-5-20251001",
+  "conversation_tokens": 983940,
+  "conversation_messages": 4220,
+  "n_facts": 80,
+  "timestamp": "20260225_1642"
+}

@@ -283,6 +283,92 @@ def compact_tool_results_except_last(messages: list[dict], threshold: int = 500)
     return compacted
 
 
+class BrutalCompactor:
+    """Single-shot: summarize everything except last N messages each cycle.
+
+    Closest to what Claude Code does — when the watermark is hit, compact
+    ALL messages (except the most recent turn) into a single summary.
+    On subsequent cycles, re-summarizes the previous summary + newer messages,
+    producing maximum JPEG-cascade degradation.
+    """
+
+    def __init__(
+        self,
+        maxContextTokens: int = 200_000,
+        highWatermark: float = 0.90,
+        minKeepRecent: int = 2,
+    ):
+        self.maxContextTokens = maxContextTokens
+        self.highWatermark = highWatermark
+        self.minKeepRecent = minKeepRecent
+        # Conservative char limit for summarization input
+        self.maxChars = int(maxContextTokens * 2.4)
+
+        # Tracking
+        self.lastInputTokens = 0
+        self.compactionCount = 0
+        self.totalTokensFreed = 0
+
+    def update_from_api(self, inputTokens: int):
+        """Called after each LLM API call with actual token count."""
+        self.lastInputTokens = inputTokens
+
+    def should_compact(self, messages: list[dict], system: str = "") -> bool:
+        tokens = estimate_tokens(messages, system)
+        return tokens >= self.maxContextTokens * self.highWatermark
+
+    def compact(self, messages: list[dict], llm, system: str = "") -> dict:
+        """Compact ALL messages except the last minKeepRecent into one summary.
+        Mutates messages list in-place. Returns stats dict."""
+        tokensBefore = estimate_tokens(messages, system)
+        keepRecent = self.minKeepRecent
+
+        if len(messages) <= keepRecent + 2:
+            return {"compacted": False, "reason": "not enough messages"}
+
+        toCompact = messages[:-keepRecent]
+        conversationText = messages_to_text(toCompact)
+
+        # Truncate if text exceeds model capacity
+        if len(conversationText) > self.maxChars:
+            conversationText = conversationText[:self.maxChars] + "\n\n[...truncated...]"
+
+        try:
+            response = llm.chat_raw(
+                [{"role": "user", "content": f"{COMPACT_PROMPT}{conversationText}"}],
+                tools=None, system=COMPACT_SYSTEM,
+            )
+            summary = None
+            for block in response.content:
+                if block.type == "text":
+                    summary = block.text
+                    break
+            if not summary:
+                return {"compacted": False, "reason": "empty summary"}
+        except Exception as e:
+            return {"compacted": False, "reason": f"{type(e).__name__}: {e}"}
+
+        summaryPair = [
+            {"role": "user", "content": f"[Summary of {len(toCompact)} earlier messages]\n\n{summary}"},
+            {"role": "assistant", "content": "Understood. I have the context from our earlier conversation."},
+        ]
+        messages[:-keepRecent] = summaryPair
+
+        tokensAfter = estimate_tokens(messages, system)
+        freed = tokensBefore - tokensAfter
+        self.compactionCount += 1
+        self.totalTokensFreed += freed
+        return {
+            "compacted": True,
+            "messagesCompacted": len(toCompact),
+            "messagesRemaining": len(messages),
+            "tokensBefore": tokensBefore,
+            "tokensAfterEst": tokensAfter,
+            "tokensFreed": freed,
+            "compactionNumber": self.compactionCount,
+        }
+
+
 class ContextCompactor:
     """Dual-watermark incremental context compaction."""
 

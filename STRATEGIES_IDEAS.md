@@ -156,20 +156,91 @@ récent.
 **Variante** : TTL variable par catégorie — les décisions ont un long TTL,
 le debugging a un court TTL.
 
+**Complexité implem** : Faible — ajouter un champ `created_at` aux marqueurs
+frozen, supprimer ceux qui dépassent le TTL au lieu de merger.
+
+---
+
+### S9. Compaction turn-by-turn (érosion progressive)
+
+**Principe** : À chaque échange user/assistant, on résume systématiquement
+le turn brut le plus ancien. Pas de watermark, pas de batch — une érosion
+continue et régulière, un turn à la fois.
+
+```
+Échange 1: [raw1] [raw2] [raw3] [raw4] [raw5]
+Échange 2: [sum1] [raw2] [raw3] [raw4] [raw5] [raw6]
+Échange 3: [sum1] [sum2] [raw3] [raw4] [raw5] [raw6] [raw7]
+...
+```
+
+**Avantage** : Chaque résumé est hyper-focalisé (un seul turn) → meilleure
+qualité de summarization qu'un batch de 10 turns mélangés. Pas de "choc de
+compaction" — la dégradation est parfaitement lisse.
+
+**Lien avec Frozen (S3)** : C'est conceptuellement un Frozen avec
+`chunk_size=1 turn` et un trigger systématique (chaque échange) au lieu d'un
+watermark. La différence clé : la granularité fine devrait produire des
+résumés plus fidèles.
+
+**Risque** : Coût API × N (un appel de compaction par turn). Sur une longue
+session de 500 turns, ça fait 500 appels de summarization.
+
+**Testabilité** : Compatible avec notre protocole v5 mais plus cher. On
+itère sur chaque turn de la zone à compacter, on le résume individuellement,
+on gèle le résumé. ~200 appels API par config au lieu de 1.
+
+**Complexité implem** : Faible — c'est un FrozenCompactor avec
+`chunk_size=1` et trigger systématique.
+
+---
+
+## Notes de discussion (2026-02-25)
+
+### S5 vs S6 — clarification
+
+S5 et S6 attaquent le même problème (remplacer les résumés narratifs empilés)
+avec deux approches :
+
+- **S5** : UN doc structuré à sections, le LLM le met à jour à chaque
+  compaction. Plus élégant mais plus fragile — si le LLM réécrit tout au
+  lieu de mettre à jour, on retombe dans le JPEG cascade.
+
+- **S6** : Fact store **append-only** (jamais réécrit) + résumé narratif
+  séparé (classique). Plus safe car les faits ne sont jamais retouchés.
+  Prompt unique double-sortie (FACTS + SUMMARY) pour éviter les double
+  appels. Le risque principal est la qualité d'extraction — on sait déjà
+  que le LLM rate ~25% des faits en recall simple.
+
+Les deux restent **dans le contexte** (pas de RAG externe, pas d'offload).
+Le doc structuré / fact store est injecté en tête de la fenêtre de contexte.
+
 ---
 
 ## Matrice de comparaison
 
-| Stratégie | Early recall | Late recall | Complexité | Lost in Middle? |
-|-----------|:-----------:|:----------:|:----------:|:---------------:|
-| S4. Frozen V2 (rang) | ★★★★★ | ★★ | Faible | Oui (même pb) |
-| S5. Structuré unique | ★★★★ | ★★★★ | Moyenne | **Non** |
-| S6. Hybrid fact+narr | ★★★★★ | ★★★★ | Haute | Partiel |
-| S7. Fossiles | ★★★ | ★★★★★ | Moyenne | **Non** |
-| S8. Frozen TTL | ★★ | ★★★★★ | Faible | Oui |
+| Stratégie | Early recall | Late recall | Complexité | Lost in Middle? | Codée ? |
+|-----------|:-----------:|:----------:|:----------:|:---------------:|:-------:|
+| S1. Brutal | ★ | ★★★★★ | Aucune | N/A (pas de résumé) | ✅ |
+| S2. Incremental | ★★ | ★★★★ | Faible | Oui | ✅ |
+| S3. Frozen | ★★★★ | ★★★ | Faible | Oui | ✅ |
+| S4. Frozen Ranked | ★★★★★ | ★★ | Faible | Oui (même pb) | ✅ |
+| S5. Structuré unique | ★★★★ | ★★★★ | Moyenne | **Non** | ❌ |
+| S6. Hybrid fact+narr | ★★★★★ | ★★★★ | Haute | Partiel | ❌ |
+| S7. Fossiles | ★★★ | ★★★★★ | Moyenne | **Non** | ❌ |
+| S8. Frozen TTL | ★★ | ★★★★★ | Faible | Oui | ❌ |
+| S9. Turn-by-turn | ★★★★ | ★★★ | Faible | Oui | ❌ (≈ Frozen chunk=1) |
 
-## Priorité suggérée
+## Priorité Phase 3
 
-1. **S4 (Frozen V2 rang)** — rapide à implémenter, teste l'hypothèse merge
-2. **S5 (Structuré)** — attaque le problème Lost in the Middle
-3. **S7 (Fossiles)** — variante intéressante si S5 est trop complexe
+### Tier 1 — déjà codé, benchmark immédiat
+1. **S1-S3** : re-benchmark avec protocole v5 calibré (résultats v1 non calibrés)
+2. **S4 (Frozen Ranked)** : codé, jamais testé — gratuit
+
+### Tier 2 — à coder, fort potentiel
+3. **S5 (Structuré)** ou **S6 (Hybrid)** : attaquent Lost in the Middle
+4. **S9 (Turn-by-turn)** : variante fine de Frozen, teste l'hypothèse granularité
+
+### Tier 3 — intéressant mais secondaire
+5. **S7 (Fossiles)** : variante de S5/S6 avec scoring d'importance
+6. **S8 (Frozen TTL)** : optimisation de S3, teste l'hypothèse "oublier volontairement"
