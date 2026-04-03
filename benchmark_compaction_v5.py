@@ -50,14 +50,14 @@ def print(*args, **kwargs):
 # ============================================================================
 
 from compaction import estimate_tokens, messages_to_text, COMPACT_SYSTEM, COMPACT_PROMPT
-from benchmark_compaction_v2 import RateLimitedLLM
+from benchmark_compaction_v2 import RateLimitedLLM, OllamaLLM
 
 
 # ============================================================================
 # CONSTANTS
 # ============================================================================
 
-REAL_TARGET_TOKENS = 190_000
+REAL_TARGET_TOKENS = 190_000  # overridden by --target-tokens
 CHARS_PER_TOKEN = 4.3
 
 COMPACTION_LEVELS = {
@@ -131,7 +131,11 @@ def estimate_tokens_chars(chars):
 # CONTEXT LOADING (from benchmark_recall_v5.py)
 # ============================================================================
 
+_CONTEXTS_DIR_OVERRIDE = None
+
 def contexts_dir(runMode):
+    if _CONTEXTS_DIR_OVERRIDE:
+        return Path(_CONTEXTS_DIR_OVERRIDE) / f"v5_{runMode}"
     return Path("data/contexts") / f"v5_{runMode}"
 
 
@@ -623,16 +627,23 @@ def build_all_contexts(args, llm, paddingPool, outputDir):
 # ============================================================================
 
 def run_benchmark(args):
-    import anthropic
+    from llm_backend import LLM_CreateBackend
 
     runMode = args.run
     densities = [int(d) for d in args.densities.split(",")]
     levels = [l.strip() for l in args.levels.split(",")]
     batchSizes = [int(b) for b in args.batch_sizes.split(",")]
     model = args.model
+    judgeModel = args.judge_model or model
     judgeBatchSize = 15
 
-    client = anthropic.Anthropic()
+    backend = LLM_CreateBackend(
+        args.backend, model=model, judge_model=judgeModel,
+        base_url=getattr(args, 'base_url', None),
+        api_key=getattr(args, 'api_key', None),
+        poll_interval=args.poll_interval,
+        workers=getattr(args, 'workers', 4),
+    )
 
     # Output directory
     timestamp = datetime.now().strftime("%Y%m%d_%H%M")
@@ -648,7 +659,10 @@ def run_benchmark(args):
 
     # LLM for sync compaction calls
     compactModel = args.compact_model or model
-    llm = RateLimitedLLM(model=compactModel, minDelay=2.0)
+    if args.backend == "openai":
+        llm = OllamaLLM(model=compactModel, baseUrl=args.base_url.replace("/v1", ""))
+    else:
+        llm = RateLimitedLLM(model=compactModel, minDelay=2.0)
 
     print(f"\n  Loading padding pool...")
     paddingPool = load_padding_pool()
@@ -729,8 +743,9 @@ def run_benchmark(args):
         "batch_sizes": batchSizes,
         "seed": args.seed,
         "model": model,
+        "judge_model": judgeModel,
         "compact_model": compactModel,
-        "backend": "anthropic_batch",
+        "backend": backend.name,
         "contexts_dir": str(contexts_dir(runMode)),
     }
     save_json(config, str(outputDir / "config.json"))
@@ -780,12 +795,7 @@ def run_benchmark(args):
 
     print(f"  Total Q&A requests: {len(qaRequests)}")
 
-    QA_CHUNK_SIZE = 20
-    qaBatches = submit_chunked(client, qaRequests, QA_CHUNK_SIZE,
-                                description=f"[Q&A {runMode} compaction]")
-    qaResults = {}
-    for qab in qaBatches:
-        qaResults.update(wait_for_batch(client, qab.id, pollInterval=args.poll_interval))
+    qaResults = backend.run_requests(qaRequests)
 
     # Parse Q&A
     print(f"\n  Parsing Q&A results...")
@@ -885,7 +895,7 @@ def run_benchmark(args):
             judgeRequests.append({
                 "custom_id": customId,
                 "params": {
-                    "model": model,
+                    "model": judgeModel,
                     "max_tokens": 4096,
                     "system": JUDGE_SYSTEM,
                     "messages": [{"role": "user", "content": judgePrompt}],
@@ -902,12 +912,9 @@ def run_benchmark(args):
 
     print(f"  Total judge requests: {len(judgeRequests)}")
 
-    JUDGE_CHUNK_SIZE = 50
-    judgeBatches = submit_chunked(client, judgeRequests, JUDGE_CHUNK_SIZE,
-                                  description=f"[Judge {runMode} compaction]")
-    judgeResults = {}
-    for jb in judgeBatches:
-        judgeResults.update(wait_for_batch(client, jb.id, pollInterval=args.poll_interval))
+    for jr in judgeRequests:
+        jr["params"]["model"] = judgeModel
+    judgeResults = backend.run_requests(judgeRequests)
 
     # Parse judge
     print(f"\n  Parsing judge results...")
@@ -1043,8 +1050,8 @@ def run_benchmark(args):
 
     # Batch API info
     summary["batch_api"] = {
-        "qa_batch_ids": [b.id for b in qaBatches],
-        "judge_batch_ids": [b.id for b in judgeBatches],
+        "qa_batch_ids": [],
+        "judge_batch_ids": [],
         "qa_requests": len(qaRequests),
         "judge_requests": len(judgeRequests),
         "compact_calls": llm.totalCalls,
@@ -1071,6 +1078,7 @@ def dry_run(args):
     print(f"  DRY RUN — Compaction v5 ({runMode})")
     print(f"{'=' * 70}")
     print(f"  Model (Q&A):      {args.model}")
+    print(f"  Model (judge):    {args.judge_model or args.model}")
     print(f"  Model (compact):  {args.compact_model or args.model}")
     print(f"  Densities:        {densities}")
     print(f"  Levels:           {levels}")
@@ -1253,12 +1261,33 @@ def main():
                         help="Q&A batch sizes (default: 1,5,10)")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--model", type=str, default="claude-haiku-4-5-20251001",
-                        help="Model for Q&A + judge (default: haiku)")
+                        help="Model for Q&A (default: haiku)")
+    parser.add_argument("--judge-model", type=str, default=None,
+                        help="Model for judge (default: same as --model)")
     parser.add_argument("--compact-model", type=str, default=None,
                         help="Model for compaction LLM calls (default: same as --model)")
     parser.add_argument("--output-dir", type=str, default=None)
     parser.add_argument("--poll-interval", type=float, default=30.0)
+    parser.add_argument("--backend", type=str, default="anthropic_batch",
+                        choices=["anthropic_batch", "openai", "wrapper"],
+                        help="LLM backend (default: anthropic_batch)")
+    parser.add_argument("--base-url", type=str, default=None,
+                        help="Base URL for OpenAI/wrapper backend")
+    parser.add_argument("--api-key", type=str, default=None,
+                        help="API key for OpenAI backend")
+    parser.add_argument("--workers", type=int, default=4,
+                        help="Parallel workers for wrapper backend (default: 4)")
+    parser.add_argument("--contexts-dir", type=str, default=None,
+                        help="Override contexts directory")
+    parser.add_argument("--target-tokens", type=int, default=None,
+                        help="Target context size for re-padding (default: 190000)")
     args = parser.parse_args()
+
+    global _CONTEXTS_DIR_OVERRIDE, REAL_TARGET_TOKENS
+    if args.contexts_dir:
+        _CONTEXTS_DIR_OVERRIDE = args.contexts_dir
+    if args.target_tokens:
+        REAL_TARGET_TOKENS = args.target_tokens
 
     if args.dry_run:
         dry_run(args)

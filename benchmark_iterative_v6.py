@@ -49,7 +49,7 @@ from compaction import (
     estimate_tokens, messages_to_text,
     BrutalCompactor, ContextCompactor, FrozenCompactor, FrozenRankedCompactor,
 )
-from benchmark_compaction_v2 import RateLimitedLLM
+from benchmark_compaction_v2 import RateLimitedLLM, WrapperLLM
 
 
 # ============================================================================
@@ -280,26 +280,48 @@ class TrackedCompactor:
 # ============================================================================
 
 def feed_strategy(allMessages, compactor, llm, label, factMeta,
-                  batchSize=10, system=""):
+                  batchSize=10, system="", checkpoints=None):
     """Feed messages in batches, compact at watermark, track facts.
 
-    Returns (finalMessages, trackingData).
+    Args:
+        checkpoints: list of token thresholds (e.g. [500000, 1000000, 2000000]).
+            At each threshold, yields (messages_copy, tracking_copy, fed_tokens).
+            If None, no checkpoints — just runs to completion.
+
+    Returns (finalMessages, trackingData, checkpointSnapshots).
+        checkpointSnapshots: list of (messages, tracking, fed_tokens) at each checkpoint.
     """
     tracker = TrackedCompactor(compactor, factMeta, len(allMessages))
     messages = []
     consecutiveFailures = 0
     maxFailures = 3
+    checkpointSnapshots = []
+    pendingCheckpoints = list(checkpoints) if checkpoints else []
+    fedChars = 0
 
     total = len(allMessages)
     for i in range(0, total, batchSize):
         batch = allMessages[i:i + batchSize]
         messages.extend(batch)
         tracker.update_fed(i + len(batch))
+        fedChars += sum(len(m.get("content", "")) for m in batch)
+        fedTokens = estimate_tokens_chars(fedChars)
 
         if hasattr(compactor, 'lastInputTokens'):
             compactor.lastInputTokens = estimate_tokens(messages, system)
 
         if consecutiveFailures >= maxFailures:
+            # Check checkpoints even when compaction failed
+            if pendingCheckpoints and fedTokens >= pendingCheckpoints[0]:
+                cpTok = pendingCheckpoints.pop(0)
+                print(f"  [{label}] CHECKPOINT @~{cpTok//1000}K "
+                      f"(fed ~{fedTokens:,} tok, {len(messages)} msgs, "
+                      f"{len(tracker.cycleLog)} cycles)")
+                checkpointSnapshots.append((
+                    deepcopy(messages),
+                    deepcopy(tracker.get_tracking_summary()),
+                    fedTokens,
+                ))
             continue
 
         if tracker.should_compact(messages, system):
@@ -326,12 +348,24 @@ def feed_strategy(allMessages, compactor, llm, label, factMeta,
                 if consecutiveFailures >= maxFailures:
                     print(f"  [{label}] Giving up after {maxFailures} failures")
 
+        # Check if we crossed a checkpoint
+        if pendingCheckpoints and fedTokens >= pendingCheckpoints[0]:
+            cpTok = pendingCheckpoints.pop(0)
+            print(f"  [{label}] CHECKPOINT @~{cpTok//1000}K "
+                  f"(fed ~{fedTokens:,} tok, {len(messages)} msgs, "
+                  f"{len(tracker.cycleLog)} cycles)")
+            checkpointSnapshots.append((
+                deepcopy(messages),
+                deepcopy(tracker.get_tracking_summary()),
+                fedTokens,
+            ))
+
     # Final token count
     finalTokens = estimate_tokens(messages, system)
     print(f"  [{label}] Done: {len(messages)} msgs, ~{finalTokens:,} tokens, "
           f"{len(tracker.cycleLog)} compaction cycles")
 
-    return messages, tracker.get_tracking_summary()
+    return messages, tracker.get_tracking_summary(), checkpointSnapshots
 
 
 # ============================================================================
@@ -535,14 +569,32 @@ def main():
                         help="Q&A batch size (questions per request)")
     parser.add_argument("--strategies", type=str, default="S1,S2,S3,S4",
                         help="Comma-separated strategies to test")
-    parser.add_argument("--model", type=str, default="claude-haiku-4-5-20251001")
-    parser.add_argument("--compact-delay", type=float, default=2.0,
+    parser.add_argument("--model", type=str, default="claude-sonnet-4-20250514")
+    parser.add_argument("--judge-model", type=str, default=None,
+                        help="Model for judge (default: same as --model)")
+    parser.add_argument("--compact-delay", type=float, default=0.5,
                         help="Seconds between compaction API calls")
     parser.add_argument("--dry-run", action="store_true")
     parser.add_argument("--skip-feed", action="store_true",
                         help="Skip feed+compact, load saved contexts")
+    parser.add_argument("--checkpoints", type=str, default=None,
+                        help="Comma-separated token thresholds for mid-feed evaluation "
+                             "(e.g. 500000,1000000,2000000). Enables Phase D mode.")
     parser.add_argument("--grep-only", action="store_true")
+    parser.add_argument("--conversation", type=str, default=None,
+                        help="Path to conversation JSON (overrides --density/--target-tokens lookup)")
+    parser.add_argument("--backend", type=str, default="wrapper",
+                        choices=["anthropic_batch", "wrapper", "openai"],
+                        help="Backend for Q&A (default: wrapper)")
+    parser.add_argument("--judge-backend", type=str, default=None,
+                        help="Backend for judge (default: same as --backend)")
+    parser.add_argument("--base-url", type=str, default=None,
+                        help="Base URL for wrapper/openai backend")
+    parser.add_argument("--workers", type=int, default=4,
+                        help="Parallel workers for wrapper backend (default: 4)")
     args = parser.parse_args()
+    if args.judge_backend is None:
+        args.judge_backend = args.backend
 
     strategyKeys = [s.strip() for s in args.strategies.split(",")]
     for sk in strategyKeys:
@@ -563,7 +615,18 @@ def main():
     print("=" * 70)
 
     # Load conversation
-    allMessages, convMeta = load_conversation(args.density, args.target_tokens, args.seed)
+    if args.conversation:
+        convFile = Path(args.conversation)
+        metaFile = convFile.parent / (convFile.stem + "_meta.json")
+        print(f"  Loading conversation: {convFile.name}...")
+        with open(convFile, encoding="utf-8") as f:
+            allMessages = json.load(f)
+        with open(metaFile, encoding="utf-8") as f:
+            convMeta = json.load(f)
+        print(f"    {len(allMessages)} messages, ~{convMeta['est_tokens']:,} tokens, "
+              f"{len(convMeta['facts'])} facts")
+    else:
+        allMessages, convMeta = load_conversation(args.density, args.target_tokens, args.seed)
     facts = extract_facts(convMeta)
     factMeta = convMeta["facts"]
 
@@ -605,6 +668,34 @@ def main():
               f"~${compactTotal + qaTotal + judgeTotal:.2f}")
         return
 
+    # ================================================================
+    # Setup backends
+    # ================================================================
+
+    from llm_backend import LLM_CreateBackend
+
+    judgeModel = args.judge_model or args.model
+
+    # LLM for compaction (sync, single calls)
+    if args.backend == "wrapper":
+        llm = WrapperLLM(args.model, minDelay=args.compact_delay)
+    else:
+        llm = RateLimitedLLM(args.model, minDelay=args.compact_delay)
+
+    # Backend for Q&A phase (parallel)
+    qaBackend = LLM_CreateBackend(
+        args.backend, model=args.model,
+        base_url=getattr(args, 'base_url', None),
+        workers=args.workers,
+    )
+
+    # Backend for judge phase
+    judgeBackend = LLM_CreateBackend(
+        args.judge_backend, model=judgeModel,
+        base_url=getattr(args, 'base_url', None),
+        workers=args.workers,
+    )
+
     # Save config
     config = {
         "experiment": "iterative_v6",
@@ -618,6 +709,10 @@ def main():
         "qa_batch_size": args.batch_size,
         "strategies": strategyKeys,
         "model": args.model,
+        "judge_model": judgeModel,
+        "backend": args.backend,
+        "judge_backend": args.judge_backend,
+        "workers": args.workers,
         "conversation_tokens": totalTokens,
         "conversation_messages": len(allMessages),
         "n_facts": len(facts),
@@ -625,16 +720,14 @@ def main():
     }
     save_json(config, outputDir / "config.json")
 
-    # ================================================================
-    # PHASE 1 — Feed + Compact (per strategy)
-    # ================================================================
-
-    import anthropic
-    client = anthropic.Anthropic()
-    llm = RateLimitedLLM(args.model, minDelay=args.compact_delay)
+    # Parse checkpoints early (needed for feed phase)
+    checkpointTokens = []
+    if args.checkpoints:
+        checkpointTokens = [int(c.strip()) for c in args.checkpoints.split(",")]
 
     strategyContexts = {}  # stratKey -> final messages
     strategyTracking = {}  # stratKey -> tracking data
+    strategyCheckpoints = {}  # stratKey -> [(messages, tracking, fedTokens), ...]
 
     if args.skip_feed:
         print(f"\n  --- Skipping feed+compact (loading saved contexts) ---")
@@ -672,13 +765,15 @@ def main():
                     lowWatermark=args.low_watermark,
                 )
 
-            finalMsgs, tracking = feed_strategy(
+            finalMsgs, tracking, cpSnapshots = feed_strategy(
                 allMessages, compactor, llm, sk, factMeta,
-                batchSize=args.feed_batch_size, system=SYSTEM_PROMPT
+                batchSize=args.feed_batch_size, system=SYSTEM_PROMPT,
+                checkpoints=checkpointTokens,
             )
 
             strategyContexts[sk] = finalMsgs
             strategyTracking[sk] = tracking
+            strategyCheckpoints[sk] = cpSnapshots
 
             # Save
             stratDir = outputDir / "strategies" / f"{sk}_{sName}"
@@ -690,188 +785,211 @@ def main():
                 save_json(tracking.get("cycle_log", []), stratDir / "compaction_log.json")
 
     # ================================================================
-    # PHASE 2 — Grep scan
+    # EVALUATION FUNCTION (reusable for checkpoints)
     # ================================================================
 
-    print(f"\n  === PHASE 2: Grep scan ===")
-    grepResults = {}
-    for sk in strategyKeys:
-        gResult = grep_keywords(strategyContexts[sk], facts)
-        gSummary = summarize_grep(gResult)
-        grepResults[sk] = gSummary
-        save_json(gResult, outputDir / "grep" / f"{sk}.json")
-        print(f"  [{sk}] grep upper bound: {gSummary['recall_upper_bound']:.1%} "
-              f"({gSummary['all_present']}/{gSummary['facts_total']})")
+    def evaluate_snapshot(snapshotContexts, snapshotTracking, evalFacts, evalFactMeta,
+                          evalLabel, evalDir):
+        """Run grep + QA + judge + metrics on a set of strategy contexts.
+
+        Args:
+            snapshotContexts: dict {stratKey: messages}
+            snapshotTracking: dict {stratKey: tracking_data}
+            evalFacts: list of (fid, question, answer, keywords, qType)
+            evalFactMeta: list of fact metadata dicts
+            evalLabel: label for print output
+            evalDir: directory to save results
+        Returns: dict {stratKey: metrics}
+        """
+        evalKeys = [sk for sk in strategyKeys if sk in snapshotContexts]
+        bs = args.batch_size
+
+        # -- Grep --
+        grepResults = {}
+        for sk in evalKeys:
+            gResult = grep_keywords(snapshotContexts[sk], evalFacts)
+            gSummary = summarize_grep(gResult)
+            grepResults[sk] = gSummary
+            save_json(gResult, evalDir / "grep" / f"{sk}.json")
+            print(f"  [{sk}] grep: {gSummary['recall_upper_bound']:.1%}")
+
+        # -- QA --
+        qaRequests = []
+        for sk in evalKeys:
+            contextMsgs = snapshotContexts[sk]
+            for bIdx in range(0, len(evalFacts), bs):
+                batch = evalFacts[bIdx:bIdx + bs]
+                questionsText = "\n".join(
+                    f"- [{fid}] {question}" for fid, question, _, _, _ in batch
+                )
+                prompt = BATCH_QUESTION_PROMPT.format(questions=questionsText)
+                reqMessages = contextMsgs + [{"role": "user", "content": prompt}]
+                qaRequests.append({
+                    "custom_id": f"qa_{sk}_bs{bs}_b{bIdx // bs}",
+                    "params": {
+                        "model": args.model,
+                        "max_tokens": 4096,
+                        "system": SYSTEM_PROMPT,
+                        "messages": reqMessages,
+                    },
+                })
+
+        print(f"  QA: {len(qaRequests)} requests")
+        allQaResults = qaBackend.run_requests(qaRequests)
+
+        answersByStrategy = {sk: {} for sk in evalKeys}
+        for cid, result in allQaResults.items():
+            parts = cid.split("_")
+            sk = parts[1]
+            batchIdx = int(parts[3][1:])
+            if result["status"] != "succeeded":
+                continue
+            try:
+                answers = parse_llm_json(result["text"])
+                answerMap = {a["id"]: a.get("answer", "[parse error]") for a in answers}
+            except Exception:
+                answerMap = {}
+            batchStart = batchIdx * bs
+            batchFacts = evalFacts[batchStart:batchStart + bs]
+            for fid, _, _, _, _ in batchFacts:
+                answersByStrategy[sk][fid] = answerMap.get(fid, "[no answer]")
+
+        for sk in evalKeys:
+            save_json(answersByStrategy[sk], evalDir / "answers" / f"{sk}_bs{bs}.json")
+
+        # -- Judge --
+        judgeBatchSize = 15
+        judgeRequests = []
+        for sk in evalKeys:
+            entries = []
+            for fid, question, answer, keywords, qType in evalFacts:
+                llmAnswer = answersByStrategy[sk].get(fid, "[no answer]")
+                entries.append({
+                    "id": fid, "question": question,
+                    "expected_answer": answer, "expected_keywords": keywords,
+                    "llm_answer": llmAnswer,
+                })
+            for jIdx in range(0, len(entries), judgeBatchSize):
+                batch = entries[jIdx:jIdx + judgeBatchSize]
+                judgeRequests.append({
+                    "custom_id": f"judge_{sk}_b{jIdx // judgeBatchSize}",
+                    "params": {
+                        "model": judgeModel,
+                        "max_tokens": 4096,
+                        "system": JUDGE_SYSTEM,
+                        "messages": [{"role": "user", "content": json.dumps(batch, indent=2)}],
+                    },
+                })
+                # Fix: use proper prompt format
+                judgeRequests[-1]["params"]["messages"] = [
+                    {"role": "user", "content": BATCH_JUDGE_PROMPT.format(
+                        entries=json.dumps(batch, indent=2))}
+                ]
+
+        print(f"  Judge: {len(judgeRequests)} requests")
+        allJudgeResults = judgeBackend.run_requests(judgeRequests)
+
+        verdictsByStrategy = {sk: [] for sk in evalKeys}
+        for cid, result in allJudgeResults.items():
+            parts = cid.split("_")
+            sk = parts[1]
+            if result["status"] != "succeeded":
+                continue
+            try:
+                verdicts = parse_llm_json(result["text"])
+                for v in verdicts:
+                    v["fact_id"] = v.pop("id", v.get("fact_id", "?"))
+                verdictsByStrategy[sk].extend(verdicts)
+            except Exception:
+                pass
+
+        for sk in evalKeys:
+            save_json({"verdicts": verdictsByStrategy[sk]},
+                      evalDir / "judgments" / f"{sk}_bs{bs}.json")
+
+        # -- Metrics --
+        evalResults = {}
+        for sk in evalKeys:
+            sName = STRATEGIES[sk][0]
+            metrics = compute_metrics(
+                verdictsByStrategy[sk], evalFactMeta,
+                tracking=snapshotTracking.get(sk),
+            )
+            metrics["grep"] = grepResults.get(sk, {})
+            evalResults[sk] = metrics
+            print(f"  [{sk}] Recall: {metrics['recall']:.1%} "
+                  f"({metrics['facts_recalled']}/{metrics['facts_total']}) "
+                  f"| Grep: {metrics['grep'].get('recall_upper_bound', 0):.1%}")
+
+        save_json({"results": evalResults, "label": evalLabel}, evalDir / "summary.json")
+        return evalResults
+
+    # ================================================================
+    # PHASE 2-5 — Evaluate (final + checkpoints)
+    # ================================================================
 
     if args.grep_only:
-        print("\n  --- Grep-only mode, stopping here ---")
-        save_json({"grep": grepResults, "config": config}, outputDir / "summary.json")
+        # Quick grep scan only
+        for sk in strategyKeys:
+            gResult = grep_keywords(strategyContexts[sk], facts)
+            gSummary = summarize_grep(gResult)
+            save_json(gResult, outputDir / "grep" / f"{sk}.json")
+            print(f"  [{sk}] grep: {gSummary['recall_upper_bound']:.1%}")
         return
 
-    # ================================================================
-    # PHASE 3 — Q&A via Batch API
-    # ================================================================
+    # Evaluate checkpoints (if any)
+    checkpointResults = {}
+    if checkpointTokens:
+        for cpIdx, (sk, snapshots) in enumerate(
+            [(sk, strategyCheckpoints.get(sk, [])) for sk in strategyKeys]
+        ):
+            pass  # handled below
 
-    print(f"\n  === PHASE 3: Q&A (Batch API) ===")
-    bs = args.batch_size
-    qaRequests = []
+        # Collect all checkpoint snapshots across strategies
+        # strategyCheckpoints[sk] = [(messages, tracking, fedTokens), ...]
+        nCheckpoints = max(len(strategyCheckpoints.get(sk, []))
+                          for sk in strategyKeys) if strategyCheckpoints else 0
 
-    for sk in strategyKeys:
-        contextMsgs = strategyContexts[sk]
-        for bIdx in range(0, len(facts), bs):
-            batch = facts[bIdx:bIdx + bs]
-            questionsText = "\n".join(
-                f"- [{fid}] {question}" for fid, question, _, _, _ in batch
-            )
-            prompt = BATCH_QUESTION_PROMPT.format(questions=questionsText)
+        for cpIdx in range(nCheckpoints):
+            cpContexts = {}
+            cpTracking = {}
+            cpTok = 0
+            for sk in strategyKeys:
+                snaps = strategyCheckpoints.get(sk, [])
+                if cpIdx < len(snaps):
+                    msgs, tracking, fedTok = snaps[cpIdx]
+                    cpContexts[sk] = msgs
+                    cpTracking[sk] = tracking
+                    cpTok = fedTok
 
-            reqMessages = contextMsgs + [{"role": "user", "content": prompt}]
-            customId = f"qa_{sk}_bs{bs}_b{bIdx // bs}"
+            if not cpContexts:
+                continue
 
-            qaRequests.append({
-                "custom_id": customId,
-                "params": {
-                    "model": args.model,
-                    "max_tokens": 4096,
-                    "system": SYSTEM_PROMPT,
-                    "messages": reqMessages,
-                },
-            })
+            cpLabel = f"checkpoint_{cpTok // 1000}K"
+            cpDir = outputDir / f"checkpoint_{cpTok // 1000}K"
+            print(f"\n  === EVAL CHECKPOINT @~{cpTok // 1000}K ===")
 
-    print(f"  Total Q&A requests: {len(qaRequests)}")
-    qaBatches = submit_chunked(client, qaRequests, QA_CHUNK_SIZE, "Q&A")
+            # Only evaluate facts that have been fed at this checkpoint
+            fedFactIds = set()
+            for sk in cpContexts:
+                tracking = cpTracking[sk]
+                for fid, info in tracking.get("fact_status", {}).items():
+                    if info["status"] != "not_yet_fed":
+                        fedFactIds.add(fid)
 
-    # Wait and collect
-    allQaResults = {}
-    for batch in qaBatches:
-        results = wait_for_batch(client, batch.id)
-        allQaResults.update(results)
+            cpFacts = [(fid, q, a, kw, qt) for fid, q, a, kw, qt in facts
+                       if fid in fedFactIds]
+            cpFactMeta = [fm for fm in factMeta if fm["fact_id"] in fedFactIds]
 
-    # Parse answers per strategy
-    answersByStrategy = {sk: {} for sk in strategyKeys}
-    for cid, result in allQaResults.items():
-        # parse cid: qa_S1_bs5_b0
-        parts = cid.split("_")
-        sk = parts[1]
-        batchIdx = int(parts[3][1:])
+            print(f"  Facts fed: {len(cpFacts)}/{len(facts)}")
+            cpResults = evaluate_snapshot(
+                cpContexts, cpTracking, cpFacts, cpFactMeta, cpLabel, cpDir)
+            checkpointResults[cpLabel] = cpResults
 
-        if result["status"] != "succeeded":
-            print(f"  WARNING: {cid} failed: {result['text']}")
-            continue
-
-        try:
-            answers = parse_llm_json(result["text"])
-            answerMap = {a["id"]: a.get("answer", "[parse error]") for a in answers}
-        except Exception as e:
-            print(f"  WARNING: {cid} parse error: {e}")
-            answerMap = {}
-
-        batchStart = batchIdx * bs
-        batchFacts = facts[batchStart:batchStart + bs]
-        for fid, _, _, _, _ in batchFacts:
-            answersByStrategy[sk][fid] = answerMap.get(fid, "[no answer]")
-
-    # Save answers
-    for sk in strategyKeys:
-        save_json(answersByStrategy[sk], outputDir / "answers" / f"{sk}_bs{bs}.json")
-        answered = sum(1 for a in answersByStrategy[sk].values() if a != "[no answer]")
-        print(f"  [{sk}] {answered}/{len(facts)} answers collected")
-
-    # ================================================================
-    # PHASE 4 — Judge via Batch API
-    # ================================================================
-
-    print(f"\n  === PHASE 4: Judge (Batch API) ===")
-    judgeBatchSize = 15
-    judgeRequests = []
-
-    for sk in strategyKeys:
-        entries = []
-        for fid, question, answer, keywords, qType in facts:
-            llmAnswer = answersByStrategy[sk].get(fid, "[no answer]")
-            entries.append({
-                "id": fid,
-                "question": question,
-                "expected_answer": answer,
-                "expected_keywords": keywords,
-                "llm_answer": llmAnswer,
-            })
-
-        for jIdx in range(0, len(entries), judgeBatchSize):
-            batch = entries[jIdx:jIdx + judgeBatchSize]
-            entriesText = json.dumps(batch, indent=2)
-            prompt = BATCH_JUDGE_PROMPT.format(entries=entriesText)
-            customId = f"judge_{sk}_b{jIdx // judgeBatchSize}"
-
-            judgeRequests.append({
-                "custom_id": customId,
-                "params": {
-                    "model": args.model,
-                    "max_tokens": 4096,
-                    "system": JUDGE_SYSTEM,
-                    "messages": [{"role": "user", "content": prompt}],
-                },
-            })
-
-    print(f"  Total judge requests: {len(judgeRequests)}")
-    judgeBatches = submit_chunked(client, judgeRequests, JUDGE_CHUNK_SIZE, "Judge")
-
-    allJudgeResults = {}
-    for batch in judgeBatches:
-        results = wait_for_batch(client, batch.id)
-        allJudgeResults.update(results)
-
-    # Parse verdicts per strategy
-    verdictsByStrategy = {sk: [] for sk in strategyKeys}
-    for cid, result in allJudgeResults.items():
-        parts = cid.split("_")
-        sk = parts[1]
-
-        if result["status"] != "succeeded":
-            print(f"  WARNING: {cid} failed: {result['text']}")
-            continue
-
-        try:
-            verdicts = parse_llm_json(result["text"])
-            for v in verdicts:
-                v["fact_id"] = v.pop("id", v.get("fact_id", "?"))
-            verdictsByStrategy[sk].extend(verdicts)
-        except Exception as e:
-            print(f"  WARNING: {cid} parse error: {e}")
-
-    # Save judgments
-    for sk in strategyKeys:
-        save_json({"verdicts": verdictsByStrategy[sk]},
-                  outputDir / "judgments" / f"{sk}_bs{bs}.json")
-        recalled = sum(1 for v in verdictsByStrategy[sk] if v.get("recalled"))
-        print(f"  [{sk}] {recalled}/{len(verdictsByStrategy[sk])} recalled")
-
-    # ================================================================
-    # PHASE 5 — Metrics + Summary
-    # ================================================================
-
-    print(f"\n  === PHASE 5: Metrics ===")
-    summaryResults = {}
-    for sk in strategyKeys:
-        sName = STRATEGIES[sk][0]
-        metrics = compute_metrics(
-            verdictsByStrategy[sk], factMeta,
-            tracking=strategyTracking.get(sk),
-        )
-        metrics["grep"] = grepResults.get(sk, {})
-        summaryResults[sk] = metrics
-
-        print(f"\n  [{sk} — {sName}]")
-        print(f"    Recall: {metrics['recall']:.1%} ({metrics['facts_recalled']}/{metrics['facts_total']})")
-        print(f"    Grep:   {metrics['grep'].get('recall_upper_bound', 0):.1%}")
-        print(f"    Position: Q1={metrics['recall_q1']:.0%} Q2={metrics['recall_q2']:.0%} "
-              f"Q3={metrics['recall_q3']:.0%} Q4={metrics['recall_q4']:.0%} Q5={metrics['recall_q5']:.0%}")
-        if metrics.get("compaction_cycles"):
-            print(f"    Compaction cycles: {metrics['compaction_cycles']}")
-        if metrics.get("by_compression_depth"):
-            for depth, dMetrics in sorted(metrics["by_compression_depth"].items(), key=lambda x: int(x[0])):
-                print(f"      depth={depth}: {dMetrics['recall']:.0%} "
-                      f"({dMetrics['recalled']}/{dMetrics['total']})")
+    # Evaluate final state
+    print(f"\n  === EVAL FINAL ===")
+    summaryResults = evaluate_snapshot(
+        strategyContexts, strategyTracking, facts, factMeta, "final", outputDir)
 
     # Save summary
     summary = {
@@ -880,9 +998,9 @@ def main():
         "density": args.density,
         "conversation_tokens": totalTokens,
         "context_window": args.context_window,
-        "qa_batch_size": bs,
+        "qa_batch_size": args.batch_size,
         "results": summaryResults,
-        "grep": grepResults,
+        "checkpoints": checkpointResults,
         "config": config,
     }
     save_json(summary, outputDir / "summary.json")
@@ -890,13 +1008,30 @@ def main():
     print(f"\n{'=' * 70}")
     print(f"  RESULTS SUMMARY")
     print(f"{'=' * 70}")
+
+    # Print checkpoint results
+    if checkpointResults:
+        for cpLabel, cpRes in sorted(checkpointResults.items()):
+            print(f"\n  {cpLabel}:")
+            print(f"  {'Strategy':<20s} {'Recall':>8s} {'Grep':>8s}")
+            print(f"  {'-'*20} {'-'*8} {'-'*8}")
+            for sk in strategyKeys:
+                if sk in cpRes:
+                    m = cpRes[sk]
+                    print(f"  {sk} {STRATEGIES[sk][0]:<15s} "
+                          f"{m['recall']:>7.1%} "
+                          f"{m['grep'].get('recall_upper_bound', 0):>7.1%}")
+
+    # Print final results
+    print(f"\n  FINAL ({totalTokens:,} tok):")
     print(f"  {'Strategy':<20s} {'Recall':>8s} {'Grep':>8s} {'Cycles':>8s}")
     print(f"  {'-'*20} {'-'*8} {'-'*8} {'-'*8}")
     for sk in strategyKeys:
         sName = STRATEGIES[sk][0]
         m = summaryResults[sk]
         cycles = m.get("compaction_cycles", "?")
-        print(f"  {sk} {sName:<15s} {m['recall']:>7.1%} {m['grep'].get('recall_upper_bound', 0):>7.1%} {cycles:>8}")
+        print(f"  {sk} {sName:<15s} {m['recall']:>7.1%} "
+              f"{m['grep'].get('recall_upper_bound', 0):>7.1%} {cycles:>8}")
     print(f"\n  Output: {outputDir}/")
     print(f"  Done!")
 

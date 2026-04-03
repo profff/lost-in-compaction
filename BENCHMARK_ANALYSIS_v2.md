@@ -12,9 +12,10 @@ facts from its own context — and what factors affect that recall.
 
 We present a three-phase study. First, we **calibrate a recall benchmark**
 using 234 naturally-embedded facts from the LongMemEval dataset across a
-190K-token context. We discover three measurement pitfalls that affect all
-compaction benchmarks: (1) a **questions-per-prompt effect** where asking 10 questions
-at once yields 75 percentage points higher recall than asking one at a time,
+190K-token context. We discover four measurement pitfalls that affect all
+compaction benchmarks: (1) a **questions-per-prompt effect** where Q=10 yields
+11pp higher recall than Q=1 in static contexts — but the effect **reverses**
+under severe compaction, with Q=1 outperforming Q=5 by 9pp,
 (2) a **category hierarchy** where temporal reasoning (30% max) and preference
 recall (40% max) are near-impossible regardless of strategy, (3) a **density
 saturation** where recall plateaus beyond ~0.4 facts/kTok despite increasing
@@ -29,8 +30,10 @@ near-dead (0–7% recall) despite keywords surviving at 82–93% via grep.
 Critically, compaction damages even the *untouched* portion of the context:
 remaining-zone recall drops from 68% to 39% as compaction increases — an
 **attention dilution** effect caused by injecting noise (re-padding) into the
-context. Repeatability testing across 3 independent runs confirms these effects
-are stable (σ ≤ 2.6pp) against measured deltas of 7–70pp.
+context. Cross-model validation with Claude Sonnet 4.6 (92.5% baseline recall,
+no Lost-in-the-Middle effect) confirms that severe compaction destroys
+information regardless of model capability: even a model with flat spatial
+recall drops to 21% at 98% compaction.
 
 Third, we **compare four multi-pass compaction strategies** (Brutal,
 Incremental, Frozen, FrozenRanked) on conversations ranging from 500K to 10M
@@ -137,8 +140,9 @@ the resulting space-time tradeoff have not been explored.
 
 We introduce:
 
-1. **Evidence that recall measurement is non-trivial**: a 75pp questions-per-prompt
-   effect, a category-dependent recall hierarchy, and a systematic gap between
+1. **Evidence that recall measurement is non-trivial**: a significant questions-per-prompt
+   effect (up to 20pp between Q=1 and Q=10) that **reverses direction** under severe
+   compaction, a category-dependent recall hierarchy, and a systematic gap between
    keyword presence and LLM retrieval
 2. **A calibrated benchmark protocol** using LongMemEval evidence with
    controlled density, factorial evidence design, and repeatability validation
@@ -269,9 +273,10 @@ The secondary axis maps density values to the d** notation used throughout the p
 Grep upper bound (dashed) shows near-perfect keyword presence regardless of density.*
 
 At δ=0.42 (80 facts in 190 kTok, R4 mode), recall ranges from 67.5% (Q=1) to 78.8% (Q=10) — an
-11pp gap on the same context with the same facts. At lower densities, the
-gap widens further. Across the full density sweep, the Q=1 to Q=10 delta
-reaches 75 percentage points at extreme configurations.
+11pp gap on the same context with the same facts. At higher densities (δ=0.63),
+the gap reaches 20pp. Critically, this effect **reverses** under severe
+compaction (§5.6): at C4 (98% compacted), Q=1 outperforms Q=5 by 9pp, as
+focused single-question attention outperforms multi-query probing in degraded contexts.
 
 **Why this matters for benchmarks**: Any compaction evaluation that uses a
 fixed Q is measuring a confound of retrieval ability and multi-query
@@ -496,6 +501,79 @@ Maximum variance is ±2.6pp (C0 baseline). All compaction effects (−7pp to
 −70pp) are far larger than measurement noise. The C3 result is remarkably
 stable (40.0% in all three runs), suggesting that at this compaction level,
 the outcome is nearly deterministic.
+
+### 5.6 Q-effect inversion under compaction
+
+The calibration (§3) established that asking more questions per prompt yields
+higher recall in static contexts: at δ=0.42, Q=10 reaches 79% vs 68% for Q=1.
+This holds for uncompacted and lightly compacted contexts. However, under
+severe compaction, the effect **reverses**:
+
+| Level | Q=5 | Q=1 | Δ (Q=1 − Q=5) |
+|-------|:---:|:---:|:-------------:|
+| C0    | 73.8% | 67.5% | −6.3pp |
+| C1 (5%)  | 66.2% | 55.0% | −11.2pp |
+| C2 (25%) | 50.0% | 47.5% | −2.5pp |
+| C3 (50%) | 35.0% | 31.2% | −3.8pp |
+| C4 (98%) | 2.5%  | 11.2% | **+8.7pp** |
+
+At C4, Q=1 surpasses Q=5 by 8.7pp. The same inversion appears in
+the iterative multi-pass experiments (§6): across all four strategies at 1M
+tokens, Q=1 outperforms Q=5 by 5–9pp.
+
+The mechanism is intuitive: in a rich context, multiple questions per prompt
+cast a wider net, increasing the chance of activating diverse regions. In a
+degraded context (heavy compaction or many compaction cycles), the model's
+limited attention is better spent focusing on a single question rather than
+splitting across multiple retrieval targets.
+
+This has practical implications for benchmarking: **Q=5 results are not
+directly comparable to Q=1 results**, and the direction of the bias depends
+on context quality. Evaluations of compacted contexts should report results
+at multiple Q values or, at minimum, note which Q was used.
+
+### 5.7 Cross-model validation: Sonnet 4.6
+
+To test whether our findings are model-specific, we replicated the
+single-pass compaction experiment using Claude Sonnet 4.6 (Q=1, δ=0.42,
+judge: Haiku 4.5).
+
+| Level | Haiku 4.5 | Sonnet 4.6 | Haiku Δ/C0 | Sonnet Δ/C0 |
+|-------|:---------:|:----------:|:----------:|:-----------:|
+| C0    | 67.5%     | 92.5%      | —          | —           |
+| C1 (5%)  | 55.0%  | 90.0%      | −12.5pp    | −2.5pp      |
+| C2 (25%) | 47.5%  | 86.2%      | −20.0pp    | −6.2pp      |
+| C3 (50%) | 31.2%  | 62.5%      | −36.2pp    | −30.0pp     |
+| C4 (98%) | 11.2%  | 21.2%      | −56.2pp    | −71.2pp     |
+
+Three key findings emerge:
+
+**1. Sonnet has no Lost-in-the-Middle effect.** The C0 spatial recall profile
+is flat: 93% early, 93% mid, 92% late. Haiku's C0 shows the classic U-shaped
+profile (higher at extremes, lower in the middle). This difference disappears
+under compaction — both models converge to similar spatial patterns at C3–C4.
+
+![Figure 8 — Smoothed Recall Density](figures/fig8_recall_density.png)
+*Figure 8: Smoothed recall density by position in the original context (Gaussian
+kernel, bw=15kTok). Left: Haiku Q=5. Center: Haiku Q=1. Right: Sonnet Q=1.
+Sonnet's C0 (green) is flat at ~95%, confirming the absence of Lost-in-the-Middle.
+Under compaction, all models show the same pattern: dead zone in the compacted
+region, concentration of recall at the context end.*
+
+**2. A stronger model resists light compaction better.** Sonnet loses only
+2.5pp at C1 and 6.2pp at C2, vs 12.5pp and 20.0pp for Haiku. The additional
+25pp of baseline recall provides a buffer against moderate information loss.
+
+**3. Severe compaction equalizes models.** At C3–C4, the delta relative to C0
+is similar (−30pp and −71pp for Sonnet vs −36pp and −56pp for Haiku). This
+confirms that the information is **destroyed by the compaction process itself**,
+not merely hidden from a weaker model's attention. If the degradation were
+purely attentional, Sonnet's superior baseline should provide proportional
+protection at all compaction levels.
+
+This cross-model comparison strengthens the paper's central finding: the
+bottleneck at high compaction is information destruction, not attention
+capacity.
 
 
 ## 6. Strategy Comparison at Scale
@@ -946,8 +1024,9 @@ intervals. Red: p < 0.001; Orange: p < 0.05; Grey: not significant.*
 
 **Batch size is the strongest measurement confound.** Each additional question
 per batch increases log-odds of recall by 0.086–0.096 (p < 0.001). This
-corresponds to a 75pp swing between Q=1 and Q=10 — confirming that the
-evaluation protocol dominates the effect of what is being evaluated.
+corresponds to up to 20pp difference between Q=1 and Q=10 in static contexts,
+and the effect reverses under compaction (§5.6) — confirming that the
+evaluation protocol interacts with context quality in complex ways.
 
 **Compaction is monotonically destructive.** Each percentage point of compacted
 context reduces log-odds by 0.054 (p < 0.001). At 50% compaction, this alone
@@ -1030,6 +1109,11 @@ Incremental (S2) fares better but remains heavily recency-biased — at 1M
 tokens, 94% of its recall comes from the most recent quintile (Q5), with
 the first four quintiles contributing near-zero.
 
+The cross-model validation (§5.7) strengthens this finding: Sonnet 4.6, with
+92.5% baseline recall and no Lost-in-the-Middle effect, still drops to 21% at
+C4. If the loss were purely attentional, a more capable model should resist
+proportionally better — but it does not at severe compaction levels.
+
 **2. Information preserved but ignored (attention dilution)**
 
 The calibration's grep-LLM gap (86% grep vs 67% LLM at δ=0.42) shows that facts
@@ -1059,8 +1143,11 @@ scale**:
 The calibration findings (§3) have implications beyond our own benchmark:
 
 **Batch size sensitivity** means that compaction evaluations using different
-values of Q are not comparable. A strategy showing "80% recall" at Q=10 and
-another showing "60% recall" at Q=1 may be equally effective.
+values of Q are not comparable. Worse, the direction of the Q-effect depends
+on context quality (§5.6): Q=10 outperforms Q=1 in rich contexts, but Q=1
+outperforms Q=5 in severely compacted contexts. A strategy showing "80%
+recall" at Q=10 and another showing "60% recall" at Q=1 may be equally
+effective — or the ranking may invert entirely.
 
 **Category hierarchy** means that the mix of easy vs hard facts determines
 the baseline. Testing compaction only on "single-session-user" facts (80–100%
@@ -1078,7 +1165,7 @@ A global recall score averages over spatial positions and fact categories. Our
 Our calibration results show this hides structural information:
 - Categories range from 100% (single-session-user) to 20% (preferences)
 - Spatial position matters: middle facts are harder to recall
-- Batch size shifts the entire curve by 10–75pp
+- Batch size shifts the curve by up to 20pp, and the direction reverses under compaction
 
 The single-pass experiment amplifies this: compacted-zone recall (0–7%) and remaining-zone recall
 (53–73%) tell very different stories that a global 40% would hide.
@@ -1173,11 +1260,15 @@ Expected to address the "keywords present but not retrievable" gap.
 Score messages by importance before compaction, preserving high-value
 exchanges (decisions, configurations) over low-value ones (acknowledgments).
 
-### 9.4 Cross-model validation
+### 9.4 Cross-model and cross-architecture validation
 
-Our results use Claude Haiku 4.5 exclusively. Testing on other models
-(GPT-4, Gemini, open-source) would establish whether the findings generalize
-or are model-specific.
+Our cross-model validation (§5.7) established that the findings generalize
+from Claude Haiku 4.5 to Claude Sonnet 4.6 — a model with fundamentally
+different spatial recall characteristics (no Lost-in-the-Middle). Testing on
+non-Claude models (GPT-4, Gemini, open-source LLMs served locally) would
+establish whether the findings hold across architectures. Preliminary
+investigation suggests that local LLMs with shorter context windows
+(32K–128K) could be tested with proportionally smaller contexts.
 
 
 ## 10. Conclusion
@@ -1187,7 +1278,7 @@ conversations — and it is fundamentally lossy. This paper quantifies that
 loss across three complementary experiments.
 
 **Recall calibration** (§3) established that recall measurement itself is
-non-trivial. A 75pp questions-per-prompt effect, a category-dependent recall hierarchy,
+non-trivial. A questions-per-prompt effect (up to 20pp, reversing under compaction), a category-dependent recall hierarchy,
 and a systematic grep-LLM gap mean that naive benchmarks conflate measurement
 artifacts with real strategy differences. Any compaction evaluation that does
 not control for these confounds risks measuring noise.
@@ -1198,6 +1289,10 @@ compacted zone is near-dead (0–7% recall) despite 82–93% keyword survival �
 the starkest illustration that information *presence* does not equal
 information *retrievability*. The attention dilution effect (remaining-zone
 degradation of 20pp) shows that compaction damages even untouched context.
+Cross-model testing with Sonnet 4.6 — which has no Lost-in-the-Middle effect
+and 92.5% baseline recall — confirms that severe compaction destroys
+information irrespective of model capability, while stronger models resist
+light compaction significantly better (−2.5pp vs −12.5pp at C1).
 
 **Multi-pass strategy comparison** (§6) compared four architectures across
 conversation sizes up to 10M tokens. The hierarchy is consistent: Frozen >

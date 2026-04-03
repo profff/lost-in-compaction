@@ -121,11 +121,12 @@ class RateLimitedLLM:
 class OllamaLLM:
     """Direct Ollama API backend. No rate limits, no cost."""
 
-    def __init__(self, model: str = "qwen2.5:3b", baseUrl: str = "http://localhost:11434"):
+    def __init__(self, model: str = "qwen2.5:3b", baseUrl: str = "http://localhost:11434",
+                 timeout=None):
         import httpx
         self.model = model
         self.baseUrl = baseUrl
-        self._client = httpx.Client(timeout=300)
+        self._client = httpx.Client(timeout=timeout)
         self.totalCalls = 0
         self.totalRetries = 0  # for interface compat
 
@@ -173,6 +174,52 @@ class OllamaLLM:
         resp.raise_for_status()
         data = resp.json()
         text = data.get("message", {}).get("content", "")
+        return _FakeResponse(text)
+
+
+class WrapperLLM:
+    """OpenAI-compatible wrapper (claude-code-openai-wrapper). No API cost."""
+
+    def __init__(self, model: str = "claude-sonnet-4-20250514",
+                 baseUrl: str = "http://localhost:8082/v1", minDelay: float = 0.5):
+        from openai import OpenAI
+        self.model = model
+        self._client = OpenAI(base_url=baseUrl, api_key="none", timeout=None)
+        self.minDelay = minDelay
+        self._lastCall = 0.0
+        self.totalCalls = 0
+        self.totalRetries = 0
+
+    def chat_raw(self, messages, tools=None, system=None):
+        """Call wrapper and return Anthropic-compatible response."""
+        oaiMessages = []
+        if system:
+            oaiMessages.append({"role": "system", "content": system})
+        for msg in messages:
+            role = msg.get("role", "user")
+            content = msg.get("content", "")
+            if isinstance(content, list):
+                parts = []
+                for block in content:
+                    if isinstance(block, dict):
+                        parts.append(block.get("text", "") or block.get("content", ""))
+                content = "\n".join(parts)
+            oaiMessages.append({"role": role, "content": content})
+
+        elapsed = time.time() - self._lastCall
+        if elapsed < self.minDelay:
+            time.sleep(self.minDelay - elapsed)
+
+        self._lastCall = time.time()
+        self.totalCalls += 1
+
+        response = self._client.chat.completions.create(
+            model=self.model,
+            messages=oaiMessages,
+            max_tokens=4096,
+            temperature=0,
+        )
+        text = response.choices[0].message.content or ""
         return _FakeResponse(text)
 
 

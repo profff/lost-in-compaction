@@ -1,76 +1,57 @@
-# TODO — Phase D : Nested Benchmark à densité constante
+# TODO — Phase D : Strategy Comparison at Constant Density
 
 ## Contexte
 
-Les runs §6 utilisent 80 faits fixes dans des conversations de 500K à 10M tokens.
-La densité δ décroît de 0.16 à 0.008 facts/kTok — on confond compaction et dilution.
+Les runs §6 originaux utilisaient 80 faits fixes dans des conversations de 500K à 10M tokens.
+La densité δ décroissait de 0.16 à 0.008 → confound compaction vs dilution.
 
-Le nested design résout ça :
-- Conversations emboîtées (1M = 500K existante + 500K neuve)
-- Cohortes de faits (G1, G2, ...) suivies à travers toutes les tailles
-- Mode R2 (500 faits LongMemEval) au lieu de R4 (234)
+**Nouveau design** : faits distribués uniformément, évaluation à des checkpoints mid-feed.
+Modèle QA : Sonnet 4.6 via gateway `claude -p` (gratuit, abo Max).
 
-Budget déjà dépensé : ~$450
+## Infra
 
----
+- [x] `llm_backend.py` : backend `wrapper` (WrapperBackend, parallèle, ThreadPoolExecutor)
+- [x] `benchmark_compaction_v2.py` : `WrapperLLM` (chat_raw compatible)
+- [x] `benchmark_iterative_v6.py` : refactoré pour backend abstraction + `--checkpoints`
+- [x] `openai-gateway/server.py` v0.2.0 : proxy `claude -p` sur port 8082
+- [x] Conversation 5M construite : `data/conversations/v6_R4/d200_5M_seed42.json` (200 faits, δ=0.04)
 
-## Plomberie (avant tout run)
+## Phase D — Runs
 
-- [ ] Modifier `build_conversation_v6.py` pour conversations nested + mode R2
-- [ ] Modifier `benchmark_iterative_v6.py` pour eval par cohorte + checkpoints intermédiaires
-- [ ] Construire les conversations nested
-- [ ] Investiguer LoCoMo comme source de faits supplémentaires (pendant que les runs tournent)
+### Run test (en cours, 2026-04-03)
+- **Conv** : 5M, 200 faits R4, δ=0.04
+- **Stratégie** : S3 seul, checkpoint @2.5M
+- **Backend** : wrapper (gateway claude -p), 2 workers
+- **Objectif** : valider le pipeline checkpoint + gateway
 
----
-
-## Runs planifiés
-
-### Run 1 — Proof of concept (~$26)
-- **Objectif** : Valider le design nested avant d'investir plus
-- **Taille** : 1M tokens (= conv 500K existante + 500K neuve)
-- **Densité** : δ = 0.16 facts/kTok (80 faits par segment de 500K)
-- **Faits** : 160 total (G1=80 @0-500K, G2=80 @500K-1M)
+### Run complet Phase D
+- **Conv** : 5M, 200 faits R4, δ=0.04
 - **Stratégies** : S1, S2, S3, S4
-- **Évaluation** : recall G1@500K, recall G1@1M, recall G2@1M
-- **Résultat attendu** : on voit si les faits G1 "vieillissent" entre 500K et 1M
+- **Checkpoints** : 500K, 1M, 2M, 3M, 5M
+- **Modèle QA** : Sonnet via gateway
+- **Modèle judge** : Sonnet via gateway (ou Haiku batch si budget)
+- **Estimation** : ~4-5h overnight avec gateway
 
-### Run 2 — Série complète δ=0.16 (~$83 S3+S4, ~$157 all 4)
-- **Objectif** : Matrice de vieillissement des faits à densité constante
-- **Taille** : 500K → 1M → 1.5M → 2M → 2.5M → 3M (6 checkpoints)
-- **Densité** : δ = 0.16 facts/kTok constant
-- **Faits** : 500 total (R2 mode), ~80 par segment de 500K, 6 cohortes
-- **Stratégies** : S3+S4 minimum, idéalement les 4
-- **Évaluation** : à chaque checkpoint, recall de TOUTES les cohortes précédentes
-- **Résultat attendu** : courbe de vieillissement par cohorte, comparable à calibration §3
-
-### Run 3 — Chasse aux merges 6M (~$70)
-- **Objectif** : Observer les merges FrozenRanked (jamais vus à 10M actuel)
-- **Taille** : 6M tokens
-- **Densité** : δ = 0.08 facts/kTok (40 faits par segment 500K)
-- **Faits** : ~480 (R2 mode)
-- **Stratégies** : S3 + S4 seulement
-- **Résultat attendu** : ~108 cycles → summaries devraient dépasser budget → merges S4
-
-### Run 4 — Chasse aux merges 12M (~$125)
-- **Objectif** : Observer le merge regime de FrozenRanked à grande échelle
-- **Taille** : 12M tokens
-- **Densité** : δ = 0.04 facts/kTok (20 faits par segment 500K)
-- **Faits** : ~480 (R2 mode)
-- **Stratégies** : S3 + S4 seulement
-- **Résultat attendu** : ~216 cycles → merges massifs → S4 devrait enfin se différencier de S3
+### Extension 10M (si résultats intéressants)
+- Construire conv 10M (besoin de plus de faits → R2 500 faits ou synthétiques)
+- Checkpoints : 500K, 1M, 2M, 5M, 7M, 10M
+- Objectif : observer les merges FrozenRanked (rank 2+)
 
 ---
 
-## Décisions à prendre
+## Papier
 
-- Run 2 : 4 stratégies ($157) ou S3+S4 seulement ($83) ?
-- Run 3+4 : lancer si Run 1 est concluant, ou directement ?
-- LoCoMo : si les 500 faits R2 suffisent pas, faut-il synthétiser ou importer ?
+- [ ] Clarifier modèles utilisés (Haiku §3-5, Sonnet §6/Phase D)
+- [ ] Réduire §6 aux résultats préliminaires + introduction Phase D
+- [ ] Retirer §7 (modèle prédictif) → reconstruire après Phase D
+- [ ] Intégrer résultats Phase D dans §6
+- [ ] Mettre à jour §8 Discussion
+- [ ] Phase D ≠ Future Work, c'est §6 amélioré
+- [ ] Simplifier multi-model → garder §5.7 Sonnet, retirer Qwen
+- [ ] Push GitHub : `git@github.com:profff/COMPACTION_BENCH.git`
 
----
-
-## Autres TODO (papier)
-
-- [ ] Intégrer résultats nested dans §6 quand disponibles
-- [ ] Mettre à jour modèle prédictif §7 avec nouvelles données
-- [ ] GitHub push : `git@github.com:profff/COMPACTION_BENCH.git`
+## Piste : S5 Retrieval Memory
+- Au lieu de compacter, embed la conversation chunk par chunk + vector search
+- Inspiré discussion avec chercheur Bell Labs (tool-augmented retrieval)
+- Ref : MemGPT/Letta, ReadAgent, MemWalker
+- À implémenter après Phase D comme comparaison

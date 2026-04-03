@@ -200,12 +200,15 @@ def estimate_tokens_turns(turns):
 # ============================================================================
 
 def select_evidence(evidence, density, seed):
-    """Select N evidence entries deterministically."""
+    """Select N evidence entries deterministically, shuffled for interleave."""
     rng = random.Random(seed)
     pool = sorted(evidence, key=lambda e: e["fact_id"])
     rng.shuffle(pool)
     selected = pool[:density]
-    selected.sort(key=lambda e: e["fact_id"])
+    # Shuffle again with different seed for insertion order
+    # (avoids category clustering since fact_ids are ordered by category)
+    rng2 = random.Random(seed + 7777)
+    rng2.shuffle(selected)
     return selected
 
 
@@ -239,7 +242,12 @@ def select_padding(paddingPool, targetTokens, evidenceTokens, seed):
 
 def interleave(paddingSessions, evidenceEntries):
     """
-    Interleave evidence into padding at uniformly spaced positions.
+    Interleave evidence into padding at uniformly spaced TOKEN positions.
+
+    Computes cumulative token count across padding sessions and inserts
+    each evidence entry at the target token position (evenly spaced).
+    This ensures uniform fact distribution in token space regardless of
+    varying session or evidence sizes.
 
     Returns (messages, factMeta).
     """
@@ -252,26 +260,30 @@ def interleave(paddingSessions, evidenceEntries):
             messages.extend(sess["turns"])
         return messages, []
 
-    # Split padding into (nEvidence + 1) chunks
-    chunkSize = nPadding // (nEvidence + 1)
-    remainder = nPadding % (nEvidence + 1)
+    # Compute cumulative tokens for each padding session
+    padTokens = [estimate_tokens_chars(s["chars"]) for s in paddingSessions]
+    totalPadTokens = sum(padTokens)
 
-    chunks = []
-    idx = 0
-    for i in range(nEvidence + 1):
-        end = idx + chunkSize + (1 if i < remainder else 0)
-        chunks.append(paddingSessions[idx:end])
-        idx = end
+    # Include evidence tokens in total for target computation
+    evTokens = [e["est_tokens"] for e in evidenceEntries]
+    totalTokens = totalPadTokens + sum(evTokens)
 
+    # Target token positions: evenly spaced (excluding edges)
+    # e.g. for 3 facts in 190K: targets at 47.5K, 95K, 142.5K
+    targets = [(i + 1) * totalTokens / (nEvidence + 1)
+               for i in range(nEvidence)]
+
+    # Walk through padding sessions, inserting evidence at target positions
     messages = []
     factMeta = []
+    cumulTok = 0
+    evIdx = 0
+    padIdx = 0
 
-    for i in range(nEvidence + 1):
-        for sess in chunks[i]:
-            messages.extend(sess["turns"])
-
-        if i < nEvidence:
-            ev = evidenceEntries[i]
+    while padIdx < nPadding:
+        # Check if next evidence should be inserted before this padding session
+        if evIdx < nEvidence and cumulTok >= targets[evIdx]:
+            ev = evidenceEntries[evIdx]
             startIdx = len(messages)
             messages.extend(ev["evidence_turns"])
             endIdx = len(messages)
@@ -294,11 +306,50 @@ def interleave(paddingSessions, evidenceEntries):
                 meta["kept_n_turns"] = ev.get("kept_n_turns", 0)
 
             factMeta.append(meta)
+            cumulTok += ev["est_tokens"]
+            evIdx += 1
+            continue  # Re-check before consuming next padding session
 
-    # Compute position percentages with final total
-    totalMsgs = len(messages)
+        # Consume padding session
+        sess = paddingSessions[padIdx]
+        messages.extend(sess["turns"])
+        cumulTok += padTokens[padIdx]
+        padIdx += 1
+
+    # Insert any remaining evidence entries at the end
+    while evIdx < nEvidence:
+        ev = evidenceEntries[evIdx]
+        startIdx = len(messages)
+        messages.extend(ev["evidence_turns"])
+        endIdx = len(messages)
+
+        meta = {
+            "fact_id": ev["fact_id"],
+            "source": ev["source"],
+            "question_type": ev.get("question_type", "unknown"),
+            "question": ev["question"],
+            "answer": ev["answer"],
+            "keywords": ev["keywords"],
+            "message_start": startIdx,
+            "message_end": endIdx,
+            "n_turns": len(ev["evidence_turns"]),
+            "est_tokens": ev["est_tokens"],
+            "chopped": ev.get("chopped", False),
+        }
+        if ev.get("chopped"):
+            meta["original_n_turns"] = ev.get("original_n_turns", 0)
+            meta["kept_n_turns"] = ev.get("kept_n_turns", 0)
+
+        factMeta.append(meta)
+        evIdx += 1
+
+    # Compute position percentages based on token position
+    totalChars = sum(len(m["content"]) for m in messages)
     for fm in factMeta:
-        fm["position_pct"] = round(fm["message_start"] / totalMsgs * 100, 1)
+        # Use chars up to message_start as proxy for token position
+        charsBeforeFact = sum(len(messages[j]["content"])
+                              for j in range(fm["message_start"]))
+        fm["position_pct"] = round(charsBeforeFact / max(totalChars, 1) * 100, 1)
 
     return messages, factMeta
 

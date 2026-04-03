@@ -76,7 +76,11 @@ JUDGE_SYSTEM = "You are an objective evaluator. Answer ONLY with valid JSON."
 # CONTEXT LOADING
 # ============================================================================
 
+_CONTEXTS_DIR_OVERRIDE = None
+
 def contexts_dir(runMode):
+    if _CONTEXTS_DIR_OVERRIDE:
+        return Path(_CONTEXTS_DIR_OVERRIDE) / f"v5_{runMode}"
     return Path("data/contexts") / f"v5_{runMode}"
 
 
@@ -153,16 +157,30 @@ def submit_batch(client, requests, description=""):
     return batch
 
 
-def submit_chunked(client, requests, chunkSize, description=""):
-    """Submit requests in chunks to avoid MemoryError on large payloads.
+def submit_chunked(client, requests, chunkSize, description="",
+                    maxRetries=5, baseWait=10):
+    """Submit requests in chunks with retry and exponential backoff.
     Returns list of batch objects."""
     batches = []
     for i in range(0, len(requests), chunkSize):
         chunk = requests[i:i + chunkSize]
-        batch = client.messages.batches.create(requests=chunk)
-        print(f"  Batch submitted: {batch.id} ({len(chunk)} requests) "
-              f"{description} [{i+1}-{i+len(chunk)}/{len(requests)}]")
-        batches.append(batch)
+        for attempt in range(maxRetries):
+            try:
+                batch = client.messages.batches.create(requests=chunk)
+                print(f"  Batch submitted: {batch.id} ({len(chunk)} requests) "
+                      f"{description} [{i+1}-{i+len(chunk)}/{len(requests)}]")
+                batches.append(batch)
+                break
+            except Exception as e:
+                if attempt < maxRetries - 1:
+                    wait = baseWait * (2 ** attempt)  # 10, 20, 40, 80, 160s
+                    print(f"  Batch submit failed (attempt {attempt+1}/{maxRetries}): {e}")
+                    print(f"  Retrying in {wait}s... ({len(batches)} batches submitted so far)")
+                    time.sleep(wait)
+                else:
+                    print(f"  FATAL: {maxRetries} attempts exhausted. {len(batches)} batches already submitted.")
+                    print(f"  Batch IDs so far: {[b.id for b in batches]}")
+                    raise
     return batches
 
 
@@ -317,16 +335,23 @@ def save_json(data, filepath):
 # ============================================================================
 
 def run_benchmark(args):
-    import anthropic
+    from llm_backend import LLM_CreateBackend
 
     runMode = args.run
     densities = [int(d) for d in args.densities.split(",")]
     batchSizes = [int(b) for b in args.batch_sizes.split(",")]
     model = args.model
+    judgeModel = args.judge_model or model
     seed = args.seed
     judgeBatchSize = 15
 
-    client = anthropic.Anthropic()
+    backend = LLM_CreateBackend(
+        args.backend, model=model, judge_model=judgeModel,
+        base_url=getattr(args, 'base_url', None),
+        api_key=getattr(args, 'api_key', None),
+        poll_interval=args.poll_interval,
+        workers=getattr(args, 'workers', 4),
+    )
 
     # Output directory
     timestamp = datetime.now().strftime("%Y%m%d_%H%M")
@@ -415,7 +440,8 @@ def run_benchmark(args):
         "batch_sizes": batchSizes,
         "seed": seed,
         "model": model,
-        "backend": "anthropic_batch",
+        "judge_model": judgeModel,
+        "backend": backend.name,
         "contexts_dir": str(contexts_dir(runMode)),
     }
     save_json(config, str(outputDir / "config.json"))
@@ -461,12 +487,8 @@ def run_benchmark(args):
 
     print(f"  Total Q&A requests: {len(qaRequests)}")
 
-    # Submit in chunks to avoid MemoryError (each request carries ~140K tok context)
-    QA_CHUNK_SIZE = 20
-    qaBatches = submit_chunked(client, qaRequests, QA_CHUNK_SIZE, description=f"[Q&A {runMode}]")
-    qaResults = {}
-    for qab in qaBatches:
-        qaResults.update(wait_for_batch(client, qab.id, pollInterval=args.poll_interval))
+    # Submit via backend
+    qaResults = backend.run_requests(qaRequests)
 
     # ===== Parse Q&A =====
     print(f"\n  Parsing Q&A results...")
@@ -562,7 +584,7 @@ def run_benchmark(args):
             judgeRequests.append({
                 "custom_id": customId,
                 "params": {
-                    "model": model,
+                    "model": judgeModel,
                     "max_tokens": 4096,
                     "system": JUDGE_SYSTEM,
                     "messages": [{"role": "user", "content": judgePrompt}],
@@ -578,12 +600,11 @@ def run_benchmark(args):
 
     print(f"  Total judge requests: {len(judgeRequests)}")
 
-    # Judge requests are lightweight, single batch should be fine, but chunk for safety
-    JUDGE_CHUNK_SIZE = 50
-    judgeBatches = submit_chunked(client, judgeRequests, JUDGE_CHUNK_SIZE, description=f"[Judge {runMode}]")
-    judgeResults = {}
-    for jb in judgeBatches:
-        judgeResults.update(wait_for_batch(client, jb.id, pollInterval=args.poll_interval))
+    # Submit judge via backend (uses judge model)
+    # Swap model for judge requests
+    for jr in judgeRequests:
+        jr["params"]["model"] = judgeModel
+    judgeResults = backend.run_requests(judgeRequests)
 
     # ===== Parse judge =====
     print(f"\n  Parsing judge results...")
@@ -686,8 +707,8 @@ def run_benchmark(args):
 
     # Batch API info
     summary["batch_api"] = {
-        "qa_batch_ids": [b.id for b in qaBatches],
-        "judge_batch_ids": [b.id for b in judgeBatches],
+        "qa_batch_ids": [],
+        "judge_batch_ids": [],
         "qa_requests": len(qaRequests),
         "judge_requests": len(judgeRequests),
         "total_requests": len(qaRequests) + len(judgeRequests),
@@ -712,7 +733,8 @@ def dry_run(args):
     print(f"\n{'=' * 70}")
     print(f"  DRY RUN — Recall v5 ({runMode})")
     print(f"{'=' * 70}")
-    print(f"  Model: {args.model}")
+    print(f"  Model (Q&A):   {args.model}")
+    print(f"  Model (judge): {args.judge_model or args.model}")
     print(f"  Densities: {densities}")
     print(f"  Batch sizes: {batchSizes}")
 
@@ -825,13 +847,31 @@ def main():
     parser.add_argument("--batch-sizes", type=str, default="1,5,10",
                         help="Q&A batch sizes (default: 1,5,10)")
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--model", type=str, default="claude-haiku-4-5-20251001")
+    parser.add_argument("--model", type=str, default="claude-haiku-4-5-20251001",
+                        help="Model for Q&A (default: haiku)")
+    parser.add_argument("--judge-model", type=str, default=None,
+                        help="Model for judge (default: same as --model)")
     parser.add_argument("--output-dir", type=str, default=None)
     parser.add_argument("--poll-interval", type=float, default=30.0)
+    parser.add_argument("--backend", type=str, default="anthropic_batch",
+                        choices=["anthropic_batch", "openai", "wrapper"],
+                        help="LLM backend (default: anthropic_batch)")
+    parser.add_argument("--base-url", type=str, default=None,
+                        help="Base URL for OpenAI/wrapper backend")
+    parser.add_argument("--api-key", type=str, default=None,
+                        help="API key for OpenAI backend")
+    parser.add_argument("--workers", type=int, default=4,
+                        help="Parallel workers for wrapper backend (default: 4)")
+    parser.add_argument("--contexts-dir", type=str, default=None,
+                        help="Override contexts directory (default: data/contexts/v5_RX)")
     args = parser.parse_args()
 
     if args.densities is None:
         args.densities = defaultDensities[args.run]
+
+    global _CONTEXTS_DIR_OVERRIDE
+    if args.contexts_dir:
+        _CONTEXTS_DIR_OVERRIDE = args.contexts_dir
 
     if args.dry_run:
         dry_run(args)

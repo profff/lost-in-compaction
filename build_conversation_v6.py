@@ -217,6 +217,176 @@ def interleave(paddingSessions, evidenceEntries):
 # MAIN
 # ============================================================================
 
+def build_nested(prefixConvFile, prefixMetaFile, newDensity, targetTokens,
+                 seed, outputDir, dryRun=False):
+    """Build a nested conversation: existing prefix + new segment with new facts.
+
+    The first part of the conversation is identical to the prefix.
+    New facts (G2, G3, ...) are interleaved in the appended segment.
+    """
+    print("=" * 70)
+    print(f"  BUILD NESTED CONVERSATION v6")
+    print(f"  Prefix: {prefixConvFile}")
+    print(f"  New facts per segment: {newDensity}")
+    print(f"  Target total: {targetTokens:,} tokens ({targetTokens / 1_000_000:.1f}M)")
+    print("=" * 70)
+
+    # Load prefix
+    print("\n  Loading prefix conversation...")
+    with open(prefixConvFile, encoding="utf-8") as f:
+        prefixMessages = json.load(f)
+    with open(prefixMetaFile, encoding="utf-8") as f:
+        prefixMeta = json.load(f)
+
+    prefixTokens = prefixMeta["est_tokens"]
+    prefixFacts = prefixMeta["facts"]
+    prefixFactIds = set(fm["fact_id"] for fm in prefixFacts)
+    generation = prefixMeta.get("max_generation", 1)
+
+    print(f"    {len(prefixMessages)} messages, ~{prefixTokens:,} tokens")
+    print(f"    {len(prefixFacts)} facts (G1–G{generation})")
+
+    # Compute new segment budget
+    segmentTokens = targetTokens - prefixTokens
+    if segmentTokens <= 0:
+        print(f"    ERROR: prefix ({prefixTokens:,}) >= target ({targetTokens:,})")
+        return
+    print(f"    New segment budget: ~{segmentTokens:,} tokens")
+
+    # Load evidence pool and exclude already-used facts
+    print("\n  Loading evidence pool...")
+    rawEvidence = load_evidence()
+    evidence = prepare_evidence_r4(rawEvidence)
+
+    # Reproduce same shuffled order as original (seed=42) to pick next slice
+    rng = random.Random(seed)
+    pool = sorted(evidence, key=lambda e: e["fact_id"])
+    rng.shuffle(pool)
+
+    # Skip facts already used in prefix (take from position after prefix facts)
+    alreadyUsed = 0
+    for e in pool:
+        if e["fact_id"] in prefixFactIds:
+            alreadyUsed += 1
+    # Find the first unused fact in shuffled order
+    available = [e for e in pool if e["fact_id"] not in prefixFactIds]
+    print(f"    {len(evidence)} R4 pool, {alreadyUsed} already used, {len(available)} available")
+
+    if len(available) < newDensity:
+        print(f"    WARNING: only {len(available)} available (requested {newDensity})")
+        newDensity = len(available)
+
+    newFacts = available[:newDensity]
+    newEvTokens = sum(e["est_tokens"] for e in newFacts)
+    print(f"    G{generation + 1}: {len(newFacts)} new facts, ~{newEvTokens:,} tok")
+
+    typeCounts = Counter(e.get("question_type", "unknown") for e in newFacts)
+    print(f"    Categories: {', '.join(f'{t}={c}' for t, c in sorted(typeCounts.items()))}")
+
+    # Load padding pool — use different seed range to avoid overlap with prefix
+    paddingPool = load_padding_pool()
+
+    # Figure out which padding sessions were used in prefix
+    # Use seed+2000 offset for new segments to get fresh padding
+    padSeed = seed + 2000 * generation
+    padSessions = select_padding(paddingPool, segmentTokens, newEvTokens, padSeed)
+    padTokens = sum(estimate_tokens_chars(s["chars"]) for s in padSessions)
+    segmentEst = newEvTokens + padTokens
+    totalEst = prefixTokens + segmentEst
+    print(f"    Padding: {len(padSessions)} sessions, ~{padTokens:,} tok")
+    print(f"    Segment estimate: ~{segmentEst:,} tok")
+    print(f"    Total estimate: ~{totalEst:,} tok ({totalEst / targetTokens * 100:.1f}% of target)")
+
+    if dryRun:
+        print("\n  Done (dry-run, no files written).")
+        return
+
+    # Build new segment
+    print(f"\n  Assembling new segment...")
+    segmentMessages, segmentFactMeta = interleave(padSessions, newFacts)
+
+    # Sanitize empty messages
+    segmentMessages = [m for m in segmentMessages if m.get("content", "").strip()]
+
+    # Offset fact positions to account for prefix
+    prefixMsgCount = len(prefixMessages)
+    for fm in segmentFactMeta:
+        fm["message_start"] += prefixMsgCount
+        fm["message_end"] += prefixMsgCount
+        fm["generation"] = generation + 1
+
+    # Tag prefix facts with generation
+    for fm in prefixFacts:
+        if "generation" not in fm:
+            fm["generation"] = fm.get("generation", 1)
+
+    # Combine
+    allMessages = prefixMessages + segmentMessages
+    allFacts = list(prefixFacts) + segmentFactMeta
+
+    # Recompute position_pct for ALL facts
+    totalMsgs = len(allMessages)
+    for fm in allFacts:
+        fm["position_pct"] = round(fm["message_start"] / totalMsgs * 100, 1)
+
+    actualChars = sum(len(m["content"]) for m in allMessages)
+    actualTokEst = estimate_tokens_chars(actualChars)
+    print(f"  Combined: {len(allMessages)} messages, ~{actualTokEst:,} tok")
+    print(f"    G1–G{generation}: {len(prefixFacts)} facts (from prefix)")
+    print(f"    G{generation + 1}: {len(segmentFactMeta)} new facts")
+
+    # Build metadata
+    metadata = {
+        "version": "v6_nested",
+        "run_mode": "R4",
+        "density": len(allFacts),
+        "target_tokens": targetTokens,
+        "seed": seed,
+        "n_messages": len(allMessages),
+        "total_chars": actualChars,
+        "est_tokens": actualTokEst,
+        "n_evidence": len(allFacts),
+        "question_types": dict(Counter(fm["question_type"] for fm in allFacts)),
+        "n_padding_sessions": prefixMeta["n_padding_sessions"] + len(padSessions),
+        "padding_tokens": prefixMeta.get("padding_tokens", 0) + padTokens,
+        "evidence_tokens": prefixMeta.get("evidence_tokens", 0) + newEvTokens,
+        "facts": allFacts,
+        "max_generation": generation + 1,
+        "generations": {
+            **prefixMeta.get("generations", {str(i): 0 for i in range(1, generation + 1)}),
+            str(generation + 1): len(segmentFactMeta),
+        },
+        "prefix_file": str(prefixConvFile),
+        "prefix_tokens": prefixTokens,
+    }
+
+    # Fill in generation counts for prefix if not already there
+    if "generations" not in prefixMeta:
+        metadata["generations"]["1"] = len(prefixFacts)
+
+    # Save
+    outDir = Path(outputDir) / "v6_R4"
+    outDir.mkdir(parents=True, exist_ok=True)
+
+    tokLabel = (f"{targetTokens // 1_000_000}M" if targetTokens >= 1_000_000
+                else f"{targetTokens // 1_000}K")
+    tag = f"nested_d{len(allFacts)}_{tokLabel}_seed{seed}"
+    contextFile = outDir / f"{tag}.json"
+    metaFile = outDir / f"{tag}_meta.json"
+
+    print(f"\n  Saving...")
+    with open(contextFile, "w", encoding="utf-8") as f:
+        json.dump(allMessages, f, ensure_ascii=False)
+
+    with open(metaFile, "w", encoding="utf-8") as f:
+        json.dump(metadata, f, indent=2, ensure_ascii=False)
+
+    sizeMB = contextFile.stat().st_size / (1024 * 1024)
+    print(f"    {contextFile} ({sizeMB:.1f} MB)")
+    print(f"    {metaFile}")
+    print(f"\n  Done!")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Build long conversation for iterative compaction benchmark (v6)")
@@ -227,7 +397,32 @@ def main():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--output-dir", type=str, default=str(OUTPUT_BASE))
     parser.add_argument("--dry-run", action="store_true")
+    # Nested mode
+    parser.add_argument("--nested", type=str, default=None,
+                        help="Path to prefix conversation JSON (enables nested mode)")
+    parser.add_argument("--nested-density", type=int, default=80,
+                        help="Number of NEW facts to add in the nested segment (default: 80)")
     args = parser.parse_args()
+
+    if args.nested:
+        prefixConv = Path(args.nested)
+        prefixMeta = prefixConv.parent / (prefixConv.stem + "_meta.json")
+        if not prefixConv.exists():
+            print(f"ERROR: prefix file not found: {prefixConv}")
+            return
+        if not prefixMeta.exists():
+            print(f"ERROR: prefix meta not found: {prefixMeta}")
+            return
+        build_nested(
+            prefixConvFile=prefixConv,
+            prefixMetaFile=prefixMeta,
+            newDensity=args.nested_density,
+            targetTokens=args.target_tokens,
+            seed=args.seed,
+            outputDir=args.output_dir,
+            dryRun=args.dry_run,
+        )
+        return
 
     print("=" * 70)
     print(f"  BUILD CONVERSATION v6 (iterative compaction)")
