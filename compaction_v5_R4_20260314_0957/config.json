@@ -1,0 +1,23 @@
+{
+  "experiment": "compaction_v5",
+  "run_mode": "R4",
+  "timestamp": "2026-03-14T09:59:29.163543",
+  "densities": [
+    80
+  ],
+  "levels": [
+    "C1",
+    "C2",
+    "C3",
+    "C4"
+  ],
+  "batch_sizes": [
+    1
+  ],
+  "seed": 42,
+  "model": "claude-sonnet-4-6",
+  "judge_model": "claude-haiku-4-5-20251001",
+  "compact_model": "claude-sonnet-4-6",
+  "backend": "anthropic_batch",
+  "contexts_dir": "data\\contexts\\v5_R4"
+}

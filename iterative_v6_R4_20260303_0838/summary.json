@@ -1,0 +1,318 @@
+{
+  "experiment": "iterative_v6",
+  "run_mode": "R4",
+  "density": 80,
+  "conversation_tokens": 993393,
+  "context_window": 190000,
+  "qa_batch_size": 1,
+  "results": {
+    "S1": {
+      "recall": 0.1,
+      "accuracy": 0.025,
+      "facts_recalled": 16,
+      "facts_total": 160,
+      "recall_q1": 0.07142857142857142,
+      "recall_q2": 0.2222222222222222,
+      "recall_q3": 0.03571428571428571,
+      "recall_q4": 0.029411764705882353,
+      "recall_q5": 0.11764705882352941,
+      "n_q1": 28,
+      "n_q2": 36,
+      "n_q3": 28,
+      "n_q4": 34,
+      "n_q5": 34,
+      "by_category": {
+        "knowledge-update": {
+          "total": 48,
+          "recalled": 2,
+          "accurate": 1,
+          "recall": 0.041666666666666664,
+          "accuracy": 0.020833333333333332
+        },
+        "single-session-assistant": {
+          "total": 41,
+          "recalled": 6,
+          "accurate": 2,
+          "recall": 0.14634146341463414,
+          "accuracy": 0.04878048780487805
+        },
+        "single-session-preference": {
+          "total": 22,
+          "recalled": 6,
+          "accurate": 0,
+          "recall": 0.2727272727272727,
+          "accuracy": 0.0
+        },
+        "single-session-user": {
+          "total": 49,
+          "recalled": 2,
+          "accurate": 1,
+          "recall": 0.04081632653061224,
+          "accuracy": 0.02040816326530612
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 4,
+          "recalled": 2,
+          "recall": 0.5
+        },
+        "1": {
+          "total": 156,
+          "recalled": 14,
+          "recall": 0.08974358974358974
+        }
+      },
+      "compaction_cycles": 6,
+      "grep": {
+        "facts_total": 160,
+        "all_present": 54,
+        "any_present": 126,
+        "recall_upper_bound": 0.3375
+      }
+    },
+    "S2": {
+      "recall": 0.20625,
+      "accuracy": 0.13125,
+      "facts_recalled": 33,
+      "facts_total": 160,
+      "recall_q1": 0.07142857142857142,
+      "recall_q2": 0.1111111111111111,
+      "recall_q3": 0.07142857142857142,
+      "recall_q4": 0.17647058823529413,
+      "recall_q5": 0.5588235294117647,
+      "n_q1": 28,
+      "n_q2": 36,
+      "n_q3": 28,
+      "n_q4": 34,
+      "n_q5": 34,
+      "by_category": {
+        "knowledge-update": {
+          "total": 48,
+          "recalled": 9,
+          "accurate": 5,
+          "recall": 0.1875,
+          "accuracy": 0.10416666666666667
+        },
+        "single-session-assistant": {
+          "total": 41,
+          "recalled": 8,
+          "accurate": 7,
+          "recall": 0.1951219512195122,
+          "accuracy": 0.17073170731707318
+        },
+        "single-session-preference": {
+          "total": 22,
+          "recalled": 8,
+          "accurate": 4,
+          "recall": 0.36363636363636365,
+          "accuracy": 0.18181818181818182
+        },
+        "single-session-user": {
+          "total": 49,
+          "recalled": 8,
+          "accurate": 5,
+          "recall": 0.16326530612244897,
+          "accuracy": 0.10204081632653061
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 3,
+          "recalled": 2,
+          "recall": 0.6666666666666666
+        },
+        "1": {
+          "total": 157,
+          "recalled": 31,
+          "recall": 0.19745222929936307
+        }
+      },
+      "compaction_cycles": 16,
+      "grep": {
+        "facts_total": 160,
+        "all_present": 78,
+        "any_present": 137,
+        "recall_upper_bound": 0.4875
+      }
+    },
+    "S3": {
+      "recall": 0.19375,
+      "accuracy": 0.1,
+      "facts_recalled": 31,
+      "facts_total": 160,
+      "recall_q1": 0.21428571428571427,
+      "recall_q2": 0.05555555555555555,
+      "recall_q3": 0.14285714285714285,
+      "recall_q4": 0.17647058823529413,
+      "recall_q5": 0.38235294117647056,
+      "n_q1": 28,
+      "n_q2": 36,
+      "n_q3": 28,
+      "n_q4": 34,
+      "n_q5": 34,
+      "by_category": {
+        "knowledge-update": {
+          "total": 48,
+          "recalled": 17,
+          "accurate": 11,
+          "recall": 0.3541666666666667,
+          "accuracy": 0.22916666666666666
+        },
+        "single-session-assistant": {
+          "total": 41,
+          "recalled": 5,
+          "accurate": 2,
+          "recall": 0.12195121951219512,
+          "accuracy": 0.04878048780487805
+        },
+        "single-session-preference": {
+          "total": 22,
+          "recalled": 6,
+          "accurate": 1,
+          "recall": 0.2727272727272727,
+          "accuracy": 0.045454545454545456
+        },
+        "single-session-user": {
+          "total": 49,
+          "recalled": 3,
+          "accurate": 2,
+          "recall": 0.061224489795918366,
+          "accuracy": 0.04081632653061224
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 3,
+          "recalled": 2,
+          "recall": 0.6666666666666666
+        },
+        "1": {
+          "total": 157,
+          "recalled": 29,
+          "recall": 0.18471337579617833
+        }
+      },
+      "compaction_cycles": 16,
+      "grep": {
+        "facts_total": 160,
+        "all_present": 93,
+        "any_present": 142,
+        "recall_upper_bound": 0.58125
+      }
+    },
+    "S4": {
+      "recall": 0.1875,
+      "accuracy": 0.08125,
+      "facts_recalled": 30,
+      "facts_total": 160,
+      "recall_q1": 0.17857142857142858,
+      "recall_q2": 0.08333333333333333,
+      "recall_q3": 0.03571428571428571,
+      "recall_q4": 0.17647058823529413,
+      "recall_q5": 0.4411764705882353,
+      "n_q1": 28,
+      "n_q2": 36,
+      "n_q3": 28,
+      "n_q4": 34,
+      "n_q5": 34,
+      "by_category": {
+        "knowledge-update": {
+          "total": 48,
+          "recalled": 15,
+          "accurate": 8,
+          "recall": 0.3125,
+          "accuracy": 0.16666666666666666
+        },
+        "single-session-assistant": {
+          "total": 41,
+          "recalled": 4,
+          "accurate": 2,
+          "recall": 0.0975609756097561,
+          "accuracy": 0.04878048780487805
+        },
+        "single-session-preference": {
+          "total": 22,
+          "recalled": 8,
+          "accurate": 1,
+          "recall": 0.36363636363636365,
+          "accuracy": 0.045454545454545456
+        },
+        "single-session-user": {
+          "total": 49,
+          "recalled": 3,
+          "accurate": 2,
+          "recall": 0.061224489795918366,
+          "accuracy": 0.04081632653061224
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 3,
+          "recalled": 1,
+          "recall": 0.3333333333333333
+        },
+        "1": {
+          "total": 157,
+          "recalled": 29,
+          "recall": 0.18471337579617833
+        }
+      },
+      "compaction_cycles": 16,
+      "grep": {
+        "facts_total": 160,
+        "all_present": 90,
+        "any_present": 140,
+        "recall_upper_bound": 0.5625
+      }
+    }
+  },
+  "grep": {
+    "S1": {
+      "facts_total": 160,
+      "all_present": 54,
+      "any_present": 126,
+      "recall_upper_bound": 0.3375
+    },
+    "S2": {
+      "facts_total": 160,
+      "all_present": 78,
+      "any_present": 137,
+      "recall_upper_bound": 0.4875
+    },
+    "S3": {
+      "facts_total": 160,
+      "all_present": 93,
+      "any_present": 142,
+      "recall_upper_bound": 0.58125
+    },
+    "S4": {
+      "facts_total": 160,
+      "all_present": 90,
+      "any_present": 140,
+      "recall_upper_bound": 0.5625
+    }
+  },
+  "config": {
+    "experiment": "iterative_v6",
+    "run_mode": "R4",
+    "density": 80,
+    "seed": 42,
+    "context_window": 190000,
+    "high_watermark": 0.9,
+    "low_watermark": 0.6,
+    "feed_batch_size": 10,
+    "qa_batch_size": 1,
+    "strategies": [
+      "S1",
+      "S2",
+      "S3",
+      "S4"
+    ],
+    "model": "claude-haiku-4-5-20251001",
+    "conversation_tokens": 993393,
+    "conversation_messages": 4180,
+    "n_facts": 160,
+    "timestamp": "20260303_0838"
+  }
+}

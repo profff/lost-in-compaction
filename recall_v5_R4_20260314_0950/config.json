@@ -1,0 +1,16 @@
+{
+  "experiment": "recall_v5_density_sweep",
+  "run_mode": "R4",
+  "timestamp": "2026-03-14T09:51:00.036664",
+  "densities": [
+    80
+  ],
+  "batch_sizes": [
+    1
+  ],
+  "seed": 42,
+  "model": "claude-sonnet-4-6",
+  "judge_model": "claude-haiku-4-5-20251001",
+  "backend": "anthropic_batch",
+  "contexts_dir": "data\\contexts\\v5_R4"
+}

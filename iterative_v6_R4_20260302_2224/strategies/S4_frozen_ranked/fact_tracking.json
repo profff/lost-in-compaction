@@ -1,0 +1,1652 @@
+{
+  "fact_status": {
+    "LM_0122": {
+      "original_msg_start": 26,
+      "original_msg_end": 32,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0124": {
+      "original_msg_start": 60,
+      "original_msg_end": 68,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0125": {
+      "original_msg_start": 100,
+      "original_msg_end": 106,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0126": {
+      "original_msg_start": 140,
+      "original_msg_end": 146,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0127": {
+      "original_msg_start": 182,
+      "original_msg_end": 188,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0131": {
+      "original_msg_start": 224,
+      "original_msg_end": 230,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0132": {
+      "original_msg_start": 261,
+      "original_msg_end": 267,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0134": {
+      "original_msg_start": 303,
+      "original_msg_end": 308,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0135": {
+      "original_msg_start": 332,
+      "original_msg_end": 338,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0137": {
+      "original_msg_start": 358,
+      "original_msg_end": 364,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0143": {
+      "original_msg_start": 388,
+      "original_msg_end": 393,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0149": {
+      "original_msg_start": 417,
+      "original_msg_end": 423,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0151": {
+      "original_msg_start": 447,
+      "original_msg_end": 452,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0152": {
+      "original_msg_start": 474,
+      "original_msg_end": 480,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0160": {
+      "original_msg_start": 504,
+      "original_msg_end": 510,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0164": {
+      "original_msg_start": 524,
+      "original_msg_end": 530,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0166": {
+      "original_msg_start": 546,
+      "original_msg_end": 552,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0167": {
+      "original_msg_start": 576,
+      "original_msg_end": 581,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0169": {
+      "original_msg_start": 599,
+      "original_msg_end": 605,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0174": {
+      "original_msg_start": 631,
+      "original_msg_end": 637,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0182": {
+      "original_msg_start": 661,
+      "original_msg_end": 666,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0183": {
+      "original_msg_start": 688,
+      "original_msg_end": 693,
+      "status": "compacted_cycle_2",
+      "compacted_at_cycle": 2,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0186": {
+      "original_msg_start": 711,
+      "original_msg_end": 717,
+      "status": "compacted_cycle_2",
+      "compacted_at_cycle": 2,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0188": {
+      "original_msg_start": 731,
+      "original_msg_end": 737,
+      "status": "compacted_cycle_2",
+      "compacted_at_cycle": 2,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0194": {
+      "original_msg_start": 754,
+      "original_msg_end": 757,
+      "status": "compacted_cycle_2",
+      "compacted_at_cycle": 2,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0195": {
+      "original_msg_start": 779,
+      "original_msg_end": 782,
+      "status": "compacted_cycle_2",
+      "compacted_at_cycle": 2,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0199": {
+      "original_msg_start": 801,
+      "original_msg_end": 807,
+      "status": "compacted_cycle_2",
+      "compacted_at_cycle": 2,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0200": {
+      "original_msg_start": 825,
+      "original_msg_end": 827,
+      "status": "compacted_cycle_2",
+      "compacted_at_cycle": 2,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0201": {
+      "original_msg_start": 851,
+      "original_msg_end": 859,
+      "status": "compacted_cycle_2",
+      "compacted_at_cycle": 2,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0203": {
+      "original_msg_start": 883,
+      "original_msg_end": 886,
+      "status": "compacted_cycle_2",
+      "compacted_at_cycle": 2,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0206": {
+      "original_msg_start": 910,
+      "original_msg_end": 913,
+      "status": "compacted_cycle_3",
+      "compacted_at_cycle": 3,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0207": {
+      "original_msg_start": 931,
+      "original_msg_end": 938,
+      "status": "compacted_cycle_3",
+      "compacted_at_cycle": 3,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0211": {
+      "original_msg_start": 958,
+      "original_msg_end": 961,
+      "status": "compacted_cycle_3",
+      "compacted_at_cycle": 3,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0221": {
+      "original_msg_start": 985,
+      "original_msg_end": 990,
+      "status": "compacted_cycle_3",
+      "compacted_at_cycle": 3,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0225": {
+      "original_msg_start": 1007,
+      "original_msg_end": 1009,
+      "status": "compacted_cycle_3",
+      "compacted_at_cycle": 3,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0226": {
+      "original_msg_start": 1021,
+      "original_msg_end": 1026,
+      "status": "compacted_cycle_3",
+      "compacted_at_cycle": 3,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0228": {
+      "original_msg_start": 1050,
+      "original_msg_end": 1055,
+      "status": "compacted_cycle_3",
+      "compacted_at_cycle": 3,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0231": {
+      "original_msg_start": 1070,
+      "original_msg_end": 1073,
+      "status": "compacted_cycle_3",
+      "compacted_at_cycle": 3,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0232": {
+      "original_msg_start": 1090,
+      "original_msg_end": 1092,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0233": {
+      "original_msg_start": 1118,
+      "original_msg_end": 1121,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0234": {
+      "original_msg_start": 1135,
+      "original_msg_end": 1138,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0235": {
+      "original_msg_start": 1158,
+      "original_msg_end": 1161,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0237": {
+      "original_msg_start": 1177,
+      "original_msg_end": 1179,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0241": {
+      "original_msg_start": 1193,
+      "original_msg_end": 1196,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0242": {
+      "original_msg_start": 1220,
+      "original_msg_end": 1223,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0244": {
+      "original_msg_start": 1243,
+      "original_msg_end": 1245,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0246": {
+      "original_msg_start": 1273,
+      "original_msg_end": 1275,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0252": {
+      "original_msg_start": 1283,
+      "original_msg_end": 1286,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0256": {
+      "original_msg_start": 1310,
+      "original_msg_end": 1313,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0266": {
+      "original_msg_start": 1337,
+      "original_msg_end": 1339,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0267": {
+      "original_msg_start": 1354,
+      "original_msg_end": 1356,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0270": {
+      "original_msg_start": 1380,
+      "original_msg_end": 1382,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0271": {
+      "original_msg_start": 1408,
+      "original_msg_end": 1410,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0275": {
+      "original_msg_start": 1430,
+      "original_msg_end": 1432,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0277": {
+      "original_msg_start": 1448,
+      "original_msg_end": 1451,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0279": {
+      "original_msg_start": 1475,
+      "original_msg_end": 1478,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0283": {
+      "original_msg_start": 1502,
+      "original_msg_end": 1505,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0291": {
+      "original_msg_start": 1519,
+      "original_msg_end": 1521,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0292": {
+      "original_msg_start": 1537,
+      "original_msg_end": 1540,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0293": {
+      "original_msg_start": 1557,
+      "original_msg_end": 1560,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0296": {
+      "original_msg_start": 1584,
+      "original_msg_end": 1587,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0304": {
+      "original_msg_start": 1612,
+      "original_msg_end": 1615,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0306": {
+      "original_msg_start": 1639,
+      "original_msg_end": 1642,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0307": {
+      "original_msg_start": 1666,
+      "original_msg_end": 1669,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0309": {
+      "original_msg_start": 1689,
+      "original_msg_end": 1692,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0313": {
+      "original_msg_start": 1706,
+      "original_msg_end": 1709,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0318": {
+      "original_msg_start": 1725,
+      "original_msg_end": 1728,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0319": {
+      "original_msg_start": 1754,
+      "original_msg_end": 1757,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0325": {
+      "original_msg_start": 1771,
+      "original_msg_end": 1774,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0326": {
+      "original_msg_start": 1790,
+      "original_msg_end": 1793,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0330": {
+      "original_msg_start": 1817,
+      "original_msg_end": 1820,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0331": {
+      "original_msg_start": 1844,
+      "original_msg_end": 1846,
+      "status": "compacted_cycle_7",
+      "compacted_at_cycle": 7,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0338": {
+      "original_msg_start": 1870,
+      "original_msg_end": 1874,
+      "status": "compacted_cycle_7",
+      "compacted_at_cycle": 7,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0341": {
+      "original_msg_start": 1896,
+      "original_msg_end": 1899,
+      "status": "compacted_cycle_7",
+      "compacted_at_cycle": 7,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0342": {
+      "original_msg_start": 1917,
+      "original_msg_end": 1919,
+      "status": "compacted_cycle_7",
+      "compacted_at_cycle": 7,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0344": {
+      "original_msg_start": 1941,
+      "original_msg_end": 1944,
+      "status": "compacted_cycle_7",
+      "compacted_at_cycle": 7,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0345": {
+      "original_msg_start": 1970,
+      "original_msg_end": 1973,
+      "status": "compacted_cycle_7",
+      "compacted_at_cycle": 7,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0347": {
+      "original_msg_start": 1997,
+      "original_msg_end": 2000,
+      "status": "compacted_cycle_7",
+      "compacted_at_cycle": 7,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0348": {
+      "original_msg_start": 2022,
+      "original_msg_end": 2025,
+      "status": "compacted_cycle_7",
+      "compacted_at_cycle": 7,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0349": {
+      "original_msg_start": 2051,
+      "original_msg_end": 2054,
+      "status": "compacted_cycle_8",
+      "compacted_at_cycle": 8,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0312": {
+      "original_msg_start": 2100,
+      "original_msg_end": 2103,
+      "status": "compacted_cycle_8",
+      "compacted_at_cycle": 8,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0159": {
+      "original_msg_start": 2135,
+      "original_msg_end": 2144,
+      "status": "compacted_cycle_8",
+      "compacted_at_cycle": 8,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0329": {
+      "original_msg_start": 2168,
+      "original_msg_end": 2171,
+      "status": "compacted_cycle_8",
+      "compacted_at_cycle": 8,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0322": {
+      "original_msg_start": 2207,
+      "original_msg_end": 2210,
+      "status": "compacted_cycle_8",
+      "compacted_at_cycle": 8,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0204": {
+      "original_msg_start": 2248,
+      "original_msg_end": 2256,
+      "status": "compacted_cycle_8",
+      "compacted_at_cycle": 8,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0156": {
+      "original_msg_start": 2286,
+      "original_msg_end": 2292,
+      "status": "compacted_cycle_9",
+      "compacted_at_cycle": 9,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0243": {
+      "original_msg_start": 2328,
+      "original_msg_end": 2331,
+      "status": "compacted_cycle_9",
+      "compacted_at_cycle": 9,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0227": {
+      "original_msg_start": 2359,
+      "original_msg_end": 2363,
+      "status": "compacted_cycle_9",
+      "compacted_at_cycle": 9,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0222": {
+      "original_msg_start": 2396,
+      "original_msg_end": 2398,
+      "status": "compacted_cycle_9",
+      "compacted_at_cycle": 9,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0320": {
+      "original_msg_start": 2408,
+      "original_msg_end": 2411,
+      "status": "compacted_cycle_9",
+      "compacted_at_cycle": 9,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0351": {
+      "original_msg_start": 2445,
+      "original_msg_end": 2448,
+      "status": "compacted_cycle_9",
+      "compacted_at_cycle": 9,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0154": {
+      "original_msg_start": 2482,
+      "original_msg_end": 2488,
+      "status": "compacted_cycle_10",
+      "compacted_at_cycle": 10,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0303": {
+      "original_msg_start": 2524,
+      "original_msg_end": 2527,
+      "status": "compacted_cycle_10",
+      "compacted_at_cycle": 10,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0284": {
+      "original_msg_start": 2559,
+      "original_msg_end": 2562,
+      "status": "compacted_cycle_10",
+      "compacted_at_cycle": 10,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0220": {
+      "original_msg_start": 2594,
+      "original_msg_end": 2600,
+      "status": "compacted_cycle_10",
+      "compacted_at_cycle": 10,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0170": {
+      "original_msg_start": 2630,
+      "original_msg_end": 2636,
+      "status": "compacted_cycle_10",
+      "compacted_at_cycle": 10,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0290": {
+      "original_msg_start": 2662,
+      "original_msg_end": 2665,
+      "status": "compacted_cycle_10",
+      "compacted_at_cycle": 10,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0260": {
+      "original_msg_start": 2689,
+      "original_msg_end": 2692,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0198": {
+      "original_msg_start": 2714,
+      "original_msg_end": 2720,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0250": {
+      "original_msg_start": 2728,
+      "original_msg_end": 2731,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0315": {
+      "original_msg_start": 2741,
+      "original_msg_end": 2744,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0334": {
+      "original_msg_start": 2767,
+      "original_msg_end": 2770,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0355": {
+      "original_msg_start": 2780,
+      "original_msg_end": 2783,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0254": {
+      "original_msg_start": 2802,
+      "original_msg_end": 2805,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0141": {
+      "original_msg_start": 2812,
+      "original_msg_end": 2818,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0262": {
+      "original_msg_start": 2844,
+      "original_msg_end": 2847,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0332": {
+      "original_msg_start": 2873,
+      "original_msg_end": 2876,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0298": {
+      "original_msg_start": 2900,
+      "original_msg_end": 2903,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0328": {
+      "original_msg_start": 2923,
+      "original_msg_end": 2926,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0185": {
+      "original_msg_start": 2948,
+      "original_msg_end": 2954,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0187": {
+      "original_msg_start": 2976,
+      "original_msg_end": 2982,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0247": {
+      "original_msg_start": 3004,
+      "original_msg_end": 3006,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0354": {
+      "original_msg_start": 3024,
+      "original_msg_end": 3027,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0168": {
+      "original_msg_start": 3043,
+      "original_msg_end": 3046,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0173": {
+      "original_msg_start": 3076,
+      "original_msg_end": 3081,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0268": {
+      "original_msg_start": 3105,
+      "original_msg_end": 3107,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0323": {
+      "original_msg_start": 3131,
+      "original_msg_end": 3134,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0253": {
+      "original_msg_start": 3148,
+      "original_msg_end": 3151,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0286": {
+      "original_msg_start": 3173,
+      "original_msg_end": 3177,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0245": {
+      "original_msg_start": 3195,
+      "original_msg_end": 3198,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0248": {
+      "original_msg_start": 3216,
+      "original_msg_end": 3219,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0257": {
+      "original_msg_start": 3241,
+      "original_msg_end": 3244,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0281": {
+      "original_msg_start": 3266,
+      "original_msg_end": 3269,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0217": {
+      "original_msg_start": 3287,
+      "original_msg_end": 3289,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0299": {
+      "original_msg_start": 3307,
+      "original_msg_end": 3310,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0289": {
+      "original_msg_start": 3332,
+      "original_msg_end": 3335,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0155": {
+      "original_msg_start": 3359,
+      "original_msg_end": 3364,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0158": {
+      "original_msg_start": 3378,
+      "original_msg_end": 3384,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0327": {
+      "original_msg_start": 3403,
+      "original_msg_end": 3406,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0223": {
+      "original_msg_start": 3426,
+      "original_msg_end": 3428,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0249": {
+      "original_msg_start": 3438,
+      "original_msg_end": 3441,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0255": {
+      "original_msg_start": 3467,
+      "original_msg_end": 3469,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0317": {
+      "original_msg_start": 3495,
+      "original_msg_end": 3498,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0176": {
+      "original_msg_start": 3512,
+      "original_msg_end": 3518,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0138": {
+      "original_msg_start": 3542,
+      "original_msg_end": 3548,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0274": {
+      "original_msg_start": 3562,
+      "original_msg_end": 3565,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0224": {
+      "original_msg_start": 3591,
+      "original_msg_end": 3596,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0202": {
+      "original_msg_start": 3622,
+      "original_msg_end": 3624,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0339": {
+      "original_msg_start": 3644,
+      "original_msg_end": 3647,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0287": {
+      "original_msg_start": 3663,
+      "original_msg_end": 3666,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0136": {
+      "original_msg_start": 3690,
+      "original_msg_end": 3696,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0205": {
+      "original_msg_start": 3722,
+      "original_msg_end": 3724,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0324": {
+      "original_msg_start": 3738,
+      "original_msg_end": 3741,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0264": {
+      "original_msg_start": 3766,
+      "original_msg_end": 3769,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0191": {
+      "original_msg_start": 3791,
+      "original_msg_end": 3797,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0294": {
+      "original_msg_start": 3815,
+      "original_msg_end": 3818,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0240": {
+      "original_msg_start": 3826,
+      "original_msg_end": 3829,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0278": {
+      "original_msg_start": 3850,
+      "original_msg_end": 3853,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0350": {
+      "original_msg_start": 3875,
+      "original_msg_end": 3878,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0258": {
+      "original_msg_start": 3890,
+      "original_msg_end": 3893,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0165": {
+      "original_msg_start": 3913,
+      "original_msg_end": 3919,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0140": {
+      "original_msg_start": 3939,
+      "original_msg_end": 3945,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0190": {
+      "original_msg_start": 3969,
+      "original_msg_end": 3975,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0175": {
+      "original_msg_start": 3999,
+      "original_msg_end": 4005,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0212": {
+      "original_msg_start": 4029,
+      "original_msg_end": 4032,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0216": {
+      "original_msg_start": 4048,
+      "original_msg_end": 4050,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0163": {
+      "original_msg_start": 4070,
+      "original_msg_end": 4076,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0215": {
+      "original_msg_start": 4100,
+      "original_msg_end": 4103,
+      "status": "raw",
+      "compacted_at_cycle": null,
+      "n_compressions": 0,
+      "keyword_survived_last": null
+    },
+    "LM_0238": {
+      "original_msg_start": 4127,
+      "original_msg_end": 4129,
+      "status": "raw",
+      "compacted_at_cycle": null,
+      "n_compressions": 0,
+      "keyword_survived_last": null
+    },
+    "LM_0314": {
+      "original_msg_start": 4153,
+      "original_msg_end": 4156,
+      "status": "raw",
+      "compacted_at_cycle": null,
+      "n_compressions": 0,
+      "keyword_survived_last": null
+    }
+  },
+  "cycle_log": [
+    {
+      "cycle": 1,
+      "msgs_before": 670,
+      "msgs_after": 419,
+      "tokens_before": 173457,
+      "tokens_after": 113691,
+      "tokens_freed": 59766,
+      "facts_affected": [
+        "LM_0122",
+        "LM_0124",
+        "LM_0125",
+        "LM_0126",
+        "LM_0127",
+        "LM_0131",
+        "LM_0132",
+        "LM_0134",
+        "LM_0135",
+        "LM_0137",
+        "LM_0143",
+        "LM_0149",
+        "LM_0151",
+        "LM_0152",
+        "LM_0160",
+        "LM_0164",
+        "LM_0166",
+        "LM_0167",
+        "LM_0169",
+        "LM_0174",
+        "LM_0182"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 670
+    },
+    {
+      "cycle": 2,
+      "msgs_before": 639,
+      "msgs_after": 426,
+      "tokens_before": 173040,
+      "tokens_after": 113854,
+      "tokens_freed": 59186,
+      "facts_affected": [
+        "LM_0183",
+        "LM_0186",
+        "LM_0188",
+        "LM_0194",
+        "LM_0195",
+        "LM_0199",
+        "LM_0200",
+        "LM_0201",
+        "LM_0203"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 890
+    },
+    {
+      "cycle": 3,
+      "msgs_before": 626,
+      "msgs_after": 412,
+      "tokens_before": 171308,
+      "tokens_after": 113695,
+      "tokens_freed": 57613,
+      "facts_affected": [
+        "LM_0206",
+        "LM_0207",
+        "LM_0211",
+        "LM_0221",
+        "LM_0225",
+        "LM_0226",
+        "LM_0228",
+        "LM_0231"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 1090
+    },
+    {
+      "cycle": 4,
+      "msgs_before": 662,
+      "msgs_after": 452,
+      "tokens_before": 171300,
+      "tokens_after": 114123,
+      "tokens_freed": 57177,
+      "facts_affected": [
+        "LM_0232",
+        "LM_0233",
+        "LM_0234",
+        "LM_0235",
+        "LM_0237",
+        "LM_0241",
+        "LM_0242",
+        "LM_0244",
+        "LM_0246",
+        "LM_0252",
+        "LM_0256",
+        "LM_0266"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 1340
+    },
+    {
+      "cycle": 5,
+      "msgs_before": 692,
+      "msgs_after": 484,
+      "tokens_before": 172283,
+      "tokens_after": 114097,
+      "tokens_freed": 58186,
+      "facts_affected": [
+        "LM_0267",
+        "LM_0270",
+        "LM_0271",
+        "LM_0275",
+        "LM_0277",
+        "LM_0279",
+        "LM_0283",
+        "LM_0291",
+        "LM_0292",
+        "LM_0293"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 1580
+    },
+    {
+      "cycle": 6,
+      "msgs_before": 724,
+      "msgs_after": 460,
+      "tokens_before": 173834,
+      "tokens_after": 114042,
+      "tokens_freed": 59792,
+      "facts_affected": [
+        "LM_0296",
+        "LM_0304",
+        "LM_0306",
+        "LM_0307",
+        "LM_0309",
+        "LM_0313",
+        "LM_0318",
+        "LM_0319",
+        "LM_0325",
+        "LM_0326",
+        "LM_0330"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 1820
+    },
+    {
+      "cycle": 7,
+      "msgs_before": 690,
+      "msgs_after": 451,
+      "tokens_before": 172433,
+      "tokens_after": 113884,
+      "tokens_freed": 58549,
+      "facts_affected": [
+        "LM_0331",
+        "LM_0338",
+        "LM_0341",
+        "LM_0342",
+        "LM_0344",
+        "LM_0345",
+        "LM_0347",
+        "LM_0348"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 2050
+    },
+    {
+      "cycle": 8,
+      "msgs_before": 681,
+      "msgs_after": 462,
+      "tokens_before": 171243,
+      "tokens_after": 114139,
+      "tokens_freed": 57104,
+      "facts_affected": [
+        "LM_0349",
+        "LM_0312",
+        "LM_0159",
+        "LM_0329",
+        "LM_0322",
+        "LM_0204"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 2280
+    },
+    {
+      "cycle": 9,
+      "msgs_before": 662,
+      "msgs_after": 432,
+      "tokens_before": 172094,
+      "tokens_after": 113519,
+      "tokens_freed": 58575,
+      "facts_affected": [
+        "LM_0156",
+        "LM_0243",
+        "LM_0227",
+        "LM_0222",
+        "LM_0320",
+        "LM_0351"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 2480
+    },
+    {
+      "cycle": 10,
+      "msgs_before": 642,
+      "msgs_after": 414,
+      "tokens_before": 171264,
+      "tokens_after": 113789,
+      "tokens_freed": 57475,
+      "facts_affected": [
+        "LM_0154",
+        "LM_0303",
+        "LM_0284",
+        "LM_0220",
+        "LM_0170",
+        "LM_0290"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 2690
+    },
+    {
+      "cycle": 11,
+      "msgs_before": 624,
+      "msgs_after": 426,
+      "tokens_before": 171687,
+      "tokens_after": 113652,
+      "tokens_freed": 58035,
+      "facts_affected": [
+        "LM_0260",
+        "LM_0198",
+        "LM_0250",
+        "LM_0315",
+        "LM_0334",
+        "LM_0355",
+        "LM_0254",
+        "LM_0141",
+        "LM_0262",
+        "LM_0332"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 2900
+    },
+    {
+      "cycle": 12,
+      "msgs_before": 696,
+      "msgs_after": 479,
+      "tokens_before": 172251,
+      "tokens_after": 113912,
+      "tokens_freed": 58339,
+      "facts_affected": [
+        "LM_0298",
+        "LM_0328",
+        "LM_0185",
+        "LM_0187",
+        "LM_0247",
+        "LM_0354",
+        "LM_0168",
+        "LM_0173",
+        "LM_0268",
+        "LM_0323",
+        "LM_0253"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 3170
+    },
+    {
+      "cycle": 13,
+      "msgs_before": 709,
+      "msgs_after": 498,
+      "tokens_before": 172545,
+      "tokens_after": 113667,
+      "tokens_freed": 58878,
+      "facts_affected": [
+        "LM_0286",
+        "LM_0245",
+        "LM_0248",
+        "LM_0257",
+        "LM_0281",
+        "LM_0217",
+        "LM_0299",
+        "LM_0289",
+        "LM_0155",
+        "LM_0158"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 3400
+    },
+    {
+      "cycle": 14,
+      "msgs_before": 738,
+      "msgs_after": 477,
+      "tokens_before": 171336,
+      "tokens_after": 114126,
+      "tokens_freed": 57210,
+      "facts_affected": [
+        "LM_0327",
+        "LM_0223",
+        "LM_0249",
+        "LM_0255",
+        "LM_0317",
+        "LM_0176",
+        "LM_0138",
+        "LM_0274",
+        "LM_0224",
+        "LM_0202"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 3640
+    },
+    {
+      "cycle": 15,
+      "msgs_before": 697,
+      "msgs_after": 468,
+      "tokens_before": 171427,
+      "tokens_after": 113631,
+      "tokens_freed": 57796,
+      "facts_affected": [
+        "LM_0339",
+        "LM_0287",
+        "LM_0136",
+        "LM_0205",
+        "LM_0324",
+        "LM_0264",
+        "LM_0191",
+        "LM_0294",
+        "LM_0240",
+        "LM_0278"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 3860
+    },
+    {
+      "cycle": 16,
+      "msgs_before": 698,
+      "msgs_after": 450,
+      "tokens_before": 171654,
+      "tokens_after": 113507,
+      "tokens_freed": 58147,
+      "facts_affected": [
+        "LM_0350",
+        "LM_0258",
+        "LM_0165",
+        "LM_0140",
+        "LM_0190",
+        "LM_0175",
+        "LM_0212",
+        "LM_0216",
+        "LM_0163"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 4090
+    }
+  ],
+  "total_cycles": 16
+}

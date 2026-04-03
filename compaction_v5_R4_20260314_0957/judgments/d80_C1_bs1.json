@@ -1,0 +1,607 @@
+{
+  "judge_batch_size": 15,
+  "batches": [
+    {
+      "batch_id": 0,
+      "judge_prompt_sent": "You are evaluating whether an LLM correctly recalled facts from a conversation.\n\nFor each entry below, compare the LLM's answer with the expected answer and keywords.\n\n[LM_0122]\n  Expected answer: 25 minutes and 50 seconds (or 25:50)\n  Expected keywords: 25, minutes, 50, seconds\n  LLM answer: Your personal best time in the charity 5K run was 27:12, with a goal to beat 25:50.\n\n[LM_0124]\n  Expected answer: the suburbs\n  Expected keywords: suburbs\n  LLM answer: Rachel moved to the suburbs after initially moving to Chicago.\n\n[LM_0125]\n  Expected answer: $400,000\n  Expected keywords: 400, 000\n  LLM answer: You were pre-approved for $350,000 from Wells Fargo.\n\n[LM_0126]\n  Expected answer: Three times a week.\n  Expected keywords: Three, times, week\n  LLM answer: You attend yoga classes twice a week to help with your anxiety, although at one point in the conversation you mentioned attending three times a week. The most recent mention was that you do yoga twice a week.\n\n[LM_0127]\n  Expected answer: Yes.\n  Expected keywords: Yes\n  LLM answer: Yes, your mom is now using the same grocery list app as you, and you can easily share lists and keep track of what you need.\n\n[LM_0131]\n  Expected answer: Paris\n  Expected keywords: Paris\n  LLM answer: Hawaii\n\n[LM_0132]\n  Expected answer: under my bed\n  Expected keywords: under, bed\n  LLM answer: Under your bed for storage\n\n[LM_0134]\n  Expected answer: 220\n  Expected keywords: 220\n  LLM answer: 220 pages\n\n[LM_0135]\n  Expected answer: When you just started your new role as Senior Software Engineer, you led 4 engineers. Now, you lead 5 engineers\n  Expected keywords: started, new, role, Senior, Software, Engineer, led, engineers, Now, lead, 4, 5\n  LLM answer: When you first started your new role as Senior Software Engineer, you led a team of 4 engineers. Later in the conversation, you mentioned that you lead a team of 5 engineers.\n\n[LM_0137]\n  Expected answer: 120\n  Expected keywords: 120\n  LLM answer: 120 stars\n\n[LM_0143]\n  Expected answer: 3\n  Expected keywords: 3\n  LLM answer: You mentioned trying out 3 of Emma's recipes, which you described as amazing.\n\n[LM_0149]\n  Expected answer: Yes\n  Expected keywords: Yes\n  LLM answer: Based on our conversation, you mentioned that you go to the gym on Tuesdays, Thursdays, and Saturdays, which is 3 times a week. However, you also mentioned that you go to the gym 4 times a week in a later message. I don't recall any mention of your previous gym frequency to compare it to.\n\n[LM_0151]\n  Expected answer: 30\n  Expected keywords: 30\n  LLM answer: You have completed 30 videos of Corey Schafer's Python programming series so far.\n\n[LM_0152]\n  Expected answer: 3 months\n  Expected keywords: months, 3\n  LLM answer: 3 months\n\n[LM_0160]\n  Expected answer: Yes\n  Expected keywords: Yes\n  LLM answer: Based on our conversation, you had put down 'The Nightingale' temporarily because it was getting too emotional, and you were planning to finish it in time for your book club discussion. However, you later mentioned that you had recently finished it, saying it was amazing. So yes, you did finish reading 'The Nightingale' by Kristin Hannah.\n\nFor each entry, output:\n- \"recalled\": true if the answer demonstrates knowledge of the expected information (even if imprecise). \"I don't recall\" or \"I don't know\" = false.\n- \"accurate\": true if the specific details match (numbers, names, dates). Partial match = false.\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0122\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM mentioned 25:50 as a goal but stated personal best was 27:12, not 25:50\"},\n  {\"id\": \"LM_0124\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correctly recalled suburbs as the answer\"},\n  {\"id\": \"LM_0125\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM stated $350,000 pre-approval instead of expected $400,000\"},\n  {\"id\": \"LM_0126\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM reported twice a week as most recent answer instead of three times a week\"},\n  {\"id\": \"LM_0127\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correctly confirmed Yes with supporting details about mom and grocery app\"},\n  {\"id\": \"LM_0131\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM answered Hawaii instead of Paris\"},\n  {\"id\": \"LM_0132\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correctly recalled under bed, included additional context about storage\"},\n  {\"id\": \"LM_0134\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correctly recalled 220 with unit specification\"},\n  {\"id\": \"LM_0135\", \"recalled\": true, \"accurate\": true, \"notes\": \"All key details present: started new role as Senior Software Engineer, led 4 engineers, now leads 5\"},\n  {\"id\": \"LM_0137\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correctly recalled 120 with unit specification\"},\n  {\"id\": \"LM_0143\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correctly recalled 3 recipes tried from Emma\"},\n  {\"id\": \"LM_0149\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM did not provide clear Yes/No answer and expressed uncertainty about previous gym frequency\"},\n  {\"id\": \"LM_0151\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correctly recalled 30 videos of Corey Schafer's Python series\"},\n  {\"id\": \"LM_0152\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correctly recalled 3 months\"},\n  {\"id\": \"LM_0160\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correctly confirmed Yes with detailed narrative about The Nightingale and book club\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0122",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM mentioned 25:50 as a goal but stated personal best was 27:12, not 25:50"
+        },
+        {
+          "fact_id": "LM_0124",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correctly recalled suburbs as the answer"
+        },
+        {
+          "fact_id": "LM_0125",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM stated $350,000 pre-approval instead of expected $400,000"
+        },
+        {
+          "fact_id": "LM_0126",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM reported twice a week as most recent answer instead of three times a week"
+        },
+        {
+          "fact_id": "LM_0127",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correctly confirmed Yes with supporting details about mom and grocery app"
+        },
+        {
+          "fact_id": "LM_0131",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM answered Hawaii instead of Paris"
+        },
+        {
+          "fact_id": "LM_0132",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correctly recalled under bed, included additional context about storage"
+        },
+        {
+          "fact_id": "LM_0134",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correctly recalled 220 with unit specification"
+        },
+        {
+          "fact_id": "LM_0135",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "All key details present: started new role as Senior Software Engineer, led 4 engineers, now leads 5"
+        },
+        {
+          "fact_id": "LM_0137",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correctly recalled 120 with unit specification"
+        },
+        {
+          "fact_id": "LM_0143",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correctly recalled 3 recipes tried from Emma"
+        },
+        {
+          "fact_id": "LM_0149",
+          "question_type": "knowledge-update",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM did not provide clear Yes/No answer and expressed uncertainty about previous gym frequency"
+        },
+        {
+          "fact_id": "LM_0151",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correctly recalled 30 videos of Corey Schafer's Python series"
+        },
+        {
+          "fact_id": "LM_0152",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correctly recalled 3 months"
+        },
+        {
+          "fact_id": "LM_0160",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correctly confirmed Yes with detailed narrative about The Nightingale and book club"
+        }
+      ]
+    },
+    {
+      "batch_id": 1,
+      "judge_prompt_sent": "You are evaluating whether an LLM correctly recalled facts from a conversation.\n\nFor each entry below, compare the LLM's answer with the expected answer and keywords.\n\n[LM_0164]\n  Expected answer: $420\n  Expected keywords: 420\n  LLM answer: $420\n\n[LM_0166]\n  Expected answer: 6:00 pm\n  Expected keywords: 00, pm, 6\n  LLM answer: You go to the gym on Tuesdays, Thursdays, and Saturdays at 7:00 pm.\n\n[LM_0167]\n  Expected answer: 15\n  Expected keywords: 15\n  LLM answer: Based on our conversation, you mentioned watching 15 Crash Course videos in the past few weeks, though you later updated this to 30 videos when discussing Corey Schafer's Python series.\n\n[LM_0169]\n  Expected answer: 32\n  Expected keywords: 32\n  LLM answer: 32 species, with the most recent being a Northern Flicker spotted last weekend\n\n[LM_0174]\n  Expected answer: about two hours\n  Expected keywords: two, hours\n  LLM answer: You dedicate 2 hours each day to coding exercises.\n\n[LM_0182]\n  Expected answer: Ford F-150 pickup truck\n  Expected keywords: Ford, 150, pickup, truck\n  LLM answer: Ford F-150 pickup truck\n\n[LM_0183]\n  Expected answer: level 100\n  Expected keywords: level, 100\n  LLM answer: The user's previous goal was to reach level 100 before the end of the year, before updating their goal to level 150.\n\n[LM_0186]\n  Expected answer: 6\n  Expected keywords: 6\n  LLM answer: 6 women out of 10 people on Rachel's team, as mentioned in a later message. However, an earlier message stated 5 women out of 10 people. The most recent figure mentioned was 6 women.\n\n[LM_0188]\n  Expected answer: We've met up twice.\n  Expected keywords: We've, met, twice\n  LLM answer: You have met up with Alex from Germany twice.\n\n[LM_0194]\n  Expected answer: The information provided is not enough. You mentioned seeing Dr. Smith but not Dr. Johnson.\n  Expected keywords: information, provided, enough, mentioned, seeing, Dr, Smith, Johnson\n  LLM answer: I don't recall. The user mentioned a therapist named Dr. Smith, not Dr. Johnson, and stated that therapy sessions are every two weeks.\n\n[LM_0195]\n  Expected answer: The information provided is not enough. You mentioned living in Harajuku but not Shinjuku.\n  Expected keywords: information, provided, enough, mentioned, living, Harajuku, Shinjuku\n  LLM answer: I don't recall. You mentioned living in Harajuku, not Shinjuku, but I don't have specific information about how long you've been living in your current apartment. You mentioned living in Harajuku for 3 months at one point in our conversation.\n\n[LM_0199]\n  Expected answer: in a shoe rack in my closet\n  Expected keywords: shoe, rack, closet\n  LLM answer: You keep your old sneakers under your bed for storage.\n\n[LM_0200]\n  Expected answer: The user would prefer responses that suggest resources specifically tailored to Adobe Premiere Pro, especially those that delve into its advanced settings. They might not prefer general video editing resources or resources related to other video editing software.\n  Expected keywords: user, prefer, responses, suggest, resources, specifically, tailored, Adobe, Premiere, Pro, especially, delve, advanced, settings, general, video, editing, related, other, software\n  LLM answer: Based on our conversation, I recommended the following resources for learning more about video editing with Adobe Premiere Pro: Adobe Premiere Pro's official documentation and tutorials, YouTube channels like Premiere Bro, Video Copilot, and Adobe Creative Cloud, online courses on platforms like Udemy, LinkedIn Learning, and Skillshare, and Premiere Pro communities and forums, such as Reddit's r/premierepro and Adobe's Premiere Pro forum.\n\n[LM_0201]\n  Expected answer: The user would prefer suggestions of Sony-compatible accessories or high-quality photography gear that can enhance their photography experience. They may not prefer suggestions of other brands' equipment or low-quality gear.\n  Expected keywords: user, prefer, suggestions, Sony, compatible, accessories, high, quality, photography, gear, enhance, experience, other, brands', equipment, low\n  LLM answer: Based on our conversation, I know that you have a Sony A7R IV camera, a Sony 24-70mm f/2.8 lens, and you are looking to upgrade your camera flash. You have already received recommendations for camera flashes, including the Sony HVL-F60RM, Sony HVL-F45RM, Godox V1, Godox AD200, and Profoto A1. I also know that you are looking for a new camera bag. Some accessories that would complement your current photography setup could include a camera strap, extra batteries, memory cards, a tripod, a camera cleaning kit, and a neutral density filter. However, I don't recall specific details about your tripod or other accessories you may already have, so these are general suggestions based on your camera and lens.\n\n[LM_0203]\n  Expected answer: The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features.\n  Expected keywords: user, prefer, suggestions, hotels, Miami, offer, great, views, possibly, ocean, city, skyline, unique, features, rooftop, pool, hot, tub, balcony, basic, budget, without\n  LLM answer: I don't recall any discussion about a trip to Miami in our conversation.\n\nFor each entry, output:\n- \"recalled\": true if the answer demonstrates knowledge of the expected information (even if imprecise). \"I don't recall\" or \"I don't know\" = false.\n- \"accurate\": true if the specific details match (numbers, names, dates). Partial match = false.\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0164\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer matches expected answer exactly\"\n  },\n  {\n    \"id\": \"LM_0166\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM recalled gym schedule but gave 7:00 pm instead of expected 6:00 pm\"\n  },\n  {\n    \"id\": \"LM_0167\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly identified 15 as the initial figure mentioned, with additional context about updates\"\n  },\n  {\n    \"id\": \"LM_0169\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer contains the correct number 32 with supporting details\"\n  },\n  {\n    \"id\": \"LM_0174\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly identifies 2 hours daily for coding exercises\"\n  },\n  {\n    \"id\": \"LM_0182\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer matches expected answer exactly with all required keywords\"\n  },\n  {\n    \"id\": \"LM_0183\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly identified level 100 as previous goal with additional context\"\n  },\n  {\n    \"id\": \"LM_0186\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly identified 6 as the most recent figure with context about prior discrepancy\"\n  },\n  {\n    \"id\": \"LM_0188\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Answer correctly conveys meeting up twice with Alex, contains required keywords\"\n  },\n  {\n    \"id\": \"LM_0194\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM mentions Dr. Smith correctly but doesn't properly acknowledge insufficient information about Dr. Johnson as required by expected answer\"\n  },\n  {\n    \"id\": \"LM_0195\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM mentions Harajuku and Shinjuku but adds unsupported specific detail (3 months) rather than stating information is insufficient\"\n  },\n  {\n    \"id\": \"LM_0199\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM recalled storage location but provided incorrect details (under bed vs. shoe rack in closet)\"\n  },\n  {\n    \"id\": \"LM_0200\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM provided resource recommendations instead of identifying user preferences; doesn't address what user would or wouldn't prefer\"\n  },\n  {\n    \"id\": \"LM_0201\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM provided specific product recommendations rather than identifying user preferences about Sony compatibility and quality gear\"\n  },\n  {\n    \"id\": \"LM_0203\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM states 'I don't recall' - unable to recall expected preference information about Miami hotels\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0164",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer matches expected answer exactly"
+        },
+        {
+          "fact_id": "LM_0166",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalled gym schedule but gave 7:00 pm instead of expected 6:00 pm"
+        },
+        {
+          "fact_id": "LM_0167",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified 15 as the initial figure mentioned, with additional context about updates"
+        },
+        {
+          "fact_id": "LM_0169",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer contains the correct number 32 with supporting details"
+        },
+        {
+          "fact_id": "LM_0174",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly identifies 2 hours daily for coding exercises"
+        },
+        {
+          "fact_id": "LM_0182",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer matches expected answer exactly with all required keywords"
+        },
+        {
+          "fact_id": "LM_0183",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified level 100 as previous goal with additional context"
+        },
+        {
+          "fact_id": "LM_0186",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified 6 as the most recent figure with context about prior discrepancy"
+        },
+        {
+          "fact_id": "LM_0188",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Answer correctly conveys meeting up twice with Alex, contains required keywords"
+        },
+        {
+          "fact_id": "LM_0194",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM mentions Dr. Smith correctly but doesn't properly acknowledge insufficient information about Dr. Johnson as required by expected answer"
+        },
+        {
+          "fact_id": "LM_0195",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM mentions Harajuku and Shinjuku but adds unsupported specific detail (3 months) rather than stating information is insufficient"
+        },
+        {
+          "fact_id": "LM_0199",
+          "question_type": "knowledge-update",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalled storage location but provided incorrect details (under bed vs. shoe rack in closet)"
+        },
+        {
+          "fact_id": "LM_0200",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM provided resource recommendations instead of identifying user preferences; doesn't address what user would or wouldn't prefer"
+        },
+        {
+          "fact_id": "LM_0201",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM provided specific product recommendations rather than identifying user preferences about Sony compatibility and quality gear"
+        },
+        {
+          "fact_id": "LM_0203",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM states 'I don't recall' - unable to recall expected preference information about Miami hotels"
+        }
+      ]
+    },
+    {
+      "batch_id": 2,
+      "judge_prompt_sent": "You are evaluating whether an LLM correctly recalled facts from a conversation.\n\nFor each entry below, compare the LLM's answer with the expected answer and keywords.\n\n[LM_0206]\n  Expected answer: The user would prefer suggestions that involve relaxing activities that can be done in the evening, preferably before 9:30 pm. They would not prefer suggestions that involve using their phone or watching TV, as these activities have been affecting their sleep quality.\n  Expected keywords: user, prefer, suggestions, involve, relaxing, activities, done, evening, preferably, 30, pm, using, phone, watching, TV, affecting, sleep, quality, 9\n  LLM answer: Based on our conversation, you mentioned that you prefer winding down by 9:30 pm to prepare for a good night's sleep. Some activities you can do in the evening include: reading a book, practicing meditation or deep breathing exercises, gentle stretching or yoga, listening to soothing music, or writing in a journal. You should start winding down around 8:30 pm and avoid screens for at least 30 minutes before bedtime at 9:30 pm.\n\n[LM_0207]\n  Expected answer: The user would prefer responses that acknowledge and build upon their existing efforts to organize their kitchen, such as utilizing their new utensil holder to keep countertops clutter-free. They would also appreciate tips that address their concern for maintaining their granite surface, particularly around the sink area. Preferred responses would provide practical and actionable steps to maintain cleanliness, leveraging the user's current tools and setup. They might not prefer generic or vague suggestions that do not take into account their specific kitchen setup or concerns.\n  Expected keywords: user, prefer, responses, acknowledge, build, upon, existing, efforts, organize, kitchen, utilizing, new, utensil, holder, keep, countertops, clutter, free, appreciate, tips, address, concern, maintaining, granite, surface, particularly, around, sink, area, Preferred, provide, practical, actionable, steps, maintain, cleanliness, leveraging, user's, current, tools, setup, generic, vague, suggestions, take, account, specific, concerns\n  LLM answer: I don't recall any specific details about your kitchen from our conversation. However, based on general knowledge, some tips for keeping a kitchen clean include wiping down countertops regularly, doing dishes promptly, and organizing utensils in a utensil holder, which you mentioned you recently bought to keep countertops clutter-free.\n\n[LM_0211]\n  Expected answer: The user would prefer responses that build upon their existing sources of inspiration, such as revisiting Instagram art accounts or exploring new techniques from online tutorials. They might also appreciate suggestions that revisit previous themes they found enjoyable, like painting flowers. The user would not prefer generic or vague suggestions for finding inspiration, and would likely appreciate responses that utilize their recent 30-day painting challenge experience.\n  Expected keywords: user, prefer, responses, build, upon, existing, sources, inspiration, revisiting, Instagram, art, accounts, exploring, new, techniques, online, tutorials, appreciate, suggestions, revisit, previous, themes, found, enjoyable, like, painting, flowers, generic, vague, finding, likely, utilize, recent, 30, day, challenge, experience\n  LLM answer: I don't recall this question being asked in our conversation.\n\n[LM_0221]\n  Expected answer: The user would prefer responses that take into account their current home network storage capacity issues and recent reliance on external hard drives, highlighting the potential benefits of a NAS device in addressing these specific needs. They might not prefer responses that ignore their current storage challenges or fail to consider their recent tech upgrades and priorities. Preferred responses would utilize the user's previous mentions of storage capacity issues and tech investments to inform their decision.\n  Expected keywords: user, prefer, responses, take, account, current, home, network, storage, capacity, issues, recent, reliance, external, hard, drives, highlighting, potential, benefits, NAS, device, addressing, specific, needs, ignore, challenges, fail, consider, tech, upgrades, priorities, Preferred, utilize, user's, previous, mentions, investments, inform, decision\n  LLM answer: Based on our conversation, you mentioned that you were thinking of getting a NAS device to expand your home network's storage capacity and make it easily accessible to all devices on your network. You also mentioned that you were already backing up your files to an external hard drive, but thought a NAS would be more convenient and provide more storage. Based on this, it seems like you have a clear need for a NAS device, and waiting may not be necessary. However, the decision ultimately depends on your budget and specific needs.\n\n[LM_0225]\n  Expected answer: The user would prefer documentary recommendations that are similar in style and theme to 'Our Planet', 'Free Solo', and 'Tiger King', which they have previously enjoyed. They might not prefer recommendations of documentaries that are vastly different in tone or subject matter from these titles. The preferred response utilizes the user's previously mentioned viewing history to suggest documentaries that cater to their tastes.\n  Expected keywords: user, prefer, documentary, recommendations, similar, style, theme, 'Our, Planet', 'Free, Solo', 'Tiger, King', previously, enjoyed, documentaries, vastly, different, tone, subject, matter, titles, preferred, response, utilizes, user's, mentioned, viewing, history, suggest, cater, tastes\n  LLM answer: Based on our conversation, you mentioned enjoying documentaries like 'Our Planet', 'Free Solo', and 'Tiger King' on Netflix. I recommended several documentaries including 'Planet Earth', 'Blue Planet', 'March of the Penguins', 'Dynasties', 'Chasing Coral', 'The Keepers', 'The Staircase', 'The Jinx: The Life and Deaths of Robert Durst', 'Abducted in Plain Sight', 'The Inventor: Out for Blood in Silicon Valley', and 'Fyre: The Greatest Party That Never Happened'.\n\n[LM_0226]\n  Expected answer: The user would prefer responses that reference specific details from their previous interactions, such as the replacement of the bike's chain and cassette, and the use of a new Garmin bike computer. They might prefer explanations that connect these details to the observed improvement in bike performance. The user may not prefer responses that fail to acknowledge these specific details or provide vague, general explanations for the improvement.\n  Expected keywords: user, prefer, responses, reference, specific, details, previous, interactions, replacement, bike's, chain, cassette, use, new, Garmin, bike, computer, explanations, connect, observed, improvement, performance, fail, acknowledge, provide, vague, general\n  LLM answer: Based on our conversation, you replaced your bike's chain and cassette on February 1st, which likely contributed to the improvement in your bike's performance during your Sunday group rides.\n\n[LM_0228]\n  Expected answer: The user would prefer suggestions related to listening to new podcasts or audiobooks, especially the genre beyond true crime or self-improvement, such as history. They may not be interested in activities that require visual attention, such as reading or watching videos, as they are commuting. The user would not prefer general podcast topics such as true crime or self-improvement, as the user wants to explore other topics.\n  Expected keywords: user, prefer, suggestions, related, listening, new, podcasts, audiobooks, especially, genre, beyond, true, crime, self, improvement, history, interested, activities, require, visual, attention, reading, watching, videos, commuting, general, podcast, topics, wants, explore, other\n  LLM answer: Based on our conversation, you mentioned that you have a 40-minute commute each way and that you have been listening to podcasts during your commute, specifically history podcasts like Hardcore History, Lore, and The Dollop. You also mentioned that you have been reading 'The Nightingale' by Kristin Hannah during your commute. So some activities you can do during your commute include listening to history podcasts, reading books, or exploring other genres of podcasts.\n\n[LM_0231]\n  Expected answer: Miss Bee Providore\n  Expected keywords: Miss, Bee, Providore\n  LLM answer: I don't recall\n\n[LM_0232]\n  Expected answer: The Plesiosaur had a blue scaly body.\n  Expected keywords: Plesiosaur, blue, scaly, body\n  LLM answer: The Plesiosaur had a blue scaly body in the image.\n\n[LM_0233]\n  Expected answer: The Sugar Factory at Icon Park.\n  Expected keywords: Sugar, Factory, Icon, Park\n  LLM answer: The Sugar Factory, located at Icon Park, offers specialty drinks and giant milkshakes.\n\n[LM_0234]\n  Expected answer: Roscioli\n  Expected keywords: Roscioli\n  LLM answer: Roscioli\n\n[LM_0235]\n  Expected answer: Atmospheric distillation, fluid catalytic cracking (FCC), alkylation, and hydrotreating.\n  Expected keywords: Atmospheric, distillation, fluid, catalytic, cracking, FCC, alkylation, hydrotreating\n  LLM answer: According to our earlier conversation, the Lake Charles Refinery uses the following refining processes: Atmospheric distillation, Fluid catalytic cracking (FCC), Alkylation, and Hydrotreating.\n\n[LM_0237]\n  Expected answer: Transcriptionist.\n  Expected keywords: Transcriptionist\n  LLM answer: The 7th work from home job for seniors in the list was Virtual administrative assistant\n\n[LM_0241]\n  Expected answer: Evolution\n  Expected keywords: Evolution\n  LLM answer: Evolution\n\n[LM_0242]\n  Expected answer: I recommended learning Ruby, Python, or PHP as a back-end programming language.\n  Expected keywords: recommended, learning, Ruby, Python, PHP, back, end, programming, language\n  LLM answer: In our previous conversation, I recommended learning Ruby, Python, or PHP as back-end programming languages.\n\nFor each entry, output:\n- \"recalled\": true if the answer demonstrates knowledge of the expected information (even if imprecise). \"I don't recall\" or \"I don't know\" = false.\n- \"accurate\": true if the specific details match (numbers, names, dates). Partial match = false.\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0206\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly recalled preference for winding down by 9:30 pm, relaxing activities, and avoiding screens before bedtime.\"\n  },\n  {\n    \"id\": \"LM_0207\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM mentioned utensil holder and clutter-free countertops but failed to recall specific details about granite surface maintenance and sink area concerns.\"\n  },\n  {\n    \"id\": \"LM_0211\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM explicitly stated it doesn't recall the conversation, so no information was retrieved.\"\n  },\n  {\n    \"id\": \"LM_0221\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly recalled NAS device interest, external hard drive usage, storage capacity issues, and network accessibility needs.\"\n  },\n  {\n    \"id\": \"LM_0225\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly recalled the three documentaries (Our Planet, Free Solo, Tiger King) and provided themed recommendations based on viewing history.\"\n  },\n  {\n    \"id\": \"LM_0226\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM referenced specific details about chain and cassette replacement on February 1st and connected it to performance improvement.\"\n  },\n  {\n    \"id\": \"LM_0228\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM mentioned history podcasts and commute details correctly but included reading and videos as suggestions, which contradicts the expected preference for audio-only activities during commute.\"\n  },\n  {\n    \"id\": \"LM_0231\",\n    \"recalled\": false,\n    \"accurate\": false,\n    \"notes\": \"LLM stated 'I don't recall' without attempting to retrieve the information.\"\n  },\n  {\n    \"id\": \"LM_0232\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly recalled Plesiosaur description with blue scaly body, adding contextual detail about the image.\"\n  },\n  {\n    \"id\": \"LM_0233\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly identified The Sugar Factory at Icon Park and added relevant details about offerings.\"\n  },\n  {\n    \"id\": \"LM_0234\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly recalled 'Roscioli' exactly as expected.\"\n  },\n  {\n    \"id\": \"LM_0235\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly listed all four refining processes: Atmospheric distillation, FCC, Alkylation, and Hydrotreating.\"\n  },\n  {\n    \"id\": \"LM_0237\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"LLM recalled work-from-home jobs for seniors but provided incorrect position (Virtual administrative assistant vs. Transcriptionist).\"\n  },\n  {\n    \"id\": \"LM_0241\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly recalled 'Evolution' as the answer.\"\n  },\n  {\n    \"id\": \"LM_0242\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM correctly recalled recommendation of Ruby, Python, or PHP as back-end programming languages.\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0206",
+          "question_type": "single-session-preference",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalled preference for winding down by 9:30 pm, relaxing activities, and avoiding screens before bedtime."
+        },
+        {
+          "fact_id": "LM_0207",
+          "question_type": "single-session-preference",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM mentioned utensil holder and clutter-free countertops but failed to recall specific details about granite surface maintenance and sink area concerns."
+        },
+        {
+          "fact_id": "LM_0211",
+          "question_type": "single-session-preference",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM explicitly stated it doesn't recall the conversation, so no information was retrieved."
+        },
+        {
+          "fact_id": "LM_0221",
+          "question_type": "single-session-preference",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalled NAS device interest, external hard drive usage, storage capacity issues, and network accessibility needs."
+        },
+        {
+          "fact_id": "LM_0225",
+          "question_type": "single-session-preference",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalled the three documentaries (Our Planet, Free Solo, Tiger King) and provided themed recommendations based on viewing history."
+        },
+        {
+          "fact_id": "LM_0226",
+          "question_type": "single-session-preference",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM referenced specific details about chain and cassette replacement on February 1st and connected it to performance improvement."
+        },
+        {
+          "fact_id": "LM_0228",
+          "question_type": "single-session-preference",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM mentioned history podcasts and commute details correctly but included reading and videos as suggestions, which contradicts the expected preference for audio-only activities during commute."
+        },
+        {
+          "fact_id": "LM_0231",
+          "question_type": "single-session-assistant",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM stated 'I don't recall' without attempting to retrieve the information."
+        },
+        {
+          "fact_id": "LM_0232",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalled Plesiosaur description with blue scaly body, adding contextual detail about the image."
+        },
+        {
+          "fact_id": "LM_0233",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified The Sugar Factory at Icon Park and added relevant details about offerings."
+        },
+        {
+          "fact_id": "LM_0234",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalled 'Roscioli' exactly as expected."
+        },
+        {
+          "fact_id": "LM_0235",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly listed all four refining processes: Atmospheric distillation, FCC, Alkylation, and Hydrotreating."
+        },
+        {
+          "fact_id": "LM_0237",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalled work-from-home jobs for seniors but provided incorrect position (Virtual administrative assistant vs. Transcriptionist)."
+        },
+        {
+          "fact_id": "LM_0241",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalled 'Evolution' as the answer."
+        },
+        {
+          "fact_id": "LM_0242",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalled recommendation of Ruby, Python, or PHP as back-end programming languages."
+        }
+      ]
+    },
+    {
+      "batch_id": 3,
+      "judge_prompt_sent": "You are evaluating whether an LLM correctly recalled facts from a conversation.\n\nFor each entry below, compare the LLM's answer with the expected answer and keywords.\n\n[LM_0244]\n  Expected answer: 4\n  Expected keywords: 4\n  LLM answer: The party will face 4 mummies in the Lost Temple of the Djinn one-shot.\n\n[LM_0246]\n  Expected answer: According to Borges, 'The Library is a sphere whose exact center is any one of its hexagons and whose circumference is inaccessible.'\n  Expected keywords: According, Borges, 'The, Library, sphere, whose, exact, center, one, hexagons, circumference, inaccessible\n  LLM answer: Borges wrote: 'The Library is a sphere whose exact center is any one of its hexagons and whose circumference is inaccessible.'\n\n[LM_0252]\n  Expected answer: Chapter 4 of Book 1, titled 'Vocal Prayer and Meditation'.\n  Expected keywords: Chapter, Book, titled, 'Vocal, Prayer, Meditation', 4, 1\n  LLM answer: According to our conversation, the chapter in the second part of Adolphe Tanqueray's Spiritual Life treatise that discusses vocal prayer and meditation, including the prayer of beginners, is Chapter 4 of Book 1, titled 'Vocal Prayer and Meditation'.\n\n[LM_0256]\n  Expected answer: Mindful.org.\n  Expected keywords: Mindful, org\n  LLM answer: Mindful.org\n\n[LM_0266]\n  Expected answer: Memrise\n  Expected keywords: Memrise\n  LLM answer: Memrise is the language learning app that uses mnemonics to help learners memorize words, phrases, and grammatical concepts.\n\n[LM_0267]\n  Expected answer: $2,000\n  Expected keywords: 000, 2\n  LLM answer: According to the DHL Wellness Retreats influencer marketing campaign plan discussed in our conversation, $2,000 was allocated for influencer marketing.\n\n[LM_0270]\n  Expected answer: 2014.\n  Expected keywords: 2014\n  LLM answer: The construction of the house began in 2014.\n\n[LM_0271]\n  Expected answer: The video is 'How to Sit Properly at a Desk to Avoid Back Pain' and the link is https://www.youtube.com/watch?v=UfOvNlX9Hh0.\n  Expected keywords: video, 'How, Sit, Properly, Desk, Avoid, Back, Pain', link, https, www, youtube, com, watch, UfOvNlX9Hh0, 9, 0\n  LLM answer: The Mayo Clinic video recommended was 'How to Sit Properly at a Desk to Avoid Back Pain' with the URL https://www.youtube.com/watch?v=UfOvNlX9Hh0\n\n[LM_0275]\n  Expected answer: @jessica_poole_jewellery\n  Expected keywords: jessica_poole_jewellery\n  LLM answer: @jessica_poole_jewellery\n\n[LM_0277]\n  Expected answer: MusicTheory.net\n  Expected keywords: MusicTheory, net\n  LLM answer: MusicTheory.net\n\n[LM_0279]\n  Expected answer: Pennsylvania\n  Expected keywords: Pennsylvania\n  LLM answer: Pennsylvania\n\n[LM_0283]\n  Expected answer: Veja\n  Expected keywords: Veja\n  LLM answer: Veja - a French brand that produces eco-friendly sneakers using organic cotton, recycled plastic bottles, and wild rubber sourced from the Amazon rainforest.\n\n[LM_0291]\n  Expected answer: Johnson\n  Expected keywords: Johnson\n  LLM answer: Johnson\n\n[LM_0292]\n  Expected answer: Serenity Yoga\n  Expected keywords: Serenity, Yoga\n  LLM answer: Serenity Yoga\n\n[LM_0293]\n  Expected answer: a lighter shade of gray\n  Expected keywords: lighter, shade, gray\n  LLM answer: A lighter shade of gray\n\nFor each entry, output:\n- \"recalled\": true if the answer demonstrates knowledge of the expected information (even if imprecise). \"I don't recall\" or \"I don't know\" = false.\n- \"accurate\": true if the specific details match (numbers, names, dates). Partial match = false.\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0244\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correctly identified 4 mummies; answer includes contextual detail\"},\n  {\"id\": \"LM_0246\", \"recalled\": true, \"accurate\": false, \"notes\": \"Missing 'According to' at start; minor phrasing difference\"},\n  {\"id\": \"LM_0252\", \"recalled\": true, \"accurate\": true, \"notes\": \"All key details present: Chapter 4, Book 1, title matches\"},\n  {\"id\": \"LM_0256\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0266\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correct identification; includes contextual explanation\"},\n  {\"id\": \"LM_0267\", \"recalled\": true, \"accurate\": true, \"notes\": \"$2,000 correctly identified with context\"},\n  {\"id\": \"LM_0270\", \"recalled\": true, \"accurate\": true, \"notes\": \"Year 2014 correctly recalled\"},\n  {\"id\": \"LM_0271\", \"recalled\": true, \"accurate\": true, \"notes\": \"Video title and URL both correct\"},\n  {\"id\": \"LM_0275\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match of handle\"},\n  {\"id\": \"LM_0277\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0279\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0283\", \"recalled\": true, \"accurate\": true, \"notes\": \"Brand name correct; includes relevant additional context\"},\n  {\"id\": \"LM_0291\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0292\", \"recalled\": true, \"accurate\": true, \"notes\": \"Exact match\"},\n  {\"id\": \"LM_0293\", \"recalled\": true, \"accurate\": true, \"notes\": \"Correct phrase; capitalization difference negligible\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0244",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correctly identified 4 mummies; answer includes contextual detail"
+        },
+        {
+          "fact_id": "LM_0246",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Missing 'According to' at start; minor phrasing difference"
+        },
+        {
+          "fact_id": "LM_0252",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "All key details present: Chapter 4, Book 1, title matches"
+        },
+        {
+          "fact_id": "LM_0256",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0266",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correct identification; includes contextual explanation"
+        },
+        {
+          "fact_id": "LM_0267",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "$2,000 correctly identified with context"
+        },
+        {
+          "fact_id": "LM_0270",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Year 2014 correctly recalled"
+        },
+        {
+          "fact_id": "LM_0271",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Video title and URL both correct"
+        },
+        {
+          "fact_id": "LM_0275",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match of handle"
+        },
+        {
+          "fact_id": "LM_0277",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0279",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0283",
+          "question_type": "single-session-assistant",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Brand name correct; includes relevant additional context"
+        },
+        {
+          "fact_id": "LM_0291",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0292",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Exact match"
+        },
+        {
+          "fact_id": "LM_0293",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Correct phrase; capitalization difference negligible"
+        }
+      ]
+    },
+    {
+      "batch_id": 4,
+      "judge_prompt_sent": "You are evaluating whether an LLM correctly recalled facts from a conversation.\n\nFor each entry below, compare the LLM's answer with the expected answer and keywords.\n\n[LM_0296]\n  Expected answer: Marketing specialist at a small startup\n  Expected keywords: Marketing, specialist, small, startup\n  LLM answer: I don't recall\n\n[LM_0304]\n  Expected answer: 7\n  Expected keywords: 7\n  LLM answer: You packed 7 shirts for your trip to Costa Rica, but only ended up wearing 3 of them.\n\n[LM_0306]\n  Expected answer: Nike\n  Expected keywords: Nike\n  LLM answer: Nike\n\n[LM_0307]\n  Expected answer: Data Science\n  Expected keywords: Data, Science\n  LLM answer: Data Science certification\n\n[LM_0309]\n  Expected answer: Golden Retriever\n  Expected keywords: Golden, Retriever\n  LLM answer: I don't recall\n\n[LM_0313]\n  Expected answer: 18\n  Expected keywords: 18\n  LLM answer: 18 years old\n\n[LM_0318]\n  Expected answer: University of California, Los Angeles (UCLA)\n  Expected keywords: University, California, Los, Angeles, UCLA\n  LLM answer: UCLA (University of California, Los Angeles)\n\n[LM_0319]\n  Expected answer: 5 hours\n  Expected keywords: hours, 5\n  LLM answer: It took 5 hours to move to the new apartment.\n\n[LM_0325]\n  Expected answer: 500\n  Expected keywords: 500\n  LLM answer: 500 copies worldwide\n\n[LM_0326]\n  Expected answer: three months\n  Expected keywords: three, months\n  LLM answer: You have been collecting vintage cameras for three months.\n\n[LM_0330]\n  Expected answer: over a year\n  Expected keywords: over, year\n  LLM answer: Over a year\n\n[LM_0331]\n  Expected answer: a blue Snaggletooth\n  Expected keywords: blue, Snaggletooth\n  LLM answer: A rare blue Snaggletooth action figure\n\n[LM_0338]\n  Expected answer: 17\n  Expected keywords: 17\n  LLM answer: 17 skeins\n\n[LM_0341]\n  Expected answer: A mix of Irish and Italian\n  Expected keywords: mix, Irish, Italian\n  LLM answer: Irish and Italian mixed ethnicity\n\n[LM_0342]\n  Expected answer: 30 minutes\n  Expected keywords: 30, minutes\n  LLM answer: 30 minutes every day\n\nFor each entry, output:\n- \"recalled\": true if the answer demonstrates knowledge of the expected information (even if imprecise). \"I don't recall\" or \"I don't know\" = false.\n- \"accurate\": true if the specific details match (numbers, names, dates). Partial match = false.\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}]",
+      "raw_judge_response": "```json\n[\n  {\"id\": \"LM_0296\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' instead of providing the expected information\"},\n  {\"id\": \"LM_0304\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly identified 7 as the number of shirts packed\"},\n  {\"id\": \"LM_0306\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly recalled Nike\"},\n  {\"id\": \"LM_0307\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM recalled Data Science but added 'certification' which is additional context not in expected answer\"},\n  {\"id\": \"LM_0309\", \"recalled\": false, \"accurate\": false, \"notes\": \"LLM responded 'I don't recall' instead of providing the expected information\"},\n  {\"id\": \"LM_0313\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly identified 18, though presented in context of age\"},\n  {\"id\": \"LM_0318\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly recalled UCLA with full expansion, just reformatted\"},\n  {\"id\": \"LM_0319\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly identified 5 hours in contextual sentence\"},\n  {\"id\": \"LM_0325\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly identified 500 in context\"},\n  {\"id\": \"LM_0326\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly identified three months in contextual sentence\"},\n  {\"id\": \"LM_0330\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly recalled 'over a year'\"},\n  {\"id\": \"LM_0331\", \"recalled\": true, \"accurate\": false, \"notes\": \"LLM recalled blue Snaggletooth but added 'rare' and 'action figure' details not in expected answer\"},\n  {\"id\": \"LM_0338\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly identified 17 in context of skeins\"},\n  {\"id\": \"LM_0341\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly recalled Irish and Italian mix\"},\n  {\"id\": \"LM_0342\", \"recalled\": true, \"accurate\": true, \"notes\": \"LLM correctly identified 30 minutes in context\"}\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0296",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' instead of providing the expected information"
+        },
+        {
+          "fact_id": "LM_0304",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified 7 as the number of shirts packed"
+        },
+        {
+          "fact_id": "LM_0306",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalled Nike"
+        },
+        {
+          "fact_id": "LM_0307",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalled Data Science but added 'certification' which is additional context not in expected answer"
+        },
+        {
+          "fact_id": "LM_0309",
+          "question_type": "single-session-user",
+          "recalled": false,
+          "accurate": false,
+          "notes": "LLM responded 'I don't recall' instead of providing the expected information"
+        },
+        {
+          "fact_id": "LM_0313",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified 18, though presented in context of age"
+        },
+        {
+          "fact_id": "LM_0318",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalled UCLA with full expansion, just reformatted"
+        },
+        {
+          "fact_id": "LM_0319",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified 5 hours in contextual sentence"
+        },
+        {
+          "fact_id": "LM_0325",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified 500 in context"
+        },
+        {
+          "fact_id": "LM_0326",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified three months in contextual sentence"
+        },
+        {
+          "fact_id": "LM_0330",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalled 'over a year'"
+        },
+        {
+          "fact_id": "LM_0331",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "LLM recalled blue Snaggletooth but added 'rare' and 'action figure' details not in expected answer"
+        },
+        {
+          "fact_id": "LM_0338",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified 17 in context of skeins"
+        },
+        {
+          "fact_id": "LM_0341",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly recalled Irish and Italian mix"
+        },
+        {
+          "fact_id": "LM_0342",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM correctly identified 30 minutes in context"
+        }
+      ]
+    },
+    {
+      "batch_id": 5,
+      "judge_prompt_sent": "You are evaluating whether an LLM correctly recalled facts from a conversation.\n\nFor each entry below, compare the LLM's answer with the expected answer and keywords.\n\n[LM_0344]\n  Expected answer: 24 hours\n  Expected keywords: 24, hours\n  LLM answer: Alex marinated the BBQ ribs in a special sauce for 24 hours before grilling them.\n\n[LM_0345]\n  Expected answer: my sister\n  Expected keywords: sister\n  LLM answer: Your sister gave you a new stand mixer as a birthday gift last month.\n\n[LM_0347]\n  Expected answer: bronchitis\n  Expected keywords: bronchitis\n  LLM answer: Bronchitis. You initially thought it was just a cold, but it turned out to be a bad case of bronchitis that was a lot more serious.\n\n[LM_0348]\n  Expected answer: a coffee shop in the city\n  Expected keywords: coffee, shop, city\n  LLM answer: You met Sophia at a coffee shop in the city.\n\n[LM_0349]\n  Expected answer: Dark Souls 3 DLC\n  Expected keywords: Dark, Souls, DLC, 3\n  LLM answer: The last boss in the Dark Souls 3 DLC\n\nFor each entry, output:\n- \"recalled\": true if the answer demonstrates knowledge of the expected information (even if imprecise). \"I don't recall\" or \"I don't know\" = false.\n- \"accurate\": true if the specific details match (numbers, names, dates). Partial match = false.\n\nReply with ONLY a JSON array:\n[{\"id\": \"LM_0001\", \"recalled\": true/false, \"accurate\": true/false, \"notes\": \"brief reason\"}]",
+      "raw_judge_response": "```json\n[\n  {\n    \"id\": \"LM_0344\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"LLM answer contains both expected keywords '24' and 'hours' with correct context\"\n  },\n  {\n    \"id\": \"LM_0345\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Contains keyword 'sister' but uses 'Your sister' instead of expected 'my sister' - perspective mismatch\"\n  },\n  {\n    \"id\": \"LM_0347\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"Expected keyword 'bronchitis' is present and correctly identified as the illness\"\n  },\n  {\n    \"id\": \"LM_0348\",\n    \"recalled\": true,\n    \"accurate\": true,\n    \"notes\": \"All three expected keywords 'coffee', 'shop', 'city' are present with correct details\"\n  },\n  {\n    \"id\": \"LM_0349\",\n    \"recalled\": true,\n    \"accurate\": false,\n    \"notes\": \"Contains keywords 'Dark', 'Souls', '3', 'DLC' but answer is incomplete - only mentions 'the last boss' without confirming it as the full answer\"\n  }\n]\n```",
+      "verdicts": [
+        {
+          "fact_id": "LM_0344",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "LLM answer contains both expected keywords '24' and 'hours' with correct context"
+        },
+        {
+          "fact_id": "LM_0345",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Contains keyword 'sister' but uses 'Your sister' instead of expected 'my sister' - perspective mismatch"
+        },
+        {
+          "fact_id": "LM_0347",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "Expected keyword 'bronchitis' is present and correctly identified as the illness"
+        },
+        {
+          "fact_id": "LM_0348",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": true,
+          "notes": "All three expected keywords 'coffee', 'shop', 'city' are present with correct details"
+        },
+        {
+          "fact_id": "LM_0349",
+          "question_type": "single-session-user",
+          "recalled": true,
+          "accurate": false,
+          "notes": "Contains keywords 'Dark', 'Souls', '3', 'DLC' but answer is incomplete - only mentions 'the last boss' without confirming it as the full answer"
+        }
+      ]
+    }
+  ]
+}

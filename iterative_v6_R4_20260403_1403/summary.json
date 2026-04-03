@@ -1,0 +1,101 @@
+{
+  "experiment": "iterative_v6",
+  "run_mode": "R4",
+  "density": 80,
+  "conversation_tokens": 495558,
+  "context_window": 190000,
+  "qa_batch_size": 5,
+  "results": {
+    "S3": {
+      "recall": 0.3625,
+      "accuracy": 0.3,
+      "facts_recalled": 29,
+      "facts_total": 80,
+      "recall_q1": 0.2727272727272727,
+      "recall_q2": 0.29411764705882354,
+      "recall_q3": 0.16666666666666666,
+      "recall_q4": 0.11764705882352941,
+      "recall_q5": 0.9411764705882353,
+      "n_q1": 11,
+      "n_q2": 17,
+      "n_q3": 18,
+      "n_q4": 17,
+      "n_q5": 17,
+      "by_category": {
+        "knowledge-update": {
+          "total": 27,
+          "recalled": 8,
+          "accurate": 6,
+          "recall": 0.2962962962962963,
+          "accuracy": 0.2222222222222222
+        },
+        "single-session-assistant": {
+          "total": 20,
+          "recalled": 1,
+          "accurate": 1,
+          "recall": 0.05,
+          "accuracy": 0.05
+        },
+        "single-session-preference": {
+          "total": 10,
+          "recalled": 3,
+          "accurate": 1,
+          "recall": 0.3,
+          "accuracy": 0.1
+        },
+        "single-session-user": {
+          "total": 23,
+          "recalled": 17,
+          "accurate": 16,
+          "recall": 0.7391304347826086,
+          "accuracy": 0.6956521739130435
+        }
+      },
+      "by_compression_depth": {
+        "1": {
+          "total": 80,
+          "recalled": 29,
+          "recall": 0.3625
+        }
+      },
+      "compaction_cycles": 7,
+      "grep": {
+        "facts_total": 80,
+        "all_present": 51,
+        "any_present": 73,
+        "recall_upper_bound": 0.6375
+      }
+    }
+  },
+  "grep": {
+    "S3": {
+      "facts_total": 80,
+      "all_present": 51,
+      "any_present": 73,
+      "recall_upper_bound": 0.6375
+    }
+  },
+  "config": {
+    "experiment": "iterative_v6",
+    "run_mode": "R4",
+    "density": 80,
+    "seed": 42,
+    "context_window": 190000,
+    "high_watermark": 0.9,
+    "low_watermark": 0.6,
+    "feed_batch_size": 10,
+    "qa_batch_size": 5,
+    "strategies": [
+      "S3"
+    ],
+    "model": "claude-sonnet-4-20250514",
+    "judge_model": "claude-sonnet-4-20250514",
+    "backend": "wrapper",
+    "judge_backend": "wrapper",
+    "workers": 2,
+    "conversation_tokens": 495558,
+    "conversation_messages": 2078,
+    "n_facts": 80,
+    "timestamp": "20260403_1403"
+  }
+}

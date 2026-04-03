@@ -1,0 +1,133 @@
+{
+  "run_mode": "R4",
+  "results": {
+    "d80": {
+      "grep": {
+        "facts_total": 80,
+        "all_present": 69,
+        "any_present": 79,
+        "recall_upper_bound": 0.8625,
+        "by_category": {
+          "knowledge-update": {
+            "total": 27,
+            "present": 27,
+            "recall": 1.0
+          },
+          "single-session-assistant": {
+            "total": 20,
+            "present": 16,
+            "recall": 0.8
+          },
+          "single-session-preference": {
+            "total": 10,
+            "present": 3,
+            "recall": 0.3
+          },
+          "single-session-user": {
+            "total": 23,
+            "present": 23,
+            "recall": 1.0
+          }
+        }
+      },
+      "bs1": {
+        "recall": 0.575,
+        "accuracy": 0.3375,
+        "facts_recalled": 46,
+        "facts_total": 80,
+        "recall_early": 0.44,
+        "recall_mid": 0.5,
+        "recall_late": 0.7777777777777778,
+        "n_early": 25,
+        "n_mid": 28,
+        "n_late": 27,
+        "by_category": {
+          "knowledge-update": {
+            "total": 27,
+            "recalled": 16,
+            "accurate": 5,
+            "recall": 0.5925925925925926,
+            "accuracy": 0.18518518518518517
+          },
+          "single-session-assistant": {
+            "total": 20,
+            "recalled": 14,
+            "accurate": 13,
+            "recall": 0.7,
+            "accuracy": 0.65
+          },
+          "single-session-preference": {
+            "total": 10,
+            "recalled": 3,
+            "accurate": 1,
+            "recall": 0.3,
+            "accuracy": 0.1
+          },
+          "single-session-user": {
+            "total": 23,
+            "recalled": 13,
+            "accurate": 8,
+            "recall": 0.5652173913043478,
+            "accuracy": 0.34782608695652173
+          }
+        }
+      }
+    }
+  },
+  "grep": {
+    "d80": {
+      "facts_total": 80,
+      "all_present": 69,
+      "any_present": 79,
+      "recall_upper_bound": 0.8625,
+      "by_category": {
+        "knowledge-update": {
+          "total": 27,
+          "present": 27,
+          "recall": 1.0
+        },
+        "single-session-assistant": {
+          "total": 20,
+          "present": 16,
+          "recall": 0.8
+        },
+        "single-session-preference": {
+          "total": 10,
+          "present": 3,
+          "recall": 0.3
+        },
+        "single-session-user": {
+          "total": 23,
+          "present": 23,
+          "recall": 1.0
+        }
+      }
+    }
+  },
+  "batch_api": {
+    "qa_batch_ids": [
+      "msgbatch_01YZq3X2T9bQYk3HKNyirc2i",
+      "msgbatch_011dJyKaUMoGvh6WC1fJrH5C",
+      "msgbatch_01CQNHbxFdWKjcqxnEEd4M14",
+      "msgbatch_01Xgv87MfvDzrvwZfaoMWkwe",
+      "msgbatch_015ssuweA2HNgvAtMe5z8vWL",
+      "msgbatch_01NUgCBn4nh7FC6iSR3Sq7go",
+      "msgbatch_018uMeWPxtee1cz7rNkiqKwM",
+      "msgbatch_01J4KYvQBH6yfZLzb4yjizZt",
+      "msgbatch_01RQ9Yp2g8XgHW1p6WzwXfSk",
+      "msgbatch_015APcts7h8FJFEHyiLSovko",
+      "msgbatch_01SQkcwKQVSjqXXuYS6VokTX",
+      "msgbatch_01N4s2FbjEwxmycbqqiaqBXG",
+      "msgbatch_01KgAtdELnfmQSn3z9wpNrSb",
+      "msgbatch_012GJaitDwxomEn6D8BnZyvm",
+      "msgbatch_01TbvEqJvmQrYXks29udfEHS",
+      "msgbatch_01KS3gqobJ62J5hvVSATSiz2"
+    ],
+    "judge_batch_ids": [
+      "msgbatch_015MeXumCo5tEosagCULT549"
+    ],
+    "qa_requests": 80,
+    "judge_requests": 6,
+    "total_requests": 86
+  }
+}
