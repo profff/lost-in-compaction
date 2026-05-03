@@ -93,6 +93,39 @@ For each entry, check:
 Reply with ONLY a JSON array:
 [{{"id": "LM_0001", "recalled": true/false, "accurate": true/false, "notes": "brief reason"}}, ...]"""
 
+
+BATCH_JUDGE_PROMPT_STRICT = """Evaluate each LLM answer against the expected answer using STRICT criteria.
+
+{entries}
+
+For each entry, decide TWO booleans:
+
+1. "recalled": Is the SPECIFIC EXPECTED FACT actually present in the LLM's answer?
+   - TRUE only if the LLM's answer contains the substantive expected information
+     (the actual fact, value, name, or concept asked about).
+   - FALSE if any of the following:
+     * The answer says "I don't recall" / "I don't know" / "I'm not sure" / "I don't have information"
+     * The answer denies the topic was discussed ("I don't recall you mentioning X")
+     * The answer mentions a RELATED topic but not the actual expected fact
+     * The answer is vague/generic and could match many possible expected values
+     * The answer contradicts the expected fact
+
+2. "accurate": Is the answer factually equivalent to the expected answer?
+   - TRUE if the answer contains the expected value (semantic match, exact numbers, etc.)
+   - FALSE if values differ, dates differ, or the answer is wrong on the substance.
+   - Note: accurate=TRUE implies recalled=TRUE.
+
+Examples (STRICT):
+- expected "17 days", answer "10 days" → recalled=TRUE (specific number, related), accurate=FALSE
+- expected "turbinado sugar for cookies", answer "I don't recall extras for cookies but cookies were made" → recalled=FALSE (no fact, just topic mention)
+- expected "Miami trip in June", answer "I don't recall any Miami trip" → recalled=FALSE
+- expected "lemon poppyseed cake worked well", answer "We discussed many recipes including pecan pie bars and banana bread" → recalled=FALSE (related domain, no specific fact)
+- expected "Plex Media Server", answer "Plex" → recalled=TRUE, accurate=TRUE
+- expected "user is vegetarian", answer "I recall you mentioning food preferences but not specifics" → recalled=FALSE
+
+Reply with ONLY a JSON array:
+[{{"id": "LM_0001", "recalled": true/false, "accurate": true/false, "notes": "brief reason"}}, ...]"""
+
 JUDGE_SYSTEM = "You are an objective evaluator. Answer ONLY with valid JSON."
 
 QA_CHUNK_SIZE = 20
@@ -110,9 +143,33 @@ def save_json(data, filepath):
 
 
 def parse_llm_json(text):
+    """Extract a JSON array from LLM response, robust to surrounding text/code-fences."""
     clean = text.strip()
+
+    # Strip code fences ```json ... ``` or ``` ... ```
     if clean.startswith("```"):
-        clean = clean.split("\n", 1)[1].rsplit("```", 1)[0].strip()
+        # Remove first line and last fence
+        parts = clean.split("\n", 1)
+        if len(parts) > 1:
+            clean = parts[1].rsplit("```", 1)[0].strip()
+
+    # Try direct parse first
+    try:
+        return json.loads(clean)
+    except json.JSONDecodeError:
+        pass
+
+    # Find first '[' and last ']' to extract embedded JSON array
+    start = clean.find("[")
+    end = clean.rfind("]")
+    if start != -1 and end != -1 and end > start:
+        candidate = clean[start:end + 1]
+        try:
+            return json.loads(candidate)
+        except json.JSONDecodeError:
+            pass
+
+    # Last resort: re-raise the original error for visibility
     return json.loads(clean)
 
 
@@ -592,6 +649,8 @@ def main():
                         help="Base URL for wrapper/openai backend")
     parser.add_argument("--workers", type=int, default=4,
                         help="Parallel workers for wrapper backend (default: 4)")
+    parser.add_argument("--output-dir", type=str, default=None,
+                        help="Output directory (default: auto-generated timestamp)")
     args = parser.parse_args()
     if args.judge_backend is None:
         args.judge_backend = args.backend
@@ -602,7 +661,10 @@ def main():
             raise ValueError(f"Unknown strategy: {sk}. Available: {list(STRATEGIES.keys())}")
 
     timestamp = datetime.now().strftime("%Y%m%d_%H%M")
-    outputDir = Path(f"iterative_v6_R4_{timestamp}")
+    if args.output_dir:
+        outputDir = Path(args.output_dir)
+    else:
+        outputDir = Path(f"iterative_v6_R4_{timestamp}")
     outputDir.mkdir(exist_ok=True)
 
     print("=" * 70)
@@ -783,6 +845,14 @@ def main():
             # Save compaction log separately
             if tracking:
                 save_json(tracking.get("cycle_log", []), stratDir / "compaction_log.json")
+
+            # Save checkpoint snapshots on disk (so we can re-eval if QA fails)
+            for cpIdx, (msgs, trackData, fedTok) in enumerate(cpSnapshots):
+                cpDir = stratDir / f"snapshot_{fedTok // 1000}K"
+                save_json(msgs, cpDir / "context.json")
+                save_json(trackData, cpDir / "tracking.json")
+                save_json({"fed_tokens": fedTok, "checkpoint_idx": cpIdx},
+                          cpDir / "meta.json")
 
     # ================================================================
     # EVALUATION FUNCTION (reusable for checkpoints)
