@@ -1568,7 +1568,7 @@ Brutal is robust across both fits.
 
 ## Authors
 
-Olivier Gasté — conception, implementation, benchmark design
+Olivier Gasté ([0009-0003-3853-9298](https://orcid.org/0009-0003-3853-9298)) — conception, implementation, benchmark design
 
 ---
 
