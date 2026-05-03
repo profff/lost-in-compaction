@@ -1,0 +1,104 @@
+\section{Predictive recall model (full specification)}
+\label{sec:appendix-model}
+
+\subsection{Model specification}
+\label{sec:model-spec}
+
+We fit logistic regressions to the binary outcome (recalled / not
+recalled) at the individual fact level. Three nested specifications were
+tried; the most informative is the calibration + single-pass model
+(n=3{,}852):
+
+\begin{equation}
+\begin{aligned}
+\mathrm{logit}(P(\text{recall})) &= \beta_0 + \beta_1 \cdot Q + \beta_2 \cdot \log(\text{density}) \\
+&\quad + \beta_3 \cdot \text{position\_pct} + \beta_4 \cdot \text{position\_pct}^2 \\
+&\quad + \beta_5 \cdot \text{compaction\_pct} \\
+&\quad + \beta_6 \cdot (\text{compaction\_pct} \times \text{position\_pct}) \\
+&\quad + \sum_{\text{cat}} \beta_{\text{cat}} \cdot \mathbb{I}(\text{category})
+\end{aligned}
+\end{equation}
+
+Calibration data enters with \code{compaction\_pct = 0}, so the calibration-only
+sub-model (n=1{,}692) is nested in the full model.
+
+A separate strategy-comparison model fitted on the (older, fixed-density)
+\S\ref{sec:strategy} data (n=960) added \code{log(conv\_tokens)} and a strategy indicator:
+
+\begin{equation}
+\begin{aligned}
+\mathrm{logit}(P(\text{recall})) &= \beta_0 + \beta_1 \cdot \log(\text{conv\_tokens}) + \beta_2 \cdot \text{position\_pct} \\
+&\quad + \beta_3 \cdot \text{position\_pct}^2 + \sum_{\text{strat}} \beta_{\text{strat}} \cdot \mathbb{I}(\text{strategy}) \\
+&\quad + \sum_{\text{cat}} \beta_{\text{cat}} \cdot \mathbb{I}(\text{category})
+\end{aligned}
+\end{equation}
+
+\subsection{Coefficients}
+\label{sec:coefficients}
+
+\begin{table}[h]
+\centering
+\caption{Logistic regression coefficients across the three nested specifications.}
+\label{tab:coefficients}
+\small
+\begin{tabular}{lccc}
+\toprule
+Coefficient & Calibration only (n=1{,}692) & + Compaction (n=3{,}852) & Strategies (n=960) \\
+\midrule
+\textbf{$Q$}                       & +0.096*** & +0.086*** & --- \\
+\textbf{position\_pct}             & $-0.065$*** & $-0.051$*** & $-0.003$ n.s. \\
+\textbf{position\textsuperscript{2}} & +0.001*** & +0.001*** & +0.001*** \\
+log\_density                       & +0.090 n.s. & +0.126 n.s. & --- \\
+\textbf{compaction\_pct}           & ---       & \textbf{$-0.054$***} & --- \\
+compact $\times$ position          & ---       & +0.019**  & --- \\
+log\_conv\_tokens                  & ---       & ---       & \textbf{$-1.114$***} \\
+strat\_S2 (Incremental)            & ---       & ---       & +2.324*** \\
+strat\_S3 (Frozen)                 & ---       & ---       & +2.731*** \\
+strat\_S4 (FrozenRanked)           & ---       & ---       & +2.731*** \\
+cat: knowledge-update              & +2.288*** & +2.308*** & +4.025*** \\
+cat: ss-assistant                  & +1.795*** & +1.809*** & $-0.388$ n.s. \\
+cat: ss-preference                 & +0.179 n.s. & +0.339 n.s. & +3.482*** \\
+\midrule
+\textbf{AUC}                       & \textbf{0.791} & \textbf{0.839} & \textbf{0.886} \\
+\textbf{Pseudo-R\textsuperscript{2}} & 0.187 & 0.274 & 0.391 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+*** p $<$ 0.001, ** p $<$ 0.01, n.s. = not significant.
+
+\subsection{XGBoost comparison}
+\label{sec:xgboost}
+
+A gradient-boosted classifier (XGBClassifier, 100 trees, max\_depth=4)
+fitted on the same data scores AUC = $0.641 \pm 0.199$ (5-fold CV) versus
+$0.811 \pm 0.070$ for the logistic model. The simpler additive model wins,
+indicating no hidden non-linearities. XGBoost's feature importance ranking
+(compaction\_pct $>$ category $>$ position $>$ $Q$) is consistent with the logistic
+coefficient magnitudes.
+
+\subsection{Caveat on independence}
+\label{sec:independence}
+
+The 4{,}812 observations are not mutually independent: each fact appears in
+multiple conditions (different $Q$, different compaction levels, different
+strategies). The logistic-regression p-values reported above assume
+independent observations and therefore \textit{underestimate} the standard
+errors. The reader should interpret p-values descriptively rather than as
+formal significance tests; a re-fit with mixed-effects (random intercept
+per fact, random intercept per conversation seed) would produce more
+defensible inference and is left for future work. The AUC and the sign /
+magnitude of coefficients are not affected by this issue and remain
+informative.
+
+\subsection{Note on the strategy sub-model}
+\label{sec:strategy-submodel}
+
+The strategy sub-model (\S\ref{sec:strategy}, n=960) was fit on the \textit{older} fixed-density
+design with 80 facts spanning 500K--10M. It assigns identical coefficients
+to S3 and S4 because in that design the frozen merge budget was never
+exceeded. The constant-density results in \S\ref{sec:strategy-results} update this picture: in the
+means S4 outperforms S3 at 500K, 2M and 3.5M and converges to S3 only at
+5M. Re-fitting on the new data with appropriate hierarchical structure is
+left for future work; the qualitative ordering Frozen $\gg$ Incremental $\gg$
+Brutal is robust across both fits.

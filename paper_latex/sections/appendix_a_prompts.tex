@@ -1,0 +1,122 @@
+\section{Prompts used in the experiments}
+\label{sec:appendix-prompts}
+
+The full text of the LLM prompts is reproduced here for exact reproduction.
+Variables in \code{\{braces\}} are filled at runtime.
+
+\subsection{Compaction prompt (used by all four strategies)}
+\label{sec:prompt-compaction}
+
+System message:
+
+\begin{quote}
+You are a conversation summarizer. Be concise and precise.
+\end{quote}
+
+User message (followed by the conversation segment to compact):
+
+\begin{lstlisting}
+Summarize the following conversation segment.
+
+PRESERVE (critical):
+- Key facts and decisions made
+- File paths and code structures mentioned
+- User preferences and requirements stated
+- Actions completed (files created/edited, commands run)
+- Errors encountered and how they were resolved
+
+DISCARD:
+- Full file contents (keep only: filename, line count, key elements)
+- Verbose tool outputs (keep only: what was done + result)
+- Intermediate reasoning that led nowhere
+- Redundant back-and-forth
+
+Format: Concise narrative summary. Bullet points for lists of facts.
+Target: ~20% of original length, keeping all actionable information.
+
+---
+\end{lstlisting}
+
+\subsection{Q\&A prompt (used in \S\ref{sec:calibration}, \S\ref{sec:singlepass}, \S\ref{sec:strategy} evaluations)}
+\label{sec:prompt-qa}
+
+System message:
+
+\begin{quote}
+You are a helpful assistant working on a complex software project.
+Answer questions precisely from memory.
+\end{quote}
+
+User message (sent after the test conversation context):
+
+\begin{lstlisting}
+Answer each of the following questions based ONLY on what you know from
+our conversation.
+Be specific: include exact numbers, names, paths, versions.
+If you don't remember or aren't sure, say "I don't recall".
+
+{questions}
+
+Reply with a JSON array of objects, one per question:
+[{"id": "LM_0001", "answer": "your answer"}, ...]
+
+IMPORTANT: Return ONLY the JSON array, no other text.
+\end{lstlisting}
+
+\subsection{Strict judge prompt (used to score \S\ref{sec:strategy} results)}
+\label{sec:prompt-judge}
+
+System message:
+
+\begin{quote}
+You are an objective evaluator. Answer ONLY with valid JSON.
+\end{quote}
+
+User message:
+
+\begin{lstlisting}
+Evaluate each LLM answer against the expected answer using STRICT criteria.
+
+{entries}
+
+For each entry, decide TWO booleans:
+
+1. "recalled": Is the SPECIFIC EXPECTED FACT actually present in the LLM's
+   answer?
+   - TRUE only if the LLM's answer contains the substantive expected
+     information (the actual fact, value, name, or concept asked about).
+   - FALSE if any of the following:
+     * The answer says "I don't recall" / "I don't know" / "I'm not sure"
+     * The answer denies the topic was discussed ("I don't recall you
+       mentioning X")
+     * The answer mentions a RELATED topic but not the actual expected fact
+     * The answer is vague/generic and could match many possible expected
+       values
+     * The answer contradicts the expected fact
+
+2. "accurate": Is the answer factually equivalent to the expected answer?
+   - TRUE if the answer contains the expected value (semantic match,
+     exact numbers, etc.)
+   - FALSE if values differ, dates differ, or the answer is wrong on the
+     substance.
+   - Note: accurate=TRUE implies recalled=TRUE.
+
+Examples (STRICT):
+- expected "17 days", answer "10 days" -> recalled=TRUE, accurate=FALSE
+- expected "turbinado sugar for cookies", answer "I don't recall extras
+  for cookies but cookies were made" -> recalled=FALSE
+- expected "Miami trip in June", answer "I don't recall any Miami trip"
+  -> recalled=FALSE
+- expected "Plex Media Server", answer "Plex" -> recalled=TRUE, accurate=TRUE
+
+Reply with ONLY a JSON array:
+[{"id": "LM_0001", "recalled": true/false, "accurate": true/false,
+  "notes": "brief reason"}, ...]
+\end{lstlisting}
+
+A ``lenient'' version of the judge prompt (without the explicit FALSE
+clauses for ``I don't recall'' etc.) was used in early \S\ref{sec:strategy} runs and was
+later replaced with the strict version above. See \S\ref{sec:methodological} for the impact of
+this change. Both versions are in the repository at
+\code{benchmark\_iterative\_v6.py} (\code{BATCH\_JUDGE\_PROMPT} and
+\code{BATCH\_JUDGE\_PROMPT\_STRICT}).

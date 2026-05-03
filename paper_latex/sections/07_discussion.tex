@@ -1,0 +1,191 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Two fundamental failure modes}
+\label{sec:failure-modes}
+
+Our results identify two distinct mechanisms by which information is lost:
+
+\textbf{1. Information destroyed (JPEG cascade / compaction loss)}
+
+The single-pass experiment (\S\ref{sec:singlepass}) quantifies this directly: one compaction
+pass renders the compacted zone near-dead (0--7\% recall). Keywords survive
+in the summary (82--93\% grep recall) but are not retrievable. Multi-pass
+strategies like Incremental compound this loss across cycles.
+
+The strategy comparison (\S\ref{sec:strategy}) confirms this at scale: Brutal (S1) demonstrates total destruction
+with recall dropping to 1.2\% at 5M tokens (61 compaction cycles). Each
+cycle re-summarizes the entire history, amplifying loss exponentially.
+Incremental (S2) fares better but remains heavily recency-biased --- at 1M
+tokens, 94\% of its recall comes from the most recent quintile (Q5), with
+the first four quintiles contributing near-zero.
+
+The cross-model validation (\S\ref{sec:sonnet}) strengthens this finding: Sonnet 4.6, with
+92.5\% baseline recall and no Lost-in-the-Middle effect, still drops to 21\% at
+C4. If the loss were purely attentional, a more capable model should resist
+proportionally better --- but it does not at severe compaction levels.
+
+\textbf{2. Information preserved but ignored (attention dilution)}
+
+The calibration's grep-LLM gap (86\% grep vs 67\% LLM at $\delta=0.42$) shows that facts
+present in the context are not always found. The single-pass remaining-zone degradation
+(73\% $\to$ 53\% as compaction increases) shows that injecting noise (re-padding)
+dilutes attention even for intact facts.
+
+The strategy comparison (\S\ref{sec:strategy}) reveals that attention dilution operates at the strategy level too.
+Frozen (S3) preserves early facts as immutable summaries --- yet recall still
+drops from 30\% at 500K to 10\% at 5M. The information is structurally intact
+(frozen summaries are never re-compressed), but the model struggles to locate
+relevant facts among 88 frozen blocks competing for attention with 400+
+recent messages.
+
+These failure modes are orthogonal and, critically, \textbf{both worsen with
+scale}:
+\begin{itemize}
+  \item Frozen strategies prevent destruction but suffer attention dilution
+    (too many summaries to scan)
+  \item Incremental strategies destroy information but keep the context clean
+    (fewer blocks to attend to)
+  \item The optimal strategy must balance both failure modes --- and our strategy
+    comparison shows that neither Frozen nor FrozenRanked achieves this
+    balance at multi-megaToken scales
+\end{itemize}
+
+\subsection{The measurement problem}
+\label{sec:measurement-problem}
+
+The calibration findings (\S\ref{sec:calibration}) have implications beyond our own benchmark:
+
+\textbf{Batch size sensitivity} means that compaction evaluations using different
+values of $Q$ are not comparable. Worse, the direction of the Q-effect depends
+on context quality (\S\ref{sec:q-inversion}): $Q=10$ outperforms $Q=1$ in rich contexts, but $Q=1$
+outperforms $Q=5$ in severely compacted contexts. A strategy showing ``80\%
+recall'' at $Q=10$ and another showing ``60\% recall'' at $Q=1$ may be equally
+effective --- or the ranking may invert entirely.
+
+\textbf{Category hierarchy} means that the mix of easy vs hard facts determines
+the baseline. Testing compaction only on ``single-session-user'' facts (80--100\%
+baseline) will show modest degradation. Testing on ``knowledge-update'' facts
+(60--65\% baseline) will show severe degradation from a lower starting point.
+
+\textbf{The grep-LLM gap} provides a free diagnostic: if grep finds a fact but the
+LLM doesn't recall it, the problem is attention, not information loss. This
+distinction is critical for choosing mitigation strategies (restructure
+context vs improve compaction).
+
+\subsection{Why global recall is misleading}
+\label{sec:global-misleading}
+
+A global recall score averages over spatial positions and fact categories. Our
+calibration results show this hides structural information:
+\begin{itemize}
+  \item Categories range from 100\% (single-session-user) to 20\% (preferences)
+  \item Spatial position matters: middle facts are harder to recall
+  \item Batch size shifts the curve by up to 20pp, and the direction reverses under compaction
+\end{itemize}
+
+The single-pass experiment amplifies this: compacted-zone recall (0--7\%) and remaining-zone recall
+(53--73\%) tell very different stories that a global 40\% would hide.
+
+\textbf{Recommendation}: Always report spatially-resolved and category-resolved
+metrics alongside global scores.
+
+\subsection{Recall source: user queries vs chain of thought}
+\label{sec:cot}
+
+Our protocol tests recall via explicit user questions (``What was the server
+IP?''). In real usage, context recall is predominantly driven by the model's
+\textbf{chain of thought} --- during reasoning, the model implicitly scans the
+context for relevant information. The access pattern likely differs:
+\begin{itemize}
+  \item Explicit queries target a single fact at a time
+  \item Chain-of-thought may access 2--3 facts per reasoning step
+  \item The type of information sought varies (code context vs decisions vs config)
+\end{itemize}
+
+Our calibration (\S\ref{sec:calibration}) and single-pass (\S\ref{sec:singlepass}) experiments cover $Q=1$ and $Q=5$
+(and $Q=10$ for \S\ref{sec:calibration}); the strategy comparison (\S\ref{sec:strategy}) uses $Q=5$ throughout. This
+spans the realistic range for explicit queries, but neither $Q$ approximates
+the implicit, multi-fact access pattern of chain-of-thought. Instrumenting
+a real agent to observe context access patterns (coding sessions,
+conversational use, RAG-augmented workflows) is a promising direction for
+future work.
+
+\subsection{The limits of architectural optimization}
+\label{sec:arch-limits}
+
+The strategy comparison shows that FrozenRanked (S4) consistently
+outperforms Frozen (S3) in the mean (S4--S3 gap of +13.2pp at 500K, +6.6pp
+at 2M, +3.3pp at 3.5M, +1.6pp at 5M; the gap shrinks to +0.5pp at 1M
+where one S3 replicate happens to recall unusually well). The advantage
+exists but is modest at large scale, and the standard deviations (cf.\
+\Cref{fig:phase-d-final}) overlap at every checkpoint past 500K --- the strict ordering
+S4 $>$ S3 holds in the means but is not always significant on n=4--6
+replicates.
+
+The reason the gap stays modest is structural: at 5M tokens ($\sim$88 compaction
+cycles), the frozen summaries together occupy only a small fraction of the
+context --- well below the merge budget threshold. \textbf{Merges are rarely
+triggered}, so S3 and S4 are functionally close. The merge strategies
+that genuinely differentiate FrozenRanked from Frozen only activate when
+frozen summaries exceed their budget, which requires conversations
+exceeding $\sim$10M tokens ($\sim$168 cycles).
+
+This suggests that \textbf{the bottleneck is not compression quality but attention
+capacity}. Whether frozen summaries are merged sequentially or
+hierarchically matters little if the model cannot effectively attend to
+dozens of summary blocks in the first place. The attention dilution problem
+identified in the single-pass experiment (\S\ref{sec:attention-dilution}) operates at the architectural level: more
+preserved summaries means more context to scan, which degrades retrieval
+for all facts --- frozen or not.
+
+The implication is clear: improving compaction \textit{architecture} (how summaries
+are organized and merged) yields diminishing returns. The next step requires
+improving compaction \textit{interface} --- how preserved information is structured
+for efficient retrieval (see \S\ref{sec:future}).
+
+\subsection{Predictive modelling: what drives recall?}
+\label{sec:predictive}
+
+A logistic regression fitted across the \S\ref{sec:calibration} calibration and \S\ref{sec:singlepass} single-pass
+datasets (n=3{,}852, AUC=0.84) confirms the expected drivers in additive
+log-odds form: questions per prompt $Q$ (+0.086 / question), compaction
+percent ($-0.054$ / percent), a positive compaction $\times$ position interaction
+(later facts less damaged), and U-shaped position effect (Lost-in-the-Middle).
+Density is not independently significant once $Q$ and position are controlled.
+A gradient-boosted comparison on the same data scores AUC=0.64, so no
+hidden non-linearities are missed by the additive model.
+
+The model's main practical use is to express recall in compacted contexts
+as simple additive rules of thumb rather than a black box. Full
+specification, coefficients with confidence intervals, and the XGBoost
+comparison are in Appendix B. \textbf{Caveat}: the 4{,}812 observations are not
+mutually independent (same context, same facts repeated under different
+conditions), so the reported p-values should be read as descriptive
+indicators rather than rigorous significance tests; a mixed-effects
+re-fit with a random intercept per fact is left for future work.
+
+\subsection{Implications for production systems}
+\label{sec:production}
+
+Most production AI assistants (Claude Code, Cursor, Windsurf) use single-shot
+or incremental compaction. Our results suggest:
+
+\begin{enumerate}
+  \item \textbf{Even light compaction is costly}: 5\% compaction costs 6--7pp recall.
+    Systems should minimize compaction frequency.
+  \item \textbf{The compacted zone is lost}: Don't expect the summary to be queryable
+    for specific facts. If precise recall matters, extract facts to RAG
+    \textit{before} compacting.
+  \item \textbf{Re-padding noise hurts}: After compaction frees space, what fills that
+    space matters. Random conversation is noise; structured information would
+    be better.
+  \item \textbf{Frozen summaries help but don't scale}: Freezing summaries preserves
+    early facts (substantial improvement over Incremental at small scales, \S\ref{sec:strategy-results}) but the
+    advantage narrows at scale as attention dilution dominates.
+  \item \textbf{Batch size in evaluation matters}: Internal benchmarks should test at
+    multiple values of $Q$ to avoid misleading conclusions.
+  \item \textbf{Grep is not a valid proxy for recall}: Keywords surviving in summaries
+    (82--93\%) vastly overestimates actual recoverability (0--7\%). Production
+    systems should not rely on keyword presence as a quality signal.
+\end{enumerate}

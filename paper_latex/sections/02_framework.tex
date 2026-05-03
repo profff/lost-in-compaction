@@ -1,0 +1,131 @@
+\section{Evidence and Evaluation Framework}
+\label{sec:framework}
+
+\subsection{Evidence source: LongMemEval}
+\label{sec:longmemeval}
+
+Rather than generating synthetic facts (as in our preliminary experiments),
+we use evidence from the LongMemEval benchmark \citep{wang2024longmemeval}. LongMemEval
+provides 500 question-answer pairs across 6 categories, each grounded in
+realistic multi-session conversations between a user and an LLM assistant.
+
+Each fact consists of:
+\begin{itemize}
+  \item A \textbf{conversation excerpt} (the ``evidence'') containing the information
+  \item A \textbf{question} that can only be answered from the evidence
+  \item An \textbf{expected answer} with keywords for automated verification
+  \item A \textbf{category} (knowledge-update, single-session-user, single-session-assistant,
+    single-session-preference, temporal-reasoning, multi-session)
+\end{itemize}
+
+This provides ecologically valid facts --- they are naturally embedded in
+conversation, not injected as artificial needles.
+
+\subsection{Factorial evidence design (2$\times$2)}
+\label{sec:factorial}
+
+We vary two dimensions of evidence preparation:
+
+\textbf{Filtering} (complete vs filtered):
+\begin{itemize}
+  \item \textit{Complete}: all 500 questions included
+  \item \textit{Filtered}: only 234 questions from answerable categories (single-session-user,
+    single-session-assistant, knowledge-update, single-session-preference).
+    Excludes temporal-reasoning and multi-session, which require capabilities
+    beyond single-context recall.
+\end{itemize}
+
+\textbf{Truncation} (full vs chopped):
+\begin{itemize}
+  \item \textit{Full}: evidence messages preserved in their entirety
+  \item \textit{Chopped}: messages truncated to realistic lengths (simulating context limits
+    in real systems)
+\end{itemize}
+
+This yields four experimental modes:
+
+\begin{table}[h]
+\centering
+\caption{Four experimental modes from the 2$\times$2 factorial design.}
+\label{tab:modes}
+\begin{tabular}{lllcc}
+\toprule
+Mode & Filtering & Truncation & Questions & Max density (facts/kTok) \\
+\midrule
+R1 & Complete & Full    & 500 & 0.10 \\
+R2 & Complete & Chopped & 500 & 0.42 \\
+R3 & Filtered & Full    & 234 & 0.16 \\
+R4 & Filtered & Chopped & 234 & 0.79 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Context construction}
+\label{sec:context-construction}
+
+For a given density $\delta$, we embed $N = \delta \times L$ evidence items into a context of
+$L$ kilotokens (190 kTok for calibration and single-pass experiments). Evidence
+items are placed at uniformly distributed positions. The remaining space is
+filled with realistic padding --- real LLM conversation sessions from the
+LongMemEval pool (18{,}255 sessions available) --- maintaining ecological
+validity rather than using synthetic filler.
+
+Context construction is deterministic (seed=42), ensuring reproducibility
+across runs. The padding pool provides $\sim$46M tokens of real conversations.
+
+\subsection{Density sweep}
+\label{sec:density-sweep}
+
+We define \textbf{fact density} $\delta = N/L$, where $N$ is the number of embedded facts
+and $L$ the context size in kilotokens (kTok). Rather than testing a single
+density, we sweep across values:
+
+\begin{table}[h]
+\centering
+\caption{Density sweep used in the calibration and single-pass experiments.}
+\label{tab:density-sweep}
+\begin{tabular}{ccc}
+\toprule
+$N$ (facts) & Context & $\delta$ (facts/kTok) \\
+\midrule
+4   & 190 kTok & 0.02 \\
+10  & 190 kTok & 0.05 \\
+20  & 190 kTok & 0.11 \\
+40  & 190 kTok & 0.21 \\
+60  & 190 kTok & 0.32 \\
+80  & 190 kTok & 0.42 \\
+150 & 190 kTok & 0.79 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This reveals saturation effects: at what density does the model's recall
+capacity plateau? The scripts use shorthand \code{dN} (e.g., \code{d80} = 80 facts in
+190 kTok = $\delta$ 0.42); in the text, we report density as $\delta$.
+
+\subsection{Evaluation protocol}
+\label{sec:eval-protocol}
+
+\textbf{Q\&A phase}: For each fact, the LLM (Claude Haiku 4.5) is presented with
+the full context as conversation history and asked to recall the specific
+information. Multiple questions can be asked in a single prompt; we denote
+$Q$ the number of \textbf{questions per prompt} and test $Q=1$, $Q=5$, and $Q=10$.
+
+\textbf{Judge phase}: A separate LLM judge compares the model's answer against the
+expected answer keywords. Binary recall (correct/incorrect) and accuracy
+(correct and precisely matching) are computed.
+
+\textbf{Grep validation}: As a free upper bound, we check whether fact keywords
+appear verbatim in the context. If grep doesn't find them, the LLM cannot
+possibly recall them. The gap between grep recall and LLM recall quantifies
+the ``present but ignored'' phenomenon.
+
+Both Q\&A and judge phases use Claude Haiku 4.5 via the Anthropic Batch API.
+
+\subsection{Repeatability}
+\label{sec:repeatability}
+
+All key results are validated with 3 independent runs. We report mean $\pm \sigma$.
+For the single-pass compaction experiment (\S\ref{sec:singlepass}), 3 runs at $\delta=0.42$/$Q=5$ yield $\sigma \leq 2.6$pp
+across all compaction levels, confirming that observed effects (7--70pp) are
+far larger than measurement noise.

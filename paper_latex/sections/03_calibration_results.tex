@@ -1,0 +1,122 @@
+\section{Recall Calibration Results}
+\label{sec:calibration}
+
+\subsection{The questions-per-prompt effect}
+\label{sec:q-effect}
+
+The most surprising finding: asking more questions at once dramatically
+improves recall.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\linewidth]{fig1_recall_vs_density.png}
+\caption{Recall as a function of fact density (facts/kTok) for three values of $Q$.
+The secondary axis maps density values to the \code{d**} notation used throughout the paper.
+Grep upper bound (dashed) shows near-perfect keyword presence regardless of density.}
+\label{fig:recall-density}
+\end{figure}
+
+At $\delta=0.42$ (80 facts in 190 kTok, R4 mode), recall ranges from 67.5\% ($Q=1$) to 78.8\% ($Q=10$) --- an
+11pp gap on the same context with the same facts. At higher densities ($\delta=0.63$),
+the gap reaches 20pp. Critically, this effect \textbf{reverses} under severe
+compaction (\S\ref{sec:q-inversion}): at C4 (98\% compacted), $Q=1$ outperforms $Q=5$ by 9pp, as
+focused single-question attention outperforms multi-query probing in degraded contexts.
+
+\textbf{Why this matters for benchmarks}: Any compaction evaluation that uses a
+fixed $Q$ is measuring a confound of retrieval ability and multi-query
+prompting. Results from different values of $Q$ are not directly comparable.
+Our preliminary experiments used $Q=10$ exclusively --- this produced
+inflated baselines that masked the true difficulty of recall.
+
+\textbf{Mechanism hypothesis}: Multiple questions in a single prompt create
+implicit cross-references that help the model locate relevant information.
+A question about ``Rachel's new city'' might prime attention for nearby facts
+about ``family trip'' or ``moving costs,'' improving recall for co-located facts.
+
+\subsection{Category hierarchy}
+\label{sec:category-hierarchy}
+
+Not all facts are equally recallable. We identify a clear hierarchy:
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\linewidth]{fig2_recall_by_category.png}
+\caption{Recall breakdown by fact category at $\delta=0.42$ (80 facts), for three values of $Q$.
+User statements and assistant responses are reliably recalled (85--100\%),
+while preferences remain fragile (20--40\%) regardless of $Q$.}
+\label{fig:recall-category}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Recall hierarchy across LongMemEval fact categories ($\delta=0.42$, $Q=5$).}
+\label{tab:category-hierarchy}
+\begin{tabular}{lcl}
+\toprule
+Category & Recall range ($Q=5$) & Notes \\
+\midrule
+single-session-user       & 80--100\% & User's own statements, easiest \\
+single-session-assistant  & 80--100\% & Assistant's responses \\
+knowledge-update          & 60--65\%  & Updated information, stable \\
+single-session-preference & 20--40\%  & User preferences, fragile \\
+temporal-reasoning        & max 30\%  & Requires inference, near-impossible \\
+multi-session             & max 42\%  & Cross-session facts, very hard \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The top two categories (user/assistant statements) are near-ceiling. Knowledge
+updates plateau at $\sim$60\%. Preferences are fragile --- the model struggles with
+``What is my favorite X?'' even when the information is present. Temporal
+reasoning and multi-session facts are effectively unmeasurable in a single
+context.
+
+\textbf{Implication for compaction benchmarks}: Testing on ``easy'' categories
+(single-session) inflates recall and masks real degradation. Testing on ``hard''
+categories (temporal, multi-session) produces floor effects that make strategies
+indistinguishable. The filtered mode (R3/R4) excludes impossible categories
+while retaining a mix of easy and hard categories.
+
+\subsection{The grep-LLM gap: present but ignored}
+\label{sec:grep-llm-gap}
+
+For every fact, we check whether its keywords appear in the context via grep.
+Grep recall at $\delta=0.42$ is 86\%. But LLM recall at $Q=1$ is only 67.5\%.
+
+This 19pp gap --- facts that are \textit{verifiably present} in the context but
+\textit{not retrieved} by the model --- is a direct measurement of the ``Lost in the
+Middle'' phenomenon \citep{liu2023lostmiddle} in a realistic conversational setting.
+
+The gap is not uniform across the context: the spatial recall density
+(\Cref{fig:spatial-recall}, \S\ref{sec:spatial}) shows that facts near the beginning and end of the 190K
+context are recalled at higher rates than facts in the middle, consistent
+with the U-shaped Lost-in-the-Middle pattern reported in the literature.
+
+\subsection{Factorial analysis: filtering vs truncation}
+\label{sec:factorial-analysis}
+
+The 2$\times$2 factorial design reveals two independent effects:
+
+\begin{table}[h]
+\centering
+\caption{Decomposition of the 2$\times$2 factorial effects on recall.}
+\label{tab:factorial}
+\begin{tabular}{lcl}
+\toprule
+Effect      & Magnitude & Mechanism \\
+\midrule
+Filtering   & +14--15pp  & Excludes impossible questions, consistent across truncation \\
+Truncation  & $-13$ to $-22$pp  & Removes information from evidence messages \\
+Composition & +2.5pp     & Removing hard-category evidence barely helps easy-category recall \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The \textbf{filtering effect} is remarkably consistent (+14pp and +15pp across
+truncation conditions). This means it's driven entirely by excluding
+impossible questions, not by freeing context space.
+
+The \textbf{composition effect} is near-zero (+2.5pp mean): whether hard-category
+evidence occupies context space alongside easy-category facts makes almost
+no difference to easy-category recall. This validates using unfiltered
+evidence as realistic padding in controlled experiments.

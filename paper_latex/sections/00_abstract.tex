@@ -1,0 +1,53 @@
+Long-running LLM conversations inevitably exceed the context window, forcing
+systems to compact old messages through summarization. But how do we know
+whether our compaction benchmark accurately measures information loss? Before
+comparing strategies, we need to understand how reliably an LLM can recall
+facts from its own context --- and what factors affect that recall.
+
+We present a three-phase study. First, we \textbf{calibrate a recall benchmark}
+using 234 naturally-embedded facts from the LongMemEval dataset across a
+190K-token context. We discover four measurement pitfalls that affect all
+compaction benchmarks: (1) a \textbf{questions-per-prompt effect} where Q=10 yields
+11pp higher recall than Q=1 in static contexts --- but the effect \textbf{reverses}
+under severe compaction, with Q=1 outperforming Q=5 by 9pp,
+(2) a \textbf{category hierarchy} where temporal reasoning (30\% max) and preference
+recall (40\% max) are near-impossible regardless of strategy, (3) a \textbf{density
+saturation} where recall plateaus beyond $\approx$0.4 facts/kTok despite increasing
+evidence, and (4) a \textbf{grep-LLM gap} where keyword search finds 86\% of facts
+but the LLM only recalls 25--79\% of them --- information is \textit{present} in the
+context but \textit{ignored} by attention.
+
+Second, we \textbf{isolate compaction loss} by compacting 5--98\% of a context,
+re-padding to the original size, and measuring recall degradation. Even 5\%
+compaction costs 7 percentage points of recall. At 50\%, the compacted zone is
+near-dead (0--7\% recall) despite keywords surviving at 82--93\% via grep.
+Critically, compaction damages even the \textit{untouched} portion of the context:
+remaining-zone recall drops from 68\% to 39\% as compaction increases --- an
+\textbf{attention dilution} effect caused by injecting noise (re-padding) into the
+context. Cross-model validation with Claude Sonnet 4.6 (92.5\% baseline recall,
+no Lost-in-the-Middle effect) confirms that severe compaction destroys
+information regardless of model capability: even a model with flat spatial
+recall drops to 21\% at 98\% compaction.
+
+Third, we \textbf{compare four multi-pass compaction strategies} (Brutal,
+Incremental, Frozen, FrozenRanked) on a single 5M-token conversation
+evaluated at five mid-feed checkpoints (500K $\to$ 5M) with constant fact
+density and 4--6 replicates per cell. The strategy hierarchy is consistent
+in the means: \textbf{FrozenRanked $>$ Frozen $>$ Incremental $>$ Brutal}. All
+strategies degrade severely with scale (Frozen drops from 14.9\% at 500K
+to 3.0\% at 5M). With replicates we also document a \textbf{substantial run-to-run
+variance}: the compaction phase itself is non-deterministic at temperature
+zero and recall measurements on identical conversations span up to a factor
+of 14$\times$ (e.g.\ S4 at 1M: 2.6\%--35.9\% across replicates). Single-shot
+benchmarks of compaction strategies are therefore unreliable; replicates
+are mandatory.
+
+The bottleneck is attention capacity, not compression quality: keywords
+survive summarization but the LLM cannot retrieve them, and adding more
+preserved summaries dilutes attention rather than helping.
+
+\textit{Scope.} All experiments use Anthropic Claude models (Haiku 4.5 and
+Sonnet 4.6). The methodological findings (Q-effect, judge-prompt
+sensitivity, run-to-run variance) are likely model-agnostic, but the
+absolute recall numbers and the strategy ordering should be re-validated
+on non-Claude models before generalising.

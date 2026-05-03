@@ -1,0 +1,128 @@
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{The problem}
+\label{sec:problem}
+
+Stateless LLM APIs require the full conversation to be sent at each turn. When
+conversations exceed the context window (typically 128K--200K tokens), some form
+of compaction is necessary. The naive approach --- summarize and discard old
+messages --- is universally adopted by production systems (Claude Code, Cursor,
+Windsurf, MemGPT/Letta). But how much information survives this process?
+
+Answering this question requires a reliable measurement tool. Most existing
+benchmarks treat recall measurement as straightforward: embed facts, ask
+questions, count correct answers. We found that the measurement itself is
+surprisingly fragile --- sensitive to how many questions are asked at once,
+which categories of facts are tested, and whether ``present in context'' actually
+means ``retrievable by the model.''
+
+This led us to a three-phase approach: first calibrate the recall benchmark
+(\S\ref{sec:calibration}), then use it to measure single-pass compaction loss
+(\S\ref{sec:controlled}--\S\ref{sec:singlepass}), then compare multi-pass strategies
+at scale (\S\ref{sec:strategy}). The calibration itself yielded findings
+that challenge common assumptions about LLM recall.
+
+\subsection{Related work}
+\label{sec:related}
+
+\textbf{Needle in a Haystack} \citep{kamradt2023needle}. The foundational test for long-context
+retrieval: embed a specific fact in a long document and measure whether the
+model can find it. Tests the model's \textit{native} retrieval ability within a single
+context window. Our work extends this paradigm to measure fact \textit{survival}
+across compaction cycles --- ``Needle in a Compacted Haystack.''
+
+\textbf{LongMemEval} \citep{wang2024longmemeval}. Benchmarks long-term memory capabilities
+of LLM systems across 500 questions in 6 categories (knowledge update, temporal
+reasoning, multi-session, preferences, etc.) spanning up to 115 sessions. We
+use LongMemEval evidence as our fact source, providing ecologically valid,
+naturally-embedded facts rather than synthetic injections.
+
+\textbf{Context Rot} \citep{chroma2025contextrot}. Demonstrates that LLM performance
+degrades systematically as input length increases, even on trivially simple
+tasks. Evaluates 18 models and recommends compaction/summarization as
+mitigation, but does not compare compaction strategies against each other
+or measure information loss across strategies.
+
+\textbf{MemGPT / Letta} \citep{packer2023memgpt}. Proposes virtual context management
+inspired by OS memory hierarchies: main context (RAM) and external context
+(disk). When context overflows, messages are evicted and recursively
+summarized --- functionally identical to our incremental strategy. The paper
+notes that ``older messages have progressively less influence on the summary''
+but does not benchmark this degradation or compare alternative strategies.
+
+\textbf{Factory.ai --- Evaluating Context Compression} \citep{factory2025evaluating}. The closest
+work to ours. Compares three compression \textit{implementations} (Factory's
+anchored iterative, OpenAI Compact, Anthropic SDK) using probe-based
+evaluation (recall, artifact, continuation, decision probes) on 36{,}000
+production messages. A companion blog post on the design of Factory's own
+anchored-iterative method \citep{factory2025compressing} is also cited where relevant. Key
+differences with our work:
+\begin{itemize}
+  \item Factory compares \textit{implementations} from different vendors; we compare
+    fundamentally different \textit{architectures} (single-shot vs iterative vs frozen)
+  \item No zone-based recall metrics --- their evaluation does not reveal where
+    in the conversation information is lost
+  \item No frozen summary strategy or space-time tradeoff analysis
+  \item No calibration of the recall measurement itself
+\end{itemize}
+
+\textbf{Beyond a Million Tokens} \citep{beyondmillion2025}. Benchmarks long-term memory up to 10M
+tokens across diverse domains, testing recall, multi-hop reasoning,
+contradiction resolution, and temporal ordering. Tests model \textit{capabilities}
+at various context lengths, not compaction \textit{strategy} effectiveness.
+
+\textbf{Anthropic --- Effective Context Engineering} \citep{anthropic2025context}. Engineering guide
+describing best practices for context management in AI agents, including
+structured summarization and context pruning. Practical guidance but no
+comparative benchmarking of strategies.
+
+\textbf{Prompt Compression} \citep{jiang2024llmlingua}. Achieves up to
+20x token compression with $\sim$1.5\% performance loss. Focuses on \textit{prompt-level}
+compression (removing redundant tokens), orthogonal to \textit{conversation-level}
+compaction (summarizing message history).
+
+\subsection{Gap in existing work}
+\label{sec:gap}
+
+No prior work addresses the \textbf{measurement reliability} of compaction
+benchmarks. Existing evaluations assume that embedding a fact and asking about
+it provides a clean signal --- we show this assumption is wrong.
+
+Beyond measurement, no prior work compares fundamentally different compaction
+\textit{architectures} (single-shot vs iterative vs frozen summaries) on the same
+conversation with spatial recall metrics. Existing benchmarks either test model
+capabilities (Needle in a Haystack, Beyond a Million Tokens), measure context
+rot without compaction (Chroma), or compare vendor implementations without
+varying the underlying strategy (Factory.ai).
+
+The re-summarization cascade problem (which we term the \textbf{``JPEG cascade''}:
+each compaction cycle re-summarizes content that already includes earlier
+summaries, accumulating loss like repeated lossy compression of an image)
+is acknowledged implicitly in MemGPT but never quantified. The frozen
+summary strategy and the resulting space-time tradeoff have not been
+explored.
+
+\subsection{Contributions}
+\label{sec:contributions}
+
+We introduce:
+
+\begin{enumerate}
+  \item \textbf{Evidence that recall measurement is non-trivial}: a significant questions-per-prompt
+    effect (up to 20pp between Q=1 and Q=10) that \textbf{reverses direction} under severe
+    compaction, a category-dependent recall hierarchy, and a systematic gap between
+    keyword presence and LLM retrieval
+  \item \textbf{A calibrated benchmark protocol} using LongMemEval evidence with
+    controlled density, factorial evidence design, and repeatability validation
+  \item \textbf{Controlled single-pass compaction loss measurement} isolating information
+    destruction from context size reduction via re-padding
+  \item \textbf{The attention dilution effect}: compaction degrades recall even in
+    untouched portions of the context
+  \item \textbf{The grep-LLM gap}: keywords survive compaction (82--93\% grep recall)
+    but the LLM fails to retrieve them (0--7\% recall) --- a ``Lost in the Middle''
+    amplification effect
+  \item \textbf{Multi-pass strategy comparison} across conversation sizes (500K--10M
+    tokens) showing that architectural optimization yields diminishing returns
+    against the attention bottleneck
+\end{enumerate}

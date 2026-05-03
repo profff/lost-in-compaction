@@ -1,0 +1,88 @@
+\section{Future Work}
+\label{sec:future}
+
+\subsection{Scaling to extreme conversation lengths}
+\label{sec:scale-future}
+
+Our strategy comparison at 500K--10M tokens shows that frozen summary merges are not
+triggered below $\sim$10M tokens ($\sim$168 cycles). Testing at 40M+ tokens would
+force FrozenRanked into its hierarchical merge regime, revealing whether the
+$\log_2(N)$ compression limit provides measurable benefit when merge pressure
+is real --- or whether attention dilution dominates regardless.
+
+\subsection{Importance-weighted compaction}
+\label{sec:importance-weighted}
+
+Score messages by importance before compaction, preserving high-value
+exchanges (decisions, configurations) over low-value ones (acknowledgments).
+Our category breakdown already shows that some fact types survive much
+better than others; an explicit importance signal at compaction time should
+amplify this effect on the parts of the conversation users actually care
+about.
+
+\subsection{RAG-augmented compaction}
+\label{sec:rag}
+
+Two-pass compaction: extract structured facts to a vector database + generate
+a narrative summary. At query time, combine RAG retrieval with the summary.
+Expected to address the ``keywords present but not retrievable'' gap.
+
+\subsection{Lossless frozen with on-demand expansion}
+\label{sec:lossless-frozen}
+
+A natural variant of S3 Frozen: each frozen summary keeps a \textit{pointer} to the
+verbatim text it summarises. The summary is what the model sees by default,
+but a lightweight tool call (\code{expand(frozen\_id)}) can swap a frozen block
+for its full original content when precise recall matters. Compared to pure
+S3, this addresses the keyword-LLM gap exhibited in \S\ref{sec:dead-zone} without paying the
+cost of carrying full context all the time. Compared to RAG (\S\ref{sec:rag}), it
+preserves conversational structure (no arbitrary chunking) and uses the
+model's existing summary as the index.
+
+A more aggressive variant compacts continuously, one or a few turns at a
+time, instead of waiting for a watermark threshold. This avoids the
+``shock'' of large compaction passes (a major source of recall loss at 1M+
+contexts, \S\ref{sec:strategy-results}) at the cost of more compaction calls. Existing systems like
+Factory.ai's anchored iterative are in this regime; quantifying the
+frequency-vs-granularity trade-off on the same evidence framework is a
+natural extension of this paper.
+
+\subsection{Graph-augmented context for million-token windows}
+\label{sec:graph}
+
+With 1M-token context windows now available (e.g.\ Claude Opus 4 with 1M
+context), the cost of carrying an \textit{index} alongside summaries becomes
+negligible --- 50 sessions $\times \sim$200 tokens of metadata is 1\% of context.
+A ``pseudo-Graphiti in context'' approach attaches each frozen summary with
+structured metadata (tags, time, actors, link to verbatim, link to other
+related frozen blocks). The model can navigate the graph through its own
+attention without making tool calls, enabling multi-hop reasoning over
+preserved memory. This aligns with concurrent work on temporal knowledge
+graphs for agent memory (Zep / Graphiti) but pushes the structure inside
+the active context rather than into an external service.
+
+\subsection{Implications of larger context windows}
+\label{sec:large-windows}
+
+The advent of 1M-token windows changes the operating point of compaction
+but does not remove its relevance. With a 200K window, compaction triggers
+roughly every 60K tokens ($\sim$30\% of the context) and is invoked frequently;
+with 1M, it triggers less often but each invocation must compact $\sim$700K
+tokens at once --- an order-of-magnitude larger and proportionally more
+catastrophic when it goes wrong. The cost of \textit{holding} the larger context
+also matters: KV cache memory grows linearly with window size, so even
+when not running compaction, larger contexts have higher serving cost.
+Future benchmarks should re-run our protocol at 1M windows to verify that
+the strategy ordering and the variance phenomena documented here scale up
+unchanged.
+
+\subsection{Cross-model and cross-architecture validation}
+\label{sec:cross-arch}
+
+Our cross-model validation (\S\ref{sec:sonnet}) established that the findings generalize
+from Claude Haiku 4.5 to Claude Sonnet 4.6 --- a model with fundamentally
+different spatial recall characteristics (no Lost-in-the-Middle). Testing on
+non-Claude models (GPT-4, Gemini, open-source LLMs served locally) would
+establish whether the findings hold across architectures. Preliminary
+investigation suggests that local LLMs with shorter context windows
+(32K--128K) could be tested with proportionally smaller contexts.

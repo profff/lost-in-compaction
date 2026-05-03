@@ -1,0 +1,57 @@
+\section{Controlled Compaction Experiment}
+\label{sec:controlled}
+
+\subsection{Design}
+\label{sec:controlled-design}
+
+This experiment isolates the information loss from compaction itself,
+independent of context size reduction. The protocol:
+
+\begin{enumerate}
+  \item Start with a calibrated 190K context (from the recall calibration, mode R4)
+  \item Compact the oldest X\% of messages using LLM summarization
+  \item \textbf{Re-pad} to the original 190K size with real conversation sessions
+  \item Measure recall on the same facts
+\end{enumerate}
+
+The re-padding step is critical: it keeps context size constant, so any recall
+degradation is attributable to compaction, not to having less context.
+
+\subsection{Compaction levels}
+\label{sec:compaction-levels}
+
+\begin{table}[h]
+\centering
+\caption{Compaction levels used in the single-pass experiment.}
+\label{tab:compaction-levels}
+\begin{tabular}{lcl}
+\toprule
+Level & \% compacted & What happens \\
+\midrule
+C0 & 0\%   & Baseline (no compaction) \\
+C1 & 5\%   & Minimal compaction (oldest $\sim$36 messages) \\
+C2 & 25\%  & Moderate (oldest quarter) \\
+C3 & 50\%  & Half the context compacted \\
+C4 & 98\%  & Nearly everything compacted (all except last user/assistant exchange) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For each level, we track which facts fall in the compacted zone vs the
+remaining zone, enabling spatial analysis of information loss.
+
+\subsection{Compaction method}
+\label{sec:compaction-method}
+
+We use single-pass LLM summarization (Claude Haiku 4.5): the oldest X\% of
+messages is concatenated and sent to the model with instructions to produce
+a concise summary. The summary replaces the original messages, freeing
+space that is then filled with padding sessions.
+
+The compaction prompt emphasizes preserving factual details, technical
+specifications, and decisions --- the same prompt used in production compaction
+systems.
+
+[Note: \S\ref{sec:strategy} compares different multi-pass strategies: Brutal, Incremental,
+Frozen, and FrozenRanked. This section uses single-pass to isolate the
+fundamental compaction loss before strategy effects compound.]

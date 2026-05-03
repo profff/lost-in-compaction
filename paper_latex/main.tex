@@ -1,0 +1,109 @@
+\documentclass{article}
+
+% arXiv preprint style (Kourgeorge)
+\usepackage{arxiv}
+
+% --- Encoding & fonts (pdflatex-friendly) ---
+% NOTE: arxiv.sty already sets Times (\rmdefault=ptm) + Helvetica (\sfdefault=phv).
+% We keep that look and only enforce T1 + UTF-8 input + microtype refinement.
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+
+% --- Math & symbols ---
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{textcomp}     % \texteuro
+\usepackage{eurosym}      % \euro
+
+% --- Tables ---
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+
+% --- Figures & captions ---
+\usepackage{graphicx}
+\usepackage{grffile}        % allow dots/underscores in figure filenames
+\usepackage{caption}
+\usepackage{subcaption}
+\graphicspath{{figures/}}
+
+% --- Code listings ---
+\usepackage{xcolor}
+\usepackage{listings}
+
+\definecolor{codebg}{RGB}{245,245,245}
+\definecolor{codecomment}{RGB}{106,153,85}
+\definecolor{codekw}{RGB}{0,0,180}
+
+\lstdefinestyle{paperstyle}{
+  basicstyle=\ttfamily\small,
+  backgroundcolor=\color{codebg},
+  frame=none,
+  breaklines=true,
+  breakatwhitespace=true,
+  columns=fullflexible,
+  keepspaces=true,
+  showstringspaces=false,
+  xleftmargin=0.5em,
+  xrightmargin=0.5em,
+  aboveskip=0.7em,
+  belowskip=0.7em,
+  commentstyle=\color{codecomment}\itshape,
+  keywordstyle=\color{codekw}\bfseries,
+}
+\lstset{style=paperstyle}
+
+% --- Bibliography ---
+\usepackage[round,authoryear]{natbib}
+
+% --- Hyperlinks & cross-references ---
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!50!black,
+  citecolor=blue!50!black,
+  urlcolor=blue!50!black,
+}
+\usepackage{cleveref}
+
+% --- Inline code macro ---
+\newcommand{\code}[1]{\texttt{#1}}
+
+% --- Title metadata ---
+\title{Lost in Compaction: Measuring Information Loss in LLM Context Summaries}
+
+\author{
+  Olivier Gast\'e\\
+  \texttt{ogaste@gmail.com}
+}
+
+\renewcommand{\headeright}{Working Paper}
+\renewcommand{\undertitle}{Working Paper -- May 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_framework}
+\input{sections/03_calibration_results}
+\input{sections/04_controlled_compaction}
+\input{sections/05_singlepass_results}
+\input{sections/06_strategy_comparison}
+\input{sections/07_discussion}
+\input{sections/08_future_work}
+\input{sections/09_conclusion}
+\input{sections/10_reproducibility}
+
+\appendix
+\input{sections/appendix_a_prompts}
+\input{sections/appendix_b_predictive_model}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+\end{document}

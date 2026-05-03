@@ -1,0 +1,266 @@
+\section{Single-Pass Compaction Results}
+\label{sec:singlepass}
+
+\subsection{Recall degradation is monotone and severe}
+\label{sec:degradation}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\linewidth]{fig3_recall_vs_compaction.png}
+\caption{Recall degradation by compaction percentage at $Q=5$, for three densities.
+All curves decline monotonically. The grep upper bound at $\delta=0.42$ (dashed) stays above 80\%
+even at C4, illustrating the grep-LLM divergence.}
+\label{fig:recall-compaction}
+\end{figure}
+
+Recall degrades monotonically with compaction percentage
+(Claude Haiku 4.5 QA, $Q=5$):
+
+\begin{table}[h]
+\centering
+\caption{Recall vs compaction level across three densities ($Q=5$). Values in parentheses are deltas vs.\ the C0 baseline.}
+\label{tab:recall-compaction}
+\begin{tabular}{lccc}
+\toprule
+Level   & $\delta=0.21$ ($Q=5$) & $\delta=0.32$ ($Q=5$) & $\delta=0.42$ ($Q=5$) \\
+\midrule
+C0       & 62.5\%       & 75.0\%       & 78.8\% \\
+C1 (5\%) & 55.0\% ($-7$)  & 68.3\% ($-7$)  & 72.5\% ($-6$) \\
+C2 (25\%)& 40.0\% ($-23$) & 50.0\% ($-25$) & 58.8\% ($-20$) \\
+C3 (50\%)& 25.0\% ($-38$) & 33.3\% ($-42$) & 43.8\% ($-35$) \\
+C4 (98\%)& 2.5\%  ($-60$) & 10.0\% ($-65$) & 7.5\%  ($-71$) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Even the lightest compaction (C1, 5\%) costs 6--7 percentage points. At C4
+(98\%), recall drops to single digits --- the conversation is effectively
+destroyed.
+
+The degradation is consistent across densities: higher-density contexts
+have more room to fall but the relative pattern is identical.
+
+\subsection{The compacted zone is dead}
+\label{sec:dead-zone}
+
+Facts within the compacted region are almost never recalled, even though
+their keywords survive in the summary (Claude Haiku 4.5 QA, $Q=5$, $\delta=0.42$):
+
+\begin{table}[h]
+\centering
+\caption{Grep keyword survival vs.\ LLM recall in the compacted zone.}
+\label{tab:dead-zone}
+\begin{tabular}{lcc}
+\toprule
+Level & Grep survival (compacted zone) & LLM recall (compacted zone) \\
+\midrule
+C1 & 50\% (n=2)  & 0\% \\
+C2 & 82--91\%    & 8--18\% \\
+C3 & 83--93\%    & 0--7\% \\
+C4 & 59--62\%    & 2--4\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This is the most striking result: \textbf{grep finds the keywords in the summary,
+but the LLM cannot use them to answer questions.} The summary preserves
+lexical traces of the facts but destroys the surrounding context that would
+enable retrieval. This is the ``Lost in the Middle'' effect amplified: the
+summary sits at the very beginning of the context --- the least-attended
+position after the primacy window is exhausted.
+
+\subsection{Attention dilution: compaction damages untouched facts}
+\label{sec:attention-dilution}
+
+The remaining zone (facts that were \textit{not} compacted, sitting in their original
+messages) also loses recall as compaction increases:
+
+\begin{table}[h]
+\centering
+\caption{Remaining-zone recall as compaction increases ($\delta=0.42$, $Q=5$).}
+\label{tab:remaining-zone}
+\begin{tabular}{lcc}
+\toprule
+Level & Remaining zone recall ($\delta=0.42$, $Q=5$) & $n_{\text{facts}}$ \\
+\midrule
+C1 & 73\% & 78 \\
+C2 & 59\% & 69 \\
+C3 & 53\% & 59 \\
+C4 & 80\% & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+From C1 to C3, remaining-zone recall drops from 73\% to 53\% --- a 20pp loss on
+facts that were never touched by compaction. The mechanism: re-padding replaces
+the compacted portion with noise (unrelated conversation sessions). This noise
+dilutes the model's attention, degrading retrieval even for intact facts.
+
+C4 is an outlier (80\%) because only 5 facts remain in the zone --- too few for
+statistical reliability, but consistent with the model finding a needle among
+mostly-padding.
+
+\textbf{Caveat --- dilution vs semantic interference.} Our re-padding uses
+unrelated \textit{real} conversations rather than information-free filler. The
+20pp drop therefore mixes two effects: pure attention dilution (more
+tokens to attend to) and semantic interference (the unrelated conversations
+may contain content that competes with or partially matches the test
+questions). Disentangling them would require a control arm where the
+compacted region is replaced with low-information filler (e.g.\ random
+tokens or repeated boilerplate). We leave this control to future work
+(\S\ref{sec:future}).
+
+\subsection{Spatial recall density}
+\label{sec:spatial}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.85\linewidth]{fig4_spatial_recall.png}
+\caption{Cumulative recalled facts by position in the original 190K context ($\delta=0.42$, $Q=5$).
+Each step curve shows one compaction level. Dotted vertical lines mark compaction boundaries.
+The C0 baseline exhibits the classic ``lost in middle'' profile --- flat through the central region,
+steep at the end (recency). Compacted variants (C3, C4) concentrate their recall
+in the surviving portion but lose most facts from the compacted zone.}
+\label{fig:spatial-recall}
+\end{figure}
+
+This visualization maps each fact to its position in the original (pre-compaction)
+context and shows whether it was recalled. It reveals:
+
+\begin{itemize}
+  \item \textbf{C0}: Relatively uniform recall across the context, with slight primacy
+    and recency effects
+  \item \textbf{C1}: A small shadow at the beginning (compacted zone), rest intact
+  \item \textbf{C2}: A larger shadow covering the first 25\% of the context
+  \item \textbf{C3}: The first half is dead, the second half is weakened by attention dilution
+  \item \textbf{C4}: Almost complete darkness, with tiny islands of recall at the very end
+\end{itemize}
+
+This provides a visual ``damage map'' showing exactly where compaction destroys
+information.
+
+\subsection{Repeatability}
+\label{sec:singlepass-repeatability}
+
+Three independent runs at $\delta=0.42$ / $Q=5$ (the most demanding configuration
+with 80 facts; Claude Haiku 4.5 QA + Haiku judge) confirm stability:
+
+\begin{table}[h]
+\centering
+\caption{Three-run repeatability at $\delta=0.42$, $Q=5$.}
+\label{tab:repeatability}
+\begin{tabular}{lccccc}
+\toprule
+Level & Run 1 & Run 2 & Run 3 & Mean & $\sigma$ \\
+\midrule
+C0 & 73.8\% & 78.8\% & 77.5\% & 76.7\% & $\pm 2.6$ \\
+C1 & 71.2\% & 68.8\% & 68.8\% & 69.6\% & $\pm 1.4$ \\
+C2 & 52.5\% & 53.8\% & 52.5\% & 52.9\% & $\pm 0.7$ \\
+C3 & 40.0\% & 40.0\% & 40.0\% & 40.0\% & $\pm 0.0$ \\
+C4 & 8.8\%  & 6.2\%  & 6.2\%  & 7.1\%  & $\pm 1.5$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Maximum variance is $\pm 2.6$pp (C0 baseline). All compaction effects ($-7$pp to
+$-70$pp) are far larger than measurement noise. The C3 result is remarkably
+stable (40.0\% in all three runs), suggesting that at this compaction level,
+the outcome is nearly deterministic.
+
+\subsection{Q-effect inversion under compaction}
+\label{sec:q-inversion}
+
+The calibration (\S\ref{sec:calibration}) established that asking more questions per prompt yields
+higher recall in static contexts: at $\delta=0.42$, $Q=10$ reaches 79\% vs 68\% for $Q=1$.
+This holds for uncompacted and lightly compacted contexts. However, under
+severe compaction, the effect \textbf{reverses} (Claude Haiku 4.5 QA, $\delta=0.42$):
+
+\begin{table}[h]
+\centering
+\caption{Q-effect inversion under severe compaction. At C4, $Q=1$ surpasses $Q=5$.}
+\label{tab:q-inversion}
+\begin{tabular}{lccc}
+\toprule
+Level & $Q=5$ & $Q=1$ & $\Delta$ ($Q=1 - Q=5$) \\
+\midrule
+C0       & 73.8\% & 67.5\% & $-6.3$pp \\
+C1 (5\%) & 66.2\% & 55.0\% & $-11.2$pp \\
+C2 (25\%)& 50.0\% & 47.5\% & $-2.5$pp \\
+C3 (50\%)& 35.0\% & 31.2\% & $-3.8$pp \\
+C4 (98\%)& 2.5\%  & 11.2\% & \textbf{+8.7pp} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+At C4, $Q=1$ surpasses $Q=5$ by 8.7pp. The same inversion appears in
+the iterative multi-pass experiments (\S\ref{sec:strategy}): across all four strategies at 1M
+tokens, $Q=1$ outperforms $Q=5$ by 5--9pp.
+
+The mechanism is intuitive: in a rich context, multiple questions per prompt
+cast a wider net, increasing the chance of activating diverse regions. In a
+degraded context (heavy compaction or many compaction cycles), the model's
+limited attention is better spent focusing on a single question rather than
+splitting across multiple retrieval targets.
+
+This has practical implications for benchmarking: \textbf{$Q=5$ results are not
+directly comparable to $Q=1$ results}, and the direction of the bias depends
+on context quality. Evaluations of compacted contexts should report results
+at multiple $Q$ values or, at minimum, note which $Q$ was used.
+
+\subsection{Cross-model validation: Sonnet 4.6}
+\label{sec:sonnet}
+
+To test whether our findings are model-specific, we replicated the
+single-pass compaction experiment using Claude Sonnet 4.6 as the QA model
+($Q=1$, $\delta=0.42$; judge: Haiku 4.5). Both columns below are $Q=1$ --- this is
+the configuration in which the cross-model gap is largest, see \S\ref{sec:q-inversion}.
+
+\begin{table}[h]
+\centering
+\caption{Cross-model comparison: Haiku 4.5 vs Sonnet 4.6 at $Q=1$, $\delta=0.42$.}
+\label{tab:sonnet}
+\begin{tabular}{lcccc}
+\toprule
+Level & Haiku 4.5 ($Q=1$) & Sonnet 4.6 ($Q=1$) & Haiku $\Delta$/C0 & Sonnet $\Delta$/C0 \\
+\midrule
+C0       & 67.5\% & 92.5\% & ---       & --- \\
+C1 (5\%) & 55.0\% & 90.0\% & $-12.5$pp & $-2.5$pp \\
+C2 (25\%)& 47.5\% & 86.2\% & $-20.0$pp & $-6.2$pp \\
+C3 (50\%)& 31.2\% & 62.5\% & $-36.2$pp & $-30.0$pp \\
+C4 (98\%)& 11.2\% & 21.2\% & $-56.2$pp & $-71.2$pp \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Three key findings emerge:
+
+\textbf{1. Sonnet has no Lost-in-the-Middle effect.} The C0 spatial recall profile
+is flat: 93\% early, 93\% mid, 92\% late. Haiku's C0 shows the classic U-shaped
+profile (higher at extremes, lower in the middle). This difference disappears
+under compaction --- both models converge to similar spatial patterns at C3--C4.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\linewidth]{fig8_recall_density.png}
+\caption{Smoothed recall density by position in the original context (Gaussian
+kernel, bw=15kTok). Left: Haiku $Q=5$. Center: Haiku $Q=1$. Right: Sonnet $Q=1$.
+Sonnet's C0 (green) is flat at $\sim$95\%, confirming the absence of Lost-in-the-Middle.
+Under compaction, all models show the same pattern: dead zone in the compacted
+region, concentration of recall at the context end.}
+\label{fig:recall-density-smoothed}
+\end{figure}
+
+\textbf{2. A stronger model resists light compaction better.} Sonnet loses only
+2.5pp at C1 and 6.2pp at C2, vs 12.5pp and 20.0pp for Haiku. The additional
+25pp of baseline recall provides a buffer against moderate information loss.
+
+\textbf{3. Severe compaction equalizes models.} At C3--C4, the delta relative to C0
+is similar ($-30$pp and $-71$pp for Sonnet vs $-36$pp and $-56$pp for Haiku). This
+confirms that the information is \textbf{destroyed by the compaction process itself},
+not merely hidden from a weaker model's attention. If the degradation were
+purely attentional, Sonnet's superior baseline should provide proportional
+protection at all compaction levels.
+
+This cross-model comparison strengthens the paper's central finding: the
+bottleneck at high compaction is information destruction, not attention
+capacity.

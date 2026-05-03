@@ -1,0 +1,55 @@
+\section{Conclusion}
+\label{sec:conclusion}
+
+Context compaction is the invisible infrastructure of long-running LLM
+conversations --- and it is fundamentally lossy. This paper quantifies that
+loss across three complementary experiments.
+
+\textbf{Recall calibration} (\S\ref{sec:calibration}) established that recall measurement itself is
+non-trivial. A questions-per-prompt effect (up to 20pp, reversing under compaction), a category-dependent recall hierarchy,
+and a systematic grep-LLM gap mean that naive benchmarks conflate measurement
+artifacts with real strategy differences. Any compaction evaluation that does
+not control for these confounds risks measuring noise.
+
+\textbf{Controlled single-pass compaction} (\S\ref{sec:controlled}--\S\ref{sec:singlepass}) isolated the cost of one
+compaction pass. Even 5\% compaction destroys 6--7pp of recall. At 50\%, the
+compacted zone is near-dead (0--7\% recall) despite 82--93\% keyword survival ---
+the starkest illustration that information \textit{presence} does not equal
+information \textit{retrievability}. The attention dilution effect (remaining-zone
+degradation of 20pp) shows that compaction damages even untouched context.
+Cross-model testing with Sonnet 4.6 --- which has no Lost-in-the-Middle effect
+and 92.5\% baseline recall --- confirms that severe compaction destroys
+information irrespective of model capability, while stronger models resist
+light compaction significantly better ($-2.5$pp vs $-12.5$pp at C1).
+
+\textbf{Multi-pass strategy comparison} (\S\ref{sec:strategy}) ran four strategies on a single 5M
+conversation at constant fact density ($\delta=0.04$), evaluated at 5 mid-feed
+checkpoints with 4--6 replicates per cell to estimate variance. The hierarchy
+is \textbf{S4 FrozenRanked $>$ S3 Frozen $>$ S2 Incremental $>$ S1 Brutal} at every
+checkpoint in the means. With replicates we also measured a \textbf{substantial
+run-to-run variance} that is not visible in a single-shot benchmark --- the
+compaction phase itself is non-deterministic at temperature 0, producing
+different summaries across sessions and recall ranges spanning factor 14$\times$
+on identical conversations. A \textit{single} measurement of ``strategy A vs
+strategy B'' is thus untrustworthy; replicates are mandatory.
+
+The means tell a coherent story: S4 reaches $\sim$28\% recall at 500K and decays
+to $\sim$5\% at 5M; S1 stays under 10\% at every scale. The gap between S4 and S3
+narrows as conversations grow, because at 5M the frozen chain is long enough
+that hierarchical merging no longer differentiates the two strategies in
+recall --- they converge to similar attention-dilution-limited regimes.
+
+A complementary regression analysis on the \S\ref{sec:calibration}+\S\ref{sec:singlepass} dataset (4{,}812
+observations) confirms the underlying drivers: batch size $Q$, compaction
+percent, position in context, and category each act independently in
+log-odds space (logistic AUC=0.84; gradient-boosted AUC=0.64, indicating
+no hidden non-linearities). Compaction is monotonically destructive
+($-0.054$/percent) and the spatial \textit{Lost-in-the-Middle} signature is robust.
+
+The overarching finding is that \textbf{the bottleneck is attention, not
+compression}. Keywords survive summarization; the LLM simply cannot find
+them. Frozen summaries prevent the JPEG cascade but accumulate blocks that
+dilute attention. This points toward a paradigm shift: from optimizing \textit{how}
+we compress conversations to optimizing \textit{how} we structure preserved
+information for retrieval --- indexed fact stores, RAG-augmented compaction,
+and structured memory systems that bypass the attention bottleneck entirely.

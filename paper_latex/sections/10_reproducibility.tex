@@ -1,0 +1,75 @@
+\section{Reproducibility}
+\label{sec:reproducibility}
+
+All code and data are available at:
+\url{https://github.com/profff/lost-in-compaction}
+
+\subsection*{Scripts}
+\begin{itemize}
+  \item \code{benchmark\_recall\_v5.py} --- Recall calibration (\S\ref{sec:calibration})
+  \item \code{build\_contexts\_v5.py} --- Context assembly with 4 modes (R1--R4)
+  \item \code{benchmark\_compaction\_v5.py} --- Single-pass compaction experiment (\S\ref{sec:controlled}--\S\ref{sec:singlepass})
+  \item \code{compare\_runs\_v5.py} --- 2$\times$2 factorial analysis
+  \item \code{build\_conversation\_v6.py} --- Long conversation builder (500K--40M tokens)
+  \item \code{benchmark\_iterative\_v6.py} --- Strategy comparison with checkpoints (\S\ref{sec:strategy})
+  \item \code{compaction.py} --- Strategy implementations (Brutal, Incremental, Frozen, FrozenRanked)
+  \item \code{llm\_backend.py} --- Backend abstraction (anthropic\_batch, wrapper, openai)
+  \item \code{rejudge\_only.py} --- Re-run judge phase on existing answers (\code{-{}-strict} flag)
+  \item \code{rerun\_qa\_only.py} --- Re-run QA + judge from saved compaction snapshots
+  \item \code{recompute\_summaries.py} --- Recompute checkpoint summaries from disk content
+\end{itemize}
+
+\subsection*{Dependencies}
+
+\begin{lstlisting}[language=bash]
+pip install anthropic python-dotenv openai matplotlib numpy
+\end{lstlisting}
+
+\subsection*{Quick start}
+
+\begin{lstlisting}[language=bash]
+# Recall calibration (Section 3)
+./benchmark_recall_v5.py --run R4 --densities 40,60,80 --batch-sizes 1,5,10
+
+# Single-pass compaction (Sections 4-5)
+./benchmark_compaction_v5.py --run R4 --densities 40,60,80
+
+# Strategy comparison (Section 6) - 5M conversation, 200 facts, 5 checkpoints
+./build_conversation_v6.py --density 200 --target-tokens 5000000
+./benchmark_iterative_v6.py --density 200 --target-tokens 5000000 \
+    --backend anthropic_batch --judge-backend anthropic_batch \
+    --judge-model claude-haiku-4-5-20251001 \
+    --strategies S1,S2,S3,S4 \
+    --checkpoints 500000,1000000,2000000,3500000
+
+# Re-judge an existing run with the strict prompt (Section 6.4)
+./rejudge_only.py iterative_v6_R4_*/checkpoint_500K \
+    --strategies S1,S2,S3,S4 --strict --save-suffix _strict
+
+# Dry run (cost estimate, no API calls)
+./benchmark_iterative_v6.py --density 200 --target-tokens 5000000 --dry-run
+\end{lstlisting}
+
+\subsection*{Result directories}
+\begin{itemize}
+  \item \code{recall\_v5\_R\{1,2,3,4\}\_*/} --- Recall calibration results
+  \item \code{compaction\_v5\_R4\_*/} --- Single-pass compaction results
+  \item \code{iterative\_v6\_R4\_*/} --- Strategy comparison results, with \code{checkpoint\_*/},
+    \code{final\_reeval/}, \code{strategies/SK\_*/snapshot\_*/}
+  \item Each checkpoint dir contains \code{summary*.json}, \code{answers/}, \code{judgments/}, \code{grep/}
+\end{itemize}
+
+\subsection*{Computational budget}
+
+This work was funded out of pocket. Total Anthropic API spend across
+calibration (\S\ref{sec:calibration}), single-pass compaction (\S\ref{sec:controlled}--\S\ref{sec:singlepass}), the four-strategy
+comparison (\S\ref{sec:strategy}) including replicates and judge re-runs, the human-judge
+tooling, and several aborted or instrumentation-failed runs (notably
+the seed-99 attempt in \S\ref{sec:seed99}) is approximately \textbf{1{,}800 \euro}. A single
+complete \S\ref{sec:strategy} cell (one strategy, five checkpoints, one replicate, QA on
+Sonnet 4.6 with a strict re-judge pass on Haiku) costs roughly 25--35 \euro,
+so the \S\ref{sec:strategy} replicate matrix accounts for most of the total, with the
+\S\ref{sec:calibration}/\S\ref{sec:singlepass} sweeps and pilots making up the remainder. The remaining open
+blockers (multi-seed generalization, 1M-window QA model, a second
+human-judge sample, cross-architecture validation \S\ref{sec:cross-arch}) are bounded
+primarily by API spend rather than by engineering effort.
