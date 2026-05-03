@@ -1,0 +1,3577 @@
+[
+  {
+    "fact_id": "LM_0206",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "suggestions",
+      "involve",
+      "relaxing",
+      "activities",
+      "done",
+      "evening",
+      "preferably",
+      "30",
+      "pm",
+      "using",
+      "phone",
+      "watching",
+      "TV",
+      "affecting",
+      "sleep",
+      "quality",
+      "9"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "suggestions",
+      "involve",
+      "relaxing",
+      "activities",
+      "done",
+      "evening",
+      "preferably",
+      "30",
+      "pm",
+      "using",
+      "phone",
+      "watching",
+      "TV",
+      "affecting",
+      "sleep",
+      "quality",
+      "9"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0260",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Chloe"
+    ],
+    "keywords_found": [
+      "Chloe"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0132",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "under",
+      "bed"
+    ],
+    "keywords_found": [
+      "under",
+      "bed"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0255",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Absinthe"
+    ],
+    "keywords_found": [
+      "Absinthe"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0187",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Yes"
+    ],
+    "keywords_found": [
+      "Yes"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0263",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "10",
+      "minutes"
+    ],
+    "keywords_found": [
+      "10",
+      "minutes"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0153",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Kansas",
+      "City",
+      "Masterpiece"
+    ],
+    "keywords_found": [
+      "Kansas",
+      "City",
+      "Masterpiece"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0146",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "bedroom"
+    ],
+    "keywords_found": [
+      "bedroom"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0188",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "We've",
+      "met",
+      "twice"
+    ],
+    "keywords_found": [
+      "We've",
+      "met",
+      "twice"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0189",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "increased",
+      "limit",
+      "one",
+      "cup",
+      "two",
+      "cups"
+    ],
+    "keywords_found": [
+      "increased",
+      "limit",
+      "one",
+      "cup",
+      "two",
+      "cups"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0159",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Five"
+    ],
+    "keywords_found": [
+      "Five"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0242",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "recommended",
+      "learning",
+      "Ruby",
+      "Python",
+      "PHP",
+      "back",
+      "end",
+      "programming",
+      "language"
+    ],
+    "keywords_found": [
+      "recommended",
+      "learning",
+      "Ruby",
+      "Python",
+      "PHP",
+      "back",
+      "end",
+      "programming",
+      "language"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0175",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Wednesday"
+    ],
+    "keywords_found": [
+      "Wednesday"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0252",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Chapter",
+      "Book",
+      "titled",
+      "'Vocal",
+      "Prayer",
+      "Meditation'",
+      "4",
+      "1"
+    ],
+    "keywords_found": [
+      "Chapter",
+      "Book",
+      "titled",
+      "Prayer",
+      "4",
+      "1"
+    ],
+    "all_present": false,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0210",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "dinner",
+      "suggestions",
+      "incorporate",
+      "homegrown",
+      "cherry",
+      "tomatoes",
+      "herbs",
+      "like",
+      "basil",
+      "mint",
+      "highlighting",
+      "recipes",
+      "showcase",
+      "garden",
+      "produce",
+      "utilize",
+      "specific",
+      "ingredients",
+      "emphasize",
+      "use",
+      "elements"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "dinner",
+      "suggestions",
+      "incorporate",
+      "homegrown",
+      "cherry",
+      "tomatoes",
+      "herbs",
+      "like",
+      "basil",
+      "mint",
+      "highlighting",
+      "recipes",
+      "showcase",
+      "garden",
+      "produce",
+      "utilize",
+      "specific",
+      "ingredients",
+      "emphasize",
+      "use",
+      "elements"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0232",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Plesiosaur",
+      "blue",
+      "scaly",
+      "body"
+    ],
+    "keywords_found": [
+      "Plesiosaur",
+      "blue",
+      "scaly",
+      "body"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0258",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "6S",
+      "algorithm",
+      "implemented",
+      "SIAC_GEE",
+      "tool",
+      "6"
+    ],
+    "keywords_found": [
+      "6S",
+      "algorithm",
+      "implemented",
+      "tool",
+      "6"
+    ],
+    "all_present": false,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0282",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Patagonia"
+    ],
+    "keywords_found": [
+      "Patagonia"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0245",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "GR",
+      "90",
+      "trail"
+    ],
+    "keywords_found": [
+      "GR",
+      "90",
+      "trail"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0224",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "take",
+      "account",
+      "previous",
+      "experience",
+      "Denver",
+      "specifically",
+      "interest",
+      "live",
+      "music",
+      "memorable",
+      "encounter",
+      "Brandon",
+      "Flowers",
+      "appreciate",
+      "suggestions",
+      "revisit",
+      "build",
+      "upon",
+      "revisiting",
+      "same",
+      "bar",
+      "exploring",
+      "similar",
+      "venues",
+      "area",
+      "general",
+      "tourist",
+      "recommendations",
+      "activities",
+      "unrelated"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "take",
+      "account",
+      "previous",
+      "experience",
+      "Denver",
+      "specifically",
+      "interest",
+      "live",
+      "music",
+      "memorable",
+      "encounter",
+      "Brandon",
+      "Flowers",
+      "appreciate",
+      "suggestions",
+      "revisit",
+      "build",
+      "upon",
+      "revisiting",
+      "same",
+      "bar",
+      "exploring",
+      "similar",
+      "venues",
+      "area",
+      "general",
+      "tourist",
+      "recommendations",
+      "activities",
+      "unrelated"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0215",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "baking",
+      "suggestions",
+      "take",
+      "account",
+      "previous",
+      "success",
+      "lemon",
+      "poppyseed",
+      "cake",
+      "variations",
+      "recipe",
+      "other",
+      "desserts",
+      "share",
+      "similar",
+      "qualities",
+      "balance",
+      "impressiveness",
+      "manageability",
+      "considering",
+      "experience",
+      "overly",
+      "complex",
+      "unfamiliar",
+      "recipes",
+      "build",
+      "upon",
+      "existing"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "baking",
+      "suggestions",
+      "take",
+      "account",
+      "previous",
+      "success",
+      "lemon",
+      "poppyseed",
+      "cake",
+      "variations",
+      "recipe",
+      "other",
+      "desserts",
+      "share",
+      "similar",
+      "qualities",
+      "balance",
+      "manageability",
+      "considering",
+      "experience",
+      "overly",
+      "complex",
+      "unfamiliar",
+      "recipes",
+      "build",
+      "upon",
+      "existing"
+    ],
+    "all_present": false,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0174",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "two",
+      "hours"
+    ],
+    "keywords_found": [
+      "two",
+      "hours"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0235",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Atmospheric",
+      "distillation",
+      "fluid",
+      "catalytic",
+      "cracking",
+      "FCC",
+      "alkylation",
+      "hydrotreating"
+    ],
+    "keywords_found": [
+      "Atmospheric",
+      "distillation",
+      "fluid",
+      "catalytic",
+      "cracking",
+      "FCC",
+      "alkylation",
+      "hydrotreating"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0135",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "started",
+      "new",
+      "role",
+      "Senior",
+      "Software",
+      "Engineer",
+      "led",
+      "engineers",
+      "Now",
+      "lead",
+      "4",
+      "5"
+    ],
+    "keywords_found": [
+      "started",
+      "new",
+      "role",
+      "Senior",
+      "Software",
+      "Engineer",
+      "led",
+      "engineers",
+      "Now",
+      "lead",
+      "4",
+      "5"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0163",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "five"
+    ],
+    "keywords_found": [
+      "five"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0182",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Ford",
+      "150",
+      "pickup",
+      "truck"
+    ],
+    "keywords_found": [
+      "Ford",
+      "150",
+      "pickup",
+      "truck"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0196",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "collecting",
+      "autographed",
+      "baseball",
+      "football"
+    ],
+    "keywords_found": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "collecting",
+      "autographed",
+      "baseball",
+      "football"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0203",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "suggestions",
+      "hotels",
+      "Miami",
+      "offer",
+      "great",
+      "views",
+      "possibly",
+      "ocean",
+      "city",
+      "skyline",
+      "unique",
+      "features",
+      "rooftop",
+      "pool",
+      "hot",
+      "tub",
+      "balcony",
+      "basic",
+      "budget",
+      "without"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "suggestions",
+      "hotels",
+      "Miami",
+      "offer",
+      "great",
+      "views",
+      "possibly",
+      "ocean",
+      "city",
+      "skyline",
+      "unique",
+      "features",
+      "rooftop",
+      "pool",
+      "hot",
+      "tub",
+      "balcony",
+      "basic",
+      "budget",
+      "without"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0166",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "00",
+      "pm",
+      "6"
+    ],
+    "keywords_found": [
+      "00",
+      "pm",
+      "6"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0234",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Roscioli"
+    ],
+    "keywords_found": [
+      "Roscioli"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0141",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "week"
+    ],
+    "keywords_found": [
+      "week"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0150",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "25"
+    ],
+    "keywords_found": [
+      "25"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0133",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "seven"
+    ],
+    "keywords_found": [
+      "seven"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0184",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "7"
+    ],
+    "keywords_found": [
+      "7"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0200",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "suggest",
+      "resources",
+      "specifically",
+      "tailored",
+      "Adobe",
+      "Premiere",
+      "Pro",
+      "especially",
+      "delve",
+      "advanced",
+      "settings",
+      "general",
+      "video",
+      "editing",
+      "related",
+      "other",
+      "software"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "suggest",
+      "resources",
+      "specifically",
+      "tailored",
+      "Adobe",
+      "Premiere",
+      "Pro",
+      "especially",
+      "delve",
+      "advanced",
+      "settings",
+      "general",
+      "video",
+      "editing",
+      "related",
+      "other",
+      "software"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0256",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Mindful",
+      "org"
+    ],
+    "keywords_found": [
+      "Mindful",
+      "org"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0287",
+    "question_type": "single-session-user",
+    "keywords": [
+      "45",
+      "minutes",
+      "way"
+    ],
+    "keywords_found": [
+      "45",
+      "minutes",
+      "way"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0279",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Pennsylvania"
+    ],
+    "keywords_found": [
+      "Pennsylvania"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0142",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "5"
+    ],
+    "keywords_found": [
+      "5"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0148",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "50"
+    ],
+    "keywords_found": [
+      "50"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0134",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "220"
+    ],
+    "keywords_found": [
+      "220"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0139",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "five"
+    ],
+    "keywords_found": [
+      "five"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0198",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Yes",
+      "road",
+      "bike",
+      "too"
+    ],
+    "keywords_found": [
+      "Yes",
+      "road",
+      "bike",
+      "too"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0266",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Memrise"
+    ],
+    "keywords_found": [
+      "Memrise"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0147",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "six"
+    ],
+    "keywords_found": [
+      "six"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0165",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "10"
+    ],
+    "keywords_found": [
+      "10"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0238",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "suggested",
+      "'sexual",
+      "fixations'",
+      "'problematic",
+      "sexual",
+      "behaviors'",
+      "impulsivity'",
+      "'compulsive",
+      "sexuality'"
+    ],
+    "keywords_found": [
+      "suggested",
+      "sexual"
+    ],
+    "all_present": false,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0178",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "10",
+      "pounds"
+    ],
+    "keywords_found": [
+      "10",
+      "pounds"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0273",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Chiefs",
+      "played",
+      "Jaguars",
+      "12",
+      "times",
+      "Arrowhead",
+      "Stadium"
+    ],
+    "keywords_found": [
+      "Chiefs",
+      "played",
+      "Jaguars",
+      "12",
+      "times",
+      "Arrowhead",
+      "Stadium"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0125",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "400",
+      "000"
+    ],
+    "keywords_found": [
+      "400",
+      "000"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0288",
+    "question_type": "single-session-user",
+    "keywords": [
+      "Target"
+    ],
+    "keywords_found": [
+      "Target"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0284",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "recommended",
+      "ratio",
+      "10",
+      "meaning",
+      "one",
+      "part",
+      "tea",
+      "tree",
+      "oil",
+      "ten",
+      "parts",
+      "carrier",
+      "1"
+    ],
+    "keywords_found": [
+      "recommended",
+      "ratio",
+      "10",
+      "meaning",
+      "one",
+      "part",
+      "tea",
+      "tree",
+      "oil",
+      "ten",
+      "parts",
+      "carrier",
+      "1"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0190",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "five"
+    ],
+    "keywords_found": [
+      "five"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0277",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "MusicTheory",
+      "net"
+    ],
+    "keywords_found": [
+      "MusicTheory",
+      "net"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0164",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "420"
+    ],
+    "keywords_found": [
+      "420"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0228",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "suggestions",
+      "related",
+      "listening",
+      "new",
+      "podcasts",
+      "audiobooks",
+      "especially",
+      "genre",
+      "beyond",
+      "true",
+      "crime",
+      "self",
+      "improvement",
+      "history",
+      "interested",
+      "activities",
+      "require",
+      "visual",
+      "attention",
+      "reading",
+      "watching",
+      "videos",
+      "commuting",
+      "general",
+      "podcast",
+      "topics",
+      "wants",
+      "explore",
+      "other"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "suggestions",
+      "related",
+      "listening",
+      "new",
+      "podcasts",
+      "audiobooks",
+      "especially",
+      "genre",
+      "beyond",
+      "true",
+      "crime",
+      "self",
+      "improvement",
+      "history",
+      "interested",
+      "activities",
+      "require",
+      "visual",
+      "attention",
+      "reading",
+      "watching",
+      "videos",
+      "commuting",
+      "general",
+      "podcast",
+      "topics",
+      "wants",
+      "explore",
+      "other"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0205",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "recommendations",
+      "stand",
+      "comedy",
+      "specials",
+      "Netflix",
+      "especially",
+      "known",
+      "storytelling",
+      "other",
+      "genres",
+      "platforms"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "recommendations",
+      "stand",
+      "comedy",
+      "specials",
+      "Netflix",
+      "especially",
+      "known",
+      "storytelling",
+      "other",
+      "genres",
+      "platforms"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0283",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Veja"
+    ],
+    "keywords_found": [
+      "Veja"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0155",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "weeks",
+      "4"
+    ],
+    "keywords_found": [
+      "weeks",
+      "4"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0131",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Paris"
+    ],
+    "keywords_found": [
+      "Paris"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0127",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Yes"
+    ],
+    "keywords_found": [
+      "Yes"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0194",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "seeing",
+      "Dr",
+      "Smith",
+      "Johnson"
+    ],
+    "keywords_found": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "seeing",
+      "Dr",
+      "Smith",
+      "Johnson"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0218",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "suggest",
+      "variations",
+      "existing",
+      "almond",
+      "milk",
+      "vanilla",
+      "extract",
+      "honey",
+      "creamer",
+      "recipe",
+      "new",
+      "ideas",
+      "align",
+      "goals",
+      "reducing",
+      "sugar",
+      "intake",
+      "saving",
+      "money",
+      "recommend",
+      "commercial",
+      "products",
+      "recipes",
+      "high",
+      "expensive"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "suggest",
+      "variations",
+      "existing",
+      "almond",
+      "milk",
+      "vanilla",
+      "extract",
+      "honey",
+      "creamer",
+      "recipe",
+      "new",
+      "ideas",
+      "align",
+      "goals",
+      "reducing",
+      "sugar",
+      "intake",
+      "saving",
+      "money",
+      "recommend",
+      "commercial",
+      "products",
+      "recipes",
+      "high",
+      "expensive"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0223",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "suggest",
+      "healthy",
+      "meal",
+      "prep",
+      "recipes",
+      "especially",
+      "incorporate",
+      "quinoa",
+      "roasted",
+      "vegetables",
+      "offer",
+      "variations",
+      "protein",
+      "sources",
+      "appreciate",
+      "suggestions",
+      "build",
+      "upon",
+      "existing",
+      "preferences",
+      "new",
+      "twists",
+      "chicken",
+      "Caesar",
+      "salads",
+      "turkey",
+      "avocado",
+      "wraps",
+      "unhealthy",
+      "high",
+      "calorie",
+      "options",
+      "deviate",
+      "significantly",
+      "established",
+      "eating",
+      "habits"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "suggest",
+      "healthy",
+      "meal",
+      "prep",
+      "recipes",
+      "especially",
+      "incorporate",
+      "quinoa",
+      "roasted",
+      "vegetables",
+      "offer",
+      "variations",
+      "protein",
+      "sources",
+      "appreciate",
+      "suggestions",
+      "build",
+      "upon",
+      "existing",
+      "preferences",
+      "new",
+      "twists",
+      "chicken",
+      "Caesar",
+      "salads",
+      "turkey",
+      "avocado",
+      "wraps",
+      "unhealthy",
+      "high",
+      "calorie",
+      "options",
+      "deviate",
+      "significantly",
+      "established",
+      "eating",
+      "habits"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0207",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "acknowledge",
+      "build",
+      "upon",
+      "existing",
+      "efforts",
+      "organize",
+      "kitchen",
+      "utilizing",
+      "new",
+      "utensil",
+      "holder",
+      "keep",
+      "countertops",
+      "clutter",
+      "free",
+      "appreciate",
+      "tips",
+      "address",
+      "concern",
+      "maintaining",
+      "granite",
+      "surface",
+      "particularly",
+      "around",
+      "sink",
+      "area",
+      "Preferred",
+      "provide",
+      "practical",
+      "actionable",
+      "steps",
+      "maintain",
+      "cleanliness",
+      "leveraging",
+      "user's",
+      "current",
+      "tools",
+      "setup",
+      "generic",
+      "vague",
+      "suggestions",
+      "take",
+      "account",
+      "specific",
+      "concerns"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "acknowledge",
+      "build",
+      "upon",
+      "existing",
+      "efforts",
+      "organize",
+      "kitchen",
+      "utilizing",
+      "new",
+      "utensil",
+      "holder",
+      "keep",
+      "countertops",
+      "clutter",
+      "free",
+      "appreciate",
+      "tips",
+      "address",
+      "concern",
+      "maintaining",
+      "granite",
+      "surface",
+      "particularly",
+      "around",
+      "sink",
+      "area",
+      "Preferred",
+      "provide",
+      "practical",
+      "actionable",
+      "steps",
+      "maintain",
+      "cleanliness",
+      "leveraging",
+      "user's",
+      "current",
+      "tools",
+      "setup",
+      "generic",
+      "vague",
+      "suggestions",
+      "take",
+      "account",
+      "specific",
+      "concerns"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0239",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Doc",
+      "Martin"
+    ],
+    "keywords_found": [
+      "Doc",
+      "Martin"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0191",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Instant",
+      "Pot"
+    ],
+    "keywords_found": [
+      "Instant",
+      "Pot"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0149",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Yes"
+    ],
+    "keywords_found": [
+      "Yes"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0231",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Miss",
+      "Bee",
+      "Providore"
+    ],
+    "keywords_found": [
+      "Miss",
+      "Bee",
+      "Providore"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0138",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "months",
+      "9"
+    ],
+    "keywords_found": [
+      "months",
+      "9"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0265",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "average",
+      "improvement",
+      "framerate",
+      "approximately",
+      "20",
+      "using",
+      "Hardware",
+      "Aware",
+      "Modular",
+      "Training",
+      "HAMT",
+      "agent"
+    ],
+    "keywords_found": [
+      "average",
+      "improvement",
+      "framerate",
+      "approximately",
+      "20",
+      "using",
+      "Hardware",
+      "Aware",
+      "Modular",
+      "Training",
+      "HAMT",
+      "agent"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0126",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Three",
+      "times",
+      "week"
+    ],
+    "keywords_found": [
+      "Three",
+      "times",
+      "week"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0230",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Admon",
+      "assigned",
+      "am",
+      "pm",
+      "Day",
+      "Shift",
+      "Sundays",
+      "8",
+      "4"
+    ],
+    "keywords_found": [
+      "Admon",
+      "assigned",
+      "am",
+      "pm",
+      "Day",
+      "Shift",
+      "Sundays",
+      "8",
+      "4"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0183",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "level",
+      "100"
+    ],
+    "keywords_found": [
+      "level",
+      "100"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0172",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "15"
+    ],
+    "keywords_found": [
+      "15"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0253",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Manolo",
+      "García"
+    ],
+    "keywords_found": [
+      "Manolo",
+      "García"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0179",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "1300"
+    ],
+    "keywords_found": [
+      "1300"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0154",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "nine",
+      "months"
+    ],
+    "keywords_found": [
+      "nine",
+      "months"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0254",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "27th",
+      "parameter",
+      "'Sound",
+      "effects",
+      "ambient",
+      "diegetic",
+      "non",
+      "etc",
+      "27"
+    ],
+    "keywords_found": [
+      "parameter",
+      "effects",
+      "ambient",
+      "diegetic",
+      "non",
+      "etc",
+      "27"
+    ],
+    "all_present": false,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0199",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "shoe",
+      "rack",
+      "closet"
+    ],
+    "keywords_found": [
+      "shoe",
+      "rack",
+      "closet"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0204",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "suggest",
+      "cultural",
+      "events",
+      "practice",
+      "language",
+      "skills",
+      "particularly",
+      "Spanish",
+      "French",
+      "appreciate",
+      "event",
+      "focus",
+      "learning",
+      "resources",
+      "provide",
+      "opportunities",
+      "exchange"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "suggest",
+      "cultural",
+      "events",
+      "practice",
+      "language",
+      "skills",
+      "particularly",
+      "Spanish",
+      "French",
+      "appreciate",
+      "event",
+      "focus",
+      "learning",
+      "resources",
+      "provide",
+      "opportunities",
+      "exchange"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0195",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "living",
+      "Harajuku",
+      "Shinjuku"
+    ],
+    "keywords_found": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "living",
+      "Harajuku",
+      "Shinjuku"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0158",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "20"
+    ],
+    "keywords_found": [
+      "20"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0143",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "3"
+    ],
+    "keywords_found": [
+      "3"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0202",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "suggestions",
+      "related",
+      "recent",
+      "research",
+      "papers",
+      "articles",
+      "conferences",
+      "focus",
+      "artificial",
+      "intelligence",
+      "healthcare",
+      "particularly",
+      "involve",
+      "deep",
+      "learning",
+      "medical",
+      "image",
+      "analysis",
+      "interested",
+      "general",
+      "AI",
+      "topics",
+      "unrelated"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "suggestions",
+      "related",
+      "recent",
+      "research",
+      "papers",
+      "articles",
+      "conferences",
+      "focus",
+      "artificial",
+      "intelligence",
+      "healthcare",
+      "particularly",
+      "involve",
+      "deep",
+      "learning",
+      "medical",
+      "image",
+      "analysis",
+      "interested",
+      "general",
+      "AI",
+      "topics",
+      "unrelated"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0226",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "reference",
+      "specific",
+      "details",
+      "previous",
+      "interactions",
+      "replacement",
+      "bike's",
+      "chain",
+      "cassette",
+      "use",
+      "new",
+      "Garmin",
+      "bike",
+      "computer",
+      "explanations",
+      "connect",
+      "observed",
+      "improvement",
+      "performance",
+      "fail",
+      "acknowledge",
+      "provide",
+      "vague",
+      "general"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "reference",
+      "specific",
+      "details",
+      "previous",
+      "interactions",
+      "replacement",
+      "bike's",
+      "chain",
+      "cassette",
+      "use",
+      "new",
+      "Garmin",
+      "bike",
+      "computer",
+      "explanations",
+      "connect",
+      "observed",
+      "improvement",
+      "performance",
+      "fail",
+      "acknowledge",
+      "provide",
+      "vague",
+      "general"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0181",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "5"
+    ],
+    "keywords_found": [
+      "5"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0193",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "starting",
+      "role",
+      "Senior",
+      "Software",
+      "Engineer",
+      "Manager"
+    ],
+    "keywords_found": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "starting",
+      "role",
+      "Senior",
+      "Software",
+      "Engineer",
+      "Manager"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0208",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "provide",
+      "tips",
+      "advice",
+      "specifically",
+      "tailored",
+      "slow",
+      "cooker",
+      "experiences",
+      "utilizing",
+      "recent",
+      "success",
+      "beef",
+      "stew",
+      "interest",
+      "making",
+      "yogurt",
+      "general",
+      "recipes",
+      "unrelated",
+      "specific",
+      "interests"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "provide",
+      "tips",
+      "advice",
+      "specifically",
+      "tailored",
+      "slow",
+      "cooker",
+      "experiences",
+      "utilizing",
+      "recent",
+      "success",
+      "beef",
+      "stew",
+      "interest",
+      "making",
+      "yogurt",
+      "general",
+      "recipes",
+      "unrelated",
+      "specific",
+      "interests"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0209",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "acknowledge",
+      "desire",
+      "social",
+      "interaction",
+      "collaboration",
+      "while",
+      "working",
+      "remotely",
+      "utilizing",
+      "previous",
+      "experiences",
+      "company",
+      "initiatives",
+      "team",
+      "collaborations",
+      "suggestions",
+      "virtual",
+      "building",
+      "activities",
+      "regular",
+      "check",
+      "ins",
+      "joining",
+      "interest",
+      "based",
+      "groups",
+      "within",
+      "generic",
+      "take",
+      "account",
+      "specific",
+      "work",
+      "situation",
+      "attempts",
+      "staying",
+      "connected",
+      "colleagues"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "acknowledge",
+      "desire",
+      "social",
+      "interaction",
+      "collaboration",
+      "while",
+      "working",
+      "remotely",
+      "utilizing",
+      "previous",
+      "experiences",
+      "company",
+      "initiatives",
+      "team",
+      "collaborations",
+      "suggestions",
+      "virtual",
+      "building",
+      "activities",
+      "regular",
+      "check",
+      "ins",
+      "joining",
+      "interest",
+      "based",
+      "groups",
+      "within",
+      "generic",
+      "take",
+      "account",
+      "specific",
+      "work",
+      "situation",
+      "attempts",
+      "staying",
+      "connected",
+      "colleagues"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0286",
+    "question_type": "single-session-user",
+    "keywords": [
+      "Business",
+      "Administration"
+    ],
+    "keywords_found": [
+      "Business",
+      "Administration"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0129",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "4"
+    ],
+    "keywords_found": [
+      "4"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0243",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Hoop",
+      "Dance"
+    ],
+    "keywords_found": [
+      "Hoop",
+      "Dance"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0197",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "playing",
+      "tennis",
+      "table"
+    ],
+    "keywords_found": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "playing",
+      "tennis",
+      "table"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0201",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "suggestions",
+      "Sony",
+      "compatible",
+      "accessories",
+      "high",
+      "quality",
+      "photography",
+      "gear",
+      "enhance",
+      "experience",
+      "other",
+      "brands'",
+      "equipment",
+      "low"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "suggestions",
+      "Sony",
+      "compatible",
+      "accessories",
+      "high",
+      "quality",
+      "photography",
+      "gear",
+      "enhance",
+      "experience",
+      "other",
+      "brands'",
+      "equipment",
+      "low"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0270",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "2014"
+    ],
+    "keywords_found": [
+      "2014"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0276",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "designation",
+      "jumpsuit",
+      "'LIV'"
+    ],
+    "keywords_found": [
+      "designation",
+      "jumpsuit"
+    ],
+    "all_present": false,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0130",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Friday"
+    ],
+    "keywords_found": [
+      "Friday"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0162",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "132",
+      "points"
+    ],
+    "keywords_found": [
+      "132",
+      "points"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0168",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Oahu"
+    ],
+    "keywords_found": [
+      "Oahu"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0136",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "25"
+    ],
+    "keywords_found": [
+      "25"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0122",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "25",
+      "minutes",
+      "50",
+      "seconds"
+    ],
+    "keywords_found": [
+      "25",
+      "minutes",
+      "50",
+      "seconds"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0192",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "trying",
+      "Korean",
+      "restaurants",
+      "Italian"
+    ],
+    "keywords_found": [
+      "information",
+      "provided",
+      "enough",
+      "mentioned",
+      "trying",
+      "Korean",
+      "restaurants",
+      "Italian"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0227",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "suggestions",
+      "accessories",
+      "compatible",
+      "iPhone",
+      "13",
+      "Pro",
+      "high",
+      "quality",
+      "screen",
+      "protectors",
+      "durable",
+      "cases",
+      "portable",
+      "power",
+      "banks",
+      "phone",
+      "wallet",
+      "Apple",
+      "products",
+      "enhance",
+      "functionality",
+      "protection"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "suggestions",
+      "accessories",
+      "compatible",
+      "iPhone",
+      "13",
+      "Pro",
+      "high",
+      "quality",
+      "screen",
+      "protectors",
+      "durable",
+      "cases",
+      "portable",
+      "power",
+      "banks",
+      "phone",
+      "wallet",
+      "Apple",
+      "products",
+      "enhance",
+      "functionality",
+      "protection"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0241",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Evolution"
+    ],
+    "keywords_found": [
+      "Evolution"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0169",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "32"
+    ],
+    "keywords_found": [
+      "32"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0251",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "49",
+      "62",
+      "32",
+      "14",
+      "23",
+      "0"
+    ],
+    "keywords_found": [
+      "49",
+      "62",
+      "32",
+      "14",
+      "23",
+      "0"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0267",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "000",
+      "2"
+    ],
+    "keywords_found": [
+      "000",
+      "2"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0214",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "build",
+      "upon",
+      "previous",
+      "experimentation",
+      "turbinado",
+      "sugar",
+      "suggesting",
+      "ingredients",
+      "techniques",
+      "complement",
+      "richer",
+      "flavor",
+      "generic",
+      "cookie",
+      "making",
+      "advice",
+      "suggestions",
+      "don't",
+      "take",
+      "account",
+      "existing",
+      "use"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "build",
+      "upon",
+      "previous",
+      "experimentation",
+      "turbinado",
+      "sugar",
+      "suggesting",
+      "ingredients",
+      "techniques",
+      "complement",
+      "richer",
+      "flavor",
+      "generic",
+      "cookie",
+      "making",
+      "advice",
+      "suggestions",
+      "don't",
+      "take",
+      "account",
+      "existing",
+      "use"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0151",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "30"
+    ],
+    "keywords_found": [
+      "30"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0269",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Jaipur",
+      "Rugs"
+    ],
+    "keywords_found": [
+      "Jaipur",
+      "Rugs"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0261",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Dr",
+      "Arati",
+      "Prabhakar"
+    ],
+    "keywords_found": [
+      "Dr",
+      "Arati",
+      "Prabhakar"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0152",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "months",
+      "3"
+    ],
+    "keywords_found": [
+      "months",
+      "3"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0213",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "build",
+      "upon",
+      "previous",
+      "mention",
+      "purchasing",
+      "portable",
+      "power",
+      "bank",
+      "suggestions",
+      "optimize",
+      "use",
+      "like",
+      "ensuring",
+      "it's",
+      "fully",
+      "charged",
+      "appreciate",
+      "tips",
+      "utilizing",
+      "battery",
+      "saving",
+      "features",
+      "phone",
+      "suggest",
+      "alternative",
+      "solutions",
+      "unrelated",
+      "advice"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "build",
+      "upon",
+      "previous",
+      "mention",
+      "purchasing",
+      "portable",
+      "power",
+      "bank",
+      "suggestions",
+      "optimize",
+      "use",
+      "like",
+      "ensuring",
+      "it's",
+      "fully",
+      "charged",
+      "appreciate",
+      "tips",
+      "utilizing",
+      "battery",
+      "saving",
+      "features",
+      "phone",
+      "suggest",
+      "alternative",
+      "solutions",
+      "unrelated",
+      "advice"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0271",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "video",
+      "'How",
+      "Sit",
+      "Properly",
+      "Desk",
+      "Avoid",
+      "Back",
+      "Pain'",
+      "link",
+      "https",
+      "www",
+      "youtube",
+      "com",
+      "watch",
+      "UfOvNlX9Hh0",
+      "9",
+      "0"
+    ],
+    "keywords_found": [
+      "video",
+      "Sit",
+      "Properly",
+      "Desk",
+      "Avoid",
+      "Back",
+      "Pain'",
+      "link",
+      "https",
+      "www",
+      "youtube",
+      "com",
+      "watch",
+      "UfOvNlX9Hh0",
+      "9",
+      "0"
+    ],
+    "all_present": false,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0233",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Sugar",
+      "Factory",
+      "Icon",
+      "Park"
+    ],
+    "keywords_found": [
+      "Sugar",
+      "Factory",
+      "Icon",
+      "Park"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0157",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "600"
+    ],
+    "keywords_found": [
+      "600"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0268",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Patagonia",
+      "Southwest",
+      "Airlines"
+    ],
+    "keywords_found": [
+      "Patagonia",
+      "Southwest",
+      "Airlines"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0237",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Transcriptionist"
+    ],
+    "keywords_found": [
+      "Transcriptionist"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0145",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "switched",
+      "less",
+      "water",
+      "ounces",
+      "per",
+      "tablespoon",
+      "coffee",
+      "5"
+    ],
+    "keywords_found": [
+      "switched",
+      "less",
+      "water",
+      "ounces",
+      "per",
+      "tablespoon",
+      "coffee",
+      "5"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0137",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "120"
+    ],
+    "keywords_found": [
+      "120"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0161",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "music",
+      "shop",
+      "Main",
+      "St"
+    ],
+    "keywords_found": [
+      "music",
+      "shop",
+      "Main",
+      "St"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0216",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "take",
+      "account",
+      "existing",
+      "plans",
+      "replace",
+      "bedroom",
+      "dresser",
+      "interest",
+      "mid",
+      "century",
+      "modern",
+      "style",
+      "suggesting",
+      "furniture",
+      "layouts",
+      "accommodate",
+      "new",
+      "incorporate",
+      "elements",
+      "design",
+      "aesthetic",
+      "general",
+      "arrangement",
+      "tips",
+      "suggestions",
+      "consider",
+      "specific",
+      "preferences"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "take",
+      "account",
+      "existing",
+      "plans",
+      "replace",
+      "bedroom",
+      "dresser",
+      "interest",
+      "mid",
+      "century",
+      "modern",
+      "style",
+      "suggesting",
+      "furniture",
+      "layouts",
+      "accommodate",
+      "new",
+      "incorporate",
+      "elements",
+      "design",
+      "aesthetic",
+      "general",
+      "arrangement",
+      "tips",
+      "suggestions",
+      "consider",
+      "specific",
+      "preferences"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0140",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "70",
+      "200mm",
+      "zoom",
+      "lens",
+      "200"
+    ],
+    "keywords_found": [
+      "70",
+      "200mm",
+      "zoom",
+      "lens",
+      "200"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0244",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "4"
+    ],
+    "keywords_found": [
+      "4"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0285",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Grilled",
+      "Snapper",
+      "Mango",
+      "Salsa"
+    ],
+    "keywords_found": [
+      "Grilled",
+      "Snapper",
+      "Mango",
+      "Salsa"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0128",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "10",
+      "12",
+      "hours"
+    ],
+    "keywords_found": [
+      "10",
+      "12",
+      "hours"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0248",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "mentioned",
+      "biometric",
+      "authentication",
+      "one",
+      "time",
+      "passwords",
+      "OTP",
+      "examples",
+      "two",
+      "factor",
+      "methods"
+    ],
+    "keywords_found": [
+      "mentioned",
+      "biometric",
+      "authentication",
+      "one",
+      "time",
+      "passwords",
+      "OTP",
+      "examples",
+      "two",
+      "factor",
+      "methods"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0124",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "suburbs"
+    ],
+    "keywords_found": [
+      "suburbs"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0246",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "According",
+      "Borges",
+      "'The",
+      "Library",
+      "sphere",
+      "whose",
+      "exact",
+      "center",
+      "one",
+      "hexagons",
+      "circumference",
+      "inaccessible"
+    ],
+    "keywords_found": [
+      "According",
+      "Borges",
+      "'The",
+      "Library",
+      "sphere",
+      "whose",
+      "exact",
+      "center",
+      "one",
+      "hexagons",
+      "circumference",
+      "inaccessible"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0249",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Roscioli"
+    ],
+    "keywords_found": [
+      "Roscioli"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0250",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Mod",
+      "Podge",
+      "another",
+      "sealant"
+    ],
+    "keywords_found": [
+      "Mod",
+      "Podge",
+      "another",
+      "sealant"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0211",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "responses",
+      "build",
+      "upon",
+      "existing",
+      "sources",
+      "inspiration",
+      "revisiting",
+      "Instagram",
+      "art",
+      "accounts",
+      "exploring",
+      "new",
+      "techniques",
+      "online",
+      "tutorials",
+      "appreciate",
+      "suggestions",
+      "revisit",
+      "previous",
+      "themes",
+      "found",
+      "enjoyable",
+      "like",
+      "painting",
+      "flowers",
+      "generic",
+      "vague",
+      "finding",
+      "likely",
+      "utilize",
+      "recent",
+      "30",
+      "day",
+      "challenge",
+      "experience"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "responses",
+      "build",
+      "upon",
+      "existing",
+      "sources",
+      "inspiration",
+      "revisiting",
+      "Instagram",
+      "art",
+      "accounts",
+      "exploring",
+      "new",
+      "techniques",
+      "online",
+      "tutorials",
+      "appreciate",
+      "suggestions",
+      "revisit",
+      "previous",
+      "themes",
+      "found",
+      "enjoyable",
+      "like",
+      "painting",
+      "flowers",
+      "generic",
+      "vague",
+      "finding",
+      "likely",
+      "utilize",
+      "recent",
+      "30",
+      "day",
+      "challenge",
+      "experience"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0264",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Revolution",
+      "Hall"
+    ],
+    "keywords_found": [
+      "Revolution",
+      "Hall"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0262",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Nu",
+      "pogodi"
+    ],
+    "keywords_found": [
+      "Nu",
+      "pogodi"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0222",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "user",
+      "prefer",
+      "theme",
+      "park",
+      "suggestions",
+      "cater",
+      "interest",
+      "thrill",
+      "rides",
+      "special",
+      "events",
+      "utilizing",
+      "previous",
+      "experiences",
+      "Disneyland",
+      "Knott's",
+      "Berry",
+      "Farm",
+      "Six",
+      "Flags",
+      "Magic",
+      "Mountain",
+      "Universal",
+      "Studios",
+      "Hollywood",
+      "reference",
+      "point",
+      "appreciate",
+      "recommendations",
+      "highlight",
+      "unique",
+      "food",
+      "nighttime",
+      "shows",
+      "focus",
+      "solely",
+      "one",
+      "aspect",
+      "parks",
+      "family",
+      "friendly",
+      "attractions",
+      "interested",
+      "lack",
+      "dining",
+      "options"
+    ],
+    "keywords_found": [
+      "user",
+      "prefer",
+      "theme",
+      "park",
+      "suggestions",
+      "cater",
+      "interest",
+      "thrill",
+      "rides",
+      "special",
+      "events",
+      "utilizing",
+      "previous",
+      "experiences",
+      "Disneyland",
+      "Knott's",
+      "Berry",
+      "Farm",
+      "Six",
+      "Flags",
+      "Magic",
+      "Mountain",
+      "Universal",
+      "Studios",
+      "Hollywood",
+      "reference",
+      "point",
+      "appreciate",
+      "recommendations",
+      "highlight",
+      "unique",
+      "food",
+      "nighttime",
+      "shows",
+      "focus",
+      "solely",
+      "one",
+      "aspect",
+      "parks",
+      "family",
+      "friendly",
+      "attractions",
+      "interested",
+      "lack",
+      "dining",
+      "options"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0274",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "Fissionator"
+    ],
+    "keywords_found": [
+      "Fissionator"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0123",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "four"
+    ],
+    "keywords_found": [
+      "four"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0170",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "Premier",
+      "Silver"
+    ],
+    "keywords_found": [
+      "Premier",
+      "Silver"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0280",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "C",
+      "D",
+      "E"
+    ],
+    "keywords_found": [
+      "C",
+      "D",
+      "E"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0171",
+    "question_type": "knowledge-update",
+    "keywords": [
+      "27",
+      "minutes",
+      "45",
+      "seconds"
+    ],
+    "keywords_found": [
+      "27",
+      "minutes",
+      "45",
+      "seconds"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0236",
+    "question_type": "single-session-assistant",
+    "keywords": [
+      "International",
+      "Budget",
+      "Hostel"
+    ],
+    "keywords_found": [
+      "International",
+      "Budget",
+      "Hostel"
+    ],
+    "all_present": true,
+    "any_present": true
+  },
+  {
+    "fact_id": "LM_0212",
+    "question_type": "single-session-preference",
+    "keywords": [
+      "Considering",
+      "mixology",
+      "class",
+      "background",
+      "user",
+      "prefer",
+      "cocktail",
+      "suggestions",
+      "build",
+      "upon",
+      "existing",
+      "skills",
+      "interests",
+      "creative",
+      "variations",
+      "classic",
+      "cocktails",
+      "innovative",
+      "twists",
+      "familiar",
+      "flavors",
+      "appreciate",
+      "recommendations",
+      "incorporate",
+      "experience",
+      "refreshing",
+      "summer",
+      "drinks",
+      "like",
+      "Pimm's",
+      "Cup",
+      "overly",
+      "simplistic",
+      "basic",
+      "recipes",
+      "interested",
+      "don't",
+      "take",
+      "account"
+    ],
+    "keywords_found": [
+      "Considering",
+      "mixology",
+      "class",
+      "background",
+      "user",
+      "prefer",
+      "cocktail",
+      "suggestions",
+      "build",
+      "upon",
+      "existing",
+      "skills",
+      "interests",
+      "creative",
+      "variations",
+      "classic",
+      "cocktails",
+      "innovative",
+      "twists",
+      "familiar",
+      "flavors",
+      "appreciate",
+      "recommendations",
+      "incorporate",
+      "experience",
+      "refreshing",
+      "summer",
+      "drinks",
+      "like",
+      "Pimm's",
+      "Cup",
+      "overly",
+      "simplistic",
+      "basic",
+      "recipes",
+      "interested",
+      "don't",
+      "take",
+      "account"
+    ],
+    "all_present": true,
+    "any_present": true
+  }
+]

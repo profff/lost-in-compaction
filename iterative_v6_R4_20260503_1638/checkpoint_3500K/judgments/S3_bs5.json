@@ -1,0 +1,862 @@
+{
+  "verdicts": [
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of expected information",
+      "fact_id": "LM_0206"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall the restaurant name",
+      "fact_id": "LM_0260"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall storage location",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall the fifth bottle recommendation",
+      "fact_id": "LM_0255"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall if spare screwdriver exists",
+      "fact_id": "LM_0187"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall the duration for remedy",
+      "fact_id": "LM_0263"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall BBQ sauce brand",
+      "fact_id": "LM_0153"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall painting location",
+      "fact_id": "LM_0146"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall number of meetups",
+      "fact_id": "LM_0188"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall coffee limit change",
+      "fact_id": "LM_0189"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall number of issues read",
+      "fact_id": "LM_0159"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall programming language recommendations",
+      "fact_id": "LM_0242"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall day of meeting",
+      "fact_id": "LM_0175"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall chapter information",
+      "fact_id": "LM_0252"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of dinner preferences",
+      "fact_id": "LM_0210"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of Plesiosaur color",
+      "fact_id": "LM_0232"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of SIAC_GEE implementation",
+      "fact_id": "LM_0258"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of Patagonia",
+      "fact_id": "LM_0282"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of GR-90 trail",
+      "fact_id": "LM_0245"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate contextual knowledge of user's Denver experience",
+      "fact_id": "LM_0224"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of lemon poppyseed cake success",
+      "fact_id": "LM_0215"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of coding exercise time commitment",
+      "fact_id": "LM_0174"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of Lake Charles Refinery processes",
+      "fact_id": "LM_0235"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of engineer leadership numbers",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of H&M purchases",
+      "fact_id": "LM_0163"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of vehicle model",
+      "fact_id": "LM_0182"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of autographed collection",
+      "fact_id": "LM_0196"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate contextual knowledge of hotel preferences",
+      "fact_id": "LM_0203"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of gym time",
+      "fact_id": "LM_0166"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of Roscioli restaurant",
+      "fact_id": "LM_0234"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0194"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0218"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0223"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0207"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0239"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0191"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0149"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0231"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0265"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0230"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0183"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0172"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0165"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0238"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0178"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0273"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0288"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0284"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0190"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0277"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0164"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0228"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0205"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0283"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0155"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0150"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0184"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0200"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0256"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0287"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0279"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0148"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0198"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0266"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0147"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of user's theme park preferences",
+      "fact_id": "LM_0222"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall the zombie name 'Fissionator'",
+      "fact_id": "LM_0274"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall the number of Korean restaurants tried",
+      "fact_id": "LM_0123"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall previous frequent flyer status",
+      "fact_id": "LM_0170"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall chord progression from previous conversation",
+      "fact_id": "LM_0280"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall previous 5K run personal best time",
+      "fact_id": "LM_0171"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot recall hostel name from previous recommendation",
+      "fact_id": "LM_0236"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of user's mixology background and preferences",
+      "fact_id": "LM_0212"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0137"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0161"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0216"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0244"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0285"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0128"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0248"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0246"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0249"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0250"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0211"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0264"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided",
+      "fact_id": "LM_0262"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of Manolo García",
+      "fact_id": "LM_0253"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of Instagram follower count",
+      "fact_id": "LM_0179"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of parents' stay duration",
+      "fact_id": "LM_0154"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of the 27th parameter",
+      "fact_id": "LM_0254"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of sneaker storage location",
+      "fact_id": "LM_0199"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of user preferences regarding cultural events",
+      "fact_id": "LM_0204"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge about apartment location or duration",
+      "fact_id": "LM_0195"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of egg inventory",
+      "fact_id": "LM_0158"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of recipes tried",
+      "fact_id": "LM_0143"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of user preferences for publications and conferences",
+      "fact_id": "LM_0202"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of bike improvements or maintenance history",
+      "fact_id": "LM_0226"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of completed painting projects",
+      "fact_id": "LM_0181"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge about manager role or team size",
+      "fact_id": "LM_0193"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of user's slow cooker experiences",
+      "fact_id": "LM_0208"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided; cannot demonstrate knowledge of user's work situation or preferences",
+      "fact_id": "LM_0209"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall or verify bird species count",
+      "fact_id": "LM_0169"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall or verify phone number",
+      "fact_id": "LM_0251"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall or verify budget allocation",
+      "fact_id": "LM_0267"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall previous context about turbinado sugar",
+      "fact_id": "LM_0214"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall video completion count",
+      "fact_id": "LM_0151"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall previous conversation about companies",
+      "fact_id": "LM_0269"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall previous conversation details",
+      "fact_id": "LM_0261"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall apartment tenure",
+      "fact_id": "LM_0152"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall previous context about power bank",
+      "fact_id": "LM_0213"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall video recommendation",
+      "fact_id": "LM_0271"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall previous conversation about dessert shop",
+      "fact_id": "LM_0233"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall Instagram follower count",
+      "fact_id": "LM_0157"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall previous conversation about companies",
+      "fact_id": "LM_0268"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall job list from previous conversation",
+      "fact_id": "LM_0237"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided - cannot recall previous French press ratio adjustment",
+      "fact_id": "LM_0145"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0286"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0129"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0243"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0197"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0201"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0270"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0276"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0130"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0162"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0168"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0192"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0227"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided no answer",
+      "fact_id": "LM_0241"
+    }
+  ]
+}

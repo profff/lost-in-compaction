@@ -91,6 +91,18 @@ python plot_compaction_v5.py --save --dpi 300
 
 All experiments use Claude Haiku via the Anthropic Batch API. A full compaction run (3 densities × 5 levels × 3 batch sizes) costs approximately $5.50.
 
+The full benchmark suite — calibration, single-pass compaction, the four-strategy comparison with 4–6 replicates per cell, judge re-runs, and a few rough nights of debugging — has cost about **1,800 €** in API credit so far. A breakdown is in §10 of the paper.
+
+## Support & sponsorship
+
+This is independent, unfunded research, run from a home machine with a personal API key. The remaining experiments on the wishlist (multi-seed generalization, a QA model with a 1M context window so the seed-99 run actually works, a second human-judge calibration sample, cross-architecture validation against models from other providers) are blocked mostly by budget, not by code.
+
+If you work at Anthropic, OpenAI, Google DeepMind, Mistral, or anywhere else with a researcher-credit programme and you'd like to see how your own context-compaction stack behaves under this benchmark — get in touch. The codebase is provider-agnostic via `llm_backend.py`, so adding a model is a matter of credentials and a few hundred euros of credit. In return: published numbers, full methodology, no marketing spin.
+
+Tea, coffee, beer, or just a star on the repo also accepted.
+
+Contact: ogaste@gmail.com
+
 ## License
 
 Research use. Dataset derived from LongMemEval (MIT license).

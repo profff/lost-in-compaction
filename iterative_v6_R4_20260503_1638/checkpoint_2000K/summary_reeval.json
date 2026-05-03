@@ -1,0 +1,178 @@
+{
+  "results": {
+    "S1": {
+      "recall": 0.012345679012345678,
+      "accuracy": 0.0,
+      "facts_recalled": 1,
+      "facts_total": 81,
+      "recall_q1": 0.02631578947368421,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 38,
+      "n_q2": 39,
+      "n_q3": 4,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 68,
+          "recalled": 1,
+          "accurate": 0,
+          "recall": 0.014705882352941176,
+          "accuracy": 0.0
+        },
+        "single-session-preference": {
+          "total": 13,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 3,
+          "recalled": 0,
+          "recall": 0.0
+        },
+        "1": {
+          "total": 78,
+          "recalled": 1,
+          "recall": 0.01282051282051282
+        }
+      },
+      "compaction_cycles": 12
+    },
+    "S2": {
+      "recall": 0.0,
+      "accuracy": 0.0,
+      "facts_recalled": 0,
+      "facts_total": 81,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 38,
+      "n_q2": 39,
+      "n_q3": 4,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 68,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-preference": {
+          "total": 13,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 64,
+          "recalled": 0,
+          "recall": 0.0
+        },
+        "1": {
+          "total": 17,
+          "recalled": 0,
+          "recall": 0.0
+        }
+      },
+      "compaction_cycles": 6
+    },
+    "S3": {
+      "recall": 0.0,
+      "accuracy": 0.0,
+      "facts_recalled": 0,
+      "facts_total": 81,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 38,
+      "n_q2": 39,
+      "n_q3": 4,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 68,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-preference": {
+          "total": 13,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 81,
+          "recalled": 0,
+          "recall": 0.0
+        }
+      },
+      "compaction_cycles": 0
+    },
+    "S4": {
+      "recall": 0.0,
+      "accuracy": 0.0,
+      "facts_recalled": 0,
+      "facts_total": 81,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 38,
+      "n_q2": 39,
+      "n_q3": 4,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 68,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-preference": {
+          "total": 13,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 81,
+          "recalled": 0,
+          "recall": 0.0
+        }
+      },
+      "compaction_cycles": 0
+    }
+  },
+  "label": "2000K",
+  "judge_model": "claude-haiku-4-5-20251001",
+  "qa_model": "claude-sonnet-4-20250514",
+  "reeval_timestamp": "2026-05-03T17:20:29.883768"
+}

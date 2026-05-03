@@ -587,8 +587,8 @@ is flat: 93% early, 93% mid, 92% late. Haiku's C0 shows the classic U-shaped
 profile (higher at extremes, lower in the middle). This difference disappears
 under compaction — both models converge to similar spatial patterns at C3–C4.
 
-![Figure 8 — Smoothed Recall Density](figures/fig8_recall_density.png)
-*Figure 8: Smoothed recall density by position in the original context (Gaussian
+![Figure 5 — Smoothed Recall Density](figures/fig8_recall_density.png)
+*Figure 5: Smoothed recall density by position in the original context (Gaussian
 kernel, bw=15kTok). Left: Haiku Q=5. Center: Haiku Q=1. Right: Sonnet Q=1.
 Sonnet's C0 (green) is flat at ~95%, confirming the absence of Lost-in-the-Middle.
 Under compaction, all models show the same pattern: dead zone in the compacted
@@ -624,101 +624,21 @@ information?**
 messages except the 2 most recent. The input is truncated to a character cap
 (~150K real tokens) before summarization.
 
-```
-═══════════════════════════════════════════════════════════════════
- BRUTAL
-═══════════════════════════════════════════════════════════════════
-
-  BEFORE (at 90%)                    AFTER compact
-
- 200K ┌───────────────────┐  100%   200K ┌───────────────────┐  100%
-      │                   │              │                   │
- 180K ╞═══ HIGH WM (90%)══╡  ─┐    180K ╞═══ HIGH WM (90%)══╡
-      │                   │   │         │                   │
-      │  Recent messages  │   │         │                   │
-      │                   │   │         │                   │
-      │  Raw messages     │   │         │                   │
-      │  ~180K tokens     │   │         │    (empty)        │
-      │                   │   │         │                   │
-      │  Old messages     │   │         │                   │
-      │                   │   │         │                   │
- 120K ╞═══ LOW WM (60%) ══╡   │    120K ╞═══ LOW WM (60%) ══╡
-      │                   │   │         │                   │
-      │  Oldest messages  │   │         │                   │
-      │                   │   │         │  Last 2 msgs      │
-      │                   │   │         │  ~200 tokens      │
-   0K └───────────────────┘   0%     0K ├───────────────────┤
-                              │         │  Summary (N)      │
-                  Summarize ALL ──────► │  ~500 tokens      │
-                  (truncate at cap)     └───────────────────┘
-```
+![Figure 6 — Brutal: a single summarization call replaces almost the entire context with one summary plus the last two messages.](figures/fig_strategy_brutal.png)
 
 **Incremental (dual watermark)**: When context exceeds 90%, compact enough old
 messages to bring context down to 60%. Previous summaries ARE included in the
 text to be re-summarized. Creates a "JPEG cascade" where each cycle degrades
 earlier summaries.
 
-```
-═══════════════════════════════════════════════════════════════════
- INCREMENTAL
-═══════════════════════════════════════════════════════════════════
-
-  BEFORE (at 90%)                    AFTER compact
-
- 200K ┌───────────────────┐  100%   200K ┌───────────────────┐  100%
-      │                   │              │                   │
- 180K ╞═══ HIGH WM (90%)══╡         180K ╞═══ HIGH WM (90%)══╡
-      │                   │              │                   │
-      │  Recent messages  │              │                   │
-      │  (not compacted)  │              │    (empty)        │
-      │                   │              │                   │
- 120K ╞═══ LOW WM (60%) ══╡         120K ╞═══ LOW WM (60%) ══╡
-      │                   │              │                   │
-      │  Raw messages     │    ────────► │  Recent messages  │
-      │                   │              │  (kept as-is)     │
-      ├───────────────────┤              │  ~118K tokens     │
-      │  Summary v.(N-1)  │              ├───────────────────┤
-      │  ~2K tokens       │ ───────────► │  Summary v.N      │
-   0K └───────────────────┘              │  re-summarized!   │
-                                         └───────────────────┘
-
-      Problem: summary v.N = summary of a summary of a summary...
-```
+![Figure 7 — Incremental: every cycle re-summarizes the prior summary together with the oldest raw messages, accumulating loss across iterations (the "JPEG cascade").](figures/fig_strategy_incremental.png)
 
 **Frozen (dual watermark + immutable summaries)**: Same trigger and target as
 incremental, but completed summaries are marked as frozen and never
 re-summarized. Only raw (non-frozen) messages are compacted. When frozen
 summaries exceed a budget, the oldest are merged.
 
-```
-═══════════════════════════════════════════════════════════════════
- FROZEN
-═══════════════════════════════════════════════════════════════════
-
-  BEFORE (at 90%)                    AFTER compact
-
- 200K ┌───────────────────┐  100%   200K ┌───────────────────┐  100%
-      │                   │              │                   │
- 180K ╞═══ HIGH WM (90%)══╡         180K ╞═══ HIGH WM (90%)══╡
-      │                   │              │                   │
-      │  Recent messages  │              │    (empty)        │
-      │  (not compacted)  │              │                   │
-      │                   │         120K ╞═══ LOW WM (60%) ══╡
- 120K ╞═══ LOW WM (60%) ══╡              │                   │
-      │                   │              │  Recent messages  │
-      │  Raw messages     │  ──────────► │  (kept as-is)     │
-      │                   │              │  ~74K tokens      │
-      ├───────────────────┤              ├───────────────────┤
-      │  Frozen #(N-1)    │  untouched   │  NEW Frozen #N    │ ◄ new!
-  60K ├╌╌╌ BUDGET (30%) ╌╌┤  ─────────►  ├───────────────────┤
-      │  Frozen #2        │              │  Frozen #(N-1)    │
-      │  Frozen #1        │              │  Frozen #2        │
-   0K └───────────────────┘              │  Frozen #1        │
-                                      0K └───────────────────┘
-
-      Frozen summaries = never re-summarized.
-      Tradeoff: they eat context space for recent messages.
-```
+![Figure 8 — Frozen: only raw messages are compacted; completed summaries are immutable, accumulating in a budgeted "frozen" zone at the bottom of the context.](figures/fig_strategy_frozen.png)
 
 **FrozenRanked (hierarchical merge)**: A variant of Frozen where each frozen
 summary carries a *rank* (initially 1). When frozen summaries exceed their
@@ -726,32 +646,7 @@ budget, only two summaries of the *lowest available rank* merge — producing
 a summary of rank+1. This limits each fact to at most log₂(N) compression
 passes, compared to N/2 in Frozen's sequential oldest-first merging.
 
-```
-═══════════════════════════════════════════════════════════════════
- FROZEN RANKED — merge by rank
-═══════════════════════════════════════════════════════════════════
-
-  Frozen's merge strategy         FrozenRanked's merge strategy
-  (sequential)                    (hierarchical by rank)
-
-  ┌──────────┐                    ┌──────────┐
-  │ Frozen#6 │ ◄ newest           │ Frozen#6 │ R1  ◄ newest
-  │ Frozen#5 │                    │ Frozen#5 │ R1
-  │ Frozen#4 │                    │ Frozen#4 │ R1
-  │ Frozen#3 │                    │ Frozen#3 │ R2  (was R1+R1)
-  │ Frozen#2 │                    │ Frozen#2 │ R2  (was R1+R1)
-  │ Frozen#1 │ ◄ oldest           │ Frozen#1 │ R3  (was R2+R2)
-  └──────────┘                    └──────────┘
-
-  Budget exceeded → merge         Budget exceeded → merge
-  Frozen#1 + Frozen#2             two lowest-rank: #5 + #6 (both R1)
-  → always the oldest pair        → same-quality summaries merged
-
-  After 10 merges:                After 10 merges:
-  Frozen#1 has been merged        Frozen#1 has been merged
-  into 5 times (N/2)              into 3 times (log₂N)
-    ↓ severe degradation            ↓ moderate degradation
-```
+![Figure 9 — FrozenRanked vs Frozen: instead of always merging the oldest pair (left), FrozenRanked merges the two lowest-rank summaries (right), bounding the number of times any single summary is re-compressed to log₂N rather than N/2.](figures/fig_strategy_frozenranked.png)
 
 The key insight: in Frozen, the oldest summary accumulates *all* merges
 sequentially (cascade). In FrozenRanked, merges are balanced like a
@@ -816,8 +711,8 @@ quantitative impact.
 
 ### 6.3 Results
 
-![Figure 5 — Recall vs conversation length](figures/fig_phase_d_final.png)
-*Figure 5: Recall (mean ± std across replicates) for each strategy as a
+![Figure 10 — Recall vs conversation length](figures/fig_phase_d_final.png)
+*Figure 10: Recall (mean ± std across replicates) for each strategy as a
 function of conversation length, evaluated on a single 5M conversation at
 five mid-feed checkpoints. n=4–6 replicates per point. δ=0.04 throughout.
 Sonnet 4.6 QA + Haiku 4.5 strict judge.*
@@ -898,8 +793,8 @@ mean but well within one standard deviation.
 trajectory, we trace recall as a function of fact position in the original
 conversation, with one curve per checkpoint per strategy:
 
-![Figure 6 — Spatial recall per strategy](figures/fig_phase_d_spatial_per_strategy.png)
-*Figure 6: Spatial recall per strategy. Each panel is one strategy; each
+![Figure 11 — Spatial recall per strategy](figures/fig_phase_d_spatial_per_strategy.png)
+*Figure 11: Spatial recall per strategy. Each panel is one strategy; each
 curve is one checkpoint (averaged across all replicates). The x-axis is the
 position of the fact in the full 5M-token conversation. Earlier checkpoints
 only cover the first part of the conversation; later checkpoints extend
@@ -1002,6 +897,52 @@ preserves the past at the cost of the present, Incremental does the
 opposite — qualitatively persists in this study, but the small absolute
 counts (often 0–3 recalled facts per quintile) make per-cell tables
 less informative than the integrated mean ± std presented above.
+
+### 6.5 A second-seed generalization attempt — and why it failed
+
+Independent peer review of an earlier draft correctly flagged that all §6
+results come from a *single* 5M conversation built with seed 42. To
+address the generalization concern, we built a second 5M conversation
+with seed 99 (same density, same fact bank, different LongMemEval
+sessions used as padding) and re-ran the four strategies through the
+same checkpoint pipeline.
+
+The run completed but the recall numbers are uninterpretable as a
+generalization test. At checkpoint 502K, S3 and S4 had executed **0
+compaction cycles** (the trigger threshold was not yet reached) and
+fed all ~2,180 raw messages to the QA model. The QA model used
+(`claude-sonnet-4-20250514`, 200K context window) silently
+truncated/rejected these contexts, producing batch errors and a
+flat 0% recall for S3/S4 at every checkpoint. S1, which compacts
+aggressively from the start, fits inside the QA window and shows
+recall in the 1–5% range — but with so few successful answers the
+ordering is meaningless.
+
+Two lessons from this failure are worth recording.
+
+**The instrumentation has a budget envelope that is easy to break.**
+The §6 measurements implicitly assume `compacted-context size ≤ QA
+model window`. With seed 42 this held by construction; with seed 99 the
+mix of LongMemEval sessions produced longer messages on average, so
+S3/S4 (which delay compaction the most) crossed the QA model's window
+before the compaction trigger fired. Future replications must either
+(a) lower the strategies' compaction trigger so the post-compaction
+context fits the QA window with margin, or (b) use a QA model with a
+1M-token window (Sonnet 4.5 / 4.6) — at materially higher cost.
+
+**Single-seed §6 results are an honest admission, not a hidden weakness.**
+The methodological consequence is that the strategy hierarchy reported
+in §6.3 (S4 > S3 > S2 > S1) is, strictly speaking, established on one
+conversation, with the variance numbers reflecting compaction-LLM
+stochasticity but not conversation-level generalization. We document
+the seed-99 run in the repository as `iterative_v6_R4_20260503_1638/`
+with this caveat: it is a budget-and-instrument failure to be fixed
+before generalization claims can be made, not a counter-finding. The
+pilot studies on synthetic facts (1.5M and 3M tokens, briefly
+described in §6.2) showed the same qualitative S4 > S3 > S2 > S1
+ordering, which is the strongest cross-conversation evidence currently
+available; a properly instrumented multi-seed study is left to future
+work (§8).
 
 
 ## 7. Discussion
@@ -1113,7 +1054,7 @@ outperforms Frozen (S3) in the mean (S4–S3 gap of +13.2pp at 500K, +6.6pp
 at 2M, +3.3pp at 3.5M, +1.6pp at 5M; the gap shrinks to +0.5pp at 1M
 where one S3 replicate happens to recall unusually well). The advantage
 exists but is modest at large scale, and the standard deviations (cf.
-Figure 5) overlap at every checkpoint past 500K — the strict ordering
+Figure 10) overlap at every checkpoint past 500K — the strict ordering
 S4 > S3 holds in the means but is not always significant on n=4–6
 replicates.
 
@@ -1372,6 +1313,21 @@ pip install anthropic python-dotenv openai matplotlib numpy
 - `iterative_v6_R4_*/` — Strategy comparison results, with `checkpoint_*/`,
   `final_reeval/`, `strategies/SK_*/snapshot_*/`
 - Each checkpoint dir contains `summary*.json`, `answers/`, `judgments/`, `grep/`
+
+### Computational budget
+
+This work was funded out of pocket. Total Anthropic API spend across
+calibration (§3), single-pass compaction (§4–5), the four-strategy
+comparison (§6) including replicates and judge re-runs, the human-judge
+tooling, and several aborted or instrumentation-failed runs (notably
+the seed-99 attempt in §6.5) is approximately **1,800 €**. A single
+complete §6 cell (one strategy, five checkpoints, one replicate, QA on
+Sonnet 4.6 with a strict re-judge pass on Haiku) costs roughly 25–35 €,
+so the §6 replicate matrix accounts for most of the total, with the
+§3/§5 sweeps and pilots making up the remainder. The remaining open
+blockers (multi-seed generalization, 1M-window QA model, a second
+human-judge sample, cross-architecture validation §8.7) are bounded
+primarily by API spend rather than by engineering effort.
 
 
 ## Appendix A — Prompts used in the experiments
