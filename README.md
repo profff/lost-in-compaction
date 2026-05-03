@@ -24,7 +24,8 @@ This benchmark injects known facts into realistic conversation contexts and meas
 
 ## Paper
 
-The full analysis is in [`BENCHMARK_ANALYSIS_v2.md`](BENCHMARK_ANALYSIS_v2.md).
+The full analysis is in [`LOST_IN_COMPACTION.md`](LOST_IN_COMPACTION.md)
+(also available as `LOST_IN_COMPACTION.pdf`).
 
 ## Project structure
 
@@ -37,7 +38,8 @@ The full analysis is in [`BENCHMARK_ANALYSIS_v2.md`](BENCHMARK_ANALYSIS_v2.md).
 ├── figures/                      # Generated PNG figures
 ├── recall_v5_R4_*/               # Baseline recall run results
 ├── compaction_v5_R4_*/           # Compaction experiment results
-├── BENCHMARK_ANALYSIS_v2.md      # Paper (current version)
+├── LOST_IN_COMPACTION.md         # Paper (current version)
+├── LOST_IN_COMPACTION.pdf        # Paper (PDF)
 ├── BENCHMARK_ANALYSIS.md         # Paper (v1, archived)
 ├── PLAN_*.md                     # Design documents
 └── *_v4.py / recall_v4_*/        # Earlier v4 experiments (historical)
