@@ -32,7 +32,7 @@ model can find it. Tests the model's \textit{native} retrieval ability within a 
 context window. Our work extends this paradigm to measure fact \textit{survival}
 across compaction cycles --- ``Needle in a Compacted Haystack.''
 
-\textbf{LongMemEval} \citep{wang2024longmemeval}. Benchmarks long-term memory capabilities
+\textbf{LongMemEval} \citep{wu2024longmemeval}. Benchmarks long-term memory capabilities
 of LLM systems across 500 questions in 6 categories (knowledge update, temporal
 reasoning, multi-session, preferences, etc.) spanning up to 115 sessions. We
 use LongMemEval evidence as our fact source, providing ecologically valid,
@@ -67,7 +67,7 @@ differences with our work:
   \item No calibration of the recall measurement itself
 \end{itemize}
 
-\textbf{Beyond a Million Tokens} \citep{beyondmillion2025}. Benchmarks long-term memory up to 10M
+\textbf{Beyond a Million Tokens} \citep{tavakoli2025beyondmillion}. Benchmarks long-term memory up to 10M
 tokens across diverse domains, testing recall, multi-hop reasoning,
 contradiction resolution, and temporal ordering. Tests model \textit{capabilities}
 at various context lengths, not compaction \textit{strategy} effectiveness.
@@ -77,7 +77,7 @@ describing best practices for context management in AI agents, including
 structured summarization and context pruning. Practical guidance but no
 comparative benchmarking of strategies.
 
-\textbf{Prompt Compression} \citep{jiang2024llmlingua}. Achieves up to
+\textbf{Prompt Compression} \citep{jiang2023llmlingua}. Achieves up to
 20x token compression with $\sim$1.5\% performance loss. Focuses on \textit{prompt-level}
 compression (removing redundant tokens), orthogonal to \textit{conversation-level}
 compaction (summarizing message history).
