@@ -1,0 +1,120 @@
+{
+  "verdicts": [
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '25:50' contains all expected keywords (25, 50) and matches expected time format exactly.",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer 'I don't recall' fails to provide the specific fact (four restaurants).",
+      "fact_id": "LM_0123"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer 'I don't recall' fails to provide the specific fact (the suburbs).",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer provides a specific mortgage amount ($350,000) but contradicts expected answer of $400,000.",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '3 times per week' is semantically equivalent to 'Three times a week' and contains all expected keywords.",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer 'I don't recall' fails to provide the specific fact (Yes).",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer 'I don't recall' fails to provide the specific fact (Paris).",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer 'I don't recall' fails to provide the specific fact (under my bed).",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer '4-7 short stories' is a range that includes the expected value (seven) but is vague and not semantically equivalent to the specific number.",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer 'I don't recall' fails to provide the specific fact (220 pages).",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer 'I don't recall' fails to provide the specific facts (4 engineers initially, 5 engineers now).",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer 'I don't recall' fails to provide the specific fact (25 titles).",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer 'I don't recall' fails to provide the specific fact (120 stars).",
+      "fact_id": "LM_0137"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer '6-9 months' is a range that includes the expected value (9 months) but is vague and not semantically equivalent to the specific duration.",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer '3-5 sessions' is a range that includes the expected value (five) but is vague and not semantically equivalent to the specific number.",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide the expected fact about the 70-200mm zoom lens",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' and reports conflicting information rather than confirming the expected 'every week' answer",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' and reports conflicting numbers (4 and 5) rather than confirming the expected answer of 5",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' and reports conflicting numbers (2 and 3) rather than confirming the expected answer of 3",
+      "fact_id": "LM_0143"
+    }
+  ],
+  "judge_model": "claude-haiku-4-5-20251001",
+  "rejudge_timestamp": "2026-04-30T08:22:14.300664"
+}

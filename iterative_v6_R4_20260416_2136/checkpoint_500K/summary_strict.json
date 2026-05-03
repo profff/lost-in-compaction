@@ -1,0 +1,106 @@
+{
+  "results": {
+    "S1": {
+      "recall": 0.10526315789473684,
+      "accuracy": 0.10526315789473684,
+      "facts_recalled": 2,
+      "facts_total": 19,
+      "recall_q1": 0.10526315789473684,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 19,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 19,
+          "recalled": 2,
+          "accurate": 2,
+          "recall": 0.10526315789473684,
+          "accuracy": 0.10526315789473684
+        }
+      }
+    },
+    "S2": {
+      "recall": 0.21052631578947367,
+      "accuracy": 0.10526315789473684,
+      "facts_recalled": 4,
+      "facts_total": 19,
+      "recall_q1": 0.21052631578947367,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 19,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 19,
+          "recalled": 4,
+          "accurate": 2,
+          "recall": 0.21052631578947367,
+          "accuracy": 0.10526315789473684
+        }
+      }
+    },
+    "S3": {
+      "recall": 0.15789473684210525,
+      "accuracy": 0.10526315789473684,
+      "facts_recalled": 3,
+      "facts_total": 19,
+      "recall_q1": 0.15789473684210525,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 19,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 19,
+          "recalled": 3,
+          "accurate": 2,
+          "recall": 0.15789473684210525,
+          "accuracy": 0.10526315789473684
+        }
+      }
+    },
+    "S4": {
+      "recall": 0.3157894736842105,
+      "accuracy": 0.10526315789473684,
+      "facts_recalled": 6,
+      "facts_total": 19,
+      "recall_q1": 0.3157894736842105,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 19,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 19,
+          "recalled": 6,
+          "accurate": 2,
+          "recall": 0.3157894736842105,
+          "accuracy": 0.10526315789473684
+        }
+      }
+    }
+  },
+  "rejudge_timestamp": "2026-04-30T08:22:14.301669",
+  "judge_model": "claude-haiku-4-5-20251001"
+}

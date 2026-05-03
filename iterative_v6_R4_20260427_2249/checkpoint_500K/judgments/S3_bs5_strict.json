@@ -1,0 +1,120 @@
+{
+  "verdicts": [
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM correctly identifies 25:50 as the personal best time, even though it also mentions 27:12",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide the expected answer of four",
+      "fact_id": "LM_0123"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide the expected answer of suburbs",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide the expected mortgage pre-approval amount",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM provides '3 times per week' which is semantically equivalent to 'Three times a week'",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide the expected answer of Yes",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM recalls a specific destination (Hawaii) but it contradicts the expected answer (Paris)",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide the expected answer of under my bed",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide the expected answer of seven",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide the expected page count of 220",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM recalls the role and current team size (4 engineers) but fails to recall the starting team size (4) and current size (5), missing critical information",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recall of the to-watch list - does not provide the expected answer of 25",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recall of Starbucks Rewards app information - does not provide the expected answer of 120",
+      "fact_id": "LM_0137"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recall of Fitbit Charge 3 usage - does not provide the expected answer of 9 months",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM recalls conflicting information (3 or 5 sessions) instead of the definitive expected answer of five",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answer states 'Tamron 24mm lens' which directly contradicts the expected answer of '70-200mm zoom lens'. The answer is completely wrong on the specific fact.",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM explicitly states 'I don't recall' and indicates conflicting information rather than providing the expected specific fact 'every week'. This is a non-answer.",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM explicitly states 'I don't recall' and hedges with conflicting numbers (4 and 5) rather than confirming the expected answer of '5'. This is a non-answer despite mentioning related numbers.",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answer '3' exactly matches the expected answer '3' and contains the specific expected fact.",
+      "fact_id": "LM_0143"
+    }
+  ],
+  "judge_model": "claude-haiku-4-5-20251001",
+  "rejudge_timestamp": "2026-04-30T08:34:21.103996"
+}

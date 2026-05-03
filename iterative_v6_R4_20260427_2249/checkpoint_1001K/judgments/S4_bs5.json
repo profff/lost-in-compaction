@@ -1,0 +1,238 @@
+{
+  "verdicts": [
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "\"I don't recall\" indicates no knowledge demonstrated",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "\"I don't recall\" indicates no knowledge demonstrated",
+      "fact_id": "LM_0123"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer \"Chicago suburbs\" contains expected keyword \"suburbs\" and matches the expected answer",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Knows about mortgage amount but provides wrong figure ($350k vs expected $400k)",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "\"I don't recall\" indicates no knowledge demonstrated",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "\"I don't recall\" indicates no knowledge demonstrated",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "\"I don't recall\" indicates no knowledge demonstrated",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "\"I don't recall\" indicates no knowledge demonstrated",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Demonstrates knowledge with range \"4-7 short stories\" but expected exact answer \"seven\"",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Demonstrates knowledge with range \"pages 200-220\" but expected exact answer \"220\"",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "\"I don't recall\" indicates no knowledge demonstrated",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "\"I don't recall\" indicates no knowledge demonstrated",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "\"I don't recall\" indicates no knowledge demonstrated",
+      "fact_id": "LM_0137"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Demonstrates knowledge with range \"6-9 months\" but expected exact answer \"9 months\"",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Demonstrates knowledge with range \"3-5 sessions\" but expected exact answer \"five\"",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information provided; explicit 'I don't recall'",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer 'weekly' matches expected 'every week'",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information provided; explicit 'I don't recall'",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information provided; explicit 'I don't recall'",
+      "fact_id": "LM_0143"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information provided; explicit 'I don't recall'",
+      "fact_id": "LM_0146"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information provided; explicit 'I don't recall'",
+      "fact_id": "LM_0147"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information provided; explicit 'I don't recall'",
+      "fact_id": "LM_0149"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information provided; explicit 'I don't recall'",
+      "fact_id": "LM_0151"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer provided but incorrect; appears to confuse with previous video question",
+      "fact_id": "LM_0152"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information provided; explicit 'I don't recall'",
+      "fact_id": "LM_0153"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information provided; explicit 'I don't recall'",
+      "fact_id": "LM_0154"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information provided; explicit 'I don't recall'",
+      "fact_id": "LM_0155"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Recalls duration in months but provides range '6-9 months' instead of exact '9 months'",
+      "fact_id": "LM_0156"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information provided; explicit 'I don't recall'",
+      "fact_id": "LM_0158"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '5 issues' matches expected 'Five'",
+      "fact_id": "LM_0159"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' instead of 'Yes'",
+      "fact_id": "LM_0160"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' instead of providing location details",
+      "fact_id": "LM_0161"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' instead of '132 points'",
+      "fact_id": "LM_0162"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' instead of 'five'",
+      "fact_id": "LM_0163"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Exact match with expected answer '$420'",
+      "fact_id": "LM_0164"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '10 times' contains the expected value '10' and is accurate",
+      "fact_id": "LM_0165"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' instead of '6:00 pm'",
+      "fact_id": "LM_0166"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '15 videos' contains the expected value '15' and is accurate",
+      "fact_id": "LM_0167"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' instead of 'Oahu'",
+      "fact_id": "LM_0168"
+    }
+  ]
+}

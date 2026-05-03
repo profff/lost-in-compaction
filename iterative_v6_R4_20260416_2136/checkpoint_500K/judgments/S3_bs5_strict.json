@@ -1,0 +1,120 @@
+{
+  "verdicts": [
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0123"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answer '7 short stories' contains the expected number 'seven' in numeric form",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answer '220 pages' matches expected answer '220' exactly",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific facts provided about the numbers 4 and 5",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0137"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM recalled a specific lens purchase (Tamron), but provided incorrect specs (24mm minimum) instead of expected 70-200mm zoom lens. The answer shows recall of a lens purchase but contradicts the expected fact on substance.",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM explicitly stated 'I don't recall', failing to provide the expected fact about weekly therapy sessions with Dr. Smith.",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM explicitly stated 'I don't recall', failing to provide the expected specific number (5) of MCU films watched.",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM explicitly stated 'I don't recall', failing to provide the expected specific number (3) of Emma's recipes tried.",
+      "fact_id": "LM_0143"
+    }
+  ],
+  "judge_model": "claude-haiku-4-5-20251001",
+  "rejudge_timestamp": "2026-04-30T08:22:14.299175"
+}

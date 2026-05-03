@@ -1,0 +1,484 @@
+{
+  "verdicts": [
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0152"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0216"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0162"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0189"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0210"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0168"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0167"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0207"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0183"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0175"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0194"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0149"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0198"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Recalls camera equipment interest, but mentions Canon/Nikon instead of expected Sony preference",
+      "fact_id": "LM_0201"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Recalls vehicle model work, but Mustang instead of expected Ford F-150",
+      "fact_id": "LM_0182"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0205"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Correctly recalls 5 National Geographic issues",
+      "fact_id": "LM_0159"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Recalls 5K run time, but 27:45 instead of expected 25:50",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0206"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0137"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0171"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Recalls baking interests, but mentions chocolate chip cookies/pecan pie instead of expected lemon poppyseed cake",
+      "fact_id": "LM_0215"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0174"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0186"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0166"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Recalls beef stew success, but doesn't provide the expected tips and advice",
+      "fact_id": "LM_0208"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0199"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '30 videos' matches expected '30' with all keywords present",
+      "fact_id": "LM_0151"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0202"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0211"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0153"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0154"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0164"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0187"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0191"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0158"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer contains all expected keywords: 70-200mm zoom lens. More specific model detail does not contradict expected answer",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0147"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Provided a specific answer (Hawaii) but it contradicts expected answer (Paris)",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answered 'I don't recall' - no demonstration of knowledge",
+      "fact_id": "LM_0188"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Provided specific number (5) but incorrect - expected 10",
+      "fact_id": "LM_0165"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answered 'I don't recall'",
+      "fact_id": "LM_0156"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answered 'I don't recall'",
+      "fact_id": "LM_0123"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answered 'I don't recall'",
+      "fact_id": "LM_0146"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answered 'I don't recall'",
+      "fact_id": "LM_0176"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answered 'I don't recall'",
+      "fact_id": "LM_0185"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Recalled attendance information but provided range (3-5) instead of specific answer (five)",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Recalled partial information (current 4 engineers) but missing starting number (4) and current number should be 5, not 4",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answered 'I don't recall'",
+      "fact_id": "LM_0161"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answered 'I don't recall'",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answered 'I don't recall' - failed to demonstrate knowledge of user's mixology background",
+      "fact_id": "LM_0212"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answered 'I don't recall'",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answered 'I don't recall' - failed to identify the distinction between baseball and football",
+      "fact_id": "LM_0196"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Affirmative answer matches expected 'Yes'",
+      "fact_id": "LM_0160"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing expected preference-based answer",
+      "fact_id": "LM_0214"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "'Weekly' is equivalent to 'every week'",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing expected '4 weeks'",
+      "fact_id": "LM_0155"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM provides '4 engineers' but expected answer states information is insufficient to distinguish role",
+      "fact_id": "LM_0193"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of expected '32'",
+      "fact_id": "LM_0169"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing expected preference-based answer",
+      "fact_id": "LM_0209"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of expected '5'",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing past/present comparison",
+      "fact_id": "LM_0173"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Exact match of '3'",
+      "fact_id": "LM_0143"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of expected 'five'",
+      "fact_id": "LM_0190"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of clarifying Harajuku vs. Shinjuku distinction",
+      "fact_id": "LM_0195"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing expected preference-based answer",
+      "fact_id": "LM_0213"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing expected Adobe Premiere Pro preference answer",
+      "fact_id": "LM_0200"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing expected preference-based hotel recommendation answer",
+      "fact_id": "LM_0203"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer exactly matches expected answer '5-2' with supporting context",
+      "fact_id": "LM_0180"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no demonstration of knowledge about Premier Silver status",
+      "fact_id": "LM_0170"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - fails to recognize insufficient information about table tennis",
+      "fact_id": "LM_0197"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no demonstration of knowledge about H&M purchases",
+      "fact_id": "LM_0163"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - fails to recognize user preferences for language practice in cultural events",
+      "fact_id": "LM_0204"
+    }
+  ]
+}

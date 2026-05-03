@@ -1,0 +1,238 @@
+{
+  "verdicts": [
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0123"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Correctly recalls 7 short stories (matches 'seven')",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Correctly recalls 220 pages",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicitly states 'I don't recall'",
+      "fact_id": "LM_0137"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Shows knowledge of Fitbit usage but mentions conflicting timeframes instead of definitive 9 months",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Shows knowledge of attending sessions but mentions conflicting numbers instead of definitive five",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "explicitly states 'I don't recall'",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "'weekly' matches 'every week'",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "correct number provided",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "correct number provided",
+      "fact_id": "LM_0143"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "explicitly states 'I don't recall'",
+      "fact_id": "LM_0146"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "explicitly states 'I don't recall'",
+      "fact_id": "LM_0147"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "explicitly states 'I don't recall'",
+      "fact_id": "LM_0149"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "explicitly states 'I don't recall'",
+      "fact_id": "LM_0151"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "explicitly states 'I don't recall'",
+      "fact_id": "LM_0152"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "explicitly states 'I don't recall'",
+      "fact_id": "LM_0153"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "gives range '6-9 months' instead of exact 'nine months'",
+      "fact_id": "LM_0154"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "gives range '3-4 weeks' instead of exact '4 weeks'",
+      "fact_id": "LM_0155"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "explicitly states 'I don't recall'",
+      "fact_id": "LM_0156"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "gives range '20-30 dozen' instead of exact '20'",
+      "fact_id": "LM_0158"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "'5 issues' matches 'Five'",
+      "fact_id": "LM_0159"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No knowledge demonstrated",
+      "fact_id": "LM_0160"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No knowledge demonstrated",
+      "fact_id": "LM_0161"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Exact match",
+      "fact_id": "LM_0162"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No knowledge demonstrated",
+      "fact_id": "LM_0163"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Exact match",
+      "fact_id": "LM_0164"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Correct number with natural phrasing",
+      "fact_id": "LM_0165"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Exact match",
+      "fact_id": "LM_0166"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Exact match",
+      "fact_id": "LM_0167"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No knowledge demonstrated",
+      "fact_id": "LM_0168"
+    }
+  ]
+}

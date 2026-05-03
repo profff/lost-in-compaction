@@ -1,0 +1,502 @@
+{
+  "generated": "2026-04-30T02:19:17.488991",
+  "checkpoints": [
+    {
+      "label": "500K",
+      "tokens": 500000
+    },
+    {
+      "label": "1001K",
+      "tokens": 1000000
+    },
+    {
+      "label": "2001K",
+      "tokens": 2000000
+    },
+    {
+      "label": "3501K",
+      "tokens": 3500000
+    },
+    {
+      "label": "5M",
+      "tokens": 5000000
+    }
+  ],
+  "runs": {
+    "run_2136": {
+      "meta": {
+        "id": "run_2136",
+        "dir": "iterative_v6_R4_20260416_2136",
+        "label": "gateway, Sonnet QA + Sonnet judge",
+        "qa_model": "claude-sonnet-4-20250514",
+        "judge_model": "claude-sonnet-4-20250514",
+        "strategies": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "infra": "gateway"
+      },
+      "results": {
+        "S1": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.10526315789473684,
+            "facts_recalled": 2,
+            "facts_total": 19,
+            "grep_upper_bound": 0.631578947368421
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.07692307692307693,
+            "facts_recalled": 3,
+            "facts_total": 39,
+            "grep_upper_bound": 0.6666666666666666
+          },
+          "2001K": {
+            "status": "valid",
+            "recall": 0.025,
+            "facts_recalled": 2,
+            "facts_total": 80,
+            "grep_upper_bound": 0.575
+          },
+          "3501K": {
+            "status": "valid",
+            "recall": 0.09285714285714286,
+            "facts_recalled": 13,
+            "facts_total": 140,
+            "grep_upper_bound": 0.4785714285714286
+          },
+          "5M": {
+            "status": "missing"
+          }
+        },
+        "S2": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.21052631578947367,
+            "facts_recalled": 4,
+            "facts_total": 19,
+            "grep_upper_bound": 1.0
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.15384615384615385,
+            "facts_recalled": 6,
+            "facts_total": 39,
+            "grep_upper_bound": 0.8717948717948718
+          },
+          "2001K": {
+            "status": "valid",
+            "recall": 0.05,
+            "facts_recalled": 4,
+            "facts_total": 80,
+            "grep_upper_bound": 0.6
+          },
+          "3501K": {
+            "status": "qa_total_fail",
+            "recall": 0.0,
+            "facts_recalled": 0,
+            "facts_total": 140,
+            "grep_upper_bound": 0.5
+          },
+          "5M": {
+            "status": "missing"
+          }
+        },
+        "S3": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.15789473684210525,
+            "facts_recalled": 3,
+            "facts_total": 19,
+            "grep_upper_bound": 1.0
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.41025641025641024,
+            "facts_recalled": 16,
+            "facts_total": 39,
+            "grep_upper_bound": 0.8974358974358975
+          },
+          "2001K": {
+            "status": "qa_partial_fail",
+            "recall": 0.0,
+            "facts_recalled": 0,
+            "facts_total": 80,
+            "grep_upper_bound": 0.8125
+          },
+          "3501K": {
+            "status": "valid",
+            "recall": 0.17857142857142858,
+            "facts_recalled": 25,
+            "facts_total": 140,
+            "grep_upper_bound": 0.5857142857142857
+          },
+          "5M": {
+            "status": "missing"
+          }
+        },
+        "S4": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.3157894736842105,
+            "facts_recalled": 6,
+            "facts_total": 19,
+            "grep_upper_bound": 1.0
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.358974358974359,
+            "facts_recalled": 14,
+            "facts_total": 39,
+            "grep_upper_bound": 0.8461538461538461
+          },
+          "2001K": {
+            "status": "valid",
+            "recall": 0.225,
+            "facts_recalled": 18,
+            "facts_total": 80,
+            "grep_upper_bound": 0.725
+          },
+          "3501K": {
+            "status": "valid",
+            "recall": 0.2,
+            "facts_recalled": 28,
+            "facts_total": 140,
+            "grep_upper_bound": 0.5642857142857143
+          },
+          "5M": {
+            "status": "missing"
+          }
+        }
+      }
+    },
+    "run_2249": {
+      "meta": {
+        "id": "run_2249",
+        "dir": "iterative_v6_R4_20260427_2249",
+        "label": "gateway, Sonnet QA + Haiku judge (S3+S4)",
+        "qa_model": "claude-sonnet-4-20250514",
+        "judge_model": "claude-haiku-4-5-20251001",
+        "strategies": [
+          "S3",
+          "S4"
+        ],
+        "infra": "gateway"
+      },
+      "results": {
+        "S3": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.3684210526315789,
+            "facts_recalled": 7,
+            "facts_total": 19,
+            "grep_upper_bound": 1.0
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.3076923076923077,
+            "facts_recalled": 12,
+            "facts_total": 39,
+            "grep_upper_bound": 0.8974358974358975
+          },
+          "2001K": {
+            "status": "valid",
+            "recall": 0.2125,
+            "facts_recalled": 17,
+            "facts_total": 80,
+            "grep_upper_bound": 0.725
+          },
+          "3501K": {
+            "status": "qa_total_fail",
+            "recall": 0.0,
+            "facts_recalled": 0,
+            "facts_total": 140,
+            "grep_upper_bound": 0.5714285714285714
+          },
+          "5M": {
+            "status": "valid",
+            "recall": 0.1,
+            "facts_recalled": 20,
+            "facts_total": 200,
+            "grep_upper_bound": 0.595
+          }
+        },
+        "S4": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.47368421052631576,
+            "facts_recalled": 9,
+            "facts_total": 19,
+            "grep_upper_bound": 1.0
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.3333333333333333,
+            "facts_recalled": 13,
+            "facts_total": 39,
+            "grep_upper_bound": 0.9230769230769231
+          },
+          "2001K": {
+            "status": "valid",
+            "recall": 0.1625,
+            "facts_recalled": 13,
+            "facts_total": 80,
+            "grep_upper_bound": 0.7625
+          },
+          "3501K": {
+            "status": "valid",
+            "recall": 0.16428571428571428,
+            "facts_recalled": 23,
+            "facts_total": 140,
+            "grep_upper_bound": 0.5571428571428572
+          },
+          "5M": {
+            "status": "valid",
+            "recall": 0.105,
+            "facts_recalled": 21,
+            "facts_total": 200,
+            "grep_upper_bound": 0.63
+          }
+        }
+      }
+    },
+    "run_2333": {
+      "meta": {
+        "id": "run_2333",
+        "dir": "iterative_v6_R4_20260428_2333",
+        "label": "gateway, Sonnet QA + Haiku judge (S1+S2)",
+        "qa_model": "claude-sonnet-4-20250514",
+        "judge_model": "claude-haiku-4-5-20251001",
+        "strategies": [
+          "S1",
+          "S2"
+        ],
+        "infra": "gateway"
+      },
+      "results": {
+        "S1": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.05263157894736842,
+            "facts_recalled": 1,
+            "facts_total": 19,
+            "grep_upper_bound": 0.47368421052631576
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.07692307692307693,
+            "facts_recalled": 3,
+            "facts_total": 39,
+            "grep_upper_bound": 0.6666666666666666
+          },
+          "2001K": {
+            "status": "valid",
+            "recall": 0.0375,
+            "facts_recalled": 3,
+            "facts_total": 80
+          },
+          "3501K": {
+            "status": "missing"
+          },
+          "5M": {
+            "status": "missing"
+          }
+        },
+        "S2": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.21052631578947367,
+            "facts_recalled": 4,
+            "facts_total": 19,
+            "grep_upper_bound": 1.0
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.1794871794871795,
+            "facts_recalled": 7,
+            "facts_total": 39,
+            "grep_upper_bound": 0.8974358974358975
+          },
+          "2001K": {
+            "status": "qa_total_fail"
+          },
+          "3501K": {
+            "status": "missing"
+          },
+          "5M": {
+            "status": "missing"
+          }
+        }
+      }
+    },
+    "run_29_2249": {
+      "meta": {
+        "id": "run_29_2249",
+        "dir": "iterative_v6_R4_20260429_2249",
+        "label": "batch API, Sonnet QA + Haiku judge (full S1-S4)",
+        "qa_model": "claude-sonnet-4-20250514",
+        "judge_model": "claude-haiku-4-5-20251001",
+        "strategies": [
+          "S1",
+          "S2",
+          "S3",
+          "S4"
+        ],
+        "infra": "batch_api"
+      },
+      "results": {
+        "S1": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.05263157894736842,
+            "facts_recalled": 1,
+            "facts_total": 19,
+            "grep_upper_bound": 0.47368421052631576
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.07692307692307693,
+            "facts_recalled": 3,
+            "facts_total": 39,
+            "grep_upper_bound": 0.6923076923076923
+          },
+          "2001K": {
+            "status": "valid",
+            "recall": 0.0875,
+            "facts_recalled": 7,
+            "facts_total": 80,
+            "grep_upper_bound": 0.5875
+          },
+          "3501K": {
+            "status": "valid",
+            "recall": 0.10714285714285714,
+            "facts_recalled": 15,
+            "facts_total": 140,
+            "grep_upper_bound": 0.5071428571428571
+          },
+          "5M": {
+            "status": "valid",
+            "recall": 0.03,
+            "facts_recalled": 6,
+            "facts_total": 200,
+            "grep_upper_bound": 0.48
+          }
+        },
+        "S2": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.10526315789473684,
+            "facts_recalled": 2,
+            "facts_total": 19,
+            "grep_upper_bound": 1.0
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.02564102564102564,
+            "facts_recalled": 1,
+            "facts_total": 39,
+            "grep_upper_bound": 0.8974358974358975
+          },
+          "2001K": {
+            "status": "valid",
+            "recall": 0.15,
+            "facts_recalled": 12,
+            "facts_total": 80,
+            "grep_upper_bound": 0.6625
+          },
+          "3501K": {
+            "status": "valid",
+            "recall": 0.06428571428571428,
+            "facts_recalled": 9,
+            "facts_total": 140,
+            "grep_upper_bound": 0.4714285714285714
+          },
+          "5M": {
+            "status": "valid",
+            "recall": 0.03,
+            "facts_recalled": 6,
+            "facts_total": 200,
+            "grep_upper_bound": 0.47
+          }
+        },
+        "S3": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.10526315789473684,
+            "facts_recalled": 2,
+            "facts_total": 19,
+            "grep_upper_bound": 1.0
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.02564102564102564,
+            "facts_recalled": 1,
+            "facts_total": 39,
+            "grep_upper_bound": 0.8461538461538461
+          },
+          "2001K": {
+            "status": "valid",
+            "recall": 0.1625,
+            "facts_recalled": 13,
+            "facts_total": 80,
+            "grep_upper_bound": 0.725
+          },
+          "3501K": {
+            "status": "valid",
+            "recall": 0.07857142857142857,
+            "facts_recalled": 11,
+            "facts_total": 140,
+            "grep_upper_bound": 0.5642857142857143
+          },
+          "5M": {
+            "status": "valid",
+            "recall": 0.04,
+            "facts_recalled": 8,
+            "facts_total": 200,
+            "grep_upper_bound": 0.6
+          }
+        },
+        "S4": {
+          "500K": {
+            "status": "valid",
+            "recall": 0.21052631578947367,
+            "facts_recalled": 4,
+            "facts_total": 19,
+            "grep_upper_bound": 1.0
+          },
+          "1001K": {
+            "status": "valid",
+            "recall": 0.05128205128205128,
+            "facts_recalled": 2,
+            "facts_total": 39,
+            "grep_upper_bound": 0.8461538461538461
+          },
+          "2001K": {
+            "status": "valid",
+            "recall": 0.225,
+            "facts_recalled": 18,
+            "facts_total": 80,
+            "grep_upper_bound": 0.7125
+          },
+          "3501K": {
+            "status": "valid",
+            "recall": 0.07142857142857142,
+            "facts_recalled": 10,
+            "facts_total": 140,
+            "grep_upper_bound": 0.5571428571428572
+          },
+          "5M": {
+            "status": "valid",
+            "recall": 0.085,
+            "facts_recalled": 17,
+            "facts_total": 200,
+            "grep_upper_bound": 0.62
+          }
+        }
+      }
+    }
+  }
+}

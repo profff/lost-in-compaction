@@ -1,0 +1,240 @@
+{
+  "verdicts": [
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0123"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided partial information (4 engineers currently) but missed critical fact (started with 4, now leads 5). Answer contradicts expected answer which states currently leads 5, not 4.",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0137"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM mentioned 6-9 months range which includes the expected 9 months, but expressed uncertainty about Charge 3 model specifically. The fact is partially recalled but not with certainty or specificity.",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM mentioned 3-5 sessions (which includes the expected 'five'), but presented conflicting information rather than confirming the specific fact",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Expected 70-200mm zoom lens, but LLM answered Tamron 24mm lens - contradicts expected answer",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Expected 'every week' but LLM expresses uncertainty with conflicting mentions - does not contain the specific expected fact",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answer '3 recipes' contains the expected value '3' and matches the expected fact",
+      "fact_id": "LM_0143"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0146"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0147"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answer confirms 'Yes' with supporting details about gym frequency increase, matching expected answer",
+      "fact_id": "LM_0149"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answer '30 videos' contains the expected value '30' and matches the expected fact",
+      "fact_id": "LM_0151"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0152"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0153"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0154"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0155"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0156"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' - no specific fact provided",
+      "fact_id": "LM_0158"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answer '5 issues' contains the expected value matching 'Five' and is factually equivalent",
+      "fact_id": "LM_0159"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer contains 'Yes' and confirms finishing the book. Matches expected answer exactly.",
+      "fact_id": "LM_0160"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - does not contain the specific fact (music shop on Main St.) that was expected.",
+      "fact_id": "LM_0161"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - does not contain the expected score (132 points).",
+      "fact_id": "LM_0162"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - does not contain the expected number (five).",
+      "fact_id": "LM_0163"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '$420' contains the exact expected value. All keywords present.",
+      "fact_id": "LM_0164"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '10 times' contains the expected number (10). Semantically equivalent to expected answer.",
+      "fact_id": "LM_0165"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - does not contain the expected time (6:00 pm).",
+      "fact_id": "LM_0166"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '15 videos' contains the expected number (15). Semantically equivalent to expected answer.",
+      "fact_id": "LM_0167"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - does not contain the expected location (Oahu).",
+      "fact_id": "LM_0168"
+    }
+  ],
+  "judge_model": "claude-haiku-4-5-20251001",
+  "rejudge_timestamp": "2026-04-30T08:38:26.401611"
+}

@@ -1,0 +1,586 @@
+[
+  {
+    "cycle": 1,
+    "msgs_before": 700,
+    "msgs_after": 4,
+    "tokens_before": 172811,
+    "tokens_after": 576,
+    "tokens_freed": 172235,
+    "facts_affected": [
+      "LM_0122",
+      "LM_0123",
+      "LM_0124",
+      "LM_0125",
+      "LM_0126",
+      "LM_0127"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 700
+  },
+  {
+    "cycle": 2,
+    "msgs_before": 684,
+    "msgs_after": 4,
+    "tokens_before": 171151,
+    "tokens_after": 1118,
+    "tokens_freed": 170033,
+    "facts_affected": [
+      "LM_0131",
+      "LM_0132",
+      "LM_0133",
+      "LM_0134",
+      "LM_0135",
+      "LM_0136"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 1380
+  },
+  {
+    "cycle": 3,
+    "msgs_before": 674,
+    "msgs_after": 4,
+    "tokens_before": 171337,
+    "tokens_after": 1436,
+    "tokens_freed": 169901,
+    "facts_affected": [
+      "LM_0137",
+      "LM_0138",
+      "LM_0139",
+      "LM_0140",
+      "LM_0141",
+      "LM_0142"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 2050
+  },
+  {
+    "cycle": 4,
+    "msgs_before": 654,
+    "msgs_after": 4,
+    "tokens_before": 173937,
+    "tokens_after": 1141,
+    "tokens_freed": 172796,
+    "facts_affected": [
+      "LM_0143",
+      "LM_0146",
+      "LM_0147",
+      "LM_0149",
+      "LM_0151",
+      "LM_0152"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 2700
+  },
+  {
+    "cycle": 5,
+    "msgs_before": 674,
+    "msgs_after": 4,
+    "tokens_before": 172539,
+    "tokens_after": 1166,
+    "tokens_freed": 171373,
+    "facts_affected": [
+      "LM_0153",
+      "LM_0154",
+      "LM_0155",
+      "LM_0156",
+      "LM_0158",
+      "LM_0159",
+      "LM_0160"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 3370
+  },
+  {
+    "cycle": 6,
+    "msgs_before": 744,
+    "msgs_after": 4,
+    "tokens_before": 172026,
+    "tokens_after": 1413,
+    "tokens_freed": 170613,
+    "facts_affected": [
+      "LM_0161",
+      "LM_0162",
+      "LM_0163",
+      "LM_0164",
+      "LM_0165",
+      "LM_0166",
+      "LM_0167"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 4110
+  },
+  {
+    "cycle": 7,
+    "msgs_before": 684,
+    "msgs_after": 4,
+    "tokens_before": 173895,
+    "tokens_after": 1079,
+    "tokens_freed": 172816,
+    "facts_affected": [
+      "LM_0168",
+      "LM_0169",
+      "LM_0170",
+      "LM_0171",
+      "LM_0173"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 4790
+  },
+  {
+    "cycle": 8,
+    "msgs_before": 674,
+    "msgs_after": 4,
+    "tokens_before": 174248,
+    "tokens_after": 1269,
+    "tokens_freed": 172979,
+    "facts_affected": [
+      "LM_0174",
+      "LM_0175",
+      "LM_0176",
+      "LM_0180",
+      "LM_0182",
+      "LM_0183",
+      "LM_0185"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 5460
+  },
+  {
+    "cycle": 9,
+    "msgs_before": 684,
+    "msgs_after": 4,
+    "tokens_before": 171476,
+    "tokens_after": 768,
+    "tokens_freed": 170708,
+    "facts_affected": [
+      "LM_0186",
+      "LM_0187",
+      "LM_0188",
+      "LM_0189",
+      "LM_0190",
+      "LM_0191"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 6140
+  },
+  {
+    "cycle": 10,
+    "msgs_before": 684,
+    "msgs_after": 4,
+    "tokens_before": 171565,
+    "tokens_after": 1099,
+    "tokens_freed": 170466,
+    "facts_affected": [
+      "LM_0193",
+      "LM_0194",
+      "LM_0195",
+      "LM_0196",
+      "LM_0197",
+      "LM_0198",
+      "LM_0199"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 6820
+  },
+  {
+    "cycle": 11,
+    "msgs_before": 734,
+    "msgs_after": 4,
+    "tokens_before": 171571,
+    "tokens_after": 1612,
+    "tokens_freed": 169959,
+    "facts_affected": [
+      "LM_0200",
+      "LM_0201",
+      "LM_0202",
+      "LM_0203",
+      "LM_0204",
+      "LM_0205",
+      "LM_0206"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 7550
+  },
+  {
+    "cycle": 12,
+    "msgs_before": 694,
+    "msgs_after": 4,
+    "tokens_before": 173208,
+    "tokens_after": 1762,
+    "tokens_freed": 171446,
+    "facts_affected": [
+      "LM_0207",
+      "LM_0208",
+      "LM_0209",
+      "LM_0210",
+      "LM_0211",
+      "LM_0212"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 8240
+  },
+  {
+    "cycle": 13,
+    "msgs_before": 694,
+    "msgs_after": 4,
+    "tokens_before": 173445,
+    "tokens_after": 1694,
+    "tokens_freed": 171751,
+    "facts_affected": [
+      "LM_0213",
+      "LM_0214",
+      "LM_0215",
+      "LM_0216",
+      "LM_0217",
+      "LM_0218",
+      "LM_0219"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 8930
+  },
+  {
+    "cycle": 14,
+    "msgs_before": 694,
+    "msgs_after": 4,
+    "tokens_before": 171063,
+    "tokens_after": 1058,
+    "tokens_freed": 170005,
+    "facts_affected": [
+      "LM_0220",
+      "LM_0221",
+      "LM_0222",
+      "LM_0223",
+      "LM_0224",
+      "LM_0225",
+      "LM_0226"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 9620
+  },
+  {
+    "cycle": 15,
+    "msgs_before": 684,
+    "msgs_after": 4,
+    "tokens_before": 171552,
+    "tokens_after": 914,
+    "tokens_freed": 170638,
+    "facts_affected": [
+      "LM_0227",
+      "LM_0228",
+      "LM_0231",
+      "LM_0232",
+      "LM_0233"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 10300
+  },
+  {
+    "cycle": 16,
+    "msgs_before": 674,
+    "msgs_after": 4,
+    "tokens_before": 172195,
+    "tokens_after": 1092,
+    "tokens_freed": 171103,
+    "facts_affected": [
+      "LM_0234",
+      "LM_0235",
+      "LM_0237",
+      "LM_0238",
+      "LM_0239",
+      "LM_0240",
+      "LM_0241"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 10970
+  },
+  {
+    "cycle": 17,
+    "msgs_before": 654,
+    "msgs_after": 4,
+    "tokens_before": 172585,
+    "tokens_after": 1245,
+    "tokens_freed": 171340,
+    "facts_affected": [
+      "LM_0242",
+      "LM_0243",
+      "LM_0244",
+      "LM_0245",
+      "LM_0246"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 11620
+  },
+  {
+    "cycle": 18,
+    "msgs_before": 744,
+    "msgs_after": 4,
+    "tokens_before": 174886,
+    "tokens_after": 1023,
+    "tokens_freed": 173863,
+    "facts_affected": [
+      "LM_0247",
+      "LM_0248",
+      "LM_0249",
+      "LM_0250",
+      "LM_0252",
+      "LM_0253",
+      "LM_0254",
+      "LM_0255"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 12360
+  },
+  {
+    "cycle": 19,
+    "msgs_before": 754,
+    "msgs_after": 4,
+    "tokens_before": 172459,
+    "tokens_after": 475,
+    "tokens_freed": 171984,
+    "facts_affected": [
+      "LM_0256",
+      "LM_0257",
+      "LM_0258",
+      "LM_0259",
+      "LM_0260",
+      "LM_0262",
+      "LM_0263"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 13110
+  },
+  {
+    "cycle": 20,
+    "msgs_before": 684,
+    "msgs_after": 4,
+    "tokens_before": 171652,
+    "tokens_after": 1513,
+    "tokens_freed": 170139,
+    "facts_affected": [
+      "LM_0264",
+      "LM_0266",
+      "LM_0267",
+      "LM_0268",
+      "LM_0269",
+      "LM_0270"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 13790
+  },
+  {
+    "cycle": 21,
+    "msgs_before": 664,
+    "msgs_after": 4,
+    "tokens_before": 171203,
+    "tokens_after": 1800,
+    "tokens_freed": 169403,
+    "facts_affected": [
+      "LM_0271",
+      "LM_0274",
+      "LM_0275",
+      "LM_0277",
+      "LM_0278",
+      "LM_0279"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 14450
+  },
+  {
+    "cycle": 22,
+    "msgs_before": 614,
+    "msgs_after": 4,
+    "tokens_before": 172027,
+    "tokens_after": 1058,
+    "tokens_freed": 170969,
+    "facts_affected": [
+      "LM_0280",
+      "LM_0281",
+      "LM_0282",
+      "LM_0283",
+      "LM_0284",
+      "LM_0286"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 15060
+  },
+  {
+    "cycle": 23,
+    "msgs_before": 714,
+    "msgs_after": 4,
+    "tokens_before": 173753,
+    "tokens_after": 1587,
+    "tokens_freed": 172166,
+    "facts_affected": [
+      "LM_0287",
+      "LM_0289",
+      "LM_0290",
+      "LM_0291",
+      "LM_0292",
+      "LM_0293"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 15770
+  },
+  {
+    "cycle": 24,
+    "msgs_before": 644,
+    "msgs_after": 4,
+    "tokens_before": 171507,
+    "tokens_after": 1551,
+    "tokens_freed": 169956,
+    "facts_affected": [
+      "LM_0294",
+      "LM_0296",
+      "LM_0297",
+      "LM_0298",
+      "LM_0299",
+      "LM_0300",
+      "LM_0302"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 16410
+  },
+  {
+    "cycle": 25,
+    "msgs_before": 674,
+    "msgs_after": 4,
+    "tokens_before": 171659,
+    "tokens_after": 1652,
+    "tokens_freed": 170007,
+    "facts_affected": [
+      "LM_0303",
+      "LM_0304",
+      "LM_0306",
+      "LM_0307",
+      "LM_0308",
+      "LM_0309"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 17080
+  },
+  {
+    "cycle": 26,
+    "msgs_before": 794,
+    "msgs_after": 4,
+    "tokens_before": 173433,
+    "tokens_after": 1787,
+    "tokens_freed": 171646,
+    "facts_affected": [
+      "LM_0312",
+      "LM_0313",
+      "LM_0314",
+      "LM_0315",
+      "LM_0316",
+      "LM_0317",
+      "LM_0318",
+      "LM_0319"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 17870
+  },
+  {
+    "cycle": 27,
+    "msgs_before": 704,
+    "msgs_after": 4,
+    "tokens_before": 171076,
+    "tokens_after": 1366,
+    "tokens_freed": 169710,
+    "facts_affected": [
+      "LM_0320",
+      "LM_0321",
+      "LM_0322",
+      "LM_0323",
+      "LM_0324",
+      "LM_0325"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 18570
+  },
+  {
+    "cycle": 28,
+    "msgs_before": 744,
+    "msgs_after": 4,
+    "tokens_before": 172218,
+    "tokens_after": 1482,
+    "tokens_freed": 170736,
+    "facts_affected": [
+      "LM_0326",
+      "LM_0327",
+      "LM_0328",
+      "LM_0329",
+      "LM_0330",
+      "LM_0331",
+      "LM_0332"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 19310
+  },
+  {
+    "cycle": 29,
+    "msgs_before": 684,
+    "msgs_after": 4,
+    "tokens_before": 171403,
+    "tokens_after": 1561,
+    "tokens_freed": 169842,
+    "facts_affected": [
+      "LM_0333",
+      "LM_0334",
+      "LM_0335",
+      "LM_0336",
+      "LM_0337",
+      "LM_0338",
+      "LM_0339"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 19990
+  },
+  {
+    "cycle": 30,
+    "msgs_before": 734,
+    "msgs_after": 4,
+    "tokens_before": 171068,
+    "tokens_after": 1248,
+    "tokens_freed": 169820,
+    "facts_affected": [
+      "LM_0340",
+      "LM_0341",
+      "LM_0342",
+      "LM_0344",
+      "LM_0345",
+      "LM_0346",
+      "LM_0347"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 20720
+  }
+]

@@ -1,0 +1,118 @@
+{
+  "verdicts": [
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer demonstrates knowledge of a 5K time, but 27:12 ≠ 25:50",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' response",
+      "fact_id": "LM_0123"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Chicago suburbs contains the expected keyword and conveys the correct information",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer demonstrates knowledge of mortgage amount, but $350,000 ≠ $400,000",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' response",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' response",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' response",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' response",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' response",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "220 pages matches expected answer of 220",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' response",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' response",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' response",
+      "fact_id": "LM_0137"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer demonstrates knowledge of duration, but range 6-9 months ≠ specific expected value 9 months",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer demonstrates knowledge of attendance, but range 3-5 sessions ≠ specific expected value five sessions",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM provided a completely different lens type (50mm prime) instead of the 70-200mm zoom lens. Does not demonstrate knowledge of the expected purchase.",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer matches expected answer exactly and contains the required keyword 'week'.",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer matches expected answer exactly with the required keyword '5'.",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer matches expected answer exactly with the required keyword '3'.",
+      "fact_id": "LM_0143"
+    }
+  ]
+}

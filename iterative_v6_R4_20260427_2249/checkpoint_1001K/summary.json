@@ -1,0 +1,93 @@
+{
+  "results": {
+    "S3": {
+      "recall": 0.3076923076923077,
+      "accuracy": 0.20512820512820512,
+      "facts_recalled": 12,
+      "facts_total": 39,
+      "recall_q1": 0.3076923076923077,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 39,
+          "recalled": 12,
+          "accurate": 8,
+          "recall": 0.3076923076923077,
+          "accuracy": 0.20512820512820512
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 1,
+          "recalled": 0,
+          "recall": 0.0
+        },
+        "1": {
+          "total": 38,
+          "recalled": 12,
+          "recall": 0.3157894736842105
+        }
+      },
+      "compaction_cycles": 16,
+      "grep": {
+        "facts_total": 39,
+        "all_present": 35,
+        "any_present": 38,
+        "recall_upper_bound": 0.8974358974358975
+      }
+    },
+    "S4": {
+      "recall": 0.3333333333333333,
+      "accuracy": 0.15384615384615385,
+      "facts_recalled": 13,
+      "facts_total": 39,
+      "recall_q1": 0.3333333333333333,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 39,
+          "recalled": 13,
+          "accurate": 6,
+          "recall": 0.3333333333333333,
+          "accuracy": 0.15384615384615385
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 1,
+          "recalled": 0,
+          "recall": 0.0
+        },
+        "1": {
+          "total": 38,
+          "recalled": 13,
+          "recall": 0.34210526315789475
+        }
+      },
+      "compaction_cycles": 16,
+      "grep": {
+        "facts_total": 39,
+        "all_present": 36,
+        "any_present": 39,
+        "recall_upper_bound": 0.9230769230769231
+      }
+    }
+  },
+  "label": "checkpoint_1001K"
+}

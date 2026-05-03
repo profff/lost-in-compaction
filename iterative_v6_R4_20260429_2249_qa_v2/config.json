@@ -1,0 +1,29 @@
+{
+  "experiment": "iterative_v6",
+  "run_mode": "R4",
+  "density": 200,
+  "seed": 42,
+  "context_window": 190000,
+  "high_watermark": 0.9,
+  "low_watermark": 0.6,
+  "feed_batch_size": 10,
+  "qa_batch_size": 5,
+  "strategies": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ],
+  "model": "claude-sonnet-4-20250514",
+  "judge_model": "claude-haiku-4-5-20251001",
+  "backend": "anthropic_batch",
+  "judge_backend": "anthropic_batch",
+  "workers": 4,
+  "conversation_tokens": 4907856,
+  "conversation_messages": 21298,
+  "n_facts": 200,
+  "timestamp": "20260429_2249",
+  "replicate_of": "iterative_v6_R4_20260429_2249",
+  "replicate_timestamp": "2026-04-30T10:33:13.488582",
+  "judge_prompt": "STRICT"
+}

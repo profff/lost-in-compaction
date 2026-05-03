@@ -1,0 +1,846 @@
+{
+  "verdicts": [
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no substantive information provided about meal prep preferences or recipes",
+      "fact_id": "LM_0223"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - expected answer is '3 months' but LLM provides no fact",
+      "fact_id": "LM_0152"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no information about mid-century modern style or dresser plans provided",
+      "fact_id": "LM_0216"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM gives '6-9 months' which is a range that overlaps with expected '9 months', but the specific fact is not precisely matched - answer is vague and includes an alternative value",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no Instagram handle provided, expected '@jessica_poole_jewellery'",
+      "fact_id": "LM_0275"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - expected '132 points' but no specific fact given",
+      "fact_id": "LM_0162"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no information about coffee cup limit change provided",
+      "fact_id": "LM_0189"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no specific information about homegrown tomatoes, basil, or mint preferences provided",
+      "fact_id": "LM_0210"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - expected 'The Sugar Factory at Icon Park' but no information provided",
+      "fact_id": "LM_0233"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - expected 'Oahu' but no specific location provided",
+      "fact_id": "LM_0168"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer denies the topic was discussed ('I don't recall creating two sad songs') - this is a denial of the premise, not recall of a fact",
+      "fact_id": "LM_0280"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answer '15 Crash Course videos' matches expected '15' - specific fact is present and accurate",
+      "fact_id": "LM_0167"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer denies previous conversation ('I don't recall any previous conversation about kitchen cleaning tips') - no substantive information about granite surface or utensil holder maintenance provided",
+      "fact_id": "LM_0207"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer denies the topic was discussed ('I don't recall discussing a Fifth Album') - no fact provided, expected 'Evolution'",
+      "fact_id": "LM_0241"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer denies topic was discussed ('I don't recall discussing any Apex Legends level goals') - expected 'level 100' but no fact provided",
+      "fact_id": "LM_0183"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer contains the 1:10 ratio as expected, though less detailed than expected answer",
+      "fact_id": "LM_0284"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' rather than providing the expected 'Wednesday'",
+      "fact_id": "LM_0175"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer mentions pages 200-220, which includes but is not the same as the specific expected answer of 220 pages",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' rather than providing the expected explanation about Dr. Smith vs Dr. Johnson",
+      "fact_id": "LM_0194"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' rather than providing the expected 'Yes' answer",
+      "fact_id": "LM_0149"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' rather than providing the expected 'Yes' and mentioning the road bike",
+      "fact_id": "LM_0198"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' rather than providing the expected '10 minutes' answer",
+      "fact_id": "LM_0263"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' rather than providing Sony-compatible accessory recommendations",
+      "fact_id": "LM_0201"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' rather than providing the expected 'Ford F-150 pickup truck'",
+      "fact_id": "LM_0182"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' rather than providing stand-up comedy recommendations on Netflix",
+      "fact_id": "LM_0205"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM explicitly denies the topic was discussed rather than providing context about storage capacity issues",
+      "fact_id": "LM_0221"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '5 issues' is semantically equivalent to expected 'Five'",
+      "fact_id": "LM_0159"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM provides a specific time (27:12) but it contradicts the expected answer (25:50)",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "'Chicago suburbs' contains the expected 'suburbs' and adds relevant specificity",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' rather than providing the expected 'under my bed'",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling the conversation; expected answer requires knowledge of user's preferences about relaxing evening activities and sleep issues",
+      "fact_id": "LM_0206"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM correctly identifies Veja as the brand using wild rubber from Amazon rainforest",
+      "fact_id": "LM_0283"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling discussion about Starbucks Rewards; expected specific number is 120",
+      "fact_id": "LM_0137"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM provides a specific time (27:12) but it differs from expected answer (27:45)",
+      "fact_id": "LM_0171"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling discussion about companies prioritizing employee safety; expected companies are Patagonia and Southwest Airlines",
+      "fact_id": "LM_0268"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling any documentary recommendations; expected answer requires knowledge of user's previous viewing history (Our Planet, Free Solo, Tiger King)",
+      "fact_id": "LM_0225"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling discussion about baking; expected answer requires knowledge of user's lemon poppyseed cake success",
+      "fact_id": "LM_0215"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling discussion about Chaudhary or rug-manufacturing companies; expected answer is Jaipur Rugs",
+      "fact_id": "LM_0269"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling any mention of daily coding exercise time; expected answer is 'about two hours'",
+      "fact_id": "LM_0174"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling specific phone accessory suggestions for iPhone 13 Pro; mentions related products (earbuds, Apple Watch) but not the expected specific accessories",
+      "fact_id": "LM_0227"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling discussion about Native American powwows; expected answer is Hoop Dance",
+      "fact_id": "LM_0243"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling Rachel as a former manager or team composition details; expected answer is 6",
+      "fact_id": "LM_0186"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling specific gym time; expected answer is 6:00 pm",
+      "fact_id": "LM_0166"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling user mentioning slow cooker recipe struggles; expected answer requires knowledge of beef stew success and yogurt interests",
+      "fact_id": "LM_0208"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling discussion about The Library of Babel or Borges; expected answer is specific Borges quote about sphere, center, and hexagons",
+      "fact_id": "LM_0246"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no specific fact provided about shoe rack location",
+      "fact_id": "LM_0199"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answer contains the specific number '30' matching expected answer",
+      "fact_id": "LM_0151"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' and denies topic was discussed - no specific preferences or suggestions provided",
+      "fact_id": "LM_0202"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies the topic was mentioned ('I don't recall you mentioning being stuck with paintings') - no specific inspiration strategies provided",
+      "fact_id": "LM_0211"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall the specific details' - does not identify 6S algorithm in SIAC_GEE tool",
+      "fact_id": "LM_0258"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no specific BBQ sauce brand provided",
+      "fact_id": "LM_0153"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no alternative terms or suggestions provided",
+      "fact_id": "LM_0238"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no specific duration provided",
+      "fact_id": "LM_0154"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM provides specific number range '4-7' which relates to expected '7' but is a range, not exact match; answer also includes timeframe (3 months) suggesting partial memory but not precise",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no specific earnings amount provided",
+      "fact_id": "LM_0164"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no website name or resource provided",
+      "fact_id": "LM_0256"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no specific frequency provided",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no specific state name provided",
+      "fact_id": "LM_0279"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no specific venue name provided",
+      "fact_id": "LM_0264"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no specific Soviet cartoon title provided",
+      "fact_id": "LM_0262"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - provides no substantive information about creamer recipe preferences, variations, or user goals",
+      "fact_id": "LM_0218"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide the expected 'Yes' answer about spare screwdriver",
+      "fact_id": "LM_0187"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide the expected 'Instant Pot' answer",
+      "fact_id": "LM_0191"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide the expected 'Manolo García' answer",
+      "fact_id": "LM_0253"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide the expected number '20'",
+      "fact_id": "LM_0158"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide the expected '25' titles",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM provided a specific lens type ('50mm prime lens') which is a recalled fact, but it contradicts the expected answer ('70-200mm zoom lens'). The answer is specific but factually incorrect.",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide the expected programming languages (Ruby, Python, PHP)",
+      "fact_id": "LM_0242"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide the expected '7th job' answer (Transcriptionist)",
+      "fact_id": "LM_0237"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide the expected number 'six'",
+      "fact_id": "LM_0147"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide the expected 'Paris' destination",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - provides no information about theme park preferences or previous experiences",
+      "fact_id": "LM_0222"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide the expected answer about meeting Alex twice",
+      "fact_id": "LM_0188"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide information about Plesiosaur color (blue)",
+      "fact_id": "LM_0232"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answered 'I don't recall' - does not provide the expected number '10'",
+      "fact_id": "LM_0165"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing the expected fact '9 months'",
+      "fact_id": "LM_0156"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of detailing the three objectives about molecular subtypes and endometrial cancer",
+      "fact_id": "LM_0247"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing the expected '2-3 eggs'",
+      "fact_id": "LM_0259"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of recommending 'By Chloe'",
+      "fact_id": "LM_0260"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing the expected number 'four'",
+      "fact_id": "LM_0123"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies the topic was discussed ('I don't recall you asking...') rather than providing preferences about podcasts/audiobooks",
+      "fact_id": "LM_0228"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies mention of the painting rather than stating it hangs 'in my bedroom'",
+      "fact_id": "LM_0146"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies the conversation occurred rather than providing the store name 'Nostalgia'",
+      "fact_id": "LM_0281"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM provides a specific number (37) but expected answer is 38; off by one coin",
+      "fact_id": "LM_0176"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM provides a specific time (6:30 AM) but expected answer is 7:30 am; one hour difference",
+      "fact_id": "LM_0185"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing preferences about Fender Stratocaster vs Gibson Les Paul comparisons",
+      "fact_id": "LM_0217"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM provides a range '3-5 sessions' but expected specific answer is 'five'; range is imprecise and contradicts the specific expected value",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing the progression from 4 to 5 engineers",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' instead of providing 'The music shop on Main St.'",
+      "fact_id": "LM_0161"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM provides a specific mortgage amount ($350,000) but expected answer is $400,000; differs by $50,000",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answer mentions specific cocktails and liqueurs discussed, but does not address the expected answer about mixology class background preferences. The answer is about what was discussed, not about user preferences based on background.",
+      "fact_id": "LM_0212"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM explicitly states it doesn't recall the discussion. Expected answer contains specific video title and YouTube URL, which are completely absent.",
+      "fact_id": "LM_0271"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM correctly mentions Patagonia as the company with environmentally responsible supply chain practices, matching the expected answer.",
+      "fact_id": "LM_0282"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states it doesn't recall the discussion. Expected answer is 'Yes' - a specific factual claim that is not confirmed.",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM explicitly states it doesn't recall mentioning a specific deli. Expected answer is 'Roscioli' which is completely absent.",
+      "fact_id": "LM_0249"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states it doesn't recall recommending a restaurant. Expected answer is 'Roscioli' which is completely absent.",
+      "fact_id": "LM_0234"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states it doesn't recall discussing bike performance during Sunday group rides. Expected answer requires specific references to chain/cassette replacement and Garmin bike computer, none of which are present.",
+      "fact_id": "LM_0226"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states it doesn't recall a Denver trip being mentioned. Expected answer requires references to Brandon Flowers encounter and live music interests, which are completely absent.",
+      "fact_id": "LM_0224"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states it doesn't recall the discussion. Expected answer clarifies confusion between football and baseball collection, but this clarification is not present in the LLM response.",
+      "fact_id": "LM_0196"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM correctly confirms 'Yes' - the user finished 'The Nightingale' and provides additional relevant detail about seeking book recommendations afterward.",
+      "fact_id": "LM_0160"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM answer cuts off with 'I don't recall' - incomplete response that fails to provide the expected preference-based answer about turbinado sugar experimentation.",
+      "fact_id": "LM_0214"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answers 'weekly' which is semantically equivalent to the expected answer 'every week' - both convey the same frequency.",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall'. Expected answer is '4 weeks' - a specific number that is not provided.",
+      "fact_id": "LM_0155"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall'. Expected answer is 'Fissionator' - a specific name that is completely absent.",
+      "fact_id": "LM_0274"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall'. Expected answer is a clarification about the distinction between Senior Software Engineer and Software Engineer Manager roles, which is not provided.",
+      "fact_id": "LM_0193"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies having provided the list at all. Does not contain the expected 27th parameter about sound effects.",
+      "fact_id": "LM_0254"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answer contains '32' which matches the expected answer exactly.",
+      "fact_id": "LM_0169"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling the specific conversation. Does not provide 'Doc Martin' as expected.",
+      "fact_id": "LM_0239"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall the specific details' - does not acknowledge understanding of the user's work situation or provide contextual suggestions as expected.",
+      "fact_id": "LM_0209"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies recalling the previous conversation about cocktail bar recommendations. Does not provide 'Absinthe' as the fifth bottle.",
+      "fact_id": "LM_0255"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM simply states 'I don't recall' without providing the expected answer of '5' MCU films.",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' without providing the expected 'GR-90 trail' recommendation.",
+      "fact_id": "LM_0245"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' without providing the expected temporal comparison about tennis frequency.",
+      "fact_id": "LM_0173"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' without providing the expected restaurant name 'Miss Bee Providore'.",
+      "fact_id": "LM_0231"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' without providing the expected '38 subjects' figure.",
+      "fact_id": "LM_0240"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' without providing the expected answer of '3' recipes.",
+      "fact_id": "LM_0143"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' without providing the expected year '2014'.",
+      "fact_id": "LM_0270"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' without acknowledging details about Luna the cat, shedding, or the recent deep clean.",
+      "fact_id": "LM_0219"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' without providing the expected answer of 'five' trips.",
+      "fact_id": "LM_0190"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' without providing the expected website 'MusicTheory.net'.",
+      "fact_id": "LM_0277"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' but expected answer is '4 mummies'. No specific fact provided.",
+      "fact_id": "LM_0244"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' but expected answer explains why the question cannot be answered (conflation of Harajuku vs Shinjuku). LLM should have provided the clarification.",
+      "fact_id": "LM_0195"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' but expected answer describes user preferences about context. LLM did not provide the expected preference-based guidance.",
+      "fact_id": "LM_0213"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' but expected answer is '28. Kg3' (a specific chess move). No fact provided.",
+      "fact_id": "LM_0257"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' but expected answer lists specific refining processes (Atmospheric distillation, FCC, alkylation, hydrotreating). No facts provided.",
+      "fact_id": "LM_0235"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies discussing video editing resources. Expected answer describes user preferences for Adobe Premiere Pro-specific resources. Neither the resource recommendations nor the preference context were provided.",
+      "fact_id": "LM_0200"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies mentioning a specific language learning app using mnemonics. Expected answer is 'Memrise' (a specific fact). No fact provided.",
+      "fact_id": "LM_0266"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies discussing high school reunions. Expected answer describes user's personal experiences (debate team, AP courses, interests in history/economics). No personalized context provided.",
+      "fact_id": "LM_0220"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies discussing specific two-factor authentication methods. Expected answer mentions biometric authentication and OTP examples. No specific facts provided.",
+      "fact_id": "LM_0248"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM denies providing hotel recommendations for Miami. Expected answer describes user preferences (ocean views, rooftop pool, hot tub). No personalized suggestions provided.",
+      "fact_id": "LM_0203"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM provides '3-2' as volleyball record, but expected answer is '5-2'. A specific number was recalled but it is incorrect.",
+      "fact_id": "LM_0180"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' but expected answer is 'Premier Silver' (previous frequent flyer status). No specific fact provided.",
+      "fact_id": "LM_0170"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' but expected answer explains why (conflation of table tennis vs tennis). Should have provided clarification, not just denial.",
+      "fact_id": "LM_0197"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' but expected answer is 'five' (number of H&M tops purchased). No specific fact provided.",
+      "fact_id": "LM_0163"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM says 'I don't recall' but expected answer is 'Pilsner or Lager' (specific beer recommendations for recipe). No specific fact provided.",
+      "fact_id": "LM_0278"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide the expected specific fact about Chapter 4 of Book 1 on Vocal Prayer and Meditation",
+      "fact_id": "LM_0252"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide the expected sealant recommendation (Mod Podge)",
+      "fact_id": "LM_0250"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide user preferences about cultural events with language practice opportunities",
+      "fact_id": "LM_0204"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "LLM answer 'Business Administration' matches expected answer exactly and contains the substantive fact requested",
+      "fact_id": "LM_0286"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not provide the expected budget allocation of $2,000 for influencer marketing",
+      "fact_id": "LM_0267"
+    }
+  ],
+  "judge_model": "claude-haiku-4-5-20251001",
+  "rejudge_timestamp": "2026-04-30T08:46:10.943583"
+}

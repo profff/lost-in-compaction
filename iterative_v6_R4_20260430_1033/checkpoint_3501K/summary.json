@@ -1,0 +1,260 @@
+{
+  "results": {
+    "S1": {
+      "recall": 0.07142857142857142,
+      "accuracy": 0.07142857142857142,
+      "facts_recalled": 10,
+      "facts_total": 140,
+      "recall_q1": 0.0,
+      "recall_q2": 0.25,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 40,
+      "n_q4": 21,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-assistant": {
+          "total": 47,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-preference": {
+          "total": 29,
+          "recalled": 10,
+          "accurate": 10,
+          "recall": 0.3448275862068966,
+          "accuracy": 0.3448275862068966
+        },
+        "single-session-user": {
+          "total": 1,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        }
+      },
+      "by_compression_depth": {
+        "1": {
+          "total": 140,
+          "recalled": 10,
+          "recall": 0.07142857142857142
+        }
+      },
+      "compaction_cycles": 22,
+      "grep": {
+        "facts_total": 140,
+        "all_present": 15,
+        "any_present": 80,
+        "recall_upper_bound": 0.10714285714285714
+      }
+    },
+    "S2": {
+      "recall": 0.10714285714285714,
+      "accuracy": 0.03571428571428571,
+      "facts_recalled": 15,
+      "facts_total": 140,
+      "recall_q1": 0.0,
+      "recall_q2": 0.225,
+      "recall_q3": 0.025,
+      "recall_q4": 0.23809523809523808,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 40,
+      "n_q4": 21,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 3,
+          "accurate": 0,
+          "recall": 0.047619047619047616,
+          "accuracy": 0.0
+        },
+        "single-session-assistant": {
+          "total": 47,
+          "recalled": 4,
+          "accurate": 3,
+          "recall": 0.0851063829787234,
+          "accuracy": 0.06382978723404255
+        },
+        "single-session-preference": {
+          "total": 29,
+          "recalled": 7,
+          "accurate": 1,
+          "recall": 0.2413793103448276,
+          "accuracy": 0.034482758620689655
+        },
+        "single-session-user": {
+          "total": 1,
+          "recalled": 1,
+          "accurate": 1,
+          "recall": 1.0,
+          "accuracy": 1.0
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 1,
+          "recalled": 1,
+          "recall": 1.0
+        },
+        "1": {
+          "total": 139,
+          "recalled": 14,
+          "recall": 0.10071942446043165
+        }
+      },
+      "compaction_cycles": 62,
+      "grep": {
+        "facts_total": 140,
+        "all_present": 66,
+        "any_present": 125,
+        "recall_upper_bound": 0.4714285714285714
+      }
+    },
+    "S3": {
+      "recall": 0.14285714285714285,
+      "accuracy": 0.07142857142857142,
+      "facts_recalled": 20,
+      "facts_total": 140,
+      "recall_q1": 0.0,
+      "recall_q2": 0.25,
+      "recall_q3": 0.15,
+      "recall_q4": 0.19047619047619047,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 40,
+      "n_q4": 21,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-assistant": {
+          "total": 47,
+          "recalled": 8,
+          "accurate": 8,
+          "recall": 0.1702127659574468,
+          "accuracy": 0.1702127659574468
+        },
+        "single-session-preference": {
+          "total": 29,
+          "recalled": 11,
+          "accurate": 1,
+          "recall": 0.3793103448275862,
+          "accuracy": 0.034482758620689655
+        },
+        "single-session-user": {
+          "total": 1,
+          "recalled": 1,
+          "accurate": 1,
+          "recall": 1.0,
+          "accuracy": 1.0
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 1,
+          "recalled": 1,
+          "recall": 1.0
+        },
+        "1": {
+          "total": 139,
+          "recalled": 19,
+          "recall": 0.1366906474820144
+        }
+      },
+      "compaction_cycles": 62,
+      "grep": {
+        "facts_total": 140,
+        "all_present": 79,
+        "any_present": 128,
+        "recall_upper_bound": 0.5642857142857143
+      }
+    },
+    "S4": {
+      "recall": 0.1357142857142857,
+      "accuracy": 0.12142857142857143,
+      "facts_recalled": 19,
+      "facts_total": 140,
+      "recall_q1": 0.02564102564102564,
+      "recall_q2": 0.3,
+      "recall_q3": 0.05,
+      "recall_q4": 0.19047619047619047,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 40,
+      "n_q4": 21,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 3,
+          "accurate": 2,
+          "recall": 0.047619047619047616,
+          "accuracy": 0.031746031746031744
+        },
+        "single-session-assistant": {
+          "total": 47,
+          "recalled": 4,
+          "accurate": 3,
+          "recall": 0.0851063829787234,
+          "accuracy": 0.06382978723404255
+        },
+        "single-session-preference": {
+          "total": 29,
+          "recalled": 11,
+          "accurate": 11,
+          "recall": 0.3793103448275862,
+          "accuracy": 0.3793103448275862
+        },
+        "single-session-user": {
+          "total": 1,
+          "recalled": 1,
+          "accurate": 1,
+          "recall": 1.0,
+          "accuracy": 1.0
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 1,
+          "recalled": 1,
+          "recall": 1.0
+        },
+        "1": {
+          "total": 139,
+          "recalled": 18,
+          "recall": 0.12949640287769784
+        }
+      },
+      "compaction_cycles": 62,
+      "grep": {
+        "facts_total": 140,
+        "all_present": 78,
+        "any_present": 128,
+        "recall_upper_bound": 0.5571428571428572
+      }
+    }
+  },
+  "label": "checkpoint_3501K"
+}

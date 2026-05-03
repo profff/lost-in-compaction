@@ -1,0 +1,158 @@
+{
+  "results": {
+    "S1": {
+      "recall": 0.0875,
+      "accuracy": 0.0,
+      "facts_recalled": 7,
+      "facts_total": 80,
+      "recall_q1": 0.0,
+      "recall_q2": 0.175,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 1,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-preference": {
+          "total": 17,
+          "recalled": 7,
+          "accurate": 0,
+          "recall": 0.4117647058823529,
+          "accuracy": 0.0
+        }
+      },
+      "grep": {
+        "facts_total": 80,
+        "all_present": 47,
+        "any_present": 77,
+        "recall_upper_bound": 0.5875
+      }
+    },
+    "S2": {
+      "recall": 0.15,
+      "accuracy": 0.125,
+      "facts_recalled": 12,
+      "facts_total": 80,
+      "recall_q1": 0.0,
+      "recall_q2": 0.3,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 1,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-preference": {
+          "total": 17,
+          "recalled": 12,
+          "accurate": 10,
+          "recall": 0.7058823529411765,
+          "accuracy": 0.5882352941176471
+        }
+      },
+      "grep": {
+        "facts_total": 80,
+        "all_present": 53,
+        "any_present": 78,
+        "recall_upper_bound": 0.6625
+      }
+    },
+    "S3": {
+      "recall": 0.1625,
+      "accuracy": 0.0125,
+      "facts_recalled": 13,
+      "facts_total": 80,
+      "recall_q1": 0.07692307692307693,
+      "recall_q2": 0.25,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 1,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 3,
+          "accurate": 1,
+          "recall": 0.047619047619047616,
+          "accuracy": 0.015873015873015872
+        },
+        "single-session-preference": {
+          "total": 17,
+          "recalled": 10,
+          "accurate": 0,
+          "recall": 0.5882352941176471,
+          "accuracy": 0.0
+        }
+      },
+      "grep": {
+        "facts_total": 80,
+        "all_present": 58,
+        "any_present": 78,
+        "recall_upper_bound": 0.725
+      }
+    },
+    "S4": {
+      "recall": 0.225,
+      "accuracy": 0.0375,
+      "facts_recalled": 18,
+      "facts_total": 80,
+      "recall_q1": 0.15384615384615385,
+      "recall_q2": 0.3,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 1,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 6,
+          "accurate": 3,
+          "recall": 0.09523809523809523,
+          "accuracy": 0.047619047619047616
+        },
+        "single-session-preference": {
+          "total": 17,
+          "recalled": 12,
+          "accurate": 0,
+          "recall": 0.7058823529411765,
+          "accuracy": 0.0
+        }
+      },
+      "grep": {
+        "facts_total": 80,
+        "all_present": 57,
+        "any_present": 78,
+        "recall_upper_bound": 0.7125
+      }
+    }
+  },
+  "recompute_timestamp": "2026-04-30T02:18:04.548290",
+  "source": "recompute_summaries.py"
+}

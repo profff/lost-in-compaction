@@ -1,0 +1,197 @@
+{
+  "results": {
+    "S1": {
+      "recall": 0.0,
+      "accuracy": 0.0,
+      "facts_recalled": 0,
+      "facts_total": 140,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 40,
+      "n_q4": 21,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-assistant": {
+          "total": 47,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-preference": {
+          "total": 29,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-user": {
+          "total": 1,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        }
+      }
+    },
+    "S2": {
+      "recall": 0.1347517730496454,
+      "accuracy": 0.10638297872340426,
+      "facts_recalled": 19,
+      "facts_total": 141,
+      "recall_q1": 0.0,
+      "recall_q2": 0.325,
+      "recall_q3": 0.025,
+      "recall_q4": 0.23809523809523808,
+      "recall_q5": 0.0,
+      "n_q1": 40,
+      "n_q2": 40,
+      "n_q3": 40,
+      "n_q4": 21,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 3,
+          "accurate": 0,
+          "recall": 0.047619047619047616,
+          "accuracy": 0.0
+        },
+        "single-session-assistant": {
+          "total": 47,
+          "recalled": 4,
+          "accurate": 3,
+          "recall": 0.0851063829787234,
+          "accuracy": 0.06382978723404255
+        },
+        "single-session-preference": {
+          "total": 29,
+          "recalled": 11,
+          "accurate": 11,
+          "recall": 0.3793103448275862,
+          "accuracy": 0.3793103448275862
+        },
+        "single-session-user": {
+          "total": 1,
+          "recalled": 1,
+          "accurate": 1,
+          "recall": 1.0,
+          "accuracy": 1.0
+        },
+        "unknown": {
+          "total": 1,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        }
+      }
+    },
+    "S3": {
+      "recall": 0.04285714285714286,
+      "accuracy": 0.03571428571428571,
+      "facts_recalled": 6,
+      "facts_total": 140,
+      "recall_q1": 0.0,
+      "recall_q2": 0.025,
+      "recall_q3": 0.025,
+      "recall_q4": 0.19047619047619047,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 40,
+      "n_q4": 21,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-assistant": {
+          "total": 47,
+          "recalled": 3,
+          "accurate": 3,
+          "recall": 0.06382978723404255,
+          "accuracy": 0.06382978723404255
+        },
+        "single-session-preference": {
+          "total": 29,
+          "recalled": 2,
+          "accurate": 1,
+          "recall": 0.06896551724137931,
+          "accuracy": 0.034482758620689655
+        },
+        "single-session-user": {
+          "total": 1,
+          "recalled": 1,
+          "accurate": 1,
+          "recall": 1.0,
+          "accuracy": 1.0
+        }
+      }
+    },
+    "S4": {
+      "recall": 0.06428571428571428,
+      "accuracy": 0.05714285714285714,
+      "facts_recalled": 9,
+      "facts_total": 140,
+      "recall_q1": 0.02564102564102564,
+      "recall_q2": 0.05,
+      "recall_q3": 0.05,
+      "recall_q4": 0.19047619047619047,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 40,
+      "n_q4": 21,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 3,
+          "accurate": 2,
+          "recall": 0.047619047619047616,
+          "accuracy": 0.031746031746031744
+        },
+        "single-session-assistant": {
+          "total": 47,
+          "recalled": 4,
+          "accurate": 4,
+          "recall": 0.0851063829787234,
+          "accuracy": 0.0851063829787234
+        },
+        "single-session-preference": {
+          "total": 29,
+          "recalled": 1,
+          "accurate": 1,
+          "recall": 0.034482758620689655,
+          "accuracy": 0.034482758620689655
+        },
+        "single-session-user": {
+          "total": 1,
+          "recalled": 1,
+          "accurate": 1,
+          "recall": 1.0,
+          "accuracy": 1.0
+        }
+      }
+    }
+  },
+  "rejudge_timestamp": "2026-04-30T12:45:33.352622",
+  "judge_model": "claude-haiku-4-5-20251001"
+}

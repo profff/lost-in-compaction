@@ -1,0 +1,181 @@
+{
+  "results": {
+    "S1": {
+      "recall": 0.07692307692307693,
+      "accuracy": 0.07692307692307693,
+      "facts_recalled": 3,
+      "facts_total": 39,
+      "recall_q1": 0.07692307692307693,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 39,
+          "recalled": 3,
+          "accurate": 3,
+          "recall": 0.07692307692307693,
+          "accuracy": 0.07692307692307693
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 1,
+          "recalled": 1,
+          "recall": 1.0
+        },
+        "1": {
+          "total": 38,
+          "recalled": 2,
+          "recall": 0.05263157894736842
+        }
+      },
+      "compaction_cycles": 6,
+      "grep": {
+        "facts_total": 39,
+        "all_present": 26,
+        "any_present": 31,
+        "recall_upper_bound": 0.6666666666666666
+      }
+    },
+    "S2": {
+      "recall": 0.15384615384615385,
+      "accuracy": 0.15384615384615385,
+      "facts_recalled": 6,
+      "facts_total": 39,
+      "recall_q1": 0.15384615384615385,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 39,
+          "recalled": 6,
+          "accurate": 6,
+          "recall": 0.15384615384615385,
+          "accuracy": 0.15384615384615385
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 1,
+          "recalled": 1,
+          "recall": 1.0
+        },
+        "1": {
+          "total": 38,
+          "recalled": 5,
+          "recall": 0.13157894736842105
+        }
+      },
+      "compaction_cycles": 16,
+      "grep": {
+        "facts_total": 39,
+        "all_present": 34,
+        "any_present": 38,
+        "recall_upper_bound": 0.8717948717948718
+      }
+    },
+    "S3": {
+      "recall": 0.41025641025641024,
+      "accuracy": 0.28205128205128205,
+      "facts_recalled": 16,
+      "facts_total": 39,
+      "recall_q1": 0.41025641025641024,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 39,
+          "recalled": 16,
+          "accurate": 11,
+          "recall": 0.41025641025641024,
+          "accuracy": 0.28205128205128205
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 1,
+          "recalled": 0,
+          "recall": 0.0
+        },
+        "1": {
+          "total": 38,
+          "recalled": 16,
+          "recall": 0.42105263157894735
+        }
+      },
+      "compaction_cycles": 16,
+      "grep": {
+        "facts_total": 39,
+        "all_present": 35,
+        "any_present": 38,
+        "recall_upper_bound": 0.8974358974358975
+      }
+    },
+    "S4": {
+      "recall": 0.358974358974359,
+      "accuracy": 0.23076923076923078,
+      "facts_recalled": 14,
+      "facts_total": 39,
+      "recall_q1": 0.358974358974359,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 39,
+          "recalled": 14,
+          "accurate": 9,
+          "recall": 0.358974358974359,
+          "accuracy": 0.23076923076923078
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 1,
+          "recalled": 1,
+          "recall": 1.0
+        },
+        "1": {
+          "total": 38,
+          "recalled": 13,
+          "recall": 0.34210526315789475
+        }
+      },
+      "compaction_cycles": 16,
+      "grep": {
+        "facts_total": 39,
+        "all_present": 33,
+        "any_present": 37,
+        "recall_upper_bound": 0.8461538461538461
+      }
+    }
+  },
+  "label": "checkpoint_1001K"
+}

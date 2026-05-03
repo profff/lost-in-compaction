@@ -1,0 +1,118 @@
+{
+  "verdicts": [
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0137"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '3' matches expected answer '3' exactly",
+      "fact_id": "LM_0143"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer '6-9 months' is a range that includes 9 months but is not equivalent to the specific expected value of '9 months'",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall', which explicitly states the fact was not recalled",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer '5 MCU films' contains the expected fact '5' with relevant context",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no substantive fact provided. Expected answer requires specific dollar amount ($400,000).",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "LLM provides a range '3-5 bereavement sessions' which recalls the general fact of attending sessions, but the expected answer is specifically 'five' (a definite number). The range contradicts the expected exact value.",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no substantive fact provided. Expected answer requires specific destination (Paris).",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - no substantive fact provided. Expected answer requires specific number (four).",
+      "fact_id": "LM_0123"
+    }
+  ]
+}

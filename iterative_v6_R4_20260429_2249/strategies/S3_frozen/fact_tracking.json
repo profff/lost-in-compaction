@@ -1,0 +1,2950 @@
+{
+  "fact_status": {
+    "LM_0122": {
+      "original_msg_start": 96,
+      "original_msg_end": 102,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0123": {
+      "original_msg_start": 217,
+      "original_msg_end": 223,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0124": {
+      "original_msg_start": 339,
+      "original_msg_end": 347,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0125": {
+      "original_msg_start": 455,
+      "original_msg_end": 461,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0126": {
+      "original_msg_start": 569,
+      "original_msg_end": 575,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0127": {
+      "original_msg_start": 668,
+      "original_msg_end": 674,
+      "status": "compacted_cycle_1",
+      "compacted_at_cycle": 1,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0131": {
+      "original_msg_start": 783,
+      "original_msg_end": 789,
+      "status": "compacted_cycle_2",
+      "compacted_at_cycle": 2,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0132": {
+      "original_msg_start": 880,
+      "original_msg_end": 886,
+      "status": "compacted_cycle_2",
+      "compacted_at_cycle": 2,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0133": {
+      "original_msg_start": 982,
+      "original_msg_end": 988,
+      "status": "compacted_cycle_3",
+      "compacted_at_cycle": 3,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0134": {
+      "original_msg_start": 1082,
+      "original_msg_end": 1087,
+      "status": "compacted_cycle_3",
+      "compacted_at_cycle": 3,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0135": {
+      "original_msg_start": 1186,
+      "original_msg_end": 1192,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0136": {
+      "original_msg_start": 1302,
+      "original_msg_end": 1308,
+      "status": "compacted_cycle_4",
+      "compacted_at_cycle": 4,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0137": {
+      "original_msg_start": 1403,
+      "original_msg_end": 1409,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0138": {
+      "original_msg_start": 1516,
+      "original_msg_end": 1522,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0139": {
+      "original_msg_start": 1618,
+      "original_msg_end": 1624,
+      "status": "compacted_cycle_5",
+      "compacted_at_cycle": 5,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0140": {
+      "original_msg_start": 1734,
+      "original_msg_end": 1740,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0141": {
+      "original_msg_start": 1862,
+      "original_msg_end": 1868,
+      "status": "compacted_cycle_6",
+      "compacted_at_cycle": 6,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0142": {
+      "original_msg_start": 1979,
+      "original_msg_end": 1985,
+      "status": "compacted_cycle_7",
+      "compacted_at_cycle": 7,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0143": {
+      "original_msg_start": 2064,
+      "original_msg_end": 2069,
+      "status": "compacted_cycle_7",
+      "compacted_at_cycle": 7,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0146": {
+      "original_msg_start": 2175,
+      "original_msg_end": 2181,
+      "status": "compacted_cycle_8",
+      "compacted_at_cycle": 8,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0147": {
+      "original_msg_start": 2283,
+      "original_msg_end": 2288,
+      "status": "compacted_cycle_8",
+      "compacted_at_cycle": 8,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0149": {
+      "original_msg_start": 2398,
+      "original_msg_end": 2404,
+      "status": "compacted_cycle_9",
+      "compacted_at_cycle": 9,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0151": {
+      "original_msg_start": 2512,
+      "original_msg_end": 2517,
+      "status": "compacted_cycle_9",
+      "compacted_at_cycle": 9,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0152": {
+      "original_msg_start": 2624,
+      "original_msg_end": 2630,
+      "status": "compacted_cycle_10",
+      "compacted_at_cycle": 10,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0153": {
+      "original_msg_start": 2740,
+      "original_msg_end": 2746,
+      "status": "compacted_cycle_10",
+      "compacted_at_cycle": 10,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0154": {
+      "original_msg_start": 2837,
+      "original_msg_end": 2843,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0155": {
+      "original_msg_start": 2939,
+      "original_msg_end": 2944,
+      "status": "compacted_cycle_11",
+      "compacted_at_cycle": 11,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0156": {
+      "original_msg_start": 3049,
+      "original_msg_end": 3055,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0158": {
+      "original_msg_start": 3156,
+      "original_msg_end": 3162,
+      "status": "compacted_cycle_12",
+      "compacted_at_cycle": 12,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0159": {
+      "original_msg_start": 3249,
+      "original_msg_end": 3258,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0160": {
+      "original_msg_start": 3345,
+      "original_msg_end": 3351,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0161": {
+      "original_msg_start": 3451,
+      "original_msg_end": 3454,
+      "status": "compacted_cycle_13",
+      "compacted_at_cycle": 13,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0162": {
+      "original_msg_start": 3550,
+      "original_msg_end": 3556,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0163": {
+      "original_msg_start": 3676,
+      "original_msg_end": 3682,
+      "status": "compacted_cycle_14",
+      "compacted_at_cycle": 14,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0164": {
+      "original_msg_start": 3783,
+      "original_msg_end": 3789,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0165": {
+      "original_msg_start": 3897,
+      "original_msg_end": 3903,
+      "status": "compacted_cycle_15",
+      "compacted_at_cycle": 15,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0166": {
+      "original_msg_start": 4006,
+      "original_msg_end": 4012,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0167": {
+      "original_msg_start": 4093,
+      "original_msg_end": 4098,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0168": {
+      "original_msg_start": 4211,
+      "original_msg_end": 4214,
+      "status": "compacted_cycle_16",
+      "compacted_at_cycle": 16,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0169": {
+      "original_msg_start": 4317,
+      "original_msg_end": 4323,
+      "status": "compacted_cycle_17",
+      "compacted_at_cycle": 17,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0170": {
+      "original_msg_start": 4436,
+      "original_msg_end": 4442,
+      "status": "compacted_cycle_17",
+      "compacted_at_cycle": 17,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0171": {
+      "original_msg_start": 4559,
+      "original_msg_end": 4565,
+      "status": "compacted_cycle_18",
+      "compacted_at_cycle": 18,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0173": {
+      "original_msg_start": 4669,
+      "original_msg_end": 4674,
+      "status": "compacted_cycle_18",
+      "compacted_at_cycle": 18,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0174": {
+      "original_msg_start": 4787,
+      "original_msg_end": 4793,
+      "status": "compacted_cycle_19",
+      "compacted_at_cycle": 19,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0175": {
+      "original_msg_start": 4886,
+      "original_msg_end": 4892,
+      "status": "compacted_cycle_19",
+      "compacted_at_cycle": 19,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0176": {
+      "original_msg_start": 4978,
+      "original_msg_end": 4984,
+      "status": "compacted_cycle_20",
+      "compacted_at_cycle": 20,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0180": {
+      "original_msg_start": 5091,
+      "original_msg_end": 5096,
+      "status": "compacted_cycle_20",
+      "compacted_at_cycle": 20,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0182": {
+      "original_msg_start": 5184,
+      "original_msg_end": 5189,
+      "status": "compacted_cycle_21",
+      "compacted_at_cycle": 21,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0183": {
+      "original_msg_start": 5300,
+      "original_msg_end": 5305,
+      "status": "compacted_cycle_21",
+      "compacted_at_cycle": 21,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0185": {
+      "original_msg_start": 5414,
+      "original_msg_end": 5420,
+      "status": "compacted_cycle_22",
+      "compacted_at_cycle": 22,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0186": {
+      "original_msg_start": 5532,
+      "original_msg_end": 5538,
+      "status": "compacted_cycle_22",
+      "compacted_at_cycle": 22,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0187": {
+      "original_msg_start": 5642,
+      "original_msg_end": 5648,
+      "status": "compacted_cycle_23",
+      "compacted_at_cycle": 23,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0188": {
+      "original_msg_start": 5762,
+      "original_msg_end": 5768,
+      "status": "compacted_cycle_23",
+      "compacted_at_cycle": 23,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0189": {
+      "original_msg_start": 5857,
+      "original_msg_end": 5862,
+      "status": "compacted_cycle_24",
+      "compacted_at_cycle": 24,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0190": {
+      "original_msg_start": 5956,
+      "original_msg_end": 5962,
+      "status": "compacted_cycle_24",
+      "compacted_at_cycle": 24,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0191": {
+      "original_msg_start": 6056,
+      "original_msg_end": 6062,
+      "status": "compacted_cycle_24",
+      "compacted_at_cycle": 24,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0193": {
+      "original_msg_start": 6158,
+      "original_msg_end": 6161,
+      "status": "compacted_cycle_25",
+      "compacted_at_cycle": 25,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0194": {
+      "original_msg_start": 6257,
+      "original_msg_end": 6260,
+      "status": "compacted_cycle_25",
+      "compacted_at_cycle": 25,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0195": {
+      "original_msg_start": 6366,
+      "original_msg_end": 6369,
+      "status": "compacted_cycle_26",
+      "compacted_at_cycle": 26,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0196": {
+      "original_msg_start": 6477,
+      "original_msg_end": 6480,
+      "status": "compacted_cycle_26",
+      "compacted_at_cycle": 26,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0197": {
+      "original_msg_start": 6571,
+      "original_msg_end": 6574,
+      "status": "compacted_cycle_27",
+      "compacted_at_cycle": 27,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0198": {
+      "original_msg_start": 6670,
+      "original_msg_end": 6676,
+      "status": "compacted_cycle_27",
+      "compacted_at_cycle": 27,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0199": {
+      "original_msg_start": 6782,
+      "original_msg_end": 6788,
+      "status": "compacted_cycle_28",
+      "compacted_at_cycle": 28,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0200": {
+      "original_msg_start": 6893,
+      "original_msg_end": 6895,
+      "status": "compacted_cycle_28",
+      "compacted_at_cycle": 28,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0201": {
+      "original_msg_start": 6983,
+      "original_msg_end": 6991,
+      "status": "compacted_cycle_28",
+      "compacted_at_cycle": 28,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0202": {
+      "original_msg_start": 7105,
+      "original_msg_end": 7107,
+      "status": "compacted_cycle_29",
+      "compacted_at_cycle": 29,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0203": {
+      "original_msg_start": 7211,
+      "original_msg_end": 7214,
+      "status": "compacted_cycle_29",
+      "compacted_at_cycle": 29,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0204": {
+      "original_msg_start": 7309,
+      "original_msg_end": 7317,
+      "status": "compacted_cycle_30",
+      "compacted_at_cycle": 30,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0205": {
+      "original_msg_start": 7420,
+      "original_msg_end": 7422,
+      "status": "compacted_cycle_30",
+      "compacted_at_cycle": 30,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0206": {
+      "original_msg_start": 7541,
+      "original_msg_end": 7544,
+      "status": "compacted_cycle_31",
+      "compacted_at_cycle": 31,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0207": {
+      "original_msg_start": 7623,
+      "original_msg_end": 7630,
+      "status": "compacted_cycle_31",
+      "compacted_at_cycle": 31,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0208": {
+      "original_msg_start": 7736,
+      "original_msg_end": 7740,
+      "status": "compacted_cycle_32",
+      "compacted_at_cycle": 32,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0209": {
+      "original_msg_start": 7842,
+      "original_msg_end": 7844,
+      "status": "compacted_cycle_32",
+      "compacted_at_cycle": 32,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0210": {
+      "original_msg_start": 7952,
+      "original_msg_end": 7955,
+      "status": "compacted_cycle_32",
+      "compacted_at_cycle": 32,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0211": {
+      "original_msg_start": 8041,
+      "original_msg_end": 8044,
+      "status": "compacted_cycle_33",
+      "compacted_at_cycle": 33,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0212": {
+      "original_msg_start": 8151,
+      "original_msg_end": 8154,
+      "status": "compacted_cycle_33",
+      "compacted_at_cycle": 33,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0213": {
+      "original_msg_start": 8250,
+      "original_msg_end": 8252,
+      "status": "compacted_cycle_34",
+      "compacted_at_cycle": 34,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0214": {
+      "original_msg_start": 8358,
+      "original_msg_end": 8360,
+      "status": "compacted_cycle_34",
+      "compacted_at_cycle": 34,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0215": {
+      "original_msg_start": 8457,
+      "original_msg_end": 8460,
+      "status": "compacted_cycle_35",
+      "compacted_at_cycle": 35,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0216": {
+      "original_msg_start": 8565,
+      "original_msg_end": 8567,
+      "status": "compacted_cycle_35",
+      "compacted_at_cycle": 35,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0217": {
+      "original_msg_start": 8672,
+      "original_msg_end": 8674,
+      "status": "compacted_cycle_36",
+      "compacted_at_cycle": 36,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0218": {
+      "original_msg_start": 8765,
+      "original_msg_end": 8767,
+      "status": "compacted_cycle_36",
+      "compacted_at_cycle": 36,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0219": {
+      "original_msg_start": 8860,
+      "original_msg_end": 8863,
+      "status": "compacted_cycle_36",
+      "compacted_at_cycle": 36,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0220": {
+      "original_msg_start": 8973,
+      "original_msg_end": 8979,
+      "status": "compacted_cycle_37",
+      "compacted_at_cycle": 37,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0221": {
+      "original_msg_start": 9092,
+      "original_msg_end": 9097,
+      "status": "compacted_cycle_37",
+      "compacted_at_cycle": 37,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0222": {
+      "original_msg_start": 9175,
+      "original_msg_end": 9177,
+      "status": "compacted_cycle_38",
+      "compacted_at_cycle": 38,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0223": {
+      "original_msg_start": 9275,
+      "original_msg_end": 9277,
+      "status": "compacted_cycle_38",
+      "compacted_at_cycle": 38,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0224": {
+      "original_msg_start": 9377,
+      "original_msg_end": 9382,
+      "status": "compacted_cycle_39",
+      "compacted_at_cycle": 39,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0225": {
+      "original_msg_start": 9492,
+      "original_msg_end": 9494,
+      "status": "compacted_cycle_39",
+      "compacted_at_cycle": 39,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0226": {
+      "original_msg_start": 9602,
+      "original_msg_end": 9607,
+      "status": "compacted_cycle_39",
+      "compacted_at_cycle": 39,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0227": {
+      "original_msg_start": 9722,
+      "original_msg_end": 9726,
+      "status": "compacted_cycle_40",
+      "compacted_at_cycle": 40,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0228": {
+      "original_msg_start": 9855,
+      "original_msg_end": 9860,
+      "status": "compacted_cycle_41",
+      "compacted_at_cycle": 41,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0231": {
+      "original_msg_start": 9976,
+      "original_msg_end": 9979,
+      "status": "compacted_cycle_41",
+      "compacted_at_cycle": 41,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0232": {
+      "original_msg_start": 10083,
+      "original_msg_end": 10085,
+      "status": "compacted_cycle_42",
+      "compacted_at_cycle": 42,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0233": {
+      "original_msg_start": 10191,
+      "original_msg_end": 10194,
+      "status": "compacted_cycle_42",
+      "compacted_at_cycle": 42,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0234": {
+      "original_msg_start": 10312,
+      "original_msg_end": 10315,
+      "status": "compacted_cycle_43",
+      "compacted_at_cycle": 43,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0235": {
+      "original_msg_start": 10420,
+      "original_msg_end": 10423,
+      "status": "compacted_cycle_43",
+      "compacted_at_cycle": 43,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0237": {
+      "original_msg_start": 10522,
+      "original_msg_end": 10524,
+      "status": "compacted_cycle_43",
+      "compacted_at_cycle": 43,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0238": {
+      "original_msg_start": 10630,
+      "original_msg_end": 10632,
+      "status": "compacted_cycle_44",
+      "compacted_at_cycle": 44,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0239": {
+      "original_msg_start": 10741,
+      "original_msg_end": 10744,
+      "status": "compacted_cycle_44",
+      "compacted_at_cycle": 44,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0240": {
+      "original_msg_start": 10855,
+      "original_msg_end": 10858,
+      "status": "compacted_cycle_45",
+      "compacted_at_cycle": 45,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0241": {
+      "original_msg_start": 10962,
+      "original_msg_end": 10965,
+      "status": "compacted_cycle_45",
+      "compacted_at_cycle": 45,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0242": {
+      "original_msg_start": 11061,
+      "original_msg_end": 11064,
+      "status": "compacted_cycle_46",
+      "compacted_at_cycle": 46,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0243": {
+      "original_msg_start": 11186,
+      "original_msg_end": 11189,
+      "status": "compacted_cycle_46",
+      "compacted_at_cycle": 46,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0244": {
+      "original_msg_start": 11304,
+      "original_msg_end": 11306,
+      "status": "compacted_cycle_47",
+      "compacted_at_cycle": 47,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0245": {
+      "original_msg_start": 11393,
+      "original_msg_end": 11396,
+      "status": "compacted_cycle_47",
+      "compacted_at_cycle": 47,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0246": {
+      "original_msg_start": 11502,
+      "original_msg_end": 11504,
+      "status": "compacted_cycle_48",
+      "compacted_at_cycle": 48,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0247": {
+      "original_msg_start": 11624,
+      "original_msg_end": 11626,
+      "status": "compacted_cycle_48",
+      "compacted_at_cycle": 48,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0248": {
+      "original_msg_start": 11714,
+      "original_msg_end": 11717,
+      "status": "compacted_cycle_49",
+      "compacted_at_cycle": 49,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0249": {
+      "original_msg_start": 11819,
+      "original_msg_end": 11822,
+      "status": "compacted_cycle_49",
+      "compacted_at_cycle": 49,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0250": {
+      "original_msg_start": 11923,
+      "original_msg_end": 11926,
+      "status": "compacted_cycle_50",
+      "compacted_at_cycle": 50,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0252": {
+      "original_msg_start": 12009,
+      "original_msg_end": 12012,
+      "status": "compacted_cycle_50",
+      "compacted_at_cycle": 50,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0253": {
+      "original_msg_start": 12118,
+      "original_msg_end": 12121,
+      "status": "compacted_cycle_50",
+      "compacted_at_cycle": 50,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0254": {
+      "original_msg_start": 12225,
+      "original_msg_end": 12228,
+      "status": "compacted_cycle_51",
+      "compacted_at_cycle": 51,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0255": {
+      "original_msg_start": 12344,
+      "original_msg_end": 12346,
+      "status": "compacted_cycle_51",
+      "compacted_at_cycle": 51,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0256": {
+      "original_msg_start": 12447,
+      "original_msg_end": 12450,
+      "status": "compacted_cycle_52",
+      "compacted_at_cycle": 52,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0257": {
+      "original_msg_start": 12577,
+      "original_msg_end": 12580,
+      "status": "compacted_cycle_52",
+      "compacted_at_cycle": 52,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0258": {
+      "original_msg_start": 12677,
+      "original_msg_end": 12680,
+      "status": "compacted_cycle_53",
+      "compacted_at_cycle": 53,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0259": {
+      "original_msg_start": 12766,
+      "original_msg_end": 12769,
+      "status": "compacted_cycle_53",
+      "compacted_at_cycle": 53,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0260": {
+      "original_msg_start": 12876,
+      "original_msg_end": 12879,
+      "status": "compacted_cycle_54",
+      "compacted_at_cycle": 54,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0262": {
+      "original_msg_start": 12995,
+      "original_msg_end": 12998,
+      "status": "compacted_cycle_54",
+      "compacted_at_cycle": 54,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0263": {
+      "original_msg_start": 13103,
+      "original_msg_end": 13106,
+      "status": "compacted_cycle_54",
+      "compacted_at_cycle": 54,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0264": {
+      "original_msg_start": 13212,
+      "original_msg_end": 13215,
+      "status": "compacted_cycle_55",
+      "compacted_at_cycle": 55,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0266": {
+      "original_msg_start": 13309,
+      "original_msg_end": 13311,
+      "status": "compacted_cycle_55",
+      "compacted_at_cycle": 55,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0267": {
+      "original_msg_start": 13419,
+      "original_msg_end": 13421,
+      "status": "compacted_cycle_56",
+      "compacted_at_cycle": 56,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0268": {
+      "original_msg_start": 13521,
+      "original_msg_end": 13523,
+      "status": "compacted_cycle_56",
+      "compacted_at_cycle": 56,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0269": {
+      "original_msg_start": 13613,
+      "original_msg_end": 13616,
+      "status": "compacted_cycle_56",
+      "compacted_at_cycle": 56,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0270": {
+      "original_msg_start": 13715,
+      "original_msg_end": 13717,
+      "status": "compacted_cycle_57",
+      "compacted_at_cycle": 57,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0271": {
+      "original_msg_start": 13824,
+      "original_msg_end": 13826,
+      "status": "compacted_cycle_57",
+      "compacted_at_cycle": 57,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0274": {
+      "original_msg_start": 13919,
+      "original_msg_end": 13922,
+      "status": "compacted_cycle_58",
+      "compacted_at_cycle": 58,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0275": {
+      "original_msg_start": 14031,
+      "original_msg_end": 14033,
+      "status": "compacted_cycle_58",
+      "compacted_at_cycle": 58,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0277": {
+      "original_msg_start": 14124,
+      "original_msg_end": 14127,
+      "status": "compacted_cycle_59",
+      "compacted_at_cycle": 59,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0278": {
+      "original_msg_start": 14235,
+      "original_msg_end": 14238,
+      "status": "compacted_cycle_59",
+      "compacted_at_cycle": 59,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0279": {
+      "original_msg_start": 14338,
+      "original_msg_end": 14341,
+      "status": "compacted_cycle_60",
+      "compacted_at_cycle": 60,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0280": {
+      "original_msg_start": 14453,
+      "original_msg_end": 14455,
+      "status": "compacted_cycle_60",
+      "compacted_at_cycle": 60,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0281": {
+      "original_msg_start": 14575,
+      "original_msg_end": 14578,
+      "status": "compacted_cycle_61",
+      "compacted_at_cycle": 61,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0282": {
+      "original_msg_start": 14681,
+      "original_msg_end": 14684,
+      "status": "compacted_cycle_61",
+      "compacted_at_cycle": 61,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0283": {
+      "original_msg_start": 14785,
+      "original_msg_end": 14788,
+      "status": "compacted_cycle_62",
+      "compacted_at_cycle": 62,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0284": {
+      "original_msg_start": 14897,
+      "original_msg_end": 14900,
+      "status": "compacted_cycle_62",
+      "compacted_at_cycle": 62,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0286": {
+      "original_msg_start": 14989,
+      "original_msg_end": 14993,
+      "status": "compacted_cycle_63",
+      "compacted_at_cycle": 63,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0287": {
+      "original_msg_start": 15097,
+      "original_msg_end": 15100,
+      "status": "compacted_cycle_63",
+      "compacted_at_cycle": 63,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0289": {
+      "original_msg_start": 15206,
+      "original_msg_end": 15209,
+      "status": "compacted_cycle_64",
+      "compacted_at_cycle": 64,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0290": {
+      "original_msg_start": 15315,
+      "original_msg_end": 15318,
+      "status": "compacted_cycle_64",
+      "compacted_at_cycle": 64,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0291": {
+      "original_msg_start": 15430,
+      "original_msg_end": 15432,
+      "status": "compacted_cycle_65",
+      "compacted_at_cycle": 65,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0292": {
+      "original_msg_start": 15541,
+      "original_msg_end": 15544,
+      "status": "compacted_cycle_65",
+      "compacted_at_cycle": 65,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0293": {
+      "original_msg_start": 15652,
+      "original_msg_end": 15655,
+      "status": "compacted_cycle_66",
+      "compacted_at_cycle": 66,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0294": {
+      "original_msg_start": 15778,
+      "original_msg_end": 15781,
+      "status": "compacted_cycle_66",
+      "compacted_at_cycle": 66,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0296": {
+      "original_msg_start": 15876,
+      "original_msg_end": 15879,
+      "status": "compacted_cycle_67",
+      "compacted_at_cycle": 67,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0297": {
+      "original_msg_start": 15978,
+      "original_msg_end": 15981,
+      "status": "compacted_cycle_67",
+      "compacted_at_cycle": 67,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0298": {
+      "original_msg_start": 16078,
+      "original_msg_end": 16081,
+      "status": "compacted_cycle_68",
+      "compacted_at_cycle": 68,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0299": {
+      "original_msg_start": 16173,
+      "original_msg_end": 16176,
+      "status": "compacted_cycle_68",
+      "compacted_at_cycle": 68,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0300": {
+      "original_msg_start": 16268,
+      "original_msg_end": 16271,
+      "status": "compacted_cycle_68",
+      "compacted_at_cycle": 68,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0302": {
+      "original_msg_start": 16376,
+      "original_msg_end": 16379,
+      "status": "compacted_cycle_69",
+      "compacted_at_cycle": 69,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0303": {
+      "original_msg_start": 16477,
+      "original_msg_end": 16480,
+      "status": "compacted_cycle_69",
+      "compacted_at_cycle": 69,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0304": {
+      "original_msg_start": 16574,
+      "original_msg_end": 16577,
+      "status": "compacted_cycle_70",
+      "compacted_at_cycle": 70,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0306": {
+      "original_msg_start": 16683,
+      "original_msg_end": 16686,
+      "status": "compacted_cycle_70",
+      "compacted_at_cycle": 70,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0307": {
+      "original_msg_start": 16807,
+      "original_msg_end": 16810,
+      "status": "compacted_cycle_71",
+      "compacted_at_cycle": 71,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0308": {
+      "original_msg_start": 16926,
+      "original_msg_end": 16929,
+      "status": "compacted_cycle_71",
+      "compacted_at_cycle": 71,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0309": {
+      "original_msg_start": 17025,
+      "original_msg_end": 17028,
+      "status": "compacted_cycle_72",
+      "compacted_at_cycle": 72,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0312": {
+      "original_msg_start": 17114,
+      "original_msg_end": 17117,
+      "status": "compacted_cycle_72",
+      "compacted_at_cycle": 72,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0313": {
+      "original_msg_start": 17231,
+      "original_msg_end": 17234,
+      "status": "compacted_cycle_73",
+      "compacted_at_cycle": 73,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0314": {
+      "original_msg_start": 17337,
+      "original_msg_end": 17340,
+      "status": "compacted_cycle_73",
+      "compacted_at_cycle": 73,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0315": {
+      "original_msg_start": 17443,
+      "original_msg_end": 17446,
+      "status": "compacted_cycle_73",
+      "compacted_at_cycle": 73,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0316": {
+      "original_msg_start": 17557,
+      "original_msg_end": 17560,
+      "status": "compacted_cycle_74",
+      "compacted_at_cycle": 74,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0317": {
+      "original_msg_start": 17655,
+      "original_msg_end": 17658,
+      "status": "compacted_cycle_74",
+      "compacted_at_cycle": 74,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0318": {
+      "original_msg_start": 17747,
+      "original_msg_end": 17750,
+      "status": "compacted_cycle_74",
+      "compacted_at_cycle": 74,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0319": {
+      "original_msg_start": 17856,
+      "original_msg_end": 17859,
+      "status": "compacted_cycle_75",
+      "compacted_at_cycle": 75,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0320": {
+      "original_msg_start": 17969,
+      "original_msg_end": 17972,
+      "status": "compacted_cycle_75",
+      "compacted_at_cycle": 75,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0321": {
+      "original_msg_start": 18068,
+      "original_msg_end": 18071,
+      "status": "compacted_cycle_76",
+      "compacted_at_cycle": 76,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0322": {
+      "original_msg_start": 18191,
+      "original_msg_end": 18194,
+      "status": "compacted_cycle_76",
+      "compacted_at_cycle": 76,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0323": {
+      "original_msg_start": 18304,
+      "original_msg_end": 18307,
+      "status": "compacted_cycle_77",
+      "compacted_at_cycle": 77,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0324": {
+      "original_msg_start": 18434,
+      "original_msg_end": 18437,
+      "status": "compacted_cycle_77",
+      "compacted_at_cycle": 77,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0325": {
+      "original_msg_start": 18540,
+      "original_msg_end": 18543,
+      "status": "compacted_cycle_78",
+      "compacted_at_cycle": 78,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0326": {
+      "original_msg_start": 18654,
+      "original_msg_end": 18657,
+      "status": "compacted_cycle_78",
+      "compacted_at_cycle": 78,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0327": {
+      "original_msg_start": 18746,
+      "original_msg_end": 18749,
+      "status": "compacted_cycle_78",
+      "compacted_at_cycle": 78,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0328": {
+      "original_msg_start": 18841,
+      "original_msg_end": 18844,
+      "status": "compacted_cycle_79",
+      "compacted_at_cycle": 79,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0329": {
+      "original_msg_start": 18951,
+      "original_msg_end": 18954,
+      "status": "compacted_cycle_79",
+      "compacted_at_cycle": 79,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0330": {
+      "original_msg_start": 19062,
+      "original_msg_end": 19065,
+      "status": "compacted_cycle_80",
+      "compacted_at_cycle": 80,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0331": {
+      "original_msg_start": 19158,
+      "original_msg_end": 19160,
+      "status": "compacted_cycle_80",
+      "compacted_at_cycle": 80,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0332": {
+      "original_msg_start": 19260,
+      "original_msg_end": 19263,
+      "status": "compacted_cycle_81",
+      "compacted_at_cycle": 81,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0333": {
+      "original_msg_start": 19364,
+      "original_msg_end": 19367,
+      "status": "compacted_cycle_81",
+      "compacted_at_cycle": 81,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0334": {
+      "original_msg_start": 19449,
+      "original_msg_end": 19452,
+      "status": "compacted_cycle_81",
+      "compacted_at_cycle": 81,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0335": {
+      "original_msg_start": 19539,
+      "original_msg_end": 19542,
+      "status": "compacted_cycle_82",
+      "compacted_at_cycle": 82,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0336": {
+      "original_msg_start": 19648,
+      "original_msg_end": 19651,
+      "status": "compacted_cycle_82",
+      "compacted_at_cycle": 82,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0337": {
+      "original_msg_start": 19758,
+      "original_msg_end": 19760,
+      "status": "compacted_cycle_83",
+      "compacted_at_cycle": 83,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0338": {
+      "original_msg_start": 19859,
+      "original_msg_end": 19863,
+      "status": "compacted_cycle_83",
+      "compacted_at_cycle": 83,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0339": {
+      "original_msg_start": 19951,
+      "original_msg_end": 19954,
+      "status": "compacted_cycle_83",
+      "compacted_at_cycle": 83,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0340": {
+      "original_msg_start": 20054,
+      "original_msg_end": 20057,
+      "status": "compacted_cycle_84",
+      "compacted_at_cycle": 84,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0341": {
+      "original_msg_start": 20163,
+      "original_msg_end": 20166,
+      "status": "compacted_cycle_84",
+      "compacted_at_cycle": 84,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0342": {
+      "original_msg_start": 20252,
+      "original_msg_end": 20254,
+      "status": "compacted_cycle_85",
+      "compacted_at_cycle": 85,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0344": {
+      "original_msg_start": 20345,
+      "original_msg_end": 20348,
+      "status": "compacted_cycle_85",
+      "compacted_at_cycle": 85,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0345": {
+      "original_msg_start": 20445,
+      "original_msg_end": 20448,
+      "status": "compacted_cycle_86",
+      "compacted_at_cycle": 86,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0346": {
+      "original_msg_start": 20562,
+      "original_msg_end": 20565,
+      "status": "compacted_cycle_86",
+      "compacted_at_cycle": 86,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0347": {
+      "original_msg_start": 20663,
+      "original_msg_end": 20666,
+      "status": "compacted_cycle_86",
+      "compacted_at_cycle": 86,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0348": {
+      "original_msg_start": 20782,
+      "original_msg_end": 20785,
+      "status": "compacted_cycle_87",
+      "compacted_at_cycle": 87,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0349": {
+      "original_msg_start": 20871,
+      "original_msg_end": 20874,
+      "status": "compacted_cycle_87",
+      "compacted_at_cycle": 87,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0350": {
+      "original_msg_start": 20954,
+      "original_msg_end": 20957,
+      "status": "compacted_cycle_87",
+      "compacted_at_cycle": 87,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0351": {
+      "original_msg_start": 21041,
+      "original_msg_end": 21044,
+      "status": "compacted_cycle_88",
+      "compacted_at_cycle": 88,
+      "n_compressions": 1,
+      "keyword_survived_last": true
+    },
+    "LM_0354": {
+      "original_msg_start": 21134,
+      "original_msg_end": 21137,
+      "status": "compacted_cycle_88",
+      "compacted_at_cycle": 88,
+      "n_compressions": 1,
+      "keyword_survived_last": false
+    },
+    "LM_0355": {
+      "original_msg_start": 21217,
+      "original_msg_end": 21220,
+      "status": "raw",
+      "compacted_at_cycle": null,
+      "n_compressions": 0,
+      "keyword_survived_last": null
+    }
+  },
+  "cycle_log": [
+    {
+      "cycle": 1,
+      "msgs_before": 700,
+      "msgs_after": 435,
+      "tokens_before": 172811,
+      "tokens_after": 113955,
+      "tokens_freed": 58856,
+      "facts_affected": [
+        "LM_0122",
+        "LM_0123",
+        "LM_0124",
+        "LM_0125",
+        "LM_0126",
+        "LM_0127"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 700
+    },
+    {
+      "cycle": 2,
+      "msgs_before": 665,
+      "msgs_after": 447,
+      "tokens_before": 172759,
+      "tokens_after": 114099,
+      "tokens_freed": 58660,
+      "facts_affected": [
+        "LM_0131",
+        "LM_0132"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 930
+    },
+    {
+      "cycle": 3,
+      "msgs_before": 677,
+      "msgs_after": 453,
+      "tokens_before": 171955,
+      "tokens_after": 113956,
+      "tokens_freed": 57999,
+      "facts_affected": [
+        "LM_0133",
+        "LM_0134"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 1160
+    },
+    {
+      "cycle": 4,
+      "msgs_before": 693,
+      "msgs_after": 468,
+      "tokens_before": 173305,
+      "tokens_after": 114255,
+      "tokens_freed": 59050,
+      "facts_affected": [
+        "LM_0135",
+        "LM_0136"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 1400
+    },
+    {
+      "cycle": 5,
+      "msgs_before": 708,
+      "msgs_after": 472,
+      "tokens_before": 172621,
+      "tokens_after": 113830,
+      "tokens_freed": 58791,
+      "facts_affected": [
+        "LM_0137",
+        "LM_0138",
+        "LM_0139"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 1640
+    },
+    {
+      "cycle": 6,
+      "msgs_before": 702,
+      "msgs_after": 440,
+      "tokens_before": 174618,
+      "tokens_after": 113813,
+      "tokens_freed": 60805,
+      "facts_affected": [
+        "LM_0140",
+        "LM_0141"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 1870
+    },
+    {
+      "cycle": 7,
+      "msgs_before": 660,
+      "msgs_after": 432,
+      "tokens_before": 174712,
+      "tokens_after": 114109,
+      "tokens_freed": 60603,
+      "facts_affected": [
+        "LM_0142",
+        "LM_0143"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 2090
+    },
+    {
+      "cycle": 8,
+      "msgs_before": 652,
+      "msgs_after": 413,
+      "tokens_before": 174990,
+      "tokens_after": 113918,
+      "tokens_freed": 61072,
+      "facts_affected": [
+        "LM_0146",
+        "LM_0147"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 2310
+    },
+    {
+      "cycle": 9,
+      "msgs_before": 653,
+      "msgs_after": 449,
+      "tokens_before": 173361,
+      "tokens_after": 113680,
+      "tokens_freed": 59681,
+      "facts_affected": [
+        "LM_0149",
+        "LM_0151"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 2550
+    },
+    {
+      "cycle": 10,
+      "msgs_before": 659,
+      "msgs_after": 432,
+      "tokens_before": 173544,
+      "tokens_after": 113601,
+      "tokens_freed": 59943,
+      "facts_affected": [
+        "LM_0152",
+        "LM_0153"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 2760
+    },
+    {
+      "cycle": 11,
+      "msgs_before": 672,
+      "msgs_after": 432,
+      "tokens_before": 173552,
+      "tokens_after": 113890,
+      "tokens_freed": 59662,
+      "facts_affected": [
+        "LM_0154",
+        "LM_0155"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 3000
+    },
+    {
+      "cycle": 12,
+      "msgs_before": 662,
+      "msgs_after": 467,
+      "tokens_before": 171347,
+      "tokens_after": 113594,
+      "tokens_freed": 57753,
+      "facts_affected": [
+        "LM_0156",
+        "LM_0158"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 3230
+    },
+    {
+      "cycle": 13,
+      "msgs_before": 727,
+      "msgs_after": 475,
+      "tokens_before": 172992,
+      "tokens_after": 113637,
+      "tokens_freed": 59355,
+      "facts_affected": [
+        "LM_0159",
+        "LM_0160",
+        "LM_0161"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 3490
+    },
+    {
+      "cycle": 14,
+      "msgs_before": 745,
+      "msgs_after": 516,
+      "tokens_before": 173296,
+      "tokens_after": 113669,
+      "tokens_freed": 59627,
+      "facts_affected": [
+        "LM_0162",
+        "LM_0163"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 3760
+    },
+    {
+      "cycle": 15,
+      "msgs_before": 746,
+      "msgs_after": 478,
+      "tokens_before": 173184,
+      "tokens_after": 113762,
+      "tokens_freed": 59422,
+      "facts_affected": [
+        "LM_0164",
+        "LM_0165"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 3990
+    },
+    {
+      "cycle": 16,
+      "msgs_before": 718,
+      "msgs_after": 459,
+      "tokens_before": 173536,
+      "tokens_after": 114024,
+      "tokens_freed": 59512,
+      "facts_affected": [
+        "LM_0166",
+        "LM_0167",
+        "LM_0168"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 4230
+    },
+    {
+      "cycle": 17,
+      "msgs_before": 679,
+      "msgs_after": 441,
+      "tokens_before": 172611,
+      "tokens_after": 114042,
+      "tokens_freed": 58569,
+      "facts_affected": [
+        "LM_0169",
+        "LM_0170"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 4450
+    },
+    {
+      "cycle": 18,
+      "msgs_before": 671,
+      "msgs_after": 449,
+      "tokens_before": 172939,
+      "tokens_after": 113571,
+      "tokens_freed": 59368,
+      "facts_affected": [
+        "LM_0171",
+        "LM_0173"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 4680
+    },
+    {
+      "cycle": 19,
+      "msgs_before": 669,
+      "msgs_after": 448,
+      "tokens_before": 171128,
+      "tokens_after": 113704,
+      "tokens_freed": 57424,
+      "facts_affected": [
+        "LM_0174",
+        "LM_0175"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 4900
+    },
+    {
+      "cycle": 20,
+      "msgs_before": 688,
+      "msgs_after": 452,
+      "tokens_before": 171656,
+      "tokens_after": 114132,
+      "tokens_freed": 57524,
+      "facts_affected": [
+        "LM_0176",
+        "LM_0180"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 5140
+    },
+    {
+      "cycle": 21,
+      "msgs_before": 682,
+      "msgs_after": 452,
+      "tokens_before": 173527,
+      "tokens_after": 113878,
+      "tokens_freed": 59649,
+      "facts_affected": [
+        "LM_0182",
+        "LM_0183"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 5370
+    },
+    {
+      "cycle": 22,
+      "msgs_before": 702,
+      "msgs_after": 477,
+      "tokens_before": 171479,
+      "tokens_after": 113337,
+      "tokens_freed": 58142,
+      "facts_affected": [
+        "LM_0185",
+        "LM_0186"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 5620
+    },
+    {
+      "cycle": 23,
+      "msgs_before": 697,
+      "msgs_after": 471,
+      "tokens_before": 171739,
+      "tokens_after": 113293,
+      "tokens_freed": 58446,
+      "facts_affected": [
+        "LM_0187",
+        "LM_0188"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 5840
+    },
+    {
+      "cycle": 24,
+      "msgs_before": 701,
+      "msgs_after": 436,
+      "tokens_before": 172453,
+      "tokens_after": 113958,
+      "tokens_freed": 58495,
+      "facts_affected": [
+        "LM_0189",
+        "LM_0190",
+        "LM_0191"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 6070
+    },
+    {
+      "cycle": 25,
+      "msgs_before": 656,
+      "msgs_after": 440,
+      "tokens_before": 172753,
+      "tokens_after": 113906,
+      "tokens_freed": 58847,
+      "facts_affected": [
+        "LM_0193",
+        "LM_0194"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 6290
+    },
+    {
+      "cycle": 26,
+      "msgs_before": 680,
+      "msgs_after": 466,
+      "tokens_before": 172308,
+      "tokens_after": 113818,
+      "tokens_freed": 58490,
+      "facts_affected": [
+        "LM_0195",
+        "LM_0196"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 6530
+    },
+    {
+      "cycle": 27,
+      "msgs_before": 696,
+      "msgs_after": 446,
+      "tokens_before": 173308,
+      "tokens_after": 114042,
+      "tokens_freed": 59266,
+      "facts_affected": [
+        "LM_0197",
+        "LM_0198"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 6760
+    },
+    {
+      "cycle": 28,
+      "msgs_before": 686,
+      "msgs_after": 474,
+      "tokens_before": 171752,
+      "tokens_after": 113712,
+      "tokens_freed": 58040,
+      "facts_affected": [
+        "LM_0199",
+        "LM_0200",
+        "LM_0201"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 7000
+    },
+    {
+      "cycle": 29,
+      "msgs_before": 724,
+      "msgs_after": 487,
+      "tokens_before": 171634,
+      "tokens_after": 113882,
+      "tokens_freed": 57752,
+      "facts_affected": [
+        "LM_0202",
+        "LM_0203"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 7250
+    },
+    {
+      "cycle": 30,
+      "msgs_before": 717,
+      "msgs_after": 469,
+      "tokens_before": 171940,
+      "tokens_after": 113819,
+      "tokens_freed": 58121,
+      "facts_affected": [
+        "LM_0204",
+        "LM_0205"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 7480
+    },
+    {
+      "cycle": 31,
+      "msgs_before": 709,
+      "msgs_after": 472,
+      "tokens_before": 171535,
+      "tokens_after": 113309,
+      "tokens_freed": 58226,
+      "facts_affected": [
+        "LM_0206",
+        "LM_0207"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 7720
+    },
+    {
+      "cycle": 32,
+      "msgs_before": 712,
+      "msgs_after": 444,
+      "tokens_before": 173194,
+      "tokens_after": 113817,
+      "tokens_freed": 59377,
+      "facts_affected": [
+        "LM_0208",
+        "LM_0209",
+        "LM_0210"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 7960
+    },
+    {
+      "cycle": 33,
+      "msgs_before": 684,
+      "msgs_after": 480,
+      "tokens_before": 171716,
+      "tokens_after": 113851,
+      "tokens_freed": 57865,
+      "facts_affected": [
+        "LM_0211",
+        "LM_0212"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 8200
+    },
+    {
+      "cycle": 34,
+      "msgs_before": 710,
+      "msgs_after": 475,
+      "tokens_before": 171257,
+      "tokens_after": 114009,
+      "tokens_freed": 57248,
+      "facts_affected": [
+        "LM_0213",
+        "LM_0214"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 8430
+    },
+    {
+      "cycle": 35,
+      "msgs_before": 715,
+      "msgs_after": 460,
+      "tokens_before": 172853,
+      "tokens_after": 114082,
+      "tokens_freed": 58771,
+      "facts_affected": [
+        "LM_0215",
+        "LM_0216"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 8670
+    },
+    {
+      "cycle": 36,
+      "msgs_before": 680,
+      "msgs_after": 464,
+      "tokens_before": 171150,
+      "tokens_after": 114206,
+      "tokens_freed": 56944,
+      "facts_affected": [
+        "LM_0217",
+        "LM_0218",
+        "LM_0219"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 8890
+    },
+    {
+      "cycle": 37,
+      "msgs_before": 704,
+      "msgs_after": 459,
+      "tokens_before": 171810,
+      "tokens_after": 113676,
+      "tokens_freed": 58134,
+      "facts_affected": [
+        "LM_0220",
+        "LM_0221"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 9130
+    },
+    {
+      "cycle": 38,
+      "msgs_before": 709,
+      "msgs_after": 458,
+      "tokens_before": 174367,
+      "tokens_after": 113841,
+      "tokens_freed": 60526,
+      "facts_affected": [
+        "LM_0222",
+        "LM_0223"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 9380
+    },
+    {
+      "cycle": 39,
+      "msgs_before": 688,
+      "msgs_after": 475,
+      "tokens_before": 171649,
+      "tokens_after": 114130,
+      "tokens_freed": 57519,
+      "facts_affected": [
+        "LM_0224",
+        "LM_0225",
+        "LM_0226"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 9610
+    },
+    {
+      "cycle": 40,
+      "msgs_before": 715,
+      "msgs_after": 462,
+      "tokens_before": 171903,
+      "tokens_after": 114095,
+      "tokens_freed": 57808,
+      "facts_affected": [
+        "LM_0227"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 9850
+    },
+    {
+      "cycle": 41,
+      "msgs_before": 672,
+      "msgs_after": 450,
+      "tokens_before": 172085,
+      "tokens_after": 114047,
+      "tokens_freed": 58038,
+      "facts_affected": [
+        "LM_0228",
+        "LM_0231"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 10060
+    },
+    {
+      "cycle": 42,
+      "msgs_before": 690,
+      "msgs_after": 454,
+      "tokens_before": 172456,
+      "tokens_after": 113554,
+      "tokens_freed": 58902,
+      "facts_affected": [
+        "LM_0232",
+        "LM_0233"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 10300
+    },
+    {
+      "cycle": 43,
+      "msgs_before": 684,
+      "msgs_after": 454,
+      "tokens_before": 172864,
+      "tokens_after": 113894,
+      "tokens_freed": 58970,
+      "facts_affected": [
+        "LM_0234",
+        "LM_0235",
+        "LM_0237"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 10530
+    },
+    {
+      "cycle": 44,
+      "msgs_before": 704,
+      "msgs_after": 477,
+      "tokens_before": 172973,
+      "tokens_after": 113412,
+      "tokens_freed": 59561,
+      "facts_affected": [
+        "LM_0238",
+        "LM_0239"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 10780
+    },
+    {
+      "cycle": 45,
+      "msgs_before": 687,
+      "msgs_after": 456,
+      "tokens_before": 171683,
+      "tokens_after": 113831,
+      "tokens_freed": 57852,
+      "facts_affected": [
+        "LM_0240",
+        "LM_0241"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 10990
+    },
+    {
+      "cycle": 46,
+      "msgs_before": 676,
+      "msgs_after": 436,
+      "tokens_before": 174171,
+      "tokens_after": 113871,
+      "tokens_freed": 60300,
+      "facts_affected": [
+        "LM_0242",
+        "LM_0243"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 11210
+    },
+    {
+      "cycle": 47,
+      "msgs_before": 656,
+      "msgs_after": 452,
+      "tokens_before": 171478,
+      "tokens_after": 113687,
+      "tokens_freed": 57791,
+      "facts_affected": [
+        "LM_0244",
+        "LM_0245"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 11430
+    },
+    {
+      "cycle": 48,
+      "msgs_before": 682,
+      "msgs_after": 448,
+      "tokens_before": 171096,
+      "tokens_after": 113463,
+      "tokens_freed": 57633,
+      "facts_affected": [
+        "LM_0246",
+        "LM_0247"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 11660
+    },
+    {
+      "cycle": 49,
+      "msgs_before": 688,
+      "msgs_after": 464,
+      "tokens_before": 171824,
+      "tokens_after": 114022,
+      "tokens_freed": 57802,
+      "facts_affected": [
+        "LM_0248",
+        "LM_0249"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 11900
+    },
+    {
+      "cycle": 50,
+      "msgs_before": 704,
+      "msgs_after": 487,
+      "tokens_before": 171051,
+      "tokens_after": 114142,
+      "tokens_freed": 56909,
+      "facts_affected": [
+        "LM_0250",
+        "LM_0252",
+        "LM_0253"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 12140
+    },
+    {
+      "cycle": 51,
+      "msgs_before": 727,
+      "msgs_after": 485,
+      "tokens_before": 172504,
+      "tokens_after": 114092,
+      "tokens_freed": 58412,
+      "facts_affected": [
+        "LM_0254",
+        "LM_0255"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 12380
+    },
+    {
+      "cycle": 52,
+      "msgs_before": 715,
+      "msgs_after": 462,
+      "tokens_before": 173284,
+      "tokens_after": 113878,
+      "tokens_freed": 59406,
+      "facts_affected": [
+        "LM_0256",
+        "LM_0257"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 12610
+    },
+    {
+      "cycle": 53,
+      "msgs_before": 712,
+      "msgs_after": 478,
+      "tokens_before": 171850,
+      "tokens_after": 113735,
+      "tokens_freed": 58115,
+      "facts_affected": [
+        "LM_0258",
+        "LM_0259"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 12860
+    },
+    {
+      "cycle": 54,
+      "msgs_before": 768,
+      "msgs_after": 523,
+      "tokens_before": 172163,
+      "tokens_after": 113855,
+      "tokens_freed": 58308,
+      "facts_affected": [
+        "LM_0260",
+        "LM_0262",
+        "LM_0263"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 13150
+    },
+    {
+      "cycle": 55,
+      "msgs_before": 753,
+      "msgs_after": 482,
+      "tokens_before": 172909,
+      "tokens_after": 113757,
+      "tokens_freed": 59152,
+      "facts_affected": [
+        "LM_0264",
+        "LM_0266"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 13380
+    },
+    {
+      "cycle": 56,
+      "msgs_before": 722,
+      "msgs_after": 469,
+      "tokens_before": 172107,
+      "tokens_after": 113854,
+      "tokens_freed": 58253,
+      "facts_affected": [
+        "LM_0267",
+        "LM_0268",
+        "LM_0269"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 13620
+    },
+    {
+      "cycle": 57,
+      "msgs_before": 679,
+      "msgs_after": 419,
+      "tokens_before": 171096,
+      "tokens_after": 113542,
+      "tokens_freed": 57554,
+      "facts_affected": [
+        "LM_0270",
+        "LM_0271"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 13830
+    },
+    {
+      "cycle": 58,
+      "msgs_before": 659,
+      "msgs_after": 463,
+      "tokens_before": 171879,
+      "tokens_after": 113707,
+      "tokens_freed": 58172,
+      "facts_affected": [
+        "LM_0274",
+        "LM_0275"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 14070
+    },
+    {
+      "cycle": 59,
+      "msgs_before": 683,
+      "msgs_after": 443,
+      "tokens_before": 172283,
+      "tokens_after": 114087,
+      "tokens_freed": 58196,
+      "facts_affected": [
+        "LM_0277",
+        "LM_0278"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 14290
+    },
+    {
+      "cycle": 60,
+      "msgs_before": 643,
+      "msgs_after": 429,
+      "tokens_before": 171151,
+      "tokens_after": 113963,
+      "tokens_freed": 57188,
+      "facts_affected": [
+        "LM_0279",
+        "LM_0280"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 14490
+    },
+    {
+      "cycle": 61,
+      "msgs_before": 639,
+      "msgs_after": 401,
+      "tokens_before": 174200,
+      "tokens_after": 113964,
+      "tokens_freed": 60236,
+      "facts_affected": [
+        "LM_0281",
+        "LM_0282"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 14700
+    },
+    {
+      "cycle": 62,
+      "msgs_before": 621,
+      "msgs_after": 449,
+      "tokens_before": 172007,
+      "tokens_after": 113737,
+      "tokens_freed": 58270,
+      "facts_affected": [
+        "LM_0283",
+        "LM_0284"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 14920
+    },
+    {
+      "cycle": 63,
+      "msgs_before": 679,
+      "msgs_after": 454,
+      "tokens_before": 171801,
+      "tokens_after": 113953,
+      "tokens_freed": 57848,
+      "facts_affected": [
+        "LM_0286",
+        "LM_0287"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 15150
+    },
+    {
+      "cycle": 64,
+      "msgs_before": 674,
+      "msgs_after": 451,
+      "tokens_before": 172955,
+      "tokens_after": 113943,
+      "tokens_freed": 59012,
+      "facts_affected": [
+        "LM_0289",
+        "LM_0290"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 15370
+    },
+    {
+      "cycle": 65,
+      "msgs_before": 691,
+      "msgs_after": 455,
+      "tokens_before": 171563,
+      "tokens_after": 113944,
+      "tokens_freed": 57619,
+      "facts_affected": [
+        "LM_0291",
+        "LM_0292"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 15610
+    },
+    {
+      "cycle": 66,
+      "msgs_before": 715,
+      "msgs_after": 491,
+      "tokens_before": 171428,
+      "tokens_after": 113930,
+      "tokens_freed": 57498,
+      "facts_affected": [
+        "LM_0293",
+        "LM_0294"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 15870
+    },
+    {
+      "cycle": 67,
+      "msgs_before": 691,
+      "msgs_after": 440,
+      "tokens_before": 172185,
+      "tokens_after": 113425,
+      "tokens_freed": 58760,
+      "facts_affected": [
+        "LM_0296",
+        "LM_0297"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 16070
+    },
+    {
+      "cycle": 68,
+      "msgs_before": 650,
+      "msgs_after": 421,
+      "tokens_before": 174121,
+      "tokens_after": 113966,
+      "tokens_freed": 60155,
+      "facts_affected": [
+        "LM_0298",
+        "LM_0299",
+        "LM_0300"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 16280
+    },
+    {
+      "cycle": 69,
+      "msgs_before": 671,
+      "msgs_after": 462,
+      "tokens_before": 171685,
+      "tokens_after": 114152,
+      "tokens_freed": 57533,
+      "facts_affected": [
+        "LM_0302",
+        "LM_0303"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 16530
+    },
+    {
+      "cycle": 70,
+      "msgs_before": 712,
+      "msgs_after": 479,
+      "tokens_before": 173394,
+      "tokens_after": 113942,
+      "tokens_freed": 59452,
+      "facts_affected": [
+        "LM_0304",
+        "LM_0306"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 16780
+    },
+    {
+      "cycle": 71,
+      "msgs_before": 689,
+      "msgs_after": 426,
+      "tokens_before": 173565,
+      "tokens_after": 113981,
+      "tokens_freed": 59584,
+      "facts_affected": [
+        "LM_0307",
+        "LM_0308"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 16990
+    },
+    {
+      "cycle": 72,
+      "msgs_before": 656,
+      "msgs_after": 444,
+      "tokens_before": 173308,
+      "tokens_after": 113837,
+      "tokens_freed": 59471,
+      "facts_affected": [
+        "LM_0309",
+        "LM_0312"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 17220
+    },
+    {
+      "cycle": 73,
+      "msgs_before": 704,
+      "msgs_after": 489,
+      "tokens_before": 171862,
+      "tokens_after": 113876,
+      "tokens_freed": 57986,
+      "facts_affected": [
+        "LM_0313",
+        "LM_0314",
+        "LM_0315"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 17480
+    },
+    {
+      "cycle": 74,
+      "msgs_before": 759,
+      "msgs_after": 495,
+      "tokens_before": 173703,
+      "tokens_after": 113855,
+      "tokens_freed": 59848,
+      "facts_affected": [
+        "LM_0316",
+        "LM_0317",
+        "LM_0318"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 17750
+    },
+    {
+      "cycle": 75,
+      "msgs_before": 765,
+      "msgs_after": 512,
+      "tokens_before": 171780,
+      "tokens_after": 113851,
+      "tokens_freed": 57929,
+      "facts_affected": [
+        "LM_0319",
+        "LM_0320"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 18020
+    },
+    {
+      "cycle": 76,
+      "msgs_before": 762,
+      "msgs_after": 481,
+      "tokens_before": 173570,
+      "tokens_after": 113660,
+      "tokens_freed": 59910,
+      "facts_affected": [
+        "LM_0321",
+        "LM_0322"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 18270
+    },
+    {
+      "cycle": 77,
+      "msgs_before": 731,
+      "msgs_after": 482,
+      "tokens_before": 172938,
+      "tokens_after": 113775,
+      "tokens_freed": 59163,
+      "facts_affected": [
+        "LM_0323",
+        "LM_0324"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 18520
+    },
+    {
+      "cycle": 78,
+      "msgs_before": 722,
+      "msgs_after": 460,
+      "tokens_before": 172564,
+      "tokens_after": 113895,
+      "tokens_freed": 58669,
+      "facts_affected": [
+        "LM_0325",
+        "LM_0326",
+        "LM_0327"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 18760
+    },
+    {
+      "cycle": 79,
+      "msgs_before": 680,
+      "msgs_after": 439,
+      "tokens_before": 172824,
+      "tokens_after": 114062,
+      "tokens_freed": 58762,
+      "facts_affected": [
+        "LM_0328",
+        "LM_0329"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 18980
+    },
+    {
+      "cycle": 80,
+      "msgs_before": 719,
+      "msgs_after": 496,
+      "tokens_before": 171780,
+      "tokens_after": 113527,
+      "tokens_freed": 58253,
+      "facts_affected": [
+        "LM_0330",
+        "LM_0331"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 19260
+    },
+    {
+      "cycle": 81,
+      "msgs_before": 726,
+      "msgs_after": 464,
+      "tokens_before": 171811,
+      "tokens_after": 113815,
+      "tokens_freed": 57996,
+      "facts_affected": [
+        "LM_0332",
+        "LM_0333",
+        "LM_0334"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 19490
+    },
+    {
+      "cycle": 82,
+      "msgs_before": 704,
+      "msgs_after": 459,
+      "tokens_before": 174616,
+      "tokens_after": 114187,
+      "tokens_freed": 60429,
+      "facts_affected": [
+        "LM_0335",
+        "LM_0336"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 19730
+    },
+    {
+      "cycle": 83,
+      "msgs_before": 699,
+      "msgs_after": 452,
+      "tokens_before": 172459,
+      "tokens_after": 114073,
+      "tokens_freed": 58386,
+      "facts_affected": [
+        "LM_0337",
+        "LM_0338",
+        "LM_0339"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 19970
+    },
+    {
+      "cycle": 84,
+      "msgs_before": 692,
+      "msgs_after": 468,
+      "tokens_before": 171505,
+      "tokens_after": 114120,
+      "tokens_freed": 57385,
+      "facts_affected": [
+        "LM_0340",
+        "LM_0341"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 20210
+    },
+    {
+      "cycle": 85,
+      "msgs_before": 688,
+      "msgs_after": 436,
+      "tokens_before": 173436,
+      "tokens_after": 113648,
+      "tokens_freed": 59788,
+      "facts_affected": [
+        "LM_0342",
+        "LM_0344"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 20430
+    },
+    {
+      "cycle": 86,
+      "msgs_before": 726,
+      "msgs_after": 528,
+      "tokens_before": 171239,
+      "tokens_after": 113899,
+      "tokens_freed": 57340,
+      "facts_affected": [
+        "LM_0345",
+        "LM_0346",
+        "LM_0347"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 20720
+    },
+    {
+      "cycle": 87,
+      "msgs_before": 778,
+      "msgs_after": 495,
+      "tokens_before": 172013,
+      "tokens_after": 114121,
+      "tokens_freed": 57892,
+      "facts_affected": [
+        "LM_0348",
+        "LM_0349",
+        "LM_0350"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 20970
+    },
+    {
+      "cycle": 88,
+      "msgs_before": 735,
+      "msgs_after": 482,
+      "tokens_before": 171666,
+      "tokens_after": 113720,
+      "tokens_freed": 57946,
+      "facts_affected": [
+        "LM_0351",
+        "LM_0354"
+      ],
+      "type": "freeze",
+      "merge": null,
+      "fed_progress": 21210
+    }
+  ],
+  "total_cycles": 88
+}

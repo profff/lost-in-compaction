@@ -1,0 +1,484 @@
+{
+  "verdicts": [
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0167"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0135"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0191"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0132"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0215"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0164"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0203"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0175"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0205"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0182"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0193"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0126"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer mentions 'pages', demonstrating knowledge of page numbers read, but provides range '200-220' instead of specific expected value '220'",
+      "fact_id": "LM_0134"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0202"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer explicitly states 'I don't recall', demonstrating no knowledge of the information",
+      "fact_id": "LM_0201"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no information demonstrated",
+      "fact_id": "LM_0154"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no information demonstrated",
+      "fact_id": "LM_0147"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - failed to provide context-aware response",
+      "fact_id": "LM_0212"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer 'Chicago suburbs' correctly identifies suburbs; more specific than expected but accurate",
+      "fact_id": "LM_0124"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no information demonstrated",
+      "fact_id": "LM_0166"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - failed to identify and explain the Shinjuku/Harajuku discrepancy",
+      "fact_id": "LM_0195"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - failed to provide context-aware response",
+      "fact_id": "LM_0214"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - failed to provide context-aware response",
+      "fact_id": "LM_0206"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no information demonstrated",
+      "fact_id": "LM_0185"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no information demonstrated",
+      "fact_id": "LM_0146"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - failed to provide context-aware response",
+      "fact_id": "LM_0200"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no information demonstrated",
+      "fact_id": "LM_0143"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no information demonstrated",
+      "fact_id": "LM_0155"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - failed to provide context-aware response",
+      "fact_id": "LM_0210"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no information demonstrated",
+      "fact_id": "LM_0188"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0204"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0171"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0131"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Correct answer '5-2' provided with additional context",
+      "fact_id": "LM_0180"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Range '6-9 months' given instead of exact '9 months'",
+      "fact_id": "LM_0138"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Correct answer '32 species' matches expected '32'",
+      "fact_id": "LM_0169"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0156"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0209"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - should have clarified baseball vs football distinction",
+      "fact_id": "LM_0196"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0208"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0163"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0198"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0142"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0123"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Explicit 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0207"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected 'Yes'",
+      "fact_id": "LM_0187"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected '132 points'",
+      "fact_id": "LM_0162"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected preference-based response",
+      "fact_id": "LM_0211"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected preference-based response",
+      "fact_id": "LM_0216"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected increase from 1 to 2 cups",
+      "fact_id": "LM_0189"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected 'Yes'",
+      "fact_id": "LM_0149"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected distinction between Dr. Smith and Dr. Johnson",
+      "fact_id": "LM_0194"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected '3 months'",
+      "fact_id": "LM_0152"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected preference-based response",
+      "fact_id": "LM_0213"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected '25'",
+      "fact_id": "LM_0136"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected '20'",
+      "fact_id": "LM_0158"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected 'Oahu'",
+      "fact_id": "LM_0168"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected '25:50'",
+      "fact_id": "LM_0122"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall'; doesn't demonstrate knowledge of the expected distinction between tennis and table tennis",
+      "fact_id": "LM_0197"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer '37 coins' demonstrates knowledge but is incorrect; expected '38'",
+      "fact_id": "LM_0176"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information recalled",
+      "fact_id": "LM_0186"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information recalled",
+      "fact_id": "LM_0173"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Correct answer, numeric format instead of word",
+      "fact_id": "LM_0159"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Wrong amount: $350,000 vs expected $400,000",
+      "fact_id": "LM_0125"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information recalled",
+      "fact_id": "LM_0174"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information recalled",
+      "fact_id": "LM_0160"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information recalled",
+      "fact_id": "LM_0190"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Correct answer, synonym used (weekly = every week)",
+      "fact_id": "LM_0141"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information recalled",
+      "fact_id": "LM_0127"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Correct answer, expanded with descriptive context",
+      "fact_id": "LM_0151"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information recalled",
+      "fact_id": "LM_0199"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information recalled",
+      "fact_id": "LM_0161"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information recalled",
+      "fact_id": "LM_0165"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "No information recalled",
+      "fact_id": "LM_0170"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Range given (3-5 sessions) instead of exact answer (five)",
+      "fact_id": "LM_0139"
+    },
+    {
+      "recalled": true,
+      "accurate": false,
+      "notes": "Answer demonstrates knowledge of short stories but provides a range (4-7) instead of the specific value (seven)",
+      "fact_id": "LM_0133"
+    },
+    {
+      "recalled": true,
+      "accurate": true,
+      "notes": "Answer includes all required keywords (70, 200mm, zoom, lens) and matches expected answer",
+      "fact_id": "LM_0140"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0153"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0183"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "Answer is 'I don't recall' - no knowledge demonstrated",
+      "fact_id": "LM_0137"
+    }
+  ]
+}

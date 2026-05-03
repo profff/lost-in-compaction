@@ -1,0 +1,407 @@
+{
+  "experiment": "iterative_v6",
+  "run_mode": "R4",
+  "density": 200,
+  "conversation_tokens": 4907856,
+  "context_window": 190000,
+  "qa_batch_size": 5,
+  "results": {
+    "S3": {
+      "recall": 0,
+      "accuracy": 0,
+      "facts_recalled": 0,
+      "facts_total": 0,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 0,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {},
+      "by_compression_depth": {},
+      "compaction_cycles": 89,
+      "grep": {
+        "facts_total": 200,
+        "all_present": 119,
+        "any_present": 184,
+        "recall_upper_bound": 0.595
+      }
+    },
+    "S4": {
+      "recall": 0,
+      "accuracy": 0,
+      "facts_recalled": 0,
+      "facts_total": 0,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 0,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {},
+      "by_compression_depth": {},
+      "compaction_cycles": 88,
+      "grep": {
+        "facts_total": 200,
+        "all_present": 126,
+        "any_present": 185,
+        "recall_upper_bound": 0.63
+      }
+    }
+  },
+  "checkpoints": {
+    "checkpoint_500K": {
+      "S3": {
+        "recall": 0.3684210526315789,
+        "accuracy": 0.10526315789473684,
+        "facts_recalled": 7,
+        "facts_total": 19,
+        "recall_q1": 0.3684210526315789,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 19,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 19,
+            "recalled": 7,
+            "accurate": 2,
+            "recall": 0.3684210526315789,
+            "accuracy": 0.10526315789473684
+          }
+        },
+        "by_compression_depth": {
+          "1": {
+            "total": 19,
+            "recalled": 7,
+            "recall": 0.3684210526315789
+          }
+        },
+        "compaction_cycles": 7,
+        "grep": {
+          "facts_total": 19,
+          "all_present": 19,
+          "any_present": 19,
+          "recall_upper_bound": 1.0
+        }
+      },
+      "S4": {
+        "recall": 0.47368421052631576,
+        "accuracy": 0.2631578947368421,
+        "facts_recalled": 9,
+        "facts_total": 19,
+        "recall_q1": 0.47368421052631576,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 19,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 19,
+            "recalled": 9,
+            "accurate": 5,
+            "recall": 0.47368421052631576,
+            "accuracy": 0.2631578947368421
+          }
+        },
+        "by_compression_depth": {
+          "1": {
+            "total": 19,
+            "recalled": 9,
+            "recall": 0.47368421052631576
+          }
+        },
+        "compaction_cycles": 7,
+        "grep": {
+          "facts_total": 19,
+          "all_present": 19,
+          "any_present": 19,
+          "recall_upper_bound": 1.0
+        }
+      }
+    },
+    "checkpoint_1001K": {
+      "S3": {
+        "recall": 0.3076923076923077,
+        "accuracy": 0.20512820512820512,
+        "facts_recalled": 12,
+        "facts_total": 39,
+        "recall_q1": 0.3076923076923077,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 39,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 39,
+            "recalled": 12,
+            "accurate": 8,
+            "recall": 0.3076923076923077,
+            "accuracy": 0.20512820512820512
+          }
+        },
+        "by_compression_depth": {
+          "0": {
+            "total": 1,
+            "recalled": 0,
+            "recall": 0.0
+          },
+          "1": {
+            "total": 38,
+            "recalled": 12,
+            "recall": 0.3157894736842105
+          }
+        },
+        "compaction_cycles": 16,
+        "grep": {
+          "facts_total": 39,
+          "all_present": 35,
+          "any_present": 38,
+          "recall_upper_bound": 0.8974358974358975
+        }
+      },
+      "S4": {
+        "recall": 0.3333333333333333,
+        "accuracy": 0.15384615384615385,
+        "facts_recalled": 13,
+        "facts_total": 39,
+        "recall_q1": 0.3333333333333333,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 39,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 39,
+            "recalled": 13,
+            "accurate": 6,
+            "recall": 0.3333333333333333,
+            "accuracy": 0.15384615384615385
+          }
+        },
+        "by_compression_depth": {
+          "0": {
+            "total": 1,
+            "recalled": 0,
+            "recall": 0.0
+          },
+          "1": {
+            "total": 38,
+            "recalled": 13,
+            "recall": 0.34210526315789475
+          }
+        },
+        "compaction_cycles": 16,
+        "grep": {
+          "facts_total": 39,
+          "all_present": 36,
+          "any_present": 39,
+          "recall_upper_bound": 0.9230769230769231
+        }
+      }
+    },
+    "checkpoint_2001K": {
+      "S3": {
+        "recall": 0.175,
+        "accuracy": 0.0875,
+        "facts_recalled": 14,
+        "facts_total": 80,
+        "recall_q1": 0.2564102564102564,
+        "recall_q2": 0.1,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 39,
+        "n_q2": 40,
+        "n_q3": 1,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 63,
+            "recalled": 12,
+            "accurate": 7,
+            "recall": 0.19047619047619047,
+            "accuracy": 0.1111111111111111
+          },
+          "single-session-preference": {
+            "total": 17,
+            "recalled": 2,
+            "accurate": 0,
+            "recall": 0.11764705882352941,
+            "accuracy": 0.0
+          }
+        },
+        "by_compression_depth": {
+          "1": {
+            "total": 80,
+            "recalled": 14,
+            "recall": 0.175
+          }
+        },
+        "compaction_cycles": 35,
+        "grep": {
+          "facts_total": 80,
+          "all_present": 58,
+          "any_present": 78,
+          "recall_upper_bound": 0.725
+        }
+      },
+      "S4": {
+        "recall": 0.0,
+        "accuracy": 0.0,
+        "facts_recalled": 0,
+        "facts_total": 80,
+        "recall_q1": 0.0,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 39,
+        "n_q2": 40,
+        "n_q3": 1,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 63,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          },
+          "single-session-preference": {
+            "total": 17,
+            "recalled": 0,
+            "accurate": 0,
+            "recall": 0.0,
+            "accuracy": 0.0
+          }
+        },
+        "by_compression_depth": {
+          "0": {
+            "total": 2,
+            "recalled": 0,
+            "recall": 0.0
+          },
+          "1": {
+            "total": 78,
+            "recalled": 0,
+            "recall": 0.0
+          }
+        },
+        "compaction_cycles": 34,
+        "grep": {
+          "facts_total": 80,
+          "all_present": 61,
+          "any_present": 80,
+          "recall_upper_bound": 0.7625
+        }
+      }
+    },
+    "checkpoint_3501K": {
+      "S3": {
+        "recall": 0,
+        "accuracy": 0,
+        "facts_recalled": 0,
+        "facts_total": 0,
+        "recall_q1": 0.0,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 0,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {},
+        "by_compression_depth": {},
+        "compaction_cycles": 62,
+        "grep": {
+          "facts_total": 140,
+          "all_present": 80,
+          "any_present": 128,
+          "recall_upper_bound": 0.5714285714285714
+        }
+      },
+      "S4": {
+        "recall": 0,
+        "accuracy": 0,
+        "facts_recalled": 0,
+        "facts_total": 0,
+        "recall_q1": 0.0,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 0,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {},
+        "by_compression_depth": {},
+        "compaction_cycles": 62,
+        "grep": {
+          "facts_total": 140,
+          "all_present": 78,
+          "any_present": 130,
+          "recall_upper_bound": 0.5571428571428572
+        }
+      }
+    }
+  },
+  "config": {
+    "experiment": "iterative_v6",
+    "run_mode": "R4",
+    "density": 200,
+    "seed": 42,
+    "context_window": 190000,
+    "high_watermark": 0.9,
+    "low_watermark": 0.6,
+    "feed_batch_size": 10,
+    "qa_batch_size": 5,
+    "strategies": [
+      "S3",
+      "S4"
+    ],
+    "model": "claude-sonnet-4-20250514",
+    "judge_model": "claude-haiku-4-5-20251001",
+    "backend": "wrapper",
+    "judge_backend": "wrapper",
+    "workers": 1,
+    "conversation_tokens": 4907856,
+    "conversation_messages": 21298,
+    "n_facts": 200,
+    "timestamp": "20260427_2249"
+  }
+}

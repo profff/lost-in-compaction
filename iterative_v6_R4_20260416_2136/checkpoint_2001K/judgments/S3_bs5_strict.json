@@ -1,0 +1,486 @@
+{
+  "verdicts": [
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not contain the expected fact 'Yes'",
+      "fact_id": "LM_0160"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not contain any of the expected keywords (music, shop, Main, St)",
+      "fact_id": "LM_0161"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not contain the expected fact '132 points'",
+      "fact_id": "LM_0162"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not contain the expected keyword 'five'",
+      "fact_id": "LM_0163"
+    },
+    {
+      "recalled": false,
+      "accurate": false,
+      "notes": "LLM states 'I don't recall' - does not contain the expected fact '$420'",
+      "fact_id": "LM_0164"
+    },
+    {
+      "fact_id": "LM_0122",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0123",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0124",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0125",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0126",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0127",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0131",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0132",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0133",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0134",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0135",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0136",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0137",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0138",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0139",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0147",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0149",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0151",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0152",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0153",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0140",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0141",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0142",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0143",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0146",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0154",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0155",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0156",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0158",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0159",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0165",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0166",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0167",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0168",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0169",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0170",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0171",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0173",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0174",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0175",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0176",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0180",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0182",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0183",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0185",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0191",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0193",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0194",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0195",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0196",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0197",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0198",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0199",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0200",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0201",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0186",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0187",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0188",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0189",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0190",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0202",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0203",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0204",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0205",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0206",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0212",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0213",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0214",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0215",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0216",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0207",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0208",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0209",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0210",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    },
+    {
+      "fact_id": "LM_0211",
+      "recalled": false,
+      "accurate": false,
+      "notes": "No answer provided"
+    }
+  ],
+  "judge_model": "claude-haiku-4-5-20251001",
+  "rejudge_timestamp": "2026-04-30T08:25:06.177062"
+}

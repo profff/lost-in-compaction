@@ -1,0 +1,26 @@
+{
+  "experiment": "iterative_v6",
+  "run_mode": "R4",
+  "density": 200,
+  "seed": 42,
+  "context_window": 190000,
+  "high_watermark": 0.9,
+  "low_watermark": 0.6,
+  "feed_batch_size": 10,
+  "qa_batch_size": 5,
+  "strategies": [
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ],
+  "model": "claude-sonnet-4-20250514",
+  "judge_model": "claude-sonnet-4-20250514",
+  "backend": "wrapper",
+  "judge_backend": "wrapper",
+  "workers": 2,
+  "conversation_tokens": 4907856,
+  "conversation_messages": 21298,
+  "n_facts": 200,
+  "timestamp": "20260421_1029"
+}

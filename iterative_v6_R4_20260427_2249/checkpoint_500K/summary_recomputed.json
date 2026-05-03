@@ -1,0 +1,68 @@
+{
+  "results": {
+    "S3": {
+      "recall": 0.3684210526315789,
+      "accuracy": 0.10526315789473684,
+      "facts_recalled": 7,
+      "facts_total": 19,
+      "recall_q1": 0.3684210526315789,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 19,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 19,
+          "recalled": 7,
+          "accurate": 2,
+          "recall": 0.3684210526315789,
+          "accuracy": 0.10526315789473684
+        }
+      },
+      "grep": {
+        "facts_total": 19,
+        "all_present": 19,
+        "any_present": 19,
+        "recall_upper_bound": 1.0
+      }
+    },
+    "S4": {
+      "recall": 0.47368421052631576,
+      "accuracy": 0.2631578947368421,
+      "facts_recalled": 9,
+      "facts_total": 19,
+      "recall_q1": 0.47368421052631576,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 19,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 19,
+          "recalled": 9,
+          "accurate": 5,
+          "recall": 0.47368421052631576,
+          "accuracy": 0.2631578947368421
+        }
+      },
+      "grep": {
+        "facts_total": 19,
+        "all_present": 19,
+        "any_present": 19,
+        "recall_upper_bound": 1.0
+      }
+    }
+  },
+  "recompute_timestamp": "2026-04-29T05:15:04.244660",
+  "source": "recompute_summaries.py"
+}

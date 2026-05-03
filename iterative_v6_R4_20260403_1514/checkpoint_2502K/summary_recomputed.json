@@ -1,0 +1,51 @@
+{
+  "results": {
+    "S3": {
+      "recall": 0.18,
+      "accuracy": 0.11,
+      "facts_recalled": 18,
+      "facts_total": 100,
+      "recall_q1": 0.20512820512820512,
+      "recall_q2": 0.1,
+      "recall_q3": 0.2857142857142857,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 40,
+      "n_q3": 21,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 63,
+          "recalled": 10,
+          "accurate": 6,
+          "recall": 0.15873015873015872,
+          "accuracy": 0.09523809523809523
+        },
+        "single-session-assistant": {
+          "total": 8,
+          "recalled": 4,
+          "accurate": 4,
+          "recall": 0.5,
+          "accuracy": 0.5
+        },
+        "single-session-preference": {
+          "total": 29,
+          "recalled": 4,
+          "accurate": 1,
+          "recall": 0.13793103448275862,
+          "accuracy": 0.034482758620689655
+        }
+      },
+      "grep": {
+        "facts_total": 100,
+        "all_present": 69,
+        "any_present": 95,
+        "recall_upper_bound": 0.69
+      }
+    }
+  },
+  "recompute_timestamp": "2026-04-29T05:15:03.511635",
+  "source": "recompute_summaries.py"
+}

@@ -1,0 +1,55 @@
+{
+  "results": {
+    "S1": {
+      "recall": 0,
+      "accuracy": 0,
+      "facts_recalled": 0,
+      "facts_total": 0,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 0,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {},
+      "by_compression_depth": {},
+      "compaction_cycles": 21,
+      "grep": {
+        "facts_total": 140,
+        "all_present": 70,
+        "any_present": 126,
+        "recall_upper_bound": 0.5
+      }
+    },
+    "S2": {
+      "recall": 0,
+      "accuracy": 0,
+      "facts_recalled": 0,
+      "facts_total": 0,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 0,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {},
+      "by_compression_depth": {},
+      "compaction_cycles": 62,
+      "grep": {
+        "facts_total": 140,
+        "all_present": 67,
+        "any_present": 126,
+        "recall_upper_bound": 0.4785714285714286
+      }
+    }
+  },
+  "label": "checkpoint_3501K"
+}

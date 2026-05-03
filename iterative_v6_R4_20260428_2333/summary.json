@@ -1,0 +1,405 @@
+{
+  "experiment": "iterative_v6",
+  "run_mode": "R4",
+  "density": 200,
+  "conversation_tokens": 4907856,
+  "context_window": 190000,
+  "qa_batch_size": 5,
+  "results": {
+    "S1": {
+      "recall": 0,
+      "accuracy": 0,
+      "facts_recalled": 0,
+      "facts_total": 0,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 0,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {},
+      "by_compression_depth": {},
+      "compaction_cycles": 30,
+      "grep": {
+        "facts_total": 200,
+        "all_present": 96,
+        "any_present": 174,
+        "recall_upper_bound": 0.48
+      }
+    },
+    "S2": {
+      "recall": 0.0,
+      "accuracy": 0.0,
+      "facts_recalled": 0,
+      "facts_total": 170,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 9,
+      "n_q2": 40,
+      "n_q3": 40,
+      "n_q4": 40,
+      "n_q5": 41,
+      "by_category": {
+        "knowledge-update": {
+          "total": 33,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-assistant": {
+          "total": 47,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-preference": {
+          "total": 29,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        },
+        "single-session-user": {
+          "total": 61,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 1,
+          "recalled": 0,
+          "recall": 0.0
+        },
+        "1": {
+          "total": 169,
+          "recalled": 0,
+          "recall": 0.0
+        }
+      },
+      "compaction_cycles": 88,
+      "grep": {
+        "facts_total": 200,
+        "all_present": 96,
+        "any_present": 176,
+        "recall_upper_bound": 0.48
+      }
+    }
+  },
+  "checkpoints": {
+    "checkpoint_500K": {
+      "S1": {
+        "recall": 0.05263157894736842,
+        "accuracy": 0.05263157894736842,
+        "facts_recalled": 1,
+        "facts_total": 19,
+        "recall_q1": 0.05263157894736842,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 19,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 19,
+            "recalled": 1,
+            "accurate": 1,
+            "recall": 0.05263157894736842,
+            "accuracy": 0.05263157894736842
+          }
+        },
+        "by_compression_depth": {
+          "0": {
+            "total": 1,
+            "recalled": 1,
+            "recall": 1.0
+          },
+          "1": {
+            "total": 18,
+            "recalled": 0,
+            "recall": 0.0
+          }
+        },
+        "compaction_cycles": 3,
+        "grep": {
+          "facts_total": 19,
+          "all_present": 9,
+          "any_present": 12,
+          "recall_upper_bound": 0.47368421052631576
+        }
+      },
+      "S2": {
+        "recall": 0.21052631578947367,
+        "accuracy": 0.21052631578947367,
+        "facts_recalled": 4,
+        "facts_total": 19,
+        "recall_q1": 0.21052631578947367,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 19,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 19,
+            "recalled": 4,
+            "accurate": 4,
+            "recall": 0.21052631578947367,
+            "accuracy": 0.21052631578947367
+          }
+        },
+        "by_compression_depth": {
+          "1": {
+            "total": 19,
+            "recalled": 4,
+            "recall": 0.21052631578947367
+          }
+        },
+        "compaction_cycles": 7,
+        "grep": {
+          "facts_total": 19,
+          "all_present": 19,
+          "any_present": 19,
+          "recall_upper_bound": 1.0
+        }
+      }
+    },
+    "checkpoint_1001K": {
+      "S1": {
+        "recall": 0.07692307692307693,
+        "accuracy": 0.07692307692307693,
+        "facts_recalled": 3,
+        "facts_total": 39,
+        "recall_q1": 0.07692307692307693,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 39,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 39,
+            "recalled": 3,
+            "accurate": 3,
+            "recall": 0.07692307692307693,
+            "accuracy": 0.07692307692307693
+          }
+        },
+        "by_compression_depth": {
+          "0": {
+            "total": 1,
+            "recalled": 1,
+            "recall": 1.0
+          },
+          "1": {
+            "total": 38,
+            "recalled": 2,
+            "recall": 0.05263157894736842
+          }
+        },
+        "compaction_cycles": 6,
+        "grep": {
+          "facts_total": 39,
+          "all_present": 26,
+          "any_present": 31,
+          "recall_upper_bound": 0.6666666666666666
+        }
+      },
+      "S2": {
+        "recall": 0.1794871794871795,
+        "accuracy": 0.1794871794871795,
+        "facts_recalled": 7,
+        "facts_total": 39,
+        "recall_q1": 0.1794871794871795,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 39,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {
+          "knowledge-update": {
+            "total": 39,
+            "recalled": 7,
+            "accurate": 7,
+            "recall": 0.1794871794871795,
+            "accuracy": 0.1794871794871795
+          }
+        },
+        "by_compression_depth": {
+          "0": {
+            "total": 1,
+            "recalled": 1,
+            "recall": 1.0
+          },
+          "1": {
+            "total": 38,
+            "recalled": 6,
+            "recall": 0.15789473684210525
+          }
+        },
+        "compaction_cycles": 16,
+        "grep": {
+          "facts_total": 39,
+          "all_present": 35,
+          "any_present": 38,
+          "recall_upper_bound": 0.8974358974358975
+        }
+      }
+    },
+    "checkpoint_2001K": {
+      "S1": {
+        "recall": 0,
+        "accuracy": 0,
+        "facts_recalled": 0,
+        "facts_total": 0,
+        "recall_q1": 0.0,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 0,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {},
+        "by_compression_depth": {},
+        "compaction_cycles": 12,
+        "grep": {
+          "facts_total": 80,
+          "all_present": 48,
+          "any_present": 77,
+          "recall_upper_bound": 0.6
+        }
+      },
+      "S2": {
+        "recall": 0,
+        "accuracy": 0,
+        "facts_recalled": 0,
+        "facts_total": 0,
+        "recall_q1": 0.0,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 0,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {},
+        "by_compression_depth": {},
+        "compaction_cycles": 34,
+        "grep": {
+          "facts_total": 80,
+          "all_present": 53,
+          "any_present": 78,
+          "recall_upper_bound": 0.6625
+        }
+      }
+    },
+    "checkpoint_3501K": {
+      "S1": {
+        "recall": 0,
+        "accuracy": 0,
+        "facts_recalled": 0,
+        "facts_total": 0,
+        "recall_q1": 0.0,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 0,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {},
+        "by_compression_depth": {},
+        "compaction_cycles": 21,
+        "grep": {
+          "facts_total": 140,
+          "all_present": 70,
+          "any_present": 126,
+          "recall_upper_bound": 0.5
+        }
+      },
+      "S2": {
+        "recall": 0,
+        "accuracy": 0,
+        "facts_recalled": 0,
+        "facts_total": 0,
+        "recall_q1": 0.0,
+        "recall_q2": 0.0,
+        "recall_q3": 0.0,
+        "recall_q4": 0.0,
+        "recall_q5": 0.0,
+        "n_q1": 0,
+        "n_q2": 0,
+        "n_q3": 0,
+        "n_q4": 0,
+        "n_q5": 0,
+        "by_category": {},
+        "by_compression_depth": {},
+        "compaction_cycles": 62,
+        "grep": {
+          "facts_total": 140,
+          "all_present": 67,
+          "any_present": 126,
+          "recall_upper_bound": 0.4785714285714286
+        }
+      }
+    }
+  },
+  "config": {
+    "experiment": "iterative_v6",
+    "run_mode": "R4",
+    "density": 200,
+    "seed": 42,
+    "context_window": 190000,
+    "high_watermark": 0.9,
+    "low_watermark": 0.6,
+    "feed_batch_size": 10,
+    "qa_batch_size": 5,
+    "strategies": [
+      "S1",
+      "S2"
+    ],
+    "model": "claude-sonnet-4-20250514",
+    "judge_model": "claude-haiku-4-5-20251001",
+    "backend": "wrapper",
+    "judge_backend": "wrapper",
+    "workers": 1,
+    "conversation_tokens": 4907856,
+    "conversation_messages": 21298,
+    "n_facts": 200,
+    "timestamp": "20260428_2333"
+  }
+}

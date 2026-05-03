@@ -1,0 +1,56 @@
+{
+  "results": {
+    "S3": {
+      "recall": 0.2564102564102564,
+      "accuracy": 0.20512820512820512,
+      "facts_recalled": 10,
+      "facts_total": 39,
+      "recall_q1": 0.2564102564102564,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 39,
+          "recalled": 10,
+          "accurate": 8,
+          "recall": 0.2564102564102564,
+          "accuracy": 0.20512820512820512
+        }
+      }
+    },
+    "S4": {
+      "recall": 0.3076923076923077,
+      "accuracy": 0.2564102564102564,
+      "facts_recalled": 12,
+      "facts_total": 39,
+      "recall_q1": 0.3076923076923077,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 39,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 39,
+          "recalled": 12,
+          "accurate": 10,
+          "recall": 0.3076923076923077,
+          "accuracy": 0.2564102564102564
+        }
+      }
+    }
+  },
+  "rejudge_timestamp": "2026-04-30T08:38:26.401611",
+  "judge_model": "claude-haiku-4-5-20251001"
+}
