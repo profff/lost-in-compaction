@@ -50,13 +50,13 @@ Leave blank. Optional for cs.CL submissions and not relevant here.
 
 (arXiv also offers `CC BY-NC-SA` for non-commercial; pick CC BY 4.0 unless you have a reason to restrict.)
 
-## Endorsement code
+## Endorsement
 
-Once arXiv generates the endorsement code (My Account → Endorsement Request → cs.CL), paste it here so it's logged with the rest of the submission metadata:
+arXiv generates an endorsement code automatically when you start a submission in a category where you are not yet endorsed. The code is meant to be shared **privately and one-to-one** with a qualified endorser (someone with 3+ papers in cs.CL on arXiv in the last 5 years), e.g. by personal email or DM. It should not be published in public repositories, social media, or anywhere a non-vetted endorser could pick it up.
 
-```
-[FILL ME IN ONCE GENERATED — share this with the endorser, e.g. Gerard Burnside]
-```
+The code itself is kept locally (not committed) and shared by email when an endorser agrees.
+
+**How an endorser uses it**: they go to https://arxiv.org/auth/endorse, paste the code, log in to their arXiv account, and click "Endorse". Once one qualified endorser has done so, the submission moves out of the "needs endorsement" queue.
 
 ## Submission checklist (run before clicking Submit)
 
