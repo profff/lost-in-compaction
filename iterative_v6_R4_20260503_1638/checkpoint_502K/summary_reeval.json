@@ -1,0 +1,145 @@
+{
+  "results": {
+    "S1": {
+      "recall": 0.05263157894736842,
+      "accuracy": 0.0,
+      "facts_recalled": 1,
+      "facts_total": 19,
+      "recall_q1": 0.05263157894736842,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 19,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 19,
+          "recalled": 1,
+          "accurate": 0,
+          "recall": 0.05263157894736842,
+          "accuracy": 0.0
+        }
+      },
+      "by_compression_depth": {
+        "1": {
+          "total": 19,
+          "recalled": 1,
+          "recall": 0.05263157894736842
+        }
+      },
+      "compaction_cycles": 3
+    },
+    "S2": {
+      "recall": 0.15789473684210525,
+      "accuracy": 0.0,
+      "facts_recalled": 3,
+      "facts_total": 19,
+      "recall_q1": 0.15789473684210525,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 19,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 19,
+          "recalled": 3,
+          "accurate": 0,
+          "recall": 0.15789473684210525,
+          "accuracy": 0.0
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 2,
+          "recalled": 0,
+          "recall": 0.0
+        },
+        "1": {
+          "total": 17,
+          "recalled": 3,
+          "recall": 0.17647058823529413
+        }
+      },
+      "compaction_cycles": 6
+    },
+    "S3": {
+      "recall": 0.0,
+      "accuracy": 0.0,
+      "facts_recalled": 0,
+      "facts_total": 19,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 19,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 19,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 19,
+          "recalled": 0,
+          "recall": 0.0
+        }
+      },
+      "compaction_cycles": 0
+    },
+    "S4": {
+      "recall": 0.0,
+      "accuracy": 0.0,
+      "facts_recalled": 0,
+      "facts_total": 19,
+      "recall_q1": 0.0,
+      "recall_q2": 0.0,
+      "recall_q3": 0.0,
+      "recall_q4": 0.0,
+      "recall_q5": 0.0,
+      "n_q1": 19,
+      "n_q2": 0,
+      "n_q3": 0,
+      "n_q4": 0,
+      "n_q5": 0,
+      "by_category": {
+        "knowledge-update": {
+          "total": 19,
+          "recalled": 0,
+          "accurate": 0,
+          "recall": 0.0,
+          "accuracy": 0.0
+        }
+      },
+      "by_compression_depth": {
+        "0": {
+          "total": 19,
+          "recalled": 0,
+          "recall": 0.0
+        }
+      },
+      "compaction_cycles": 0
+    }
+  },
+  "label": "502K",
+  "judge_model": "claude-haiku-4-5-20251001",
+  "qa_model": "claude-sonnet-4-20250514",
+  "reeval_timestamp": "2026-05-03T17:05:45.745923"
+}

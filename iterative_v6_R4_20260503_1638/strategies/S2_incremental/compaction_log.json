@@ -1,0 +1,97 @@
+[
+  {
+    "cycle": 1,
+    "msgs_before": 770,
+    "msgs_after": 530,
+    "tokens_before": 172920,
+    "tokens_after": 113827,
+    "tokens_freed": 59093,
+    "facts_affected": [
+      "LM_0122",
+      "LM_0123",
+      "LM_0124",
+      "LM_0125",
+      "LM_0126",
+      "LM_0127"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 770
+  },
+  {
+    "cycle": 2,
+    "msgs_before": 780,
+    "msgs_after": 495,
+    "tokens_before": 171825,
+    "tokens_after": 113689,
+    "tokens_freed": 58136,
+    "facts_affected": [
+      "LM_0128",
+      "LM_0129"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 1020
+  },
+  {
+    "cycle": 3,
+    "msgs_before": 685,
+    "msgs_after": 428,
+    "tokens_before": 174105,
+    "tokens_after": 114008,
+    "tokens_freed": 60097,
+    "facts_affected": [
+      "LM_0130",
+      "LM_0131"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 1210
+  },
+  {
+    "cycle": 4,
+    "msgs_before": 648,
+    "msgs_after": 401,
+    "tokens_before": 171379,
+    "tokens_after": 113964,
+    "tokens_freed": 57415,
+    "facts_affected": [
+      "LM_0132",
+      "LM_0133"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 1430
+  },
+  {
+    "cycle": 5,
+    "msgs_before": 641,
+    "msgs_after": 456,
+    "tokens_before": 172397,
+    "tokens_after": 113944,
+    "tokens_freed": 58453,
+    "facts_affected": [
+      "LM_0134",
+      "LM_0135"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 1670
+  },
+  {
+    "cycle": 6,
+    "msgs_before": 686,
+    "msgs_after": 465,
+    "tokens_before": 172997,
+    "tokens_after": 114019,
+    "tokens_freed": 58978,
+    "facts_affected": [
+      "LM_0136",
+      "LM_0137",
+      "LM_0138"
+    ],
+    "type": "compact",
+    "merge": null,
+    "fed_progress": 1900
+  }
+]

@@ -44,12 +44,19 @@ strategies degrade severely with scale (Frozen drops from 14.9% at 500K
 to 3.0% at 5M). With replicates we also document a **substantial run-to-run
 variance**: the compaction phase itself is non-deterministic at temperature
 zero and recall measurements on identical conversations span up to a factor
-of 14×. Single-shot benchmarks of compaction strategies are therefore
-unreliable; replicates are mandatory.
+of 14× (e.g. S4 at 1M: 2.6%–35.9% across replicates). Single-shot
+benchmarks of compaction strategies are therefore unreliable; replicates
+are mandatory.
 
 The bottleneck is attention capacity, not compression quality: keywords
 survive summarization but the LLM cannot retrieve them, and adding more
 preserved summaries dilutes attention rather than helping.
+
+*Scope.* All experiments use Anthropic Claude models (Haiku 4.5 and
+Sonnet 4.6). The methodological findings (Q-effect, judge-prompt
+sensitivity, run-to-run variance) are likely model-agnostic, but the
+absolute recall numbers and the strategy ordering should be re-validated
+on non-Claude models before generalising.
 
 
 ## 1. Introduction
@@ -82,7 +89,7 @@ model can find it. Tests the model's *native* retrieval ability within a single
 context window. Our work extends this paradigm to measure fact *survival*
 across compaction cycles — "Needle in a Compacted Haystack."
 
-**LongMemEval** (Wang et al., 2025). Benchmarks long-term memory capabilities
+**LongMemEval** (Wang et al., 2024). Benchmarks long-term memory capabilities
 of LLM systems across 500 questions in 6 categories (knowledge update, temporal
 reasoning, multi-session, preferences, etc.) spanning up to 115 sessions. We
 use LongMemEval evidence as our fact source, providing ecologically valid,
@@ -101,11 +108,13 @@ summarized — functionally identical to our incremental strategy. The paper
 notes that "older messages have progressively less influence on the summary"
 but does not benchmark this degradation or compare alternative strategies.
 
-**Factory.ai — Evaluating Context Compression** (2025). The closest work to
-ours. Compares three compression *implementations* (Factory's anchored
-iterative, OpenAI Compact, Anthropic SDK) using probe-based evaluation
-(recall, artifact, continuation, decision probes) on 36,000 production
-messages. Key differences with our work:
+**Factory.ai — Evaluating Context Compression** (Ref. 4, 2025). The closest
+work to ours. Compares three compression *implementations* (Factory's
+anchored iterative, OpenAI Compact, Anthropic SDK) using probe-based
+evaluation (recall, artifact, continuation, decision probes) on 36,000
+production messages. A companion blog post on the design of Factory's own
+anchored-iterative method (Ref. 5) is also cited where relevant. Key
+differences with our work:
 - Factory compares *implementations* from different vendors; we compare
   fundamentally different *architectures* (single-shot vs iterative vs frozen)
 - No zone-based recall metrics — their evaluation does not reveal where
@@ -141,9 +150,12 @@ capabilities (Needle in a Haystack, Beyond a Million Tokens), measure context
 rot without compaction (Chroma), or compare vendor implementations without
 varying the underlying strategy (Factory.ai).
 
-The re-summarization cascade problem ("JPEG cascade") is acknowledged
-implicitly in MemGPT but never quantified. The frozen summary strategy and
-the resulting space-time tradeoff have not been explored.
+The re-summarization cascade problem (which we term the **"JPEG cascade"**:
+each compaction cycle re-summarizes content that already includes earlier
+summaries, accumulating loss like repeated lossy compression of an image)
+is acknowledged implicitly in MemGPT but never quantified. The frozen
+summary strategy and the resulting space-time tradeoff have not been
+explored.
 
 ### 1.4 Contributions
 
@@ -172,7 +184,7 @@ We introduce:
 ### 2.1 Evidence source: LongMemEval
 
 Rather than generating synthetic facts (as in our preliminary experiments),
-we use evidence from the LongMemEval benchmark (Wang et al., 2025). LongMemEval
+we use evidence from the LongMemEval benchmark (Wang et al., 2024). LongMemEval
 provides 500 question-answer pairs across 6 categories, each grounded in
 realistic multi-session conversations between a user and an LLM assistant.
 
@@ -337,9 +349,10 @@ This 19pp gap — facts that are *verifiably present* in the context but
 *not retrieved* by the model — is a direct measurement of the "Lost in the
 Middle" phenomenon (Liu et al., 2023) in a realistic conversational setting.
 
-The gap is not uniform across the context: facts in the middle of a 190K
-context are more likely to be present-but-ignored than facts near the
-beginning or end.
+The gap is not uniform across the context: the spatial recall density
+(Figure 4, §5.4) shows that facts near the beginning and end of the 190K
+context are recalled at higher rates than facts in the middle, consistent
+with the U-shaped Lost-in-the-Middle pattern reported in the literature.
 
 ### 3.4 Factorial analysis: filtering vs truncation
 
@@ -414,9 +427,10 @@ fundamental compaction loss before strategy effects compound.]
 All curves decline monotonically. The grep upper bound at δ=0.42 (dashed) stays above 80%
 even at C4, illustrating the grep-LLM divergence.*
 
-Recall degrades monotonically with compaction percentage:
+Recall degrades monotonically with compaction percentage
+(Claude Haiku 4.5 QA, Q=5):
 
-| Level   | δ=0.21 (Q=10) | δ=0.32 (Q=10) | δ=0.42 (Q=10) |
+| Level   | δ=0.21 (Q=5) | δ=0.32 (Q=5) | δ=0.42 (Q=5) |
 |---------|:-----------:|:-----------:|:-----------:|
 | C0      | 62.5%       | 75.0%       | 78.8%       |
 | C1 (5%) | 55.0% (-7)  | 68.3% (-7)  | 72.5% (-6)  |
@@ -434,7 +448,7 @@ have more room to fall but the relative pattern is identical.
 ### 5.2 The compacted zone is dead
 
 Facts within the compacted region are almost never recalled, even though
-their keywords survive in the summary:
+their keywords survive in the summary (Claude Haiku 4.5 QA, Q=5, δ=0.42):
 
 | Level | Grep survival (compacted zone) | LLM recall (compacted zone) |
 |-------|:------------------------------:|:---------------------------:|
@@ -471,6 +485,16 @@ C4 is an outlier (80%) because only 5 facts remain in the zone — too few for
 statistical reliability, but consistent with the model finding a needle among
 mostly-padding.
 
+**Caveat — dilution vs semantic interference.** Our re-padding uses
+unrelated *real* conversations rather than information-free filler. The
+20pp drop therefore mixes two effects: pure attention dilution (more
+tokens to attend to) and semantic interference (the unrelated conversations
+may contain content that competes with or partially matches the test
+questions). Disentangling them would require a control arm where the
+compacted region is replaced with low-information filler (e.g. random
+tokens or repeated boilerplate). We leave this control to future work
+(§8).
+
 ### 5.4 Spatial recall density
 
 ![Figure 4 — Spatial Recall Density](figures/fig4_spatial_recall.png)
@@ -495,8 +519,8 @@ information.
 
 ### 5.5 Repeatability
 
-Three independent runs at δ=0.42/Q=5 (the most demanding configuration with
-80 facts) confirm stability:
+Three independent runs at δ=0.42 / Q=5 (the most demanding configuration
+with 80 facts; Claude Haiku 4.5 QA + Haiku judge) confirm stability:
 
 | Level | Run 1  | Run 2  | Run 3  | Mean    | σ     |
 |-------|:------:|:------:|:------:|:-------:|:-----:|
@@ -516,7 +540,7 @@ the outcome is nearly deterministic.
 The calibration (§3) established that asking more questions per prompt yields
 higher recall in static contexts: at δ=0.42, Q=10 reaches 79% vs 68% for Q=1.
 This holds for uncompacted and lightly compacted contexts. However, under
-severe compaction, the effect **reverses**:
+severe compaction, the effect **reverses** (Claude Haiku 4.5 QA, δ=0.42):
 
 | Level | Q=5 | Q=1 | Δ (Q=1 − Q=5) |
 |-------|:---:|:---:|:-------------:|
@@ -544,11 +568,12 @@ at multiple Q values or, at minimum, note which Q was used.
 ### 5.7 Cross-model validation: Sonnet 4.6
 
 To test whether our findings are model-specific, we replicated the
-single-pass compaction experiment using Claude Sonnet 4.6 (Q=1, δ=0.42,
-judge: Haiku 4.5).
+single-pass compaction experiment using Claude Sonnet 4.6 as the QA model
+(Q=1, δ=0.42; judge: Haiku 4.5). Both columns below are Q=1 — this is
+the configuration in which the cross-model gap is largest, see §5.6.
 
-| Level | Haiku 4.5 | Sonnet 4.6 | Haiku Δ/C0 | Sonnet Δ/C0 |
-|-------|:---------:|:----------:|:----------:|:-----------:|
+| Level | Haiku 4.5 (Q=1) | Sonnet 4.6 (Q=1) | Haiku Δ/C0 | Sonnet Δ/C0 |
+|-------|:---------------:|:----------------:|:----------:|:-----------:|
 | C0    | 67.5%     | 92.5%      | —          | —           |
 | C1 (5%)  | 55.0%  | 90.0%      | −12.5pp    | −2.5pp      |
 | C2 (25%) | 47.5%  | 86.2%      | −20.0pp    | −6.2pp      |
@@ -733,68 +758,72 @@ sequentially (cascade). In FrozenRanked, merges are balanced like a
 tournament bracket — summaries of similar compression depth merge together,
 preventing any single summary from being re-compressed excessively.
 
-### 6.2 Preliminary results
+### 6.2 Protocol: a constant-density, replicated comparison
 
-Our preliminary experiments used synthetic facts on 1.5M and 3M-token
-conversations. While the evidence was less rigorous than §3–5 (synthetic
-facts, no density calibration, Q=10 only), the structural findings are
-informative:
+Pilot studies (synthetic facts at 1.5M and 3M tokens, then a first
+LongMemEval-grounded study with 80 fixed facts spanning 500K–10M) suggested
+the ordering Frozen > Incremental > Brutal but two design issues prevented
+clean conclusions. First, as the conversation grew, fact density `δ`
+decreased mechanically (0.16 → 0.008 facts/kTok), so degradation reflected
+both increased compaction cycles *and* fact dilution. Second, each cell was
+measured once: with a non-deterministic compaction LLM (see §6.4 below),
+single measurements proved insufficient to separate signal from noise.
 
-| Strategy    | Global 1.5M | Global 3M | Early 1.5M | Early 3M | Profile |
-|-------------|:-----------:|:---------:|:----------:|:--------:|---------|
-| Brutal      | 12.7%       | 3.3%      | 2%         | 1%       | ▁▁█ present-biased |
-| Incremental | 16.0%       | 3.7%      | 2%         | 2%       | ▁▃█ JPEG cascade |
-| Frozen      | 16.0%       | 4.7%      | 26%        | 12%      | █▃▂ past-preserving |
+The experiment described here resolves both issues. A single 5M conversation
+is built with **constant fact density** (200 facts at δ=0.04 facts/kTok,
+uniformly interleaved between 0.5% and 99.6% of the tokens). The same
+conversation is fed to all four strategies and evaluated at five mid-feed
+checkpoints (500K, 1M, 2M, 3.5M, 5M) so that older facts age under repeated
+compaction while newer facts are still fresh. Each (strategy, checkpoint)
+cell is measured **4 to 6 times** across independent runs.
 
-Key observations:
-- **Frozen preserves early facts** (26% vs 2% at 1.5M) by preventing
-  re-summarization
-- **JPEG cascade is real**: incremental's accuracy/recall ratio is only 46%
-  (facts recalled in degraded form)
-- **Rankings are stable across scales**: Frozen > Incremental > Brutal
-- **All strategies degrade severely** at 3M (-71% to -77% relative drop)
+Note that δ=0.04 is well below the calibration "sweet spot" (~0.42, §3) at
+which static-context recall plateaus. With density this low, absolute recall
+levels in §6 are bounded by limited evidence as well as by compaction loss.
+The strategy *ordering* (S4 > S3 > S2 > S1) is the salient comparison; the
+absolute numbers are not directly comparable to §3/§5 baselines.
 
-These results motivated the calibrated experiments below, which confirm the
-same hierarchy (Frozen > Incremental > Brutal) with rigorous evidence while
-adding FrozenRanked and spatial analysis.
+**Setup summary**:
 
-### 6.3 Protocol: Phase D — constant-density strategy comparison
+| Parameter | Value |
+|-----------|-------|
+| Conversation | 5M tokens (4.9M actual), built once with seed 42 |
+| Facts | N=200 from R4, uniformly interleaved (0.5% → 99.6%) |
+| Density | δ = 0.04 facts/kTok, constant |
+| Checkpoints | 500K, 1M, 2M, 3.5M, 5M (mid-feed) |
+| Strategies | S1, S2, S3, S4 (same input conversation) |
+| QA model | Claude Sonnet 4.6, Q=5 questions per prompt |
+| Judge model | Claude Haiku 4.5, strict prompt (see §6.4) |
+| Sampling | API temperature parameter set to 0 |
+| Replicates | 4–6 independent runs per (strategy, checkpoint) cell |
 
-Our initial pilot experiments (§6.2) and a first calibrated study used 80 fixed
-facts across conversations of 500K to 10M tokens. This design conflates two
-effects: as the conversation grows, fact density `δ` decreases (0.16 → 0.008
-facts/kTok), so degradation reflects both increased compaction cycles *and*
-fact dilution. The Phase D experiment described here resolves this confound
-with a **constant-density design** and adds replicates to estimate variance.
+The replicates are spread across batch-API runs and gateway runs (some
+gateway runs covered S3+S4 only, others S1+S2 only). Some cells additionally
+include QA-only replicates: the saved compacted contexts are re-evaluated
+with a fresh Q&A pass and a new judge call, isolating the variance
+contributed by the QA / judge phase from the variance contributed by
+compaction.
 
-**Setup**:
-- **Conversation**: 5M tokens (4.9M actual), built once with seed 42.
-- **Facts**: N=200 from R4, uniformly interleaved between 0.5% and 99.6% of
-  the conversation. Constant density `δ = 0.04 facts/kTok` throughout.
-- **Checkpoints**: instead of comparing different conversations of different
-  sizes, we evaluate a single 5M conversation at 5 progress points —
-  500K, 1M, 2M, 3.5M, and 5M. At each checkpoint, only facts that have been
-  fed into the model so far are tested.
-- **Strategies**: S1, S2, S3, S4, all sharing the same input conversation.
-- **Q&A**: Q=5, Sonnet 4.6 model, judge Haiku 4.5 with the strict prompt
-  (see §6.5 for why this matters).
-- **Replicates**: 4 to 6 independent runs per (strategy, checkpoint) cell —
-  3 batch-API runs and 3 partial gateway runs were combined; some cells
-  include QA-only replicates that re-evaluate the same compacted contexts
-  with a fresh Q&A pass.
+API "temperature 0" deserves a note here. Setting `temperature=0` is the
+conventional way to ask for a deterministic-looking output from these
+models; in practice it makes the model strongly favour a single high-
+probability token at each step. Across **independent sessions** with the
+same input it does *not* yield identical outputs: small differences
+(implementation, infrastructure load, internal session state) can change
+the chosen token. Our compaction calls all use temperature 0 yet produce
+visibly different summaries on identical inputs — see §6.4 for the
+quantitative impact.
 
-This protocol exposes the *temporal trajectory* of each strategy on the same
-underlying material, with constant density throughout.
+### 6.3 Results
 
-### 6.4 Results
-
-![Figure 5 — Phase D recall vs conversation length](figures/fig_phase_d_final.png)
+![Figure 5 — Recall vs conversation length](figures/fig_phase_d_final.png)
 *Figure 5: Recall (mean ± std across replicates) for each strategy as a
 function of conversation length, evaluated on a single 5M conversation at
 five mid-feed checkpoints. n=4–6 replicates per point. δ=0.04 throughout.
 Sonnet 4.6 QA + Haiku 4.5 strict judge.*
 
-The mean recall and standard deviation across replicates are:
+The mean recall and standard deviation across replicates are
+(QA: Claude Sonnet 4.6, Q=5; Judge: Claude Haiku 4.5, strict prompt):
 
 | Checkpoint | S1 Brutal | S2 Incremental | S3 Frozen | S4 FrozenRanked |
 |:----------:|:---------:|:--------------:|:---------:|:---------------:|
@@ -806,34 +835,56 @@ The mean recall and standard deviation across replicates are:
 
 Four patterns emerge from this dataset:
 
-**1. The strategy hierarchy holds at every scale.** S4 FrozenRanked has
-the highest mean recall at every checkpoint, followed by S3 Frozen,
-S2 Incremental, and S1 Brutal at the bottom. The strict ordering
-S4 > S3 > S2 > S1 is observed at 500K and at every subsequent checkpoint
-in the means; only at 1M is S2 marginally above S3, but the standard
-deviations overlap heavily.
+**1. The strategy hierarchy holds in the means.** S4 FrozenRanked has the
+highest mean recall at every checkpoint, followed by S3 Frozen, S2
+Incremental, and S1 Brutal. To distinguish robust orderings from
+within-noise differences we ran Wilcoxon signed-rank tests on paired
+replicates (one-sided, alternative S4 > S3 etc.); the table below reports
+the n paired replicates available per cell, the mean difference, and the
+one-sided Wilcoxon p-value. Sample sizes are limited (n=2–6) and
+1M/3.5M variance is large, so several gaps fall short of significance
+even where the mean ordering is consistent.
 
-**2. The S4–S3 gap is real and widens at intermediate scales.** Pilot
-experiments (§6.2) and the older fixed-density study showed S3 ≈ S4 at all
-sizes because frozen summaries never accumulated enough to trigger merges.
-With constant density and replicates, S4 has a robust advantage at 500K
-(28.1 vs 14.9, +13.2pp), 2M (11.2 vs 4.6, +6.6pp), and 3.5M (9.4 vs 6.1,
-+3.3pp). At 5M the gap narrows to 1.6pp and the standard deviations overlap.
-We interpret this as FrozenRanked balancing the merge load across the
-frozen chain (cf. §6.1), which preserves recall while the chain is short
-enough that the bracket structure has effect; once enough merges have
-occurred at 5M, S3 and S4 converge structurally.
+| Comparison | 500K | 1M | 2M | 3.5M | 5M |
+|------------|:----:|:----:|:----:|:----:|:----:|
+| S4 vs S3 | +13.2pp, **p=0.03** (n=6) | +0.4pp, n.s. (n=6) | +6.7pp, **p=0.02** (n=6) | +2.0pp, n.s. (n=5) | +1.6pp, p=0.06 (n=4) |
+| S4 vs S1 | +13.2pp, p=0.06 (n=4) | +6.4pp, n.s. (n=4) | +9.7pp, p=0.06 (n=4) | +5.5pp, p=0.06 (n=4) | 0.0pp, n.s. (n=2) |
+| S2 vs S1 | +9.7pp, **p=0.03** (n=6) | +3.4pp, n.s. (n=6) | +0.3pp, n.s. (n=5) | +3.4pp, n.s. (n=4) | +0.3pp, n.s. (n=3) |
 
-**3. Recall collapses around 2M, then partially recovers.** Every strategy
-shows a deep dip at 2M (S1=0.5%, S2=0.8%, S3=4.6%, S4=11.2%), followed by a
-modest rebound at 3.5M for S2/S3 and continued slow decline for S4. This
-non-monotonic behaviour is one of the most surprising findings of Phase D.
-It is not present in the pilot data because the previous design used a
-different conversation per size. We interpret it as a transient
-overcompression: at the 2M checkpoint, the most recent compaction cycle
-has just consumed a large fraction of facts that have not yet been
-re-introduced into the recent window. By 3.5M, additional facts have
-been fed and the recent window's contribution is restored.
+(Full pairwise table in `phase_d_stats.json`.) **In summary**: the mean
+ordering S4 > S3 ≥ S2 > S1 is consistent across all checkpoints, but
+robustly significant only at the lowest and middle scales (S4 > S3 at 500K
+and 2M with p<0.05, all S4 > Sk wins-only outcomes at 2M). At 1M
+and at 5M the standard deviations are too large for n=4–6 replicates to
+yield significance.
+
+**2. The S4–S3 gap is real at small/intermediate scales but narrows at 5M.**
+Pilot experiments (§6.2) and the older fixed-density study showed
+S3 ≈ S4 at all sizes because frozen summaries never accumulated enough to
+trigger merges. With constant density and replicates, S4 has a robust
+advantage at 500K (28.1 vs 14.9, +13.2pp, **p=0.03**), 2M (11.2 vs 4.6,
++6.7pp, **p=0.02**), and a marginal one at 5M (4.6 vs 3.0, +1.6pp,
+p=0.06; 4/4 wins). At 1M the gap effectively disappears (+0.4pp, n.s.),
+which we attribute to one outlier replicate where S3 happened to recall
+unusually well. We interpret the overall pattern as FrozenRanked balancing
+the merge load across the frozen chain (cf. §6.1), preserving recall
+while the chain is short enough for the bracket structure to matter;
+the persistent (if marginal) S4–S3 gap at 5M suggests this is not purely
+a small-scale phenomenon.
+
+**3. A tentative non-monotonic dip around 2M.** Mean recall for S1 and S2
+is markedly lower at 2M (S1=0.5%, S2=0.8%) than at the surrounding 1M
+(6.0%, 9.4%) and 3.5M (4.0%, 6.8%) checkpoints; S3 (4.6%) and S4 (11.2%)
+also bottom out at 2M. One plausible interpretation is a **transient
+overcompression effect**: at the 2M checkpoint, the most recent compaction
+cycle has just consumed a large block of older facts whose summaries have
+not yet stabilised, and few fresh facts have been fed in since. By 3.5M,
+new facts populate the recent window and the recall partially recovers.
+However, the standard deviations at 2M overlap with neighbouring
+checkpoints (e.g. S2 σ=1.5pp at 2M vs σ=4.0pp at 3.5M), and the effect
+rests on a single conversation; we therefore report this as a **tentative
+observation** that needs replication on additional conversation seeds
+(see §8.7).
 
 **4. All strategies converge near 5%–10% recall at 5M.** Even the best
 strategy (S4) retains only 4.6% of the 200 facts. This convergence
@@ -847,7 +898,7 @@ mean but well within one standard deviation.
 trajectory, we trace recall as a function of fact position in the original
 conversation, with one curve per checkpoint per strategy:
 
-![Figure 6 — Phase D spatial recall per strategy](figures/fig_phase_d_spatial_per_strategy.png)
+![Figure 6 — Spatial recall per strategy](figures/fig_phase_d_spatial_per_strategy.png)
 *Figure 6: Spatial recall per strategy. Each panel is one strategy; each
 curve is one checkpoint (averaged across all replicates). The x-axis is the
 position of the fact in the full 5M-token conversation. Earlier checkpoints
@@ -868,10 +919,11 @@ reduced level than when those facts were fresh. The S4 panel is visibly
 flatter than the S3 one across the conversation, which is the spatial
 counterpart to its higher mean recall.
 
-### 6.5 Methodological findings: variance and judge sensitivity
+### 6.4 Methodological findings: variance and judge sensitivity
 
-Two methodological observations from Phase D are worth highlighting because
-they affect how results from any compaction benchmark should be interpreted.
+Two methodological observations from this study are worth highlighting
+because they affect how results from any compaction benchmark should be
+interpreted.
 
 **Compaction is not deterministic.** Even at temperature 0, Sonnet produces
 different summaries when the same compaction call is invoked in different
@@ -893,17 +945,61 @@ discussing X, but Y was mentioned"*, Haiku frequently scored
 with a stricter prompt (recalled = true only if the *specific expected
 fact* is present in the answer; "I don't recall" or generic mentions of
 related topics are always false) reduced recall numbers by 5–15pp at
-intermediate checkpoints. All Phase D numbers reported above use the
-strict judge. The standard prompt remains in the codebase for reproduction
-of the §3–§5 calibration results, which used the same lenient judge but
-where the looseness has less effect because answers are either clearly
-correct or clearly absent (less ambiguity).
+intermediate checkpoints. All numbers reported above use the strict judge.
+The standard prompt remains in the codebase for reproduction of the §3–§5
+calibration results, which used the same lenient judge but where the
+looseness has less effect because answers are either clearly correct or
+clearly absent (less ambiguity).
+
+**Human-judge calibration.** To validate the strict judge, one of the
+authors hand-graded two stratified samples of 50 (question, expected,
+LLM-answer) tuples each:
+
+- **Sample A — random across all answers**: dominated by "I don't recall"
+  items (the bulk of the corpus). Validates the *negative* class.
+- **Sample B — items where lenient OR strict said `recalled = True`**:
+  validates the *positive* class.
+
+Cohen's κ between the human and each LLM judge:
+
+| | Sample A (n=50, mostly negatives) | Sample B (n=50, positives) |
+|---|:---:|:---:|
+| **κ Human ↔ Strict** (recalled) | **1.000** | **0.831** |
+| κ Human ↔ Lenient (recalled) | 0.000 (2 lenient FP) | 0.000 (lenient says True for all 50 by construction → no variance) |
+| κ Human ↔ Strict (accurate) | 1.000 | 0.879 |
+| κ Human ↔ Lenient (accurate) | 1.000 | 0.716 |
+
+The strict judge is in **almost-perfect agreement** with the human
+(κ ≥ 0.83 on both samples; Landis & Koch threshold: κ ≥ 0.81). The
+disagreements between human and strict on Sample B are interpretable:
+they are mostly cases where the LLM says *"I don't recall, but from the
+summary your sales were …"* and the strict judge accepts the bracketed
+hint while the human treats only the explicit "I don't recall" as
+not-recalled. There are also 1–2 cases where the LLM provides a wrong
+specific value (e.g. expected "120 stars", answered "500 stars"): the
+strict judge marks `recalled = True, accurate = False` per its rule
+(specific number mentioned, wrong value), while the human prefers
+`recalled = False` when the value is wrong. This is a genuine definitional
+ambiguity (recalled = "topic-correct" vs "value-correct"), not a
+mis-calibration.
+
+In contrast, the lenient judge is essentially uninformative on the
+positive class: it labels 100 % of Sample B as `recalled = True` (by
+construction — Sample B is filtered on `lenient_recalled = True`), so
+the kappa with the human collapses to zero. On Sample A the lenient
+judge produces 2 visible false positives where the LLM says "I don't
+recall mentioning X" — the very pattern the strict prompt was designed
+to catch.
+
+The samples and per-item judgements are in the repository at
+`human_judge_sample.json` (Sample A) and `human_judge_positives.json`
+(Sample B). All §6 numbers in this paper use the strict judge.
 
 **Spatial / quintile breakdowns.** With 200 facts, mid-feed checkpoints,
 and replicates, per-quintile breakdowns become noisy at small recall
 levels. The structural trade-off identified in the pilot — Frozen
 preserves the past at the cost of the present, Incremental does the
-opposite — qualitatively persists in Phase D, but the small absolute
+opposite — qualitatively persists in this study, but the small absolute
 counts (often 0–3 recalled facts per quintile) make per-cell tables
 less informative than the integrated mean ± std presented above.
 
@@ -1002,25 +1098,32 @@ context for relevant information. The access pattern likely differs:
 - Chain-of-thought may access 2–3 facts per reasoning step
 - The type of information sought varies (code context vs decisions vs config)
 
-This means our Q=5 measurements approximate one aspect of real recall but
-may not capture the full picture. Instrumenting a real agent to observe
-context access patterns (coding sessions, conversational use, RAG-augmented
-workflows) is a promising direction for future work.
+Our calibration (§3) and single-pass (§5) experiments cover Q=1 and Q=5
+(and Q=10 for §3); the strategy comparison (§6) uses Q=5 throughout. This
+spans the realistic range for explicit queries, but neither Q approximates
+the implicit, multi-fact access pattern of chain-of-thought. Instrumenting
+a real agent to observe context access patterns (coding sessions,
+conversational use, RAG-augmented workflows) is a promising direction for
+future work.
 
 ### 7.5 The limits of architectural optimization
 
-The strategy comparison's most sobering result is that FrozenRanked (S4) — our most
-sophisticated strategy — provides only marginal gains over Frozen (S3):
-+3.8pp at 500K, +1.2pp at 1M, and −5pp at 5M (likely noise). The
-theoretical advantage of hierarchical merging (log₂(N) vs N/2 compression
-depth) does not translate to meaningful recall improvement.
+The strategy comparison shows that FrozenRanked (S4) consistently
+outperforms Frozen (S3) in the mean (S4–S3 gap of +13.2pp at 500K, +6.6pp
+at 2M, +3.3pp at 3.5M, +1.6pp at 5M; the gap shrinks to +0.5pp at 1M
+where one S3 replicate happens to recall unusually well). The advantage
+exists but is modest at large scale, and the standard deviations (cf.
+Figure 5) overlap at every checkpoint past 500K — the strict ordering
+S4 > S3 holds in the means but is not always significant on n=4–6
+replicates.
 
-The reason is structural: at 5M tokens (88 compaction cycles), the 88
-frozen summaries occupy only ~37K tokens — well below the 57K budget
-threshold. **No merges are triggered**, making S3 and S4 functionally
-identical. The merge strategies that differentiate FrozenRanked from Frozen
-only activate when frozen summaries exceed their budget, which requires
-conversations exceeding ~10M tokens (~168 cycles).
+The reason the gap stays modest is structural: at 5M tokens (~88 compaction
+cycles), the frozen summaries together occupy only a small fraction of the
+context — well below the merge budget threshold. **Merges are rarely
+triggered**, so S3 and S4 are functionally close. The merge strategies
+that genuinely differentiate FrozenRanked from Frozen only activate when
+frozen summaries exceed their budget, which requires conversations
+exceeding ~10M tokens (~168 cycles).
 
 This suggests that **the bottleneck is not compression quality but attention
 capacity**. Whether frozen summaries are merged sequentially or
@@ -1037,36 +1140,23 @@ for efficient retrieval (see §8).
 
 ### 7.6 Predictive modelling: what drives recall?
 
-Beyond the headline numbers, the §3 calibration and §5 single-pass datasets
-support a parametric description of recall. We fit logistic regressions to
-the binary outcome (recalled / not recalled) at the individual fact level
-across 4,812 observations. The most informative model uses calibration plus
-single-pass data (n=3,852) and reaches AUC=0.84 with main effects only:
+A logistic regression fitted across the §3 calibration and §5 single-pass
+datasets (n=3,852, AUC=0.84) confirms the expected drivers in additive
+log-odds form: questions per prompt Q (+0.086 / question), compaction
+percent (−0.054 / percent), a positive compaction × position interaction
+(later facts less damaged), and U-shaped position effect (Lost-in-the-Middle).
+Density is not independently significant once Q and position are controlled.
+A gradient-boosted comparison on the same data scores AUC=0.64, so no
+hidden non-linearities are missed by the additive model.
 
-| Predictor | Coefficient | Effect |
-|-----------|:-----------:|---|
-| Batch size Q | +0.086 / question (p<0.001) | up to +20pp Q=1 vs Q=10 in static contexts |
-| Compaction % | −0.054 / percent (p<0.001) | ~−35pp at 50% compaction |
-| Compaction × position | +0.019 (p=0.003) | later facts are less damaged |
-| log(density) | n.s. (p≈0.1) | no independent effect once Q and position are controlled |
-| Position | linear − / quadratic + | U-shaped (Lost-in-the-Middle) |
-| Category | varies | knowledge-update +2.3, preferences ≈0 |
-
-A gradient-boosted comparison on the same data scores AUC=0.64 — the
-logistic model wins. This indicates that the experimental factors act
-**approximately independently in log-odds space**: there are no hidden
-non-linearities that a tree ensemble would exploit. For practitioners, this
-means recall in compacted contexts can be reasoned about with simple
-additive rules of thumb, not as a black box.
-
-We previously fit an analogous model on the older fixed-density §6 data and
-found Frozen (S3) and FrozenRanked (S4) to share the same coefficient
-(+2.73 log-odds vs Brutal). Phase D's constant-density results (§6.4)
-update this picture: the S4–S3 gap exists in the means at 500K, 2M and
-3.5M (with overlapping standard deviations), and only collapses near 5M.
-Re-fitting with Phase D would refine the coefficient but is not central to
-the paper's argument; the main signal is qualitative — Frozen ≫ Incremental
-≫ Brutal — and that signal is preserved in any reasonable specification.
+The model's main practical use is to express recall in compacted contexts
+as simple additive rules of thumb rather than a black box. Full
+specification, coefficients with confidence intervals, and the XGBoost
+comparison are in Appendix B. **Caveat**: the 4,812 observations are not
+mutually independent (same context, same facts repeated under different
+conditions), so the reported p-values should be read as descriptive
+indicators rather than rigorous significance tests; a mixed-effects
+re-fit with a random intercept per fact is left for future work.
 
 ### 7.7 Implications for production systems
 
@@ -1082,7 +1172,7 @@ or incremental compaction. Our results suggest:
    space matters. Random conversation is noise; structured information would
    be better.
 4. **Frozen summaries help but don't scale**: Freezing summaries preserves
-   early facts (13x improvement over Incremental at 500K, §6.4) but the
+   early facts (substantial improvement over Incremental at small scales, §6.3) but the
    advantage narrows at scale as attention dilution dominates.
 5. **Batch size in evaluation matters**: Internal benchmarks should test at
    multiple values of Q to avoid misleading conclusions.
@@ -1101,47 +1191,41 @@ force FrozenRanked into its hierarchical merge regime, revealing whether the
 log₂(N) compression limit provides measurable benefit when merge pressure
 is real — or whether attention dilution dominates regardless.
 
-### 8.2 RAG-augmented compaction
+### 8.2 Importance-weighted compaction
+
+Score messages by importance before compaction, preserving high-value
+exchanges (decisions, configurations) over low-value ones (acknowledgments).
+Our category breakdown already shows that some fact types survive much
+better than others; an explicit importance signal at compaction time should
+amplify this effect on the parts of the conversation users actually care
+about.
+
+### 8.3 RAG-augmented compaction
 
 Two-pass compaction: extract structured facts to a vector database + generate
 a narrative summary. At query time, combine RAG retrieval with the summary.
 Expected to address the "keywords present but not retrievable" gap.
 
-### 8.3 Importance-weighted compaction
-
-Score messages by importance before compaction, preserving high-value
-exchanges (decisions, configurations) over low-value ones (acknowledgments).
-
-### 8.4 Cross-model and cross-architecture validation
-
-Our cross-model validation (§5.7) established that the findings generalize
-from Claude Haiku 4.5 to Claude Sonnet 4.6 — a model with fundamentally
-different spatial recall characteristics (no Lost-in-the-Middle). Testing on
-non-Claude models (GPT-4, Gemini, open-source LLMs served locally) would
-establish whether the findings hold across architectures. Preliminary
-investigation suggests that local LLMs with shorter context windows
-(32K–128K) could be tested with proportionally smaller contexts.
-
-### 8.5 Lossless frozen with on-demand expansion
+### 8.4 Lossless frozen with on-demand expansion
 
 A natural variant of S3 Frozen: each frozen summary keeps a *pointer* to the
 verbatim text it summarises. The summary is what the model sees by default,
 but a lightweight tool call (`expand(frozen_id)`) can swap a frozen block
 for its full original content when precise recall matters. Compared to pure
 S3, this addresses the keyword-LLM gap exhibited in §5.2 without paying the
-cost of carrying full context all the time. Compared to RAG (§8.2), it
+cost of carrying full context all the time. Compared to RAG (§8.3), it
 preserves conversational structure (no arbitrary chunking) and uses the
 model's existing summary as the index.
 
 A more aggressive variant compacts continuously, one or a few turns at a
 time, instead of waiting for a watermark threshold. This avoids the
 "shock" of large compaction passes (a major source of recall loss at 1M+
-contexts, §6.4) at the cost of more compaction calls. Existing systems like
+contexts, §6.3) at the cost of more compaction calls. Existing systems like
 Factory.ai's anchored iterative are in this regime; quantifying the
 frequency-vs-granularity trade-off on the same evidence framework is a
 natural extension of this paper.
 
-### 8.6 Graph-augmented context for million-token windows
+### 8.5 Graph-augmented context for million-token windows
 
 With 1M-token context windows now available (e.g. Claude Opus 4 with 1M
 context), the cost of carrying an *index* alongside summaries becomes
@@ -1154,7 +1238,7 @@ preserved memory. This aligns with concurrent work on temporal knowledge
 graphs for agent memory (Zep / Graphiti) but pushes the structure inside
 the active context rather than into an external service.
 
-### 8.7 Implications of larger context windows
+### 8.6 Implications of larger context windows
 
 The advent of 1M-token windows changes the operating point of compaction
 but does not remove its relevance. With a 200K window, compaction triggers
@@ -1167,6 +1251,16 @@ when not running compaction, larger contexts have higher serving cost.
 Future benchmarks should re-run our protocol at 1M windows to verify that
 the strategy ordering and the variance phenomena documented here scale up
 unchanged.
+
+### 8.7 Cross-model and cross-architecture validation
+
+Our cross-model validation (§5.7) established that the findings generalize
+from Claude Haiku 4.5 to Claude Sonnet 4.6 — a model with fundamentally
+different spatial recall characteristics (no Lost-in-the-Middle). Testing on
+non-Claude models (GPT-4, Gemini, open-source LLMs served locally) would
+establish whether the findings hold across architectures. Preliminary
+investigation suggests that local LLMs with shorter context windows
+(32K–128K) could be tested with proportionally smaller contexts.
 
 
 ## 9. Conclusion
@@ -1256,7 +1350,7 @@ pip install anthropic python-dotenv openai matplotlib numpy
 # Single-pass compaction (§4–5)
 ./benchmark_compaction_v5.py --run R4 --densities 40,60,80
 
-# Strategy comparison Phase D (§6) — 5M conversation, 200 facts, 5 checkpoints
+# Strategy comparison (§6) — 5M conversation, 200 facts, 5 checkpoints
 ./build_conversation_v6.py --density 200 --target-tokens 5000000
 ./benchmark_iterative_v6.py --density 200 --target-tokens 5000000 \
     --backend anthropic_batch --judge-backend anthropic_batch \
@@ -1264,7 +1358,7 @@ pip install anthropic python-dotenv openai matplotlib numpy
     --strategies S1,S2,S3,S4 \
     --checkpoints 500000,1000000,2000000,3500000
 
-# Re-judge an existing run with the strict prompt (§6.5)
+# Re-judge an existing run with the strict prompt (§6.4)
 ./rejudge_only.py iterative_v6_R4_*/checkpoint_500K \
     --strategies S1,S2,S3,S4 --strict --save-suffix _strict
 
@@ -1278,6 +1372,205 @@ pip install anthropic python-dotenv openai matplotlib numpy
 - `iterative_v6_R4_*/` — Strategy comparison results, with `checkpoint_*/`,
   `final_reeval/`, `strategies/SK_*/snapshot_*/`
 - Each checkpoint dir contains `summary*.json`, `answers/`, `judgments/`, `grep/`
+
+
+## Appendix A — Prompts used in the experiments
+
+The full text of the LLM prompts is reproduced here for exact reproduction.
+Variables in `{braces}` are filled at runtime.
+
+### A.1 Compaction prompt (used by all four strategies)
+
+System message:
+
+> You are a conversation summarizer. Be concise and precise.
+
+User message (followed by the conversation segment to compact):
+
+```
+Summarize the following conversation segment.
+
+PRESERVE (critical):
+- Key facts and decisions made
+- File paths and code structures mentioned
+- User preferences and requirements stated
+- Actions completed (files created/edited, commands run)
+- Errors encountered and how they were resolved
+
+DISCARD:
+- Full file contents (keep only: filename, line count, key elements)
+- Verbose tool outputs (keep only: what was done + result)
+- Intermediate reasoning that led nowhere
+- Redundant back-and-forth
+
+Format: Concise narrative summary. Bullet points for lists of facts.
+Target: ~20% of original length, keeping all actionable information.
+
+---
+```
+
+### A.2 Q&A prompt (used in §3, §5, §6 evaluations)
+
+System message:
+
+> You are a helpful assistant working on a complex software project.
+> Answer questions precisely from memory.
+
+User message (sent after the test conversation context):
+
+```
+Answer each of the following questions based ONLY on what you know from
+our conversation.
+Be specific: include exact numbers, names, paths, versions.
+If you don't remember or aren't sure, say "I don't recall".
+
+{questions}
+
+Reply with a JSON array of objects, one per question:
+[{"id": "LM_0001", "answer": "your answer"}, ...]
+
+IMPORTANT: Return ONLY the JSON array, no other text.
+```
+
+### A.3 Strict judge prompt (used to score §6 results)
+
+System message:
+
+> You are an objective evaluator. Answer ONLY with valid JSON.
+
+User message:
+
+```
+Evaluate each LLM answer against the expected answer using STRICT criteria.
+
+{entries}
+
+For each entry, decide TWO booleans:
+
+1. "recalled": Is the SPECIFIC EXPECTED FACT actually present in the LLM's
+   answer?
+   - TRUE only if the LLM's answer contains the substantive expected
+     information (the actual fact, value, name, or concept asked about).
+   - FALSE if any of the following:
+     * The answer says "I don't recall" / "I don't know" / "I'm not sure"
+     * The answer denies the topic was discussed ("I don't recall you
+       mentioning X")
+     * The answer mentions a RELATED topic but not the actual expected fact
+     * The answer is vague/generic and could match many possible expected
+       values
+     * The answer contradicts the expected fact
+
+2. "accurate": Is the answer factually equivalent to the expected answer?
+   - TRUE if the answer contains the expected value (semantic match,
+     exact numbers, etc.)
+   - FALSE if values differ, dates differ, or the answer is wrong on the
+     substance.
+   - Note: accurate=TRUE implies recalled=TRUE.
+
+Examples (STRICT):
+- expected "17 days", answer "10 days" → recalled=TRUE, accurate=FALSE
+- expected "turbinado sugar for cookies", answer "I don't recall extras
+  for cookies but cookies were made" → recalled=FALSE
+- expected "Miami trip in June", answer "I don't recall any Miami trip"
+  → recalled=FALSE
+- expected "Plex Media Server", answer "Plex" → recalled=TRUE, accurate=TRUE
+
+Reply with ONLY a JSON array:
+[{"id": "LM_0001", "recalled": true/false, "accurate": true/false,
+  "notes": "brief reason"}, ...]
+```
+
+A "lenient" version of the judge prompt (without the explicit FALSE
+clauses for "I don't recall" etc.) was used in early §6 runs and was
+later replaced with the strict version above. See §6.4 for the impact of
+this change. Both versions are in the repository at
+`benchmark_iterative_v6.py` (`BATCH_JUDGE_PROMPT` and
+`BATCH_JUDGE_PROMPT_STRICT`).
+
+
+## Appendix B — Predictive recall model (full specification)
+
+### B.1 Model specification
+
+We fit logistic regressions to the binary outcome (recalled / not
+recalled) at the individual fact level. Three nested specifications were
+tried; the most informative is the calibration + single-pass model
+(n=3,852):
+
+```
+logit(P(recall)) = β₀ + β₁·Q + β₂·log(density)
+                   + β₃·position_pct + β₄·position_pct²
+                   + β₅·compaction_pct
+                   + β₆·(compaction_pct × position_pct)
+                   + Σ β_cat·I(category)
+```
+
+Calibration data enters with `compaction_pct = 0`, so the calibration-only
+sub-model (n=1,692) is nested in the full model.
+
+A separate strategy-comparison model fitted on the (older, fixed-density)
+§6 data (n=960) added `log(conv_tokens)` and a strategy indicator:
+
+```
+logit(P(recall)) = β₀ + β₁·log(conv_tokens) + β₂·position_pct
+                   + β₃·position_pct² + Σ β_strat·I(strategy)
+                   + Σ β_cat·I(category)
+```
+
+### B.2 Coefficients
+
+| Coefficient | Calibration only (n=1,692) | + Compaction (n=3,852) | Strategies (n=960) |
+|---|:---:|:---:|:---:|
+| **Q** | +0.096*** | +0.086*** | — |
+| **position_pct** | −0.065*** | −0.051*** | −0.003 n.s. |
+| **position²** | +0.001*** | +0.001*** | +0.001*** |
+| log_density | +0.090 n.s. | +0.126 n.s. | — |
+| **compaction_pct** | — | **−0.054*** | — |
+| compact × position | — | +0.019** | — |
+| log_conv_tokens | — | — | **−1.114*** |
+| strat_S2 (Incremental) | — | — | +2.324*** |
+| strat_S3 (Frozen) | — | — | +2.731*** |
+| strat_S4 (FrozenRanked) | — | — | +2.731*** |
+| cat: knowledge-update | +2.288*** | +2.308*** | +4.025*** |
+| cat: ss-assistant | +1.795*** | +1.809*** | −0.388 n.s. |
+| cat: ss-preference | +0.179 n.s. | +0.339 n.s. | +3.482*** |
+| **AUC** | **0.791** | **0.839** | **0.886** |
+| **Pseudo-R²** | 0.187 | 0.274 | 0.391 |
+
+\*\*\* p < 0.001, \*\* p < 0.01, n.s. = not significant.
+
+### B.3 XGBoost comparison
+
+A gradient-boosted classifier (XGBClassifier, 100 trees, max_depth=4)
+fitted on the same data scores AUC = 0.641 ± 0.199 (5-fold CV) versus
+0.811 ± 0.070 for the logistic model. The simpler additive model wins,
+indicating no hidden non-linearities. XGBoost's feature importance ranking
+(compaction_pct > category > position > Q) is consistent with the logistic
+coefficient magnitudes.
+
+### B.4 Caveat on independence
+
+The 4,812 observations are not mutually independent: each fact appears in
+multiple conditions (different Q, different compaction levels, different
+strategies). The logistic-regression p-values reported above assume
+independent observations and therefore *underestimate* the standard
+errors. The reader should interpret p-values descriptively rather than as
+formal significance tests; a re-fit with mixed-effects (random intercept
+per fact, random intercept per conversation seed) would produce more
+defensible inference and is left for future work. The AUC and the sign /
+magnitude of coefficients are not affected by this issue and remain
+informative.
+
+### B.5 Note on the strategy sub-model
+
+The strategy sub-model (§6, n=960) was fit on the *older* fixed-density
+design with 80 facts spanning 500K–10M. It assigns identical coefficients
+to S3 and S4 because in that design the frozen merge budget was never
+exceeded. The constant-density results in §6.3 update this picture: in the
+means S4 outperforms S3 at 500K, 2M and 3.5M and converges to S3 only at
+5M. Re-fitting on the new data with appropriate hierarchical structure is
+left for future work; the qualitative ordering Frozen ≫ Incremental ≫
+Brutal is robust across both fits.
 
 
 ## References

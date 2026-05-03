@@ -1,0 +1,1355 @@
+{
+  "run": "iterative_v6_R4_20260429_2249",
+  "sample_seed": 42,
+  "sample_size": 50,
+  "created_at": "2026-05-03T16:51:49",
+  "items": [
+    {
+      "cp": "final_reeval",
+      "strategy": "S1",
+      "fact_id": "LM_0160",
+      "question": "Did I finish reading 'The Nightingale' by Kristin Hannah?",
+      "expected": "Yes",
+      "keywords": [
+        "Yes"
+      ],
+      "llm_answer": "Yes, you mentioned that you just finished 'The Nightingale' and it took you about 10 days to finish - you described it as an emotional rollercoaster but worth it.",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:02:14"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S2",
+      "fact_id": "LM_0283",
+      "question": "I was going through our previous conversation about high-end fashion brands, and I was wondering if you could remind me of the brand that uses wild rubber sourced from the Amazon rainforest?",
+      "expected": "Veja",
+      "keywords": [
+        "Veja"
+      ],
+      "llm_answer": "Veja - this French brand produces eco-friendly sneakers using organic cotton, recycled plastic bottles, and wild rubber sourced from the Amazon rainforest",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:02:34"
+      }
+    },
+    {
+      "cp": "checkpoint_1001K",
+      "strategy": "S2",
+      "fact_id": "LM_0149",
+      "question": "Do I go to the gym more frequently than I did previously?",
+      "expected": "Yes",
+      "keywords": [
+        "Yes"
+      ],
+      "llm_answer": "Yes, you've been going to the gym three times a week for the past month and are thinking of increasing to 5 days a week",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:03:27"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S3",
+      "fact_id": "LM_0210",
+      "question": "What should I serve for dinner this weekend with my homegrown ingredients?",
+      "expected": "The user would prefer dinner suggestions that incorporate their homegrown cherry tomatoes and herbs like basil and mint, highlighting recipes that showcase their garden produce. They might not prefer suggestions that do not utilize these specific ingredients or do not emphasize the use of homegrown elements.",
+      "keywords": [
+        "user",
+        "prefer",
+        "dinner",
+        "suggestions",
+        "incorporate",
+        "homegrown",
+        "cherry",
+        "tomatoes",
+        "herbs",
+        "like",
+        "basil",
+        "mint",
+        "highlighting",
+        "recipes",
+        "showcase",
+        "garden",
+        "produce",
+        "utilize",
+        "specific",
+        "ingredients",
+        "emphasize",
+        "use",
+        "elements"
+      ],
+      "llm_answer": "I don't recall discussing your homegrown ingredients or dinner planning in our conversation.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "",
+        "judged_at": "2026-05-03T17:03:36"
+      }
+    },
+    {
+      "cp": "checkpoint_500K",
+      "strategy": "S3",
+      "fact_id": "LM_0143",
+      "question": "How many of Emma's recipes have I tried out?",
+      "expected": "3",
+      "keywords": [
+        "3"
+      ],
+      "llm_answer": "3 of Emma's recipes",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:03:43"
+      }
+    },
+    {
+      "cp": "checkpoint_500K",
+      "strategy": "S4",
+      "fact_id": "LM_0138",
+      "question": "How long have I been using my Fitbit Charge 3?",
+      "expected": "9 months",
+      "keywords": [
+        "months",
+        "9"
+      ],
+      "llm_answer": "6-9 months",
+      "strict_recalled": true,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": true,
+        "accurate": false,
+        "notes": "",
+        "judged_at": "2026-05-03T17:07:20"
+      }
+    },
+    {
+      "cp": "final_reeval",
+      "strategy": "S2",
+      "fact_id": "LM_0348",
+      "question": "Where did I meet Sophia?",
+      "expected": "a coffee shop in the city",
+      "keywords": [
+        "coffee",
+        "shop",
+        "city"
+      ],
+      "llm_answer": "Coffee shop in the city",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:07:29"
+      }
+    },
+    {
+      "cp": "checkpoint_500K",
+      "strategy": "S2",
+      "fact_id": "LM_0142",
+      "question": "How many MCU films did I watch in the last 3 months?",
+      "expected": "5",
+      "keywords": [
+        "5"
+      ],
+      "llm_answer": "5 MCU films",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:07:38"
+      }
+    },
+    {
+      "cp": "checkpoint_1001K",
+      "strategy": "S1",
+      "fact_id": "LM_0164",
+      "question": "How much did I earn at the Downtown Farmers Market on my most recent visit?",
+      "expected": "$420",
+      "keywords": [
+        "420"
+      ],
+      "llm_answer": "I don't recall you mentioning earnings from your most recent visit, but from the conversation summary your recent sales were $420 at Downtown Farmers Market",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "",
+        "judged_at": "2026-05-03T17:07:43"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S1",
+      "fact_id": "LM_0194",
+      "question": "How often do I see Dr. Johnson?",
+      "expected": "The information provided is not enough. You mentioned seeing Dr. Smith but not Dr. Johnson.",
+      "keywords": [
+        "information",
+        "provided",
+        "enough",
+        "mentioned",
+        "seeing",
+        "Dr",
+        "Smith",
+        "Johnson"
+      ],
+      "llm_answer": "I don't recall you mentioning Dr. Johnson in our conversation.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:07:55"
+      }
+    },
+    {
+      "cp": "checkpoint_1001K",
+      "strategy": "S4",
+      "fact_id": "LM_0164",
+      "question": "How much did I earn at the Downtown Farmers Market on my most recent visit?",
+      "expected": "$420",
+      "keywords": [
+        "420"
+      ],
+      "llm_answer": "$420",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:07:58"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S2",
+      "fact_id": "LM_0282",
+      "question": "I was looking back at our previous conversation about environmentally responsible supply chain practices, and I was wondering if you could remind me of the company you mentioned that's doing a great job with sustainability?",
+      "expected": "Patagonia",
+      "keywords": [
+        "Patagonia"
+      ],
+      "llm_answer": "Patagonia",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:08:00"
+      }
+    },
+    {
+      "cp": "checkpoint_500K",
+      "strategy": "S2",
+      "fact_id": "LM_0143",
+      "question": "How many of Emma's recipes have I tried out?",
+      "expected": "3",
+      "keywords": [
+        "3"
+      ],
+      "llm_answer": "3 of Emma's recipes",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:08:03"
+      }
+    },
+    {
+      "cp": "checkpoint_500K",
+      "strategy": "S4",
+      "fact_id": "LM_0139",
+      "question": "How many sessions of the bereavement support group did I attend?",
+      "expected": "five",
+      "keywords": [
+        "five"
+      ],
+      "llm_answer": "3-5 bereavement sessions",
+      "strict_recalled": true,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": true,
+        "accurate": false,
+        "notes": "",
+        "judged_at": "2026-05-03T17:08:07"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S3",
+      "fact_id": "LM_0286",
+      "question": "What degree did I graduate with?",
+      "expected": "Business Administration",
+      "keywords": [
+        "Business",
+        "Administration"
+      ],
+      "llm_answer": "You graduated with a degree in Business Administration.",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:08:12"
+      }
+    },
+    {
+      "cp": "checkpoint_500K",
+      "strategy": "S4",
+      "fact_id": "LM_0143",
+      "question": "How many of Emma's recipes have I tried out?",
+      "expected": "3",
+      "keywords": [
+        "3"
+      ],
+      "llm_answer": "3 of Emma's recipes",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:09:18"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S1",
+      "fact_id": "LM_0205",
+      "question": "Can you recommend a show or movie for me to watch tonight?",
+      "expected": "The user would prefer recommendations for stand-up comedy specials on Netflix, especially those that are known for their storytelling. They may not prefer recommendations for other genres or platforms.",
+      "keywords": [
+        "user",
+        "prefer",
+        "recommendations",
+        "stand",
+        "comedy",
+        "specials",
+        "Netflix",
+        "especially",
+        "known",
+        "storytelling",
+        "other",
+        "genres",
+        "platforms"
+      ],
+      "llm_answer": "I don't recall you asking for show or movie recommendations for tonight in our conversation.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:09:24"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S4",
+      "fact_id": "LM_0138",
+      "question": "How long have I been using my Fitbit Charge 3?",
+      "expected": "9 months",
+      "keywords": [
+        "months",
+        "9"
+      ],
+      "llm_answer": "6-9 months",
+      "strict_recalled": true,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": true,
+        "accurate": false,
+        "notes": "",
+        "judged_at": "2026-05-03T17:09:30"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S4",
+      "fact_id": "LM_0155",
+      "question": "How long have I been sticking to my daily tidying routine?",
+      "expected": "4 weeks",
+      "keywords": [
+        "weeks",
+        "4"
+      ],
+      "llm_answer": "4 weeks consistent",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:09:38"
+      }
+    },
+    {
+      "cp": "final_reeval",
+      "strategy": "S3",
+      "fact_id": "LM_0253",
+      "question": "I was going through our previous conversation about the impact of the political climate in Catalonia on its literature and music. Can you remind me of the example you gave of a Spanish-Catalan singer-songwriter who supports unity between Catalonia and Spain?",
+      "expected": "Manolo García",
+      "keywords": [
+        "Manolo",
+        "García"
+      ],
+      "llm_answer": "I don't recall discussing the impact of the political climate in Catalonia on its literature and music, or mentioning any Spanish-Catalan singer-songwriter who supports unity between Catalonia and Spain.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:09:40"
+      }
+    },
+    {
+      "cp": "final_reeval",
+      "strategy": "S3",
+      "fact_id": "LM_0277",
+      "question": "I'm going back to our previous conversation about music theory. You mentioned some online resources for learning music theory. Can you remind me of the website you recommended for free lessons and exercises?",
+      "expected": "MusicTheory.net",
+      "keywords": [
+        "MusicTheory",
+        "net"
+      ],
+      "llm_answer": "I recommended MusicTheory.net as a website that provides interactive music theory lessons, exercises, and quizzes to help you learn music theory fundamentals.",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:09:48"
+      }
+    },
+    {
+      "cp": "final_reeval",
+      "strategy": "S1",
+      "fact_id": "LM_0348",
+      "question": "Where did I meet Sophia?",
+      "expected": "a coffee shop in the city",
+      "keywords": [
+        "coffee",
+        "shop",
+        "city"
+      ],
+      "llm_answer": "Coffee shop in the city",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:11:31"
+      }
+    },
+    {
+      "cp": "final_reeval",
+      "strategy": "S4",
+      "fact_id": "LM_0203",
+      "question": "Can you suggest a hotel for my upcoming trip to Miami?",
+      "expected": "The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features.",
+      "keywords": [
+        "user",
+        "prefer",
+        "suggestions",
+        "hotels",
+        "Miami",
+        "offer",
+        "great",
+        "views",
+        "possibly",
+        "ocean",
+        "city",
+        "skyline",
+        "unique",
+        "features",
+        "rooftop",
+        "pool",
+        "hot",
+        "tub",
+        "balcony",
+        "basic",
+        "budget",
+        "without"
+      ],
+      "llm_answer": "I don't recall discussing your upcoming trip to Miami or suggesting any hotels for you.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:11:33"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S2",
+      "fact_id": "LM_0221",
+      "question": "I'm trying to decide whether to buy a NAS device now or wait. What do you think?",
+      "expected": "The user would prefer responses that take into account their current home network storage capacity issues and recent reliance on external hard drives, highlighting the potential benefits of a NAS device in addressing these specific needs. They might not prefer responses that ignore their current storage challenges or fail to consider their recent tech upgrades and priorities. Preferred responses would utilize the user's previous mentions of storage capacity issues and tech investments to inform their decision.",
+      "keywords": [
+        "user",
+        "prefer",
+        "responses",
+        "take",
+        "account",
+        "current",
+        "home",
+        "network",
+        "storage",
+        "capacity",
+        "issues",
+        "recent",
+        "reliance",
+        "external",
+        "hard",
+        "drives",
+        "highlighting",
+        "potential",
+        "benefits",
+        "NAS",
+        "device",
+        "addressing",
+        "specific",
+        "needs",
+        "ignore",
+        "challenges",
+        "fail",
+        "consider",
+        "tech",
+        "upgrades",
+        "priorities",
+        "Preferred",
+        "utilize",
+        "user's",
+        "previous",
+        "mentions",
+        "investments",
+        "inform",
+        "decision"
+      ],
+      "llm_answer": "I don't recall you asking about timing for buying a NAS device. You mentioned you've been researching NAS devices and might pull the trigger on a purchase soon, and I provided advice on choosing the right one, but you didn't ask about timing.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:11:36"
+      }
+    },
+    {
+      "cp": "checkpoint_1001K",
+      "strategy": "S1",
+      "fact_id": "LM_0162",
+      "question": "What is my current highest score in Ticket to Ride?",
+      "expected": "132 points",
+      "keywords": [
+        "132",
+        "points"
+      ],
+      "llm_answer": "I don't recall you mentioning your current highest score, but from the conversation summary you achieved 124-132 points",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:11:39"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S3",
+      "fact_id": "LM_0221",
+      "question": "I'm trying to decide whether to buy a NAS device now or wait. What do you think?",
+      "expected": "The user would prefer responses that take into account their current home network storage capacity issues and recent reliance on external hard drives, highlighting the potential benefits of a NAS device in addressing these specific needs. They might not prefer responses that ignore their current storage challenges or fail to consider their recent tech upgrades and priorities. Preferred responses would utilize the user's previous mentions of storage capacity issues and tech investments to inform their decision.",
+      "keywords": [
+        "user",
+        "prefer",
+        "responses",
+        "take",
+        "account",
+        "current",
+        "home",
+        "network",
+        "storage",
+        "capacity",
+        "issues",
+        "recent",
+        "reliance",
+        "external",
+        "hard",
+        "drives",
+        "highlighting",
+        "potential",
+        "benefits",
+        "NAS",
+        "device",
+        "addressing",
+        "specific",
+        "needs",
+        "ignore",
+        "challenges",
+        "fail",
+        "consider",
+        "tech",
+        "upgrades",
+        "priorities",
+        "Preferred",
+        "utilize",
+        "user's",
+        "previous",
+        "mentions",
+        "investments",
+        "inform",
+        "decision"
+      ],
+      "llm_answer": "I don't recall discussing the timing of purchasing a NAS device in our conversation. You mentioned you might pull the trigger on a purchase soon, but we haven't discussed whether to buy now or wait.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:11:45"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S1",
+      "fact_id": "LM_0206",
+      "question": "Can you suggest some activities that I can do in the evening?",
+      "expected": "The user would prefer suggestions that involve relaxing activities that can be done in the evening, preferably before 9:30 pm. They would not prefer suggestions that involve using their phone or watching TV, as these activities have been affecting their sleep quality.",
+      "keywords": [
+        "user",
+        "prefer",
+        "suggestions",
+        "involve",
+        "relaxing",
+        "activities",
+        "done",
+        "evening",
+        "preferably",
+        "30",
+        "pm",
+        "using",
+        "phone",
+        "watching",
+        "TV",
+        "affecting",
+        "sleep",
+        "quality",
+        "9"
+      ],
+      "llm_answer": "I don't recall discussing evening activities in our conversation.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:11:47"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S1",
+      "fact_id": "LM_0286",
+      "question": "What degree did I graduate with?",
+      "expected": "Business Administration",
+      "keywords": [
+        "Business",
+        "Administration"
+      ],
+      "llm_answer": "You graduated with a degree in Business Administration.",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:11:52"
+      }
+    },
+    {
+      "cp": "checkpoint_1001K",
+      "strategy": "S4",
+      "fact_id": "LM_0149",
+      "question": "Do I go to the gym more frequently than I did previously?",
+      "expected": "Yes",
+      "keywords": [
+        "Yes"
+      ],
+      "llm_answer": "Yes, you've been going to the gym three times a week for the past month and mentioned you've been going regularly since the beginning of March, and you're thinking of increasing to 5 days a week",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:11:58"
+      }
+    },
+    {
+      "cp": "checkpoint_1001K",
+      "strategy": "S1",
+      "fact_id": "LM_0149",
+      "question": "Do I go to the gym more frequently than I did previously?",
+      "expected": "Yes",
+      "keywords": [
+        "Yes"
+      ],
+      "llm_answer": "Yes, you mentioned you've been going to the gym 3 times a week for the past month and are thinking of increasing to 5 days a week, which suggests more frequency than previously",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:12:02"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S4",
+      "fact_id": "LM_0164",
+      "question": "How much did I earn at the Downtown Farmers Market on my most recent visit?",
+      "expected": "$420",
+      "keywords": [
+        "420"
+      ],
+      "llm_answer": "$420",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:12:07"
+      }
+    },
+    {
+      "cp": "final_reeval",
+      "strategy": "S1",
+      "fact_id": "LM_0342",
+      "question": "How much time do I dedicate to practicing guitar every day?",
+      "expected": "30 minutes",
+      "keywords": [
+        "30",
+        "minutes"
+      ],
+      "llm_answer": "30 minutes daily",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:12:09"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S3",
+      "fact_id": "LM_0167",
+      "question": "How many Crash Course videos have I watched in the past few weeks?",
+      "expected": "15",
+      "keywords": [
+        "15"
+      ],
+      "llm_answer": "I don't recall discussing Crash Course videos or how many you've watched.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:12:11"
+      }
+    },
+    {
+      "cp": "final_reeval",
+      "strategy": "S2",
+      "fact_id": "LM_0137",
+      "question": "How many stars do I need to reach the gold level on my Starbucks Rewards app?",
+      "expected": "120",
+      "keywords": [
+        "120"
+      ],
+      "llm_answer": "500 stars",
+      "strict_recalled": true,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "",
+        "judged_at": "2026-05-03T17:12:25"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S4",
+      "fact_id": "LM_0274",
+      "question": "I was thinking back to our previous conversation about the Radiation Amplified zombie, and I was wondering if you remembered what we finally decided to name it?",
+      "expected": "Fissionator.",
+      "keywords": [
+        "Fissionator"
+      ],
+      "llm_answer": "I don't recall any conversation about a Radiation Amplified zombie or what we decided to name it.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:12:28"
+      }
+    },
+    {
+      "cp": "final_reeval",
+      "strategy": "S2",
+      "fact_id": "LM_0160",
+      "question": "Did I finish reading 'The Nightingale' by Kristin Hannah?",
+      "expected": "Yes",
+      "keywords": [
+        "Yes"
+      ],
+      "llm_answer": "Yes, you finished reading 'The Nightingale' and it took you about 10 days to finish. You described it as an emotional rollercoaster but worth it.",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:14:47"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S3",
+      "fact_id": "LM_0204",
+      "question": "Can you recommend some interesting cultural events happening around me this weekend?",
+      "expected": "The user would prefer responses that suggest cultural events where they can practice their language skills, particularly Spanish and French. They would also appreciate if the event has a focus on language learning resources. They would not prefer events that do not provide opportunities for language practice or cultural exchange.",
+      "keywords": [
+        "user",
+        "prefer",
+        "responses",
+        "suggest",
+        "cultural",
+        "events",
+        "practice",
+        "language",
+        "skills",
+        "particularly",
+        "Spanish",
+        "French",
+        "appreciate",
+        "event",
+        "focus",
+        "learning",
+        "resources",
+        "provide",
+        "opportunities",
+        "exchange"
+      ],
+      "llm_answer": "I don't recall any specific cultural events being mentioned in our conversation.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:14:50"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S3",
+      "fact_id": "LM_0159",
+      "question": "How many issues of National Geographic have I finished reading?",
+      "expected": "Five",
+      "keywords": [
+        "Five"
+      ],
+      "llm_answer": "5 issues",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:14:57"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S4",
+      "fact_id": "LM_0206",
+      "question": "Can you suggest some activities that I can do in the evening?",
+      "expected": "The user would prefer suggestions that involve relaxing activities that can be done in the evening, preferably before 9:30 pm. They would not prefer suggestions that involve using their phone or watching TV, as these activities have been affecting their sleep quality.",
+      "keywords": [
+        "user",
+        "prefer",
+        "suggestions",
+        "involve",
+        "relaxing",
+        "activities",
+        "done",
+        "evening",
+        "preferably",
+        "30",
+        "pm",
+        "using",
+        "phone",
+        "watching",
+        "TV",
+        "affecting",
+        "sleep",
+        "quality",
+        "9"
+      ],
+      "llm_answer": "I don't recall discussing evening activities in our conversation.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:15:04"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S2",
+      "fact_id": "LM_0205",
+      "question": "Can you recommend a show or movie for me to watch tonight?",
+      "expected": "The user would prefer recommendations for stand-up comedy specials on Netflix, especially those that are known for their storytelling. They may not prefer recommendations for other genres or platforms.",
+      "keywords": [
+        "user",
+        "prefer",
+        "recommendations",
+        "stand",
+        "comedy",
+        "specials",
+        "Netflix",
+        "especially",
+        "known",
+        "storytelling",
+        "other",
+        "genres",
+        "platforms"
+      ],
+      "llm_answer": "I don't recall any specific shows or movies being recommended in our conversation.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:15:05"
+      }
+    },
+    {
+      "cp": "final_reeval",
+      "strategy": "S3",
+      "fact_id": "LM_0160",
+      "question": "Did I finish reading 'The Nightingale' by Kristin Hannah?",
+      "expected": "Yes",
+      "keywords": [
+        "Yes"
+      ],
+      "llm_answer": "Yes, you finished reading 'The Nightingale' and it took you about 10 days to finish. You described it as an emotional rollercoaster but worth it.",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:15:10"
+      }
+    },
+    {
+      "cp": "checkpoint_500K",
+      "strategy": "S3",
+      "fact_id": "LM_0142",
+      "question": "How many MCU films did I watch in the last 3 months?",
+      "expected": "5",
+      "keywords": [
+        "5"
+      ],
+      "llm_answer": "5 MCU films",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:15:13"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S1",
+      "fact_id": "LM_0193",
+      "question": "How many engineers do I lead when I just started my new role as Software Engineer Manager?",
+      "expected": "The information provided is not enough. You mentioned starting the role as Senior Software Engineer but not Software Engineer Manager.",
+      "keywords": [
+        "information",
+        "provided",
+        "enough",
+        "mentioned",
+        "starting",
+        "role",
+        "Senior",
+        "Software",
+        "Engineer",
+        "Manager"
+      ],
+      "llm_answer": "I don't recall you mentioning starting a new role as Software Engineer Manager or how many engineers you lead.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:15:14"
+      }
+    },
+    {
+      "cp": "checkpoint_1001K",
+      "strategy": "S3",
+      "fact_id": "LM_0149",
+      "question": "Do I go to the gym more frequently than I did previously?",
+      "expected": "Yes",
+      "keywords": [
+        "Yes"
+      ],
+      "llm_answer": "Yes, you mentioned you've been going to the gym three times a week for the past month and have been thinking of increasing to 5 days a week",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:15:15"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S1",
+      "fact_id": "LM_0203",
+      "question": "Can you suggest a hotel for my upcoming trip to Miami?",
+      "expected": "The user would prefer suggestions of hotels in Miami that offer great views, possibly of the ocean or the city skyline, and have unique features such as a rooftop pool or a hot tub on the balcony. They may not prefer suggestions of basic or budget hotels without these features.",
+      "keywords": [
+        "user",
+        "prefer",
+        "suggestions",
+        "hotels",
+        "Miami",
+        "offer",
+        "great",
+        "views",
+        "possibly",
+        "ocean",
+        "city",
+        "skyline",
+        "unique",
+        "features",
+        "rooftop",
+        "pool",
+        "hot",
+        "tub",
+        "balcony",
+        "basic",
+        "budget",
+        "without"
+      ],
+      "llm_answer": "I don't recall you mentioning an upcoming trip to Miami in our conversation.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:15:44"
+      }
+    },
+    {
+      "cp": "checkpoint_3501K",
+      "strategy": "S4",
+      "fact_id": "LM_0282",
+      "question": "I was looking back at our previous conversation about environmentally responsible supply chain practices, and I was wondering if you could remind me of the company you mentioned that's doing a great job with sustainability?",
+      "expected": "Patagonia",
+      "keywords": [
+        "Patagonia"
+      ],
+      "llm_answer": "Patagonia",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:15:47"
+      }
+    },
+    {
+      "cp": "checkpoint_500K",
+      "strategy": "S1",
+      "fact_id": "LM_0143",
+      "question": "How many of Emma's recipes have I tried out?",
+      "expected": "3",
+      "keywords": [
+        "3"
+      ],
+      "llm_answer": "3",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:15:48"
+      }
+    },
+    {
+      "cp": "final_reeval",
+      "strategy": "S4",
+      "fact_id": "LM_0268",
+      "question": "I was going through our previous conversation and I was wondering if you could remind me of the two companies you mentioned that prioritize employee safety and well-being like Triumvirate?",
+      "expected": "Patagonia and Southwest Airlines.",
+      "keywords": [
+        "Patagonia",
+        "Southwest",
+        "Airlines"
+      ],
+      "llm_answer": "Patagonia and Southwest Airlines",
+      "strict_recalled": true,
+      "strict_accurate": true,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": true,
+        "accurate": true,
+        "notes": "",
+        "judged_at": "2026-05-03T17:15:52"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S2",
+      "fact_id": "LM_0214",
+      "question": "I've been feeling like my chocolate chip cookies need something extra. Any advice?",
+      "expected": "The user would prefer responses that build upon their previous experimentation with turbinado sugar, suggesting ingredients or techniques that complement its richer flavor. They might not prefer generic cookie-making advice or suggestions that don't take into account their existing use of turbinado sugar.",
+      "keywords": [
+        "user",
+        "prefer",
+        "responses",
+        "build",
+        "upon",
+        "previous",
+        "experimentation",
+        "turbinado",
+        "sugar",
+        "suggesting",
+        "ingredients",
+        "techniques",
+        "complement",
+        "richer",
+        "flavor",
+        "generic",
+        "cookie",
+        "making",
+        "advice",
+        "suggestions",
+        "don't",
+        "take",
+        "account",
+        "existing",
+        "use"
+      ],
+      "llm_answer": "I don't recall you mentioning that your chocolate chip cookies need something extra. You mentioned making chocolate chip cookies two Sundays ago, but didn't say they needed improvement.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": false,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:15:55"
+      }
+    },
+    {
+      "cp": "checkpoint_2001K",
+      "strategy": "S2",
+      "fact_id": "LM_0208",
+      "question": "I've been struggling with my slow cooker recipes. Any advice on getting better results?",
+      "expected": "The user would prefer responses that provide tips and advice specifically tailored to their slow cooker experiences, utilizing their recent success with beef stew and interest in making yogurt in the slow cooker. They might not prefer general slow cooker recipes or advice unrelated to their specific experiences and interests.",
+      "keywords": [
+        "user",
+        "prefer",
+        "responses",
+        "provide",
+        "tips",
+        "advice",
+        "specifically",
+        "tailored",
+        "slow",
+        "cooker",
+        "experiences",
+        "utilizing",
+        "recent",
+        "success",
+        "beef",
+        "stew",
+        "interest",
+        "making",
+        "yogurt",
+        "general",
+        "recipes",
+        "unrelated",
+        "specific",
+        "interests"
+      ],
+      "llm_answer": "I don't recall discussing slow cooker recipes in our conversation.",
+      "strict_recalled": false,
+      "strict_accurate": false,
+      "lenient_recalled": true,
+      "lenient_accurate": true,
+      "human": {
+        "recalled": false,
+        "accurate": false,
+        "notes": "I don't recall but topic mentioned",
+        "judged_at": "2026-05-03T17:15:56"
+      }
+    }
+  ]
+}
