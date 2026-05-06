@@ -737,6 +737,30 @@ def main():
                                 compactDir=sonnetCompDir,
                                 recallDir=sonnetRecDir, nBins=6)
             ax2.set_title("Sonnet 4.6 — Local Recall Rate (d80, Q=1)")
+        elif figNum == 4:
+            # Combined 3-panel local recall rate: Haiku Q=5, Haiku Q=1, Sonnet Q=1.
+            # Replaces standalone fig5 (Haiku Q=1) and fig7 (Sonnet Q=1).
+            haikuQ1CompDir = BASE / "compaction_v5_R4_20260314_0856"
+            sonnetCompDir = BASE / "compaction_v5_R4_20260314_0957"
+            sonnetRecDir = BASE / "recall_v5_R4_20260314_0950"
+            fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(18, 5),
+                                                 sharey=True)
+            _plot_binned_recall(ax1, bs="bs5",
+                                compactDir=COMPACT_DIR,
+                                recallDir=RECALL_DIR, nBins=6)
+            ax1.set_title("Haiku 4.5 — Q=5")
+            _plot_binned_recall(ax2, bs="bs1",
+                                compactDir=haikuQ1CompDir,
+                                recallDir=RECALL_DIR, nBins=6)
+            ax2.set_title("Haiku 4.5 — Q=1")
+            ax2.set_ylabel("")
+            _plot_binned_recall(ax3, bs="bs1",
+                                compactDir=sonnetCompDir,
+                                recallDir=sonnetRecDir, nBins=6)
+            ax3.set_title("Sonnet 4.6 — Q=1")
+            ax3.set_ylabel("")
+            fig.suptitle("Local Recall Rate by Position — Haiku vs Sonnet (d80)",
+                         fontsize=13, fontweight="bold", y=1.02)
         else:
             fig, ax = plt.subplots(1, 1, figsize=(8, 5))
             func(ax)

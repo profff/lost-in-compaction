@@ -21,9 +21,10 @@ tokens, 94\% of its recall comes from the most recent quintile (Q5), with
 the first four quintiles contributing near-zero.
 
 The cross-model validation (\S\ref{sec:sonnet}) strengthens this finding: Sonnet 4.6, with
-92.5\% baseline recall and no Lost-in-the-Middle effect, still drops to 21\% at
-C4. If the loss were purely attentional, a more capable model should resist
-proportionally better --- but it does not at severe compaction levels.
+92.5\% baseline recall and an attenuated (rather than absent)
+Lost-in-the-Middle effect, still drops to 21\% at C4. If the loss were
+purely attentional, a more capable model should resist proportionally
+better --- but it does not at severe compaction levels.
 
 \textbf{2. Information preserved but ignored (attention dilution)}
 

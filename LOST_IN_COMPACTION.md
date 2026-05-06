@@ -31,9 +31,9 @@ Critically, compaction damages even the *untouched* portion of the context:
 remaining-zone recall drops from 68% to 39% as compaction increases — an
 **attention dilution** effect caused by injecting noise (re-padding) into the
 context. Cross-model validation with Claude Sonnet 4.6 (92.5% baseline recall,
-no Lost-in-the-Middle effect) confirms that severe compaction destroys
-information regardless of model capability: even a model with flat spatial
-recall drops to 21% at 98% compaction.
+attenuated Lost-in-the-Middle profile) confirms that severe compaction
+destroys information regardless of model capability: even a stronger
+model with much shallower spatial bias drops to 21% at 98% compaction.
 
 Third, we **compare four multi-pass compaction strategies** (Brutal,
 Incremental, Frozen, FrozenRanked) on a single 5M-token conversation
@@ -497,27 +497,31 @@ tokens or repeated boilerplate). We leave this control to future work
 
 ### 5.4 Spatial recall density
 
-![Figure 4 — Spatial Recall Density](figures/fig4_spatial_recall.png)
-*Figure 4: Cumulative recalled facts by position in the original 190K context (δ=0.42, Q=5).
-Each step curve shows one compaction level. Dotted vertical lines mark compaction boundaries
-(C1 at 9.5K, C2 at 47K, C3 at 95K, C4 at 186K). The C0 baseline rises near-linearly: at the
-sweet-spot density, recall is roughly uniform across position. Compacted variants stay close
-to flat throughout the compacted zone (low slope) and recover the C0 slope only in the
-surviving portion — yielding the expected two-slope profile, with the slope change located
-at each level's compaction boundary.*
+![Figure 4 — Local Recall Rate by Position](figures/fig4_spatial_recall.png)
+*Figure 4: Local recall rate by position in the original 190K context (δ=0.42),
+binned into 6 equal-width segments. Three panels: Haiku Q=5 (left), Haiku Q=1
+(middle), Sonnet 4.6 Q=1 (right). Each curve shows one compaction level. The
+C0 baseline (green) reveals the model's intrinsic spatial bias; C1–C4 show
+how compaction depresses recall preferentially in the compacted zone (left
+side of each panel) while the remaining zone (right side) is also degraded
+by attention dilution.*
 
-This visualization maps each fact to its position in the original (pre-compaction)
-context and shows whether it was recalled. It reveals:
+The binned view exposes three distinct patterns:
 
-- **C0**: Relatively uniform recall across the context, with slight primacy
-  and recency effects
-- **C1**: A small shadow at the beginning (compacted zone), rest intact
-- **C2**: A larger shadow covering the first 25% of the context
-- **C3**: The first half is dead, the second half is weakened by attention dilution
-- **C4**: Almost complete darkness, with tiny islands of recall at the very end
+- **Haiku Q=5 (left panel)**: Pronounced U-shaped C0 (76% early, 54% middle,
+  100% recency peak at 142K) — classic Lost-in-the-Middle. Compacted variants
+  follow the same U but offset downward; the dip in the compacted zone is
+  superimposed on the natural mid-context dip.
+- **Haiku Q=1 (middle panel)**: Same U-shape, lower overall (Q-effect from §3).
+- **Sonnet 4.6 Q=1 (right panel)**: Attenuated U on C0 (90% early, 77% middle,
+  100% recency) — Sonnet retains a Lost-in-the-Middle pattern, but with a
+  ~23pp range vs Haiku's ~46pp. Under heavy compaction (C3, C4), the dip in
+  the compacted zone becomes visible even on Sonnet.
 
-This provides a visual "damage map" showing exactly where compaction destroys
-information.
+The recovery on the right side of each panel is the "remaining zone" effect:
+recall climbs back toward the C0 baseline once we're past the compaction
+boundary. Since Haiku has stronger recency, this recovery is sharper on
+Haiku panels than on Sonnet's flatter profile.
 
 ### 5.5 Repeatability
 
@@ -584,17 +588,19 @@ the configuration in which the cross-model gap is largest, see §5.6.
 
 Three key findings emerge:
 
-**1. Sonnet has no Lost-in-the-Middle effect.** The C0 spatial recall profile
-is flat: 93% early, 93% mid, 92% late. Haiku's C0 shows the classic U-shaped
-profile (higher at extremes, lower in the middle). This difference disappears
-under compaction — both models converge to similar spatial patterns at C3–C4.
+**1. Sonnet has an attenuated Lost-in-the-Middle effect.** The C0 spatial
+recall profile retains a U shape — 90% early, 77% middle, 100% recency
+(see Figure 4, right panel) — but with a ~23pp range, much narrower than
+Haiku's ~46pp. So Sonnet does not eliminate Lost-in-the-Middle; it
+softens it substantially. This difference partially disappears under
+compaction — both models converge to similar spatial patterns at C3–C4.
 
 ![Figure 5 — Smoothed Recall Density](figures/fig8_recall_density.png)
 *Figure 5: Smoothed recall density by position in the original context (Gaussian
 kernel, bw=15kTok). Left: Haiku Q=5. Center: Haiku Q=1. Right: Sonnet Q=1.
-Sonnet's C0 (green) is flat at ~95%, confirming the absence of Lost-in-the-Middle.
-Under compaction, all models show the same pattern: dead zone in the compacted
-region, concentration of recall at the context end.*
+Sonnet's C0 (green) is the highest and flattest of the three but still shows
+a mild U; under compaction, all models show the same pattern: dead zone in
+the compacted region, concentration of recall at the context end.*
 
 **2. A stronger model resists light compaction better.** Sonnet loses only
 2.5pp at C1 and 6.2pp at C2, vs 12.5pp and 20.0pp for Haiku. The additional
@@ -968,9 +974,10 @@ tokens, 94% of its recall comes from the most recent quintile (Q5), with
 the first four quintiles contributing near-zero.
 
 The cross-model validation (§5.7) strengthens this finding: Sonnet 4.6, with
-92.5% baseline recall and no Lost-in-the-Middle effect, still drops to 21% at
-C4. If the loss were purely attentional, a more capable model should resist
-proportionally better — but it does not at severe compaction levels.
+92.5% baseline recall and an attenuated (rather than absent) Lost-in-the-Middle
+effect, still drops to 21% at C4. If the loss were purely attentional, a more
+capable model should resist proportionally better — but it does not at severe
+compaction levels.
 
 **2. Information preserved but ignored (attention dilution)**
 
@@ -1198,8 +1205,9 @@ unchanged.
 ### 8.7 Cross-model and cross-architecture validation
 
 Our cross-model validation (§5.7) established that the findings generalize
-from Claude Haiku 4.5 to Claude Sonnet 4.6 — a model with fundamentally
-different spatial recall characteristics (no Lost-in-the-Middle). Testing on
+from Claude Haiku 4.5 to Claude Sonnet 4.6 — a model with substantially
+different spatial recall characteristics (attenuated Lost-in-the-Middle,
+~23pp range vs Haiku's ~46pp). Testing on
 non-Claude models (GPT-4, Gemini, open-source LLMs served locally) would
 establish whether the findings hold across architectures. Preliminary
 investigation suggests that local LLMs with shorter context windows
@@ -1224,8 +1232,9 @@ compacted zone is near-dead (0–7% recall) despite 82–93% keyword survival �
 the starkest illustration that information *presence* does not equal
 information *retrievability*. The attention dilution effect (remaining-zone
 degradation of 20pp) shows that compaction damages even untouched context.
-Cross-model testing with Sonnet 4.6 — which has no Lost-in-the-Middle effect
-and 92.5% baseline recall — confirms that severe compaction destroys
+Cross-model testing with Sonnet 4.6 — which has only an attenuated
+Lost-in-the-Middle effect and 92.5% baseline recall — confirms that severe
+compaction destroys
 information irrespective of model capability, while stronger models resist
 light compaction significantly better (−2.5pp vs −12.5pp at C1).
 

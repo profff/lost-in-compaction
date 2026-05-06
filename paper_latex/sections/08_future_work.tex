@@ -80,8 +80,9 @@ unchanged.
 \label{sec:cross-arch}
 
 Our cross-model validation (\S\ref{sec:sonnet}) established that the findings generalize
-from Claude Haiku 4.5 to Claude Sonnet 4.6 --- a model with fundamentally
-different spatial recall characteristics (no Lost-in-the-Middle). Testing on
+from Claude Haiku 4.5 to Claude Sonnet 4.6 --- a model with substantially
+different spatial recall characteristics (attenuated Lost-in-the-Middle,
+$\sim$23pp range vs Haiku's $\sim$46pp). Testing on
 non-Claude models (GPT-4, Gemini, open-source LLMs served locally) would
 establish whether the findings hold across architectures. Preliminary
 investigation suggests that local LLMs with shorter context windows

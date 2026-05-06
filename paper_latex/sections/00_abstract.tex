@@ -25,9 +25,9 @@ Critically, compaction damages even the \textit{untouched} portion of the contex
 remaining-zone recall drops from 68\% to 39\% as compaction increases --- an
 \textbf{attention dilution} effect caused by injecting noise (re-padding) into the
 context. Cross-model validation with Claude Sonnet 4.6 (92.5\% baseline recall,
-no Lost-in-the-Middle effect) confirms that severe compaction destroys
-information regardless of model capability: even a model with flat spatial
-recall drops to 21\% at 98\% compaction.
+attenuated Lost-in-the-Middle profile) confirms that severe compaction
+destroys information regardless of model capability: even a stronger
+model with much shallower spatial bias drops to 21\% at 98\% compaction.
 
 Third, we \textbf{compare four multi-pass compaction strategies} (Brutal,
 Incremental, Frozen, FrozenRanked) on a single 5M-token conversation
