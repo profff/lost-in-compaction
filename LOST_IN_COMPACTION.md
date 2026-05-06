@@ -595,12 +595,9 @@ Haiku's ~46pp. So Sonnet does not eliminate Lost-in-the-Middle; it
 softens it substantially. This difference partially disappears under
 compaction — both models converge to similar spatial patterns at C3–C4.
 
-![Figure 5 — Smoothed Recall Density](figures/fig8_recall_density.png)
-*Figure 5: Smoothed recall density by position in the original context (Gaussian
-kernel, bw=15kTok). Left: Haiku Q=5. Center: Haiku Q=1. Right: Sonnet Q=1.
-Sonnet's C0 (green) is the highest and flattest of the three but still shows
-a mild U; under compaction, all models show the same pattern: dead zone in
-the compacted region, concentration of recall at the context end.*
+A continuous Gaussian-smoothed view of the same data, plus a Cx/C0 ratio
+that cancels the C0 bias, are provided in Appendix C as supplementary
+visualizations.
 
 **2. A stronger model resists light compaction better.** Sonnet loses only
 2.5pp at C1 and 6.2pp at C2, vs 12.5pp and 20.0pp for Haiku. The additional
@@ -632,21 +629,21 @@ information?**
 messages except the 2 most recent. The input is truncated to a character cap
 (~150K real tokens) before summarization.
 
-![Figure 6 — Brutal: a single summarization call replaces almost the entire context with one summary plus the last two messages.](figures/fig_strategy_brutal.png)
+![Figure 5 — Brutal: a single summarization call replaces almost the entire context with one summary plus the last two messages.](figures/fig_strategy_brutal.png)
 
 **Incremental (dual watermark)**: When context exceeds 90%, compact enough old
 messages to bring context down to 60%. Previous summaries ARE included in the
 text to be re-summarized. Creates a "JPEG cascade" where each cycle degrades
 earlier summaries.
 
-![Figure 7 — Incremental: every cycle re-summarizes the prior summary together with the oldest raw messages, accumulating loss across iterations (the "JPEG cascade").](figures/fig_strategy_incremental.png)
+![Figure 6 — Incremental: every cycle re-summarizes the prior summary together with the oldest raw messages, accumulating loss across iterations (the "JPEG cascade").](figures/fig_strategy_incremental.png)
 
 **Frozen (dual watermark + immutable summaries)**: Same trigger and target as
 incremental, but completed summaries are marked as frozen and never
 re-summarized. Only raw (non-frozen) messages are compacted. When frozen
 summaries exceed a budget, the oldest are merged.
 
-![Figure 8 — Frozen: only raw messages are compacted; completed summaries are immutable, accumulating in a budgeted "frozen" zone at the bottom of the context.](figures/fig_strategy_frozen.png)
+![Figure 7 — Frozen: only raw messages are compacted; completed summaries are immutable, accumulating in a budgeted "frozen" zone at the bottom of the context.](figures/fig_strategy_frozen.png)
 
 **FrozenRanked (hierarchical merge)**: A variant of Frozen where each frozen
 summary carries a *rank* (initially 1). When frozen summaries exceed their
@@ -654,7 +651,7 @@ budget, only two summaries of the *lowest available rank* merge — producing
 a summary of rank+1. This limits each fact to at most log₂(N) compression
 passes, compared to N/2 in Frozen's sequential oldest-first merging.
 
-![Figure 9 — FrozenRanked vs Frozen: instead of always merging the oldest pair (left), FrozenRanked merges the two lowest-rank summaries (right), bounding the number of times any single summary is re-compressed to log₂N rather than N/2.](figures/fig_strategy_frozenranked.png)
+![Figure 8 — FrozenRanked vs Frozen: instead of always merging the oldest pair (left), FrozenRanked merges the two lowest-rank summaries (right), bounding the number of times any single summary is re-compressed to log₂N rather than N/2.](figures/fig_strategy_frozenranked.png)
 
 The key insight: in Frozen, the oldest summary accumulates *all* merges
 sequentially (cascade). In FrozenRanked, merges are balanced like a
@@ -719,8 +716,8 @@ quantitative impact.
 
 ### 6.3 Results
 
-![Figure 10 — Recall vs conversation length](figures/fig_phase_d_final.png)
-*Figure 10: Recall (mean ± std across replicates) for each strategy as a
+![Figure 9 — Recall vs conversation length](figures/fig_phase_d_final.png)
+*Figure 9: Recall (mean ± std across replicates) for each strategy as a
 function of conversation length, evaluated on a single 5M conversation at
 five mid-feed checkpoints. n=4–6 replicates per point. δ=0.04 throughout.
 Sonnet 4.6 QA + Haiku 4.5 strict judge.*
@@ -801,8 +798,8 @@ mean but well within one standard deviation.
 trajectory, we trace recall as a function of fact position in the original
 conversation, with one curve per checkpoint per strategy:
 
-![Figure 11 — Spatial recall per strategy](figures/fig_phase_d_spatial_per_strategy.png)
-*Figure 11: Spatial recall per strategy. Each panel is one strategy; each
+![Figure 10 — Spatial recall per strategy](figures/fig_phase_d_spatial_per_strategy.png)
+*Figure 10: Spatial recall per strategy. Each panel is one strategy; each
 curve is one checkpoint (averaged across all replicates). The x-axis is the
 position of the fact in the full 5M-token conversation. Earlier checkpoints
 only cover the first part of the conversation; later checkpoints extend
@@ -1063,7 +1060,7 @@ outperforms Frozen (S3) in the mean (S4–S3 gap of +13.2pp at 500K, +6.6pp
 at 2M, +3.3pp at 3.5M, +1.6pp at 5M; the gap shrinks to +0.5pp at 1M
 where one S3 replicate happens to recall unusually well). The advantage
 exists but is modest at large scale, and the standard deviations (cf.
-Figure 10) overlap at every checkpoint past 500K — the strict ordering
+Figure 9) overlap at every checkpoint past 500K — the strict ordering
 S4 > S3 holds in the means but is not always significant on n=4–6
 replicates.
 
@@ -1538,6 +1535,35 @@ means S4 outperforms S3 at 500K, 2M and 3.5M and converges to S3 only at
 5M. Re-fitting on the new data with appropriate hierarchical structure is
 left for future work; the qualitative ordering Frozen ≫ Incremental ≫
 Brutal is robust across both fits.
+
+
+## Appendix C — Supplementary spatial figures
+
+The same data shown in Figure 4 (binned local recall rate, §5.4) can be
+viewed under two complementary aggregations. We report them here for
+completeness; they are redundant with Figure 4 and not required for
+the main argument.
+
+### C.1 Continuous Gaussian-smoothed density
+
+![Figure C.1 — Smoothed Recall Density](figures/fig8_recall_density.png)
+*Figure C.1: Smoothed recall density by position in the original context
+(Gaussian kernel, bw=15kTok). Left: Haiku Q=5. Center: Haiku Q=1. Right:
+Sonnet Q=1. The continuous view emphasizes spatial trends (the
+Lost-in-the-Middle dip on Haiku, the much shallower dip on Sonnet) but
+hides the underlying discrete sample size; readers should refer to
+Figure 4 for the raw binned values.*
+
+### C.2 Normalized recall ratio (Cx / C0)
+
+![Figure C.2 — Normalized Cumulative Recall Ratio](figures/fig9_normalized_recall.png)
+*Figure C.2: Cumulative recall ratio Cx / C0 by position (Haiku Q=5 left,
+Haiku Q=1 right). The ratio cancels the C0 baseline's intrinsic spatial
+bias (primacy/recency, Lost-in-the-Middle), isolating the multiplicative
+damage caused by compaction. Compacted variants stay below 1.0 throughout
+the compacted zone (where information has been destroyed) and approach
+1.0 only in the surviving zone — making the compaction-zone "shadow"
+visible despite the C0 noise that obscures it in the absolute plots.*
 
 
 ## References

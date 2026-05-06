@@ -250,16 +250,9 @@ Lost-in-the-Middle; it softens it substantially. This difference partially
 disappears under compaction --- both models converge to similar spatial
 patterns at C3--C4.
 
-\begin{figure}[h]
-\centering
-\includegraphics[width=0.95\linewidth]{fig8_recall_density.png}
-\caption{Smoothed recall density by position in the original context (Gaussian
-kernel, bw=15kTok). Left: Haiku $Q=5$. Center: Haiku $Q=1$. Right: Sonnet $Q=1$.
-Sonnet's C0 (green) is the highest and flattest of the three but still shows
-a mild U; under compaction, all models show the same pattern: dead zone in
-the compacted region, concentration of recall at the context end.}
-\label{fig:recall-density-smoothed}
-\end{figure}
+A continuous Gaussian-smoothed view of the same data, plus a Cx/C0 ratio
+that cancels the C0 baseline bias, are provided in
+\Cref{sec:appendix-supp-spatial} (Appendix~C) as supplementary visualizations.
 
 \textbf{2. A stronger model resists light compaction better.} Sonnet loses only
 2.5pp at C1 and 6.2pp at C2, vs 12.5pp and 20.0pp for Haiku. The additional

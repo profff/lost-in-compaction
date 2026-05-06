@@ -1,0 +1,37 @@
+\section{Supplementary spatial figures}
+\label{sec:appendix-supp-spatial}
+
+The same data shown in \Cref{fig:spatial-recall} (binned local recall rate,
+\Cref{sec:spatial}) can be viewed under two complementary aggregations. We report them here for completeness; they are redundant
+with \Cref{fig:spatial-recall} and not required for the main argument.
+
+\subsection{Continuous Gaussian-smoothed density}
+\label{sec:appendix-supp-smoothed}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\linewidth]{fig8_recall_density.png}
+\caption{Smoothed recall density by position in the original context (Gaussian
+kernel, bw=15kTok). Left: Haiku $Q=5$. Center: Haiku $Q=1$. Right: Sonnet $Q=1$.
+The continuous view emphasizes spatial trends (the Lost-in-the-Middle dip on
+Haiku, the much shallower dip on Sonnet) but hides the underlying discrete
+sample size; readers should refer to \Cref{fig:spatial-recall} for the raw
+binned values.}
+\label{fig:appendix-recall-density-smoothed}
+\end{figure}
+
+\subsection{Normalized recall ratio (Cx / C0)}
+\label{sec:appendix-supp-normalized}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.95\linewidth]{fig9_normalized_recall.png}
+\caption{Cumulative recall ratio Cx / C0 by position (Haiku $Q=5$ left, Haiku
+$Q=1$ right). The ratio cancels the C0 baseline's intrinsic spatial bias
+(primacy/recency, Lost-in-the-Middle), isolating the multiplicative damage
+caused by compaction. Compacted variants stay below 1.0 throughout the
+compacted zone (where information has been destroyed) and approach 1.0 only
+in the surviving zone --- making the compaction-zone ``shadow'' visible
+despite the C0 noise that obscures it in the absolute plots.}
+\label{fig:appendix-normalized-recall}
+\end{figure}
