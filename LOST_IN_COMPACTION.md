@@ -499,10 +499,12 @@ tokens or repeated boilerplate). We leave this control to future work
 
 ![Figure 4 — Spatial Recall Density](figures/fig4_spatial_recall.png)
 *Figure 4: Cumulative recalled facts by position in the original 190K context (δ=0.42, Q=5).
-Each step curve shows one compaction level. Dotted vertical lines mark compaction boundaries.
-The C0 baseline exhibits the classic "lost in middle" profile — flat through the central region,
-steep at the end (recency). Compacted variants (C3, C4) concentrate their recall
-in the surviving portion but lose most facts from the compacted zone.*
+Each step curve shows one compaction level. Dotted vertical lines mark compaction boundaries
+(C1 at 9.5K, C2 at 47K, C3 at 95K, C4 at 186K). The C0 baseline rises near-linearly: at the
+sweet-spot density, recall is roughly uniform across position. Compacted variants stay close
+to flat throughout the compacted zone (low slope) and recover the C0 slope only in the
+surviving portion — yielding the expected two-slope profile, with the slope change located
+at each level's compaction boundary.*
 
 This visualization maps each fact to its position in the original (pre-compaction)
 context and shows whether it was recalled. It reveals:
